@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 3e35b720f3a232d4b8bf2077b2547125
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Avrile Sans UI
+  fontNames:
+  - Avrile Sans UI
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7024677049119bd49bf10a343fb4f35e, type: 3}
+  - {fileID: 12800000, guid: 21eceb31c7c21ce45b5d1d4ad7bc5026, type: 3}
+  - {fileID: 12800000, guid: 9d763b22118bef648a96543b098e083d, type: 3}
+  - {fileID: 12800000, guid: 6bce1de366ad8f648bbdfb1b8996fe05, type: 3}
+  - {fileID: 12800000, guid: cac9f094dc38a8c44adcfa5183d7c180, type: 3}
+  - {fileID: 12800000, guid: e1151f36be2b70d4eabae116dac6939f, type: 3}
+  - {fileID: 12800000, guid: d539f737dcabe1c499d993e583d86847, type: 3}
+  - {fileID: 12800000, guid: 4382ba58a4eb1484c949095c72a20a01, type: 3}
+  - {fileID: 12800000, guid: 80ccc3e91c0e3214db35de0054a87baf, type: 3}
+  - {fileID: 12800000, guid: 6a62365bb36561546809e4ca2b55ba21, type: 3}
+  - {fileID: 12800000, guid: 0d147afbf0c18f644b0a01a500da9ba5, type: 3}
+  - {fileID: 12800000, guid: 3583aa8d742dc9048935e2d1f9e4badc, type: 3}
+  - {fileID: 12800000, guid: f3d833ad2303d8549a072cfae32b6fa7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

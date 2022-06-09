@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 3aa1fd0372abc064a9ed7ed082c8f9bd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Avrile Serif
+  fontNames:
+  - Avrile Serif
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 70eb5d60cd0cee045912055cec83fd04, type: 3}
+  - {fileID: 12800000, guid: 83a61f61a89e9644c9bfc1b74f586bef, type: 3}
+  - {fileID: 12800000, guid: 209dc042ad81c21499e06db7de7bdcf1, type: 3}
+  - {fileID: 12800000, guid: 33b5af42b6f484342947af776ee2ffb5, type: 3}
+  - {fileID: 12800000, guid: 0af1f4e97a01dd84683ac00ec8b5b048, type: 3}
+  - {fileID: 12800000, guid: 2420b05adfebb24419cd48a2fe644a5e, type: 3}
+  - {fileID: 12800000, guid: d37fdb6bd44e00b4dbfa9920756755b9, type: 3}
+  - {fileID: 12800000, guid: 89cb2e2ccb8f38944b7b3b05aba4112b, type: 3}
+  - {fileID: 12800000, guid: c0d2256e9ecdd654cb00c07a7fe7b769, type: 3}
+  - {fileID: 12800000, guid: 65fa49ef20c134c4db2dd19b0217bdbe, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

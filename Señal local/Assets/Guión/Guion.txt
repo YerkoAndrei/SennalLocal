@@ -1,0 +1,320 @@
+MENU 0:
+Objetivo:
+Guiar al usuario a un lugar seguro.
+
+Bifurcación INTRO 0:
+    ¿Hay algo que recuerdes?
+    ¿Qué objetos tienes?
+    ¿Dime que ves a tu alrededor?
+
+Bifurcación INTRO 1:
+    Mira por la ventana
+    Busca a alguien
+    Intenta abrir la puerta
+    Sube la escalera
+
+INTRO 0:
+    + Buenas noches, soy el operador, ¿Cuál es su emergencia?.
+    - B-buenas noches...
+    + ¿Cuál es su emergencia?
+    - Acabo de despertar en algún lugar... 
+    - No recuerdo nada. Ayuda por favor.
+    + ¿Está bien, puedes describir dónde estas?
+    - Estoy dentro de una casa bastante grande y antigua.
+    - En una habitación.
+
+INTRO 1:
+    - No realmente...
+
+INTRO 2:
+    - Me reviso.
+    - ...
+    - Tengo un encendedor.
+
+INTRO 3:
+
+INTRO 4:
+    - La puerta si abrió.
+    - Veo una ventana y escaleras.
+    - Parece que estoy en la entrada de alguna casa grande o mansión.
+    - Veo otras entradas pero estan bloqueadas.
+    - Aqui hay muchos escombros
+
+INTRO 5:
+    - Está abierta, voy a salir.
+    - ¿Qué es eso?
+    - ¡Son horrible!
+    - ¡Ayuda!
+    + ¿Alo? ¿Sigues ahi? ¿Alo?
+    - (Llamada perdida, el usuario ha muerto.)
+
+Bifurcación OPE 0:
+    Intenta salir de la casa
+    Sigue buscando dentro de la casa
+
+Bifurcación OPE 1:
+    Ve lento
+    Corre rápido
+    Devuélvete
+
+Bifurcación OPE 2:
+    Ve al edificio verde
+    Ve al edificio rojo
+    Ve al edificio azul
+
+Bifurcación OPE 3:
+    Es irrelevante
+    Me llamo...
+
+OPE 0:
+    - ¿Qué es eso?
+    - ¡Son horrible!
+    - Parecen humanos, pero son solo huesos moviendose.
+    - !Que asco!
+    - Se retuercen.
+    + ¿Qué ves?
+    - Son... ¿Monstruos? 
+    - No entiendo.
+    - ¿Qué está pasando? 
+    - ¿Sabes algo?
+    - Ayúdame por favor.
+
+OPE 1:
+
+OPE 2:
+
+OPE 3:
+
+OPE 4:
+
+OPE 5:
+
+OPE 6:
+
+OPE 7:
+
+Bifurcación USU 0:
+    ¡Corre!
+    Alejate despacio
+    Intenta verlo mejor
+
+Bifurcación USU 1:
+    Busca un interruptor a tientas
+    Usa tu encendedor
+
+Bifurcación USU 2:
+    ¿Qué ves en la habitación?
+    Busca una puerta
+    Busca algo útil
+    Acerca tu encendedor
+
+Bifurcación USU 3:
+    Busca un lugar tranquilo
+    Quédate ahí
+    Usa la llave
+
+USU 0:
+
+USU 1:
+    - (Ruidos)
+    - Ah, ah, ah...
+    - Creo que lo perdí.
+
+USU 2:
+    - Me voy despacio pero no deja de mirarme.
+    - Espera.
+    - Salió del borde del muro.
+    - Es enorme...
+    - ...
+    - Estoy escondido en una habitación.
+
+USU 3:
+
+USU 4:
+
+USU 5:
+
+USU 6:
+
+USU 7:
+
+USU 8:
+
+USU 9:
+
+USU 10:
+
+USU 11:
+
+USU 12:
+
+USU 13:
+
+USU 14:
+
+USU 15:
+
+Bifurcación MON 0:
+    Ignoralo
+    Míralo
+    Síguelo
+    Atácalo
+
+Bifurcación MON 1:
+    Pídele ayuda
+    Ayúdale
+    Fuerza la puerta
+
+Bifurcación MON 2:
+    Vete
+    Síguelo
+    Abre la puerta
+
+Bifurcación MON 3:
+    Pregunta quién eres
+    Pregunta quién es el monstruo
+    Pregunta...
+
+MON 0:
+    - Bien, estoy subiendo.
+    - Todo cruje un montón.
+    - ...
+    - Creo que vi a alguien.
+    - Ahi esta.
+    - ¡Oye! ¿Sabes dónd...
+    - Me está mirando...
+    - No es humano.
+
+MON 1:
+    - B-bueno.
+    - Oye amigo..
+    - ¿Puedes ayudarme?
+
+MON 2:
+
+MON 3:
+
+MON 4:
+
+MON 5:
+
+MON 6:
+
+MON 7:
+
+MON 8:
+
+MON 9:
+
+Bifurcación CAZA 0:
+    Enfréntate a él
+    Síguelo
+    Huye
+
+CAZA 0:
+
+CAZA 1:
+
+CAZA 2:
+
+CAZA 3:
+
+Bifurcación SOT 0:
+    Camina a saltos
+    Ve lento. Pisa firme
+
+SOT 0:
+
+SOT 1:
+
+SOT 2:
+
+
+
+
+Inicio:
+"Acabo de despertar y no sé donde estoy."
+"Al telefono esta trizado en algunas partes y le faltan botones."
+"Estoy dentro de una casa, me resulta familiar."
+
+Rutas principales:
+
+¿Quien soy yo?
+Salir de la casa.
+    Afuera hay monstruos normales.
+    Debe esconderse y escapar.
+    Llega a otros edificios.
+    En uno hay gente.
+        Le preguntan con quién habla.
+        Soy el operador de emergencias.
+        Emergencias se acabó hace un año.
+            ¿Quien soy?
+            Soy el operador.
+
+
+¿Quién es el cliente?
+Adentrarse en la casa.
+    Hay un monstruo fuerte y grande.
+    Tiene que esconderse y correr.
+    El monstruo aparece y desaparece.
+        Puede matarlo.
+        Te encuentras con el creador.
+        El creador te conoce.
+        ¿Quien indujo al usuario en su estado de sueño?
+
+
+Cuando cortes la llamada dejaré de existir para ti.
+Pero tú también lo haras.
+la ruta del monstruo es el usuario anterior
+
+Preguntas posibles
+
+quién creo esto                 - yerko andrei
+quién es el autor               - yerko andrei
+quién es el monstruo            - tu mismo te has convertido en uno
+quién es el usuario             - la proxima victima
+dónde estoy                     - 
+dónde está esta casa            - Valle del mapocho
+dónde está la casa              - Valle del mapocho
+dónde está la mansión           - Valle del mapocho
+qué año es                      - 2096 del calendario gregoriano
+por que hay monstruos           - En 2090 la humanidad se redujo al 10% de la poblacion. La experimentación humana comenzó con fuerza. Solo trajo miseria. La humanidad está muerta. Solo quedan 30.000 personas.
+por que hay zombies             - idem
+que son los monstruos           - 
+qué zon los zombies             - 
+quien es el operador            - mi creador, quien creo esta casa
+cómo se llama el operador       - (nombre...)
+cómo se llama el usuario        - (nombre...)
+quién soy                       - 
+cómo llegué aquí                - 
+por qué no recuerdo nada        - 
+qué pasó                        - 
+qué está pasando                - 
+por qué el teléfono modificado  -
+estoy soñando                   -
+es una pesadilla                -
+qué debo hacer                  - 
+cómo pedir ayuda                -
+por qué yo                      -
+dónde pido ayuda                -
+me puedes ayudar                -
+quién hizo este computador      -
+cómo escapo                     -
+esto es un juego / prueba       -
+voy a sobrevivir                -
+puedo defenderme                -
+dónde hay armas                 -
+y ahora, quién podrá ayudarme   -
+estoy seguro Aqui               -
+hay un escondite seguro         -
+dónde es más seguro             -
+si mato al monstruo, me salvo   -
+cómo termino este bucle         -
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f0037bc2c5ba6d14f96a604b9c8c0f9f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Avrile Sans
+  fontNames:
+  - Avrile Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 70c38c3c2f39b854a865f283f331d4f6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
