@@ -21,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_930BF83C: 0.2
+    - Vector1_930BF83C: 0.5
     - Vector1_E0C20CD7: 1000
     m_Colors:
-    - Color_65516237: {r: 0, g: 0, b: 0, a: 0}
-    - Color_C04A0E8B: {r: 1, g: 1, b: 1, a: 0}
+    - Color_65516237: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
+    - Color_C04A0E8B: {r: 0.078431375, g: 0.039215688, b: 0.039215688, a: 0}
 --- !u!114 &6737821772603544081
 MonoBehaviour:
   m_ObjectHideFlags: 11
