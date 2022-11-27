@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a14aa9f5e1e61545a16394586593e6c
+guid: 6d7348aea8f83054fbe3a465f0c5c6cf
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -10,23 +10,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Borde
-    second: {fileID: 2100000, guid: 6628f66abc229de438f9922198475da7, type: 2}
+      name: Acolachado
+    second: {fileID: 2100000, guid: ac1790d18d0215848874d3453faf7c52, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Fondo
-    second: {fileID: 2100000, guid: 229d22c7710d9e240999b7448f63a361, type: 2}
+      name: Pies
+    second: {fileID: 2100000, guid: 6f26a3849eac32b42b18d3f436199798, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Manillas
-    second: {fileID: 2100000, guid: 4657421af0d1748438f602661e8bcfb7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mesa
-    second: {fileID: 2100000, guid: 68d3449372796634090036d1738efa11, type: 2}
+      name: Silla
+    second: {fileID: 2100000, guid: b3a45e29db488574d832b7ef5196d5e5, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
