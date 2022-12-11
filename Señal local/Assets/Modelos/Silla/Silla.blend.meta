@@ -15,6 +15,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Acolchado
+    second: {fileID: 2100000, guid: 6a9c2a49f8c1f8647bd6260f788e5588, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clavos
+    second: {fileID: 2100000, guid: 1a3a0aa2caf316943bae2c374fbec172, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Pies
     second: {fileID: 2100000, guid: 6f26a3849eac32b42b18d3f436199798, type: 2}
   - first:

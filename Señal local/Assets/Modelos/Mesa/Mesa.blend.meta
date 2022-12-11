@@ -15,6 +15,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Bordes
+    second: {fileID: 2100000, guid: 83cf77d512c858949824e5d32b7209db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Fondo
     second: {fileID: 2100000, guid: 229d22c7710d9e240999b7448f63a361, type: 2}
   - first:
