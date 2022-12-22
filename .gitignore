@@ -77,3 +77,6 @@ crashlytics-build.properties
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Krita
+*.png~
