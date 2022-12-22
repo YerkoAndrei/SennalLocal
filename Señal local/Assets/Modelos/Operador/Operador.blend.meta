@@ -81,19 +81,20 @@ ModelImporter:
       that will be discarded.\n\t'little_01_l' has translation animation that will
       be discarded.\n\t'ring_01_l' has translation animation that will be discarded.\n\nClip
       'Escribir' has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'index_01_l'
-      has translation animation that will be discarded.\n\t'middle_01_l' has translation
-      animation that will be discarded.\n\t'little_01_l' has translation animation
-      that will be discarded.\n\t'ring_01_l' has translation animation that will
-      be discarded.\n"
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'upper_arm_l'
+      has translation animation that will be discarded.\n\t'index_01_l' has translation
+      animation that will be discarded.\n\t'middle_01_l' has translation animation
+      that will be discarded.\n\t'little_01_l' has translation animation that will
+      be discarded.\n\t'ring_01_l' has translation animation that will be discarded.\n\t'upper_arm_r'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 3
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationRotationError: 0
+    animationPositionError: 0
+    animationScaleError: 0
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
@@ -131,8 +132,8 @@ ModelImporter:
       name: Sentado
       takeName: Sentado
       internalID: 0
-      firstFrame: -1
-      lastFrame: 199
+      firstFrame: 0
+      lastFrame: 399
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -160,8 +161,8 @@ ModelImporter:
       name: Escribir
       takeName: Escribir
       internalID: 0
-      firstFrame: -1
-      lastFrame: 199
+      firstFrame: 0
+      lastFrame: 399
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
