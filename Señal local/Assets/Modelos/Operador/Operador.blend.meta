@@ -62,32 +62,30 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Default Take' has import animation warnings
       that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'upper_arm_l' has translation animation
-      that will be discarded.\n\t'index_01_l' has translation animation that will
-      be discarded.\n\t'middle_01_l' has translation animation that will be discarded.\n\t'little_01_l'
-      has translation animation that will be discarded.\n\t'ring_01_l' has translation
-      animation that will be discarded.\n\t'upper_arm_r' has translation animation
-      that will be discarded.\n\nClip 'Sentado' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'index_01_l' has translation animation that
       will be discarded.\n\t'middle_01_l' has translation animation that will be
       discarded.\n\t'little_01_l' has translation animation that will be discarded.\n\t'ring_01_l'
-      has translation animation that will be discarded.\n\nClip 'Escribir' has import
+      has translation animation that will be discarded.\n\nClip 'Sentado' has import
       animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'upper_arm_l' has translation
-      animation that will be discarded.\n\t'index_01_l' has translation animation
-      that will be discarded.\n\t'middle_01_l' has translation animation that will
-      be discarded.\n\t'little_01_l' has translation animation that will be discarded.\n\t'ring_01_l'
-      has translation animation that will be discarded.\n\t'upper_arm_r' has translation
-      animation that will be discarded.\n"
+      DOF on avatar to improve retargeting quality.\n\t'index_01_l' has translation
+      animation that will be discarded.\n\t'middle_01_l' has translation animation
+      that will be discarded.\n\t'little_01_l' has translation animation that will
+      be discarded.\n\t'ring_01_l' has translation animation that will be discarded.\n\nClip
+      'Escribir' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'upper_arm_l'
+      has translation animation that will be discarded.\n\t'index_01_l' has translation
+      animation that will be discarded.\n\t'middle_01_l' has translation animation
+      that will be discarded.\n\t'little_01_l' has translation animation that will
+      be discarded.\n\t'ring_01_l' has translation animation that will be discarded.\n\t'upper_arm_r'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 3
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationRotationError: 0.1
+    animationPositionError: 0.1
+    animationScaleError: 0.1
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
@@ -125,7 +123,7 @@ ModelImporter:
       name: Sentado
       takeName: Sentado
       internalID: 0
-      firstFrame: 0
+      firstFrame: -1
       lastFrame: 199
       wrapMode: 0
       orientationOffsetY: 0
@@ -154,7 +152,7 @@ ModelImporter:
       name: Escribir
       takeName: Escribir
       internalID: 0
-      firstFrame: 0
+      firstFrame: -1
       lastFrame: 199
       wrapMode: 0
       orientationOffsetY: 0
@@ -189,11 +187,11 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -210,11 +208,11 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
-    tangentImportMode: 3
+    normalImportMode: 2
+    tangentImportMode: 2
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
+    blendShapeNormalImportMode: 2
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
