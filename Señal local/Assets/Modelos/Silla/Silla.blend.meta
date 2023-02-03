@@ -2,36 +2,28 @@ fileFormatVersion: 2
 guid: 6d7348aea8f83054fbe3a465f0c5c6cf
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: 1989289236423521904
-    second: Default Take
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Acolachado
-    second: {fileID: 2100000, guid: ac1790d18d0215848874d3453faf7c52, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Acolchado
-    second: {fileID: 2100000, guid: 6a9c2a49f8c1f8647bd6260f788e5588, type: 2}
+    second: {fileID: 2100000, guid: 432738844d6f24a4ba7bd2e23bb73acd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Clavos
-    second: {fileID: 2100000, guid: 1a3a0aa2caf316943bae2c374fbec172, type: 2}
+    second: {fileID: 2100000, guid: 7d5a68df3ddb7694f84c8fc9006938f5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pies
-    second: {fileID: 2100000, guid: 6f26a3849eac32b42b18d3f436199798, type: 2}
+    second: {fileID: 2100000, guid: b1990ae8aa10cdd4cb0b82cdb8b51b38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Silla
-    second: {fileID: 2100000, guid: b3a45e29db488574d832b7ef5196d5e5, type: 2}
+    second: {fileID: 2100000, guid: e4b9870d9154bfc438108551b80e4a57, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -69,11 +61,11 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -90,11 +82,11 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 2
-    tangentImportMode: 2
+    normalImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 2
+    blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 0
@@ -112,7 +104,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1

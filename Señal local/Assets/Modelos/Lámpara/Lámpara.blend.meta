@@ -2,36 +2,28 @@ fileFormatVersion: 2
 guid: 839e1c7ebdba0f140816467f67a84d27
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: 1989289236423521904
-    second: Default Take
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ampolelta
-    second: {fileID: 2100000, guid: 8dff21cb4c9c5fe4c85fac2f4adccf20, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Ampolleta
-    second: {fileID: 2100000, guid: 8dff21cb4c9c5fe4c85fac2f4adccf20, type: 2}
+    second: {fileID: 2100000, guid: ff4a1499358368c4c984e166316342b9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: L_mpara
-    second: {fileID: 2100000, guid: e1918e7707029b0498815b59fe647e10, type: 2}
+      name: "Lat\xF3n"
+    second: {fileID: 2100000, guid: 9b8bacd75b724884ab024cceb3d3e4d3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Lat_n
-    second: {fileID: 2100000, guid: 15f53b2e90f5068448d9a98adea99045, type: 2}
+      name: "L\xE1mpara"
+    second: {fileID: 2100000, guid: 3b56287f48680f2458f9e34d067b4f6e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tubo
-    second: {fileID: 2100000, guid: 72ee4b0996f101d4dbbe1bba382ff7ea, type: 2}
+    second: {fileID: 2100000, guid: e0317fae998ee424b8fdc6d203348d94, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -69,11 +61,11 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -90,11 +82,11 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 2
-    tangentImportMode: 2
+    normalImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 2
+    blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 0

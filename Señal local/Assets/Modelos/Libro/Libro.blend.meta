@@ -2,21 +2,18 @@ fileFormatVersion: 2
 guid: c1407f1773df0904099ebeb3dafdc55a
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: 1989289236423521904
-    second: Default Take
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hojas
-    second: {fileID: 2100000, guid: 35231a02d6d4c8d46a53901a441efc87, type: 2}
+    second: {fileID: 2100000, guid: 52f53c521df84fe418dbc715d19cd355, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Libro
-    second: {fileID: 2100000, guid: d915dfe3407725f4a854152f550835a4, type: 2}
+    second: {fileID: 2100000, guid: 8884dfccac4e76e4ea67bea83daae91f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -54,11 +51,11 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -75,11 +72,11 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 2
-    tangentImportMode: 2
+    normalImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 2
+    blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 0

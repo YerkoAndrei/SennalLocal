@@ -2,36 +2,28 @@ fileFormatVersion: 2
 guid: 2a14aa9f5e1e61545a16394586593e6c
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: 1989289236423521904
-    second: Default Take
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Borde
-    second: {fileID: 2100000, guid: 6628f66abc229de438f9922198475da7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bordes
-    second: {fileID: 2100000, guid: 83cf77d512c858949824e5d32b7209db, type: 2}
+    second: {fileID: 2100000, guid: 11d5ec025ad41364296dcb6cf62faea1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Fondo
-    second: {fileID: 2100000, guid: 229d22c7710d9e240999b7448f63a361, type: 2}
+    second: {fileID: 2100000, guid: ca58be360e3452346be767dc97125792, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Manillas
-    second: {fileID: 2100000, guid: 4657421af0d1748438f602661e8bcfb7, type: 2}
+    second: {fileID: 2100000, guid: aa5b2e8cdfcd8564ebfc3df4dfab4247, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mesa
-    second: {fileID: 2100000, guid: 68d3449372796634090036d1738efa11, type: 2}
+    second: {fileID: 2100000, guid: 010b5c954c30cd64794ff55aae6811f9, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -69,11 +61,11 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -90,11 +82,11 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 2
-    tangentImportMode: 2
+    normalImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 2
+    blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 0
@@ -112,7 +104,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
