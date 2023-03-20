@@ -82,7 +82,7 @@ public class RutaOperador : InterfazRuta
         // Siguiente diálogo
         listaDiálogos.Add(CrearOperador_8()[0]);
 
-        return listaDiálogos.ToArray();
+        return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
     public ElementoDialogo[] CrearOperador_0()
