@@ -8,47 +8,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Random = System.Random;
+using static Constantes;
 
-public class ControladorDiálogos : MonoBehaviour
+public class ControladorDialogos : MonoBehaviour
 {
-    public enum Estados
-    {
-        pausa,
-        esperandoClic,
-        mostrandoDiálogo,
-        mostrandoOpciones,
-        animación
-    }
-
-    public enum Personajes
-    {
-        usuario,
-        operador,
-        monstruo,
-        sobreviviente,
-        computador
-    }
-
-    public enum TipoDiálogo
-    {
-        diálogo,
-        opciones,
-        pregunta,
-        final
-    }
-
-    public enum TipoFinal
-    {
-        muerte,
-        captura
-    }
-
     [Header("Estado")]
     [Ocultar] [SerializeField] private Estados estado;
-    [Ocultar] [SerializeField] private ElementoDiálogo diálogoActual;
-
-    [Header("Diálogo Inicial")]
-    [SerializeField] private ElementoDiálogo diálogoInicial;
+    [Ocultar] [SerializeField] private ElementoDialogo diálogoActual;
 
     [Header("Tiempos")]
     [SerializeField] private float tiempoOpciones;
@@ -63,6 +29,7 @@ public class ControladorDiálogos : MonoBehaviour
     [SerializeField] private Color colorContinuar;
 
     [Header("Referencias diálogos")]
+    [SerializeField] private GameObject panelDiálogos;
     [SerializeField] private TMP_Text txtDiálogo;
     [SerializeField] private Image imgPersonaje;
     [SerializeField] private Image imgContinuar;
@@ -71,6 +38,10 @@ public class ControladorDiálogos : MonoBehaviour
     [SerializeField] private GameObject panelOpciones;
     [SerializeField] private Transform padreOpciones;
     [SerializeField] private GameObject btnOpciónPrefab;
+
+    [Header("Referencias preguntas")]
+    [SerializeField] private GameObject panelPregunta;
+    [SerializeField] private TMP_InputField inputPregunta;
 
     [Header("Referencias audios")]
     [SerializeField] private AudioSource fuenteMúsica;
@@ -97,7 +68,7 @@ public class ControladorDiálogos : MonoBehaviour
     [SerializeField] private AudioClip audioSobreviviente;
     [SerializeField] private AudioClip audioComputador;
 
-    private List<ElementoInterfazOpción> opcionesActuales;
+    private List<ElementoInterfazOpcion> opcionesActuales;
     private bool mostrandoTexto;
     private bool puedeContinuar;
     private bool carácterDeEtiqueta;
@@ -110,9 +81,10 @@ public class ControladorDiálogos : MonoBehaviour
     private void Start()
     {
         panelOpciones.SetActive(false);
+        panelPregunta.SetActive(false);
         VerImagenContinuar(false);
 
-        opcionesActuales = new List<ElementoInterfazOpción>();
+        opcionesActuales = new List<ElementoInterfazOpcion>();
         txtDiálogo.text = string.Empty;
 
         foreach (Transform hijo in padreOpciones)
@@ -120,7 +92,8 @@ public class ControladorDiálogos : MonoBehaviour
             Destroy(hijo.gameObject);
         }
 
-        IniciarDiálogo(diálogoInicial);
+        var intro = new RutaIntro();
+        IniciarDiálogo(intro.CrearPrimerDiálogo());
     }
 
     private void Update()
@@ -149,7 +122,7 @@ public class ControladorDiálogos : MonoBehaviour
         }
     }
 
-    private void IniciarDiálogo(ElementoDiálogo _diálogoActual)
+    private void IniciarDiálogo(ElementoDialogo _diálogoActual)
     {
         estado = Estados.mostrandoDiálogo;
         diálogoActual = _diálogoActual;
@@ -345,6 +318,9 @@ public class ControladorDiálogos : MonoBehaviour
             case TipoDiálogo.opciones:
                 IniciarOpciones();
                 break;
+            case TipoDiálogo.pregunta:
+                IniciarPregunta();
+                break;
             case TipoDiálogo.final:
                 FinalizarPartida(diálogoActual.tipoFinal);
                 break;
@@ -378,14 +354,14 @@ public class ControladorDiálogos : MonoBehaviour
         }
 
         // Posición aleatoria
-        var aleatoria = new Random(ControladorMenú.semilla);
+        var aleatoria = new Random(ControladorMenu.semilla);
         var opciones = diálogoActual.opciones.OrderBy(x => aleatoria.Next()).ToArray();
 
         // Instancia nuevas
         for (int i = 0; i < opciones.Length; i++)
         {
             var nuevoObjeto = Instantiate(btnOpciónPrefab, padreOpciones);
-            var elemento = nuevoObjeto.GetComponent<ElementoInterfazOpción>();
+            var elemento = nuevoObjeto.GetComponent<ElementoInterfazOpcion>();
             Action action = () => EnClicOpción(elemento);
             opcionesActuales.Add(elemento);
             elemento.Iniciar(opciones[i], action);
@@ -403,15 +379,30 @@ public class ControladorDiálogos : MonoBehaviour
         }
     }
 
-    public void EnClicOpción(ElementoInterfazOpción opcion)
+    public void EnClicOpción(ElementoInterfazOpcion opcion)
     {
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
         IniciarDiálogo(opcion.dialogo);
     }
 
+    private void IniciarPregunta()
+    {
+        panelPregunta.SetActive(true);
+    }
+
+    public void EnClicTerminarPregunta()
+    {
+        panelPregunta.SetActive(false);
+        IniciarDiálogo(diálogoActual.siguienteDiálogo);
+    }
+
     private void FinalizarPartida(TipoFinal tipoFinal)
     {
+        panelDiálogos.SetActive(false);
+
+        // finales
+
         print("final " + tipoFinal);
     }
 }

@@ -41,7 +41,7 @@ public class OcultarAttribute : PropertyAttribute
         this.valorInt = intCondition;
     }
 
-    public OcultarAttribute(string variableCondicional, ControladorDiálogos.TipoDiálogo intCondition)
+    public OcultarAttribute(string variableCondicional, Constantes.TipoDiálogo intCondition)
     {
         this.tipoOcultar = TipoOcultar.desaparecerPorInt;
         this.variableCondicional = variableCondicional;

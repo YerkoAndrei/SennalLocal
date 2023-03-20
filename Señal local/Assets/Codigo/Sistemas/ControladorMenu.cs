@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class ControladorMenú : MonoBehaviour
+public class ControladorMenu : MonoBehaviour
 {
     public static int semilla;
 

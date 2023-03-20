@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ElementoInterfazOpción : MonoBehaviour
+public class ElementoInterfazOpcion : MonoBehaviour
 {
     [Header("Multiplicador")]
     [SerializeField] private float multiplicadorTamaño;
@@ -14,11 +14,11 @@ public class ElementoInterfazOpción : MonoBehaviour
     [SerializeField] private TMP_Text txtOpción;
 
     [Header("Diálogo")]
-    [Ocultar] public ElementoDiálogo dialogo;
+    [Ocultar] public ElementoDialogo dialogo;
 
     private Action enclic;
 
-    public void Iniciar(ElementoOpción elementoDiálogo, Action acción)
+    public void Iniciar(ElementoOpcion elementoDiálogo, Action acción)
     {
         btnOpcion.interactable = false;
         dialogo = elementoDiálogo.siguienteDiálogo;
