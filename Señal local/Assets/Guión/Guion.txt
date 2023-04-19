@@ -1,11 +1,22 @@
-MENU 0:
 Objetivo:
-Guiar al usuario a un lugar seguro.
+Guia al usuario a un lugar seguro.
+
+- Usuario
+$ Operador
+* Monstruo
+# Sobreviviente
++ Computador
+
+Final Muerte:
+(Llamada perdida. El usuario ha muerto.)
+
+Final Captura:
+(Llamada perdida. El usuario ha sido capturado.)
 
 Bifurcación INTRO 0:
     ¿Hay algo que recuerdes?
     ¿Qué objetos tienes?
-    ¿Dime que ves a tu alrededor?
+    ¿Qué ves a tu alrededor?
 
 Bifurcación INTRO 1:
     Mira por la ventana
@@ -14,43 +25,63 @@ Bifurcación INTRO 1:
     Sube la escalera
 
 INTRO 0:
-    + Buenas noches, soy el operador, ¿Cuál es su emergencia?.
+    $ Buenas noches, soy el operador, ¿Cuál es su emergencia?.
     - B-buenas noches...
-    + ¿Cuál es su emergencia?
-    - Acabo de despertar en algún lugar... 
-    - No recuerdo nada. Ayuda por favor.
-    + ¿Está bien, puedes describir dónde estas?
+    $ ¿Cuál es su emergencia?
+    - Acabo de despertar en algún lugar...
+    - No.. No recuerdo nada. Ayuda por favor.
+    $ ¿Estás bien, puedes describir dónde estás?
     - Estoy dentro de una casa bastante grande y antigua.
-    - En una habitación.
+    - En una habitación desordenada.
+    - Parece abandonada, no veo nada más.
 
 INTRO 1:
     - No realmente...
+    - Lo intento pero...
+    - No logro recordar nada.
 
 INTRO 2:
     - Me reviso.
     - ...
-    - Tengo un encendedor.
+    - Tengo un encendedor, le queda un poco de gas.
+    - No tengo nada más en los bolsillos.
 
 INTRO 3:
+    - Solo hay muebles desordenados en la habitación, parecen vacíos.
+    - Hay una ventana opaca, pero no puedo ver hacia afuera desde aquí.
 
 INTRO 4:
-    - La puerta si abrió.
-    - Veo una ventana y escaleras.
-    - Parece que estoy en la entrada de alguna casa grande o mansión.
-    - Veo otras entradas pero estan bloqueadas.
-    - Aqui hay muchos escombros
+    $ ¿Cómo llamaste a emergencias?
+    - Desperté con el teléfono en mi mano, tenía el número marcado y no funciona ningún botón.
+    - Todo es muy extraño. No sé dónde estoy, ayúdame por favor.
+    $ ¿No hay alguna puerta cerca?
+    - Sí, solo una. Voy a ir.
+    - La puerta está abierta.
+    - Hay una escalera grande.
+    - Parece que estoy en la entrada de alguna casa grande o mansión antigua.
+    - Veo otras puertas pero estan bloqueadas.
+    - Aquí hay muchos escombros.
+    $ ¿Una entrada? Entonces debería haber una puerta grande.
+    - Sí, se ve pesada, al lado hay una ventana pequeña que da hacia afuera.
 
 INTRO 5:
-    - Está abierta, voy a salir.
-    - ¿Qué es eso?
-    - ¡Son horrible!
+    - Es pesada.
+    - ...
+    - Pero se mueve.
+    - Está abierta. Bien, voy a salir.
+    - ¡¿Qué es eso?!
+    - ¡Son horribles!
+    - ¡No! ¡La puerta se cerró!
     - ¡Ayuda!
-    + ¿Alo? ¿Sigues ahi? ¿Alo?
-    - (Llamada perdida, el usuario ha muerto.)
+    - ¡No!
+    - ¡Ahhhhhh!
+    - ...
+    (Final Muerte)
+
 
 Bifurcación OPE 0:
     Intenta salir de la casa
-    Sigue buscando dentro de la casa
+    Adéntrate en la casa
 
 Bifurcación OPE 1:
     Ve lento
@@ -67,31 +98,241 @@ Bifurcación OPE 3:
     Me llamo...
 
 OPE 0:
-    - ¿Qué es eso?
-    - ¡Son horrible!
-    - Parecen humanos, pero son solo huesos moviendose.
+    - ¡¿Qué es eso?!
+    - ¡Son horribles!
+    $ ¿Qué ves?
+    - Parecen humanos, pero son solo huesos moviéndose.
     - !Que asco!
     - Se retuercen.
-    + ¿Qué ves?
+    $ ¿Cómo?
     - Son... ¿Monstruos? 
     - No entiendo.
     - ¿Qué está pasando? 
     - ¿Sabes algo?
     - Ayúdame por favor.
+    $ Bien, primero cálmate y aléjate de las ventanas.
+    - Está bien.
+    $ Busca en la entrada un lugar desde dónde salir.
+    - Bien.
 
 OPE 1:
+    - No creo que haya alguien aquí, hay demasiado polvo.
+    $ ¿Vez huellas en él?
+    - No, parece abandonada hace años.
+    - Esa escalera me da escalofríos.
+    - Parece que se va a derrumbar en cualquier momento.
 
 OPE 2:
+    - Mmm...
+    - ¡Espera!
+    - Creo que puedo pasar por una puerta bloqueada.
+    - Tiene escombros pero puedo moverlos.
+    - ...
+    - ¡Bien!
+    - Ya estoy dentro.
+    $ ¿Sabes dónde estás? Descríbelo.
+    - Por lo muebles parece un comedor.
+    - Hay dos puertas, una sale hacia afuera, y la otra debería ir a otra habitación.
+    - ¿Qué debería hacer?
 
-OPE 3:
+OPE 3.1:
+    - ¿¿Salir?!
+    $ Adentro puede ser peor, debes huir.
+    - E-está bien.
+    - La puerta está abierta.
+    - No veo nada extraño por ningún lado.
+    - ¿Cómo debería huir?
+
+OPE 3.2:
+    - ¿Salir?
+    - Está bien.
+    - La puerta está abierta.
+    - No hay nada extraño afuera.
+    - ¿Cómo debería salir?
 
 OPE 4:
+    - Bien, no veo nada extraño.
+    - Estoy caminando lento.
+    - ...
+    - Oh no.
+    $ ¿Qué ves?
+    - ...
+    - ¡Me estan siguiendo!
+    - ¡¿De dónde salieron?!
+    $ Busca un lugar seguro.
+    $ ¿Qué ves?
+    - Solo hay...
+    - ¡Me rodearon!
+    - ¡Son rápidos!
+    - ¡Nooo!
+    - ...
+    (Final Muerte)
 
 OPE 5:
+    - Bien, no veo nada extraño.
+    - Voy a correr.
+    - ...
+    - ¡Me estan siguiendo!
+    - ¡¿De dónde salieron?!
+    - ¡También estan frente a mí!
+    - Puedo desviarme.
+    $ Busca un lugar seguro.
+    $ ¿Qué ves?
+    - ...
+    - Hay un muro colapsado, puedo escalarlo.
+    - ...
+    - Creo que los perdí.
+    - Oh...
+    $ ¿Qué pasa?
+    - Todo esta en ruinas.
+    - No veo a nadie.
+    - ¿Qué debería hacer?
+    $ ¿Ves algún lugar que parezca cerrado?
+    - Mmm...
+    - Veo un par de edificios residenciales, pero la mayoría estan en ruinas.
+    $ ¿Hay alguno que parezca en menos ruinas?
+    - Sí, hay tres.
+    - Tienen algunas puertas y ventanas tapadas.
+    - Pero siguen pareciendo ruinas. Tienen pinturas muy desgastadas.
+    - Hay uno verde, uno rojo y otro azul.
+    - ¿A cuál debería ir?
 
 OPE 6:
+    - Bien.
+    - ...
+    - Creo que no me han visto.
+    - ¿Sabes que son esos monstruos?
+    - Espera...
+    - Estoy dentro pero no escucho nada.
+    - No creo que haya nadie aqui.
+    - ...
+    - Oh no.
+    $ ¿Qué pasa?
+    - Escucho pasos.
+    - ¡Ahhhhhh!
+    - ...
+    - Ah... Ah... Ah...
+    - ¡Algo me agarró del cuello!
+    - ¡Esto esta lleno de esas cosas!
+    - ¡Ahhhhhh!
+    - ...
+    (Final Muerte)
 
 OPE 7:
+    - Bien.
+    - ...
+    - Creo que no me han visto.
+    - Espera...
+    - Escucho algo, son murmullos. Creo.
+    - ¡Ah!
+    - Oh... Perdón.
+    $ ¿Qué pasa?
+    $ ¿Estás bien?
+    - Sí, hay gente aqui.
+    $ ...
+    - Sí, son personas normales.
+    - ¡Hola!
+    - ¿Sobrevivientes? ¿De qué?
+    # ¿Con quién hablas?
+    - Es un operador de emergencias.
+    # ¿Emergencias?
+    - Sí, me ayudó a llegar aquí.
+    # ¿De qué hablas? Ya no existen emergencias.
+    - ¿Cómo? Si me ayudó a escapar de la casa grande al final de la calle.
+    # ¿Q-Quién eres?
+    - ¿Por qué me miran asi?
+    - ¡No, no he hecho nada! ¡No ven los monstruos afuera!
+    # ¡Déjenlo!
+    # Puede que diga la verdad.
+    # ¿Nadie te siguió?
+    - No que yo sepa, ayúdenme por favor.
+    # Puedes quedarte aquí, pero necesitamos asegurarnos de que no te envia el demente de la casa de donde escapaste.
+    - ¿Demente?
+    # ¿Con quién estas hablando?
+    # ¿Aún no cuelgas?
+    - La verdad no le he preguntado.
+    - Operador, ¿Estás ahi?
+    $ Sí.
+    - ¿Cómo te llamas?
+
+OPE 8:
+    $ Hiciste bien en llegar a salvo.
+    $ E incluso descubriste una guarida de sobrevivientes.
+    $ Eso es genial.
+    - ¿Operador?
+    # ¿Qué es eso?
+    # ¡Es uno de los grandes!
+    - ¿Qué está pasando? ¿Operador?
+    $ El camino ha terminado.
+    - ¡Ah!
+    - ¡Acaba de entrar un monstruo!
+    - ¡Es distinto a los demás!
+    - Es más grande y... ¿Nos observa?
+    # ¡Ahhhhhh!
+    # ¡Corran!
+    $ Bien, escucho muchos juguetes nuevos.
+    - ¿De qué hablas?
+    - Ayúdame por favor ¿Qué debería hacer?
+    $ No luches, será en vano.
+    - Que no...
+    - Espera... No me digas que tú...
+    # ¡Ahhhhhh!
+    - ¡Ahhhhhh!
+    - ...
+    * Maestro.
+    * Cinco sujetos encontrados.
+    * Capturando.
+    $ Bien.
+    $ Procura no dañarlos.
+    $ Enviaré ayuda, captúralos, espera a que lleguen y tráiganlos.
+    * Entendido, maestro.
+    (Llamada perdida. El usuario ha sido capturado.)
+
+OPE 9:
+    - Dice que se llama {0}
+    # ¡¿Qué?!
+    - ¿Qué pasa? No entiendo.
+    # El demente siempre usa esos pseudónimos ridículos.
+    # ¡Está hablando con el psicópata!
+    - ¿Qué? Pero si me ayudó a llegar a salvo.
+    # ¡No! Lo ayudaste a llegar a nosotros...
+    # ¡Nos delataste!
+    - Esperen por favor.
+    - ¿Operador? ¿Que sucede? Todos están...
+    # ¿Qué es eso?
+    # ¡Es uno de los grandes!
+    - ¿Qué está pasando? ¿Operador?
+    $ El camino ha terminado.
+    - ¡Ah!
+    - ¡Acaba de entrar un monstruo!
+    - ¡Es distinto a los demás!
+    - Es más grande y... ¿Nos observa?
+    # ¡Ahhhhhh!
+    # ¡Corran!
+    $ Bien, escucho muchos juguetes nuevos.
+    - ¿De qué hablas?
+    - Ayúdame por favor ¿Qué debería hacer?
+    $ No luches, será en vano.
+    - Que no...
+    - Espera... No me digas que tú trajiste a estos monstruos.
+    - ¡Pensé que me estabas ayudando!
+    - Maldito, si estás en esa casa te encontraré
+    $ Ya es muy tarde.
+    # ¡Ahhhhhh!
+    - ¡Ahhhhhh!
+    - ...
+    * Maestro.
+    * Cinco sujetos encontrados.
+    * Capturando.
+    $ Bien.
+    $ Procura no dañarlos.
+    $ Separa al del teléfono.
+    $ Enviaré ayuda, captúralos, espera a que lleguen y tráiganlos.
+    * Entendido, maestro.
+    $ Bien, tengo más usuarios con los qué entretenerme.
+    $ Espero los siguientes sean más divertidos que éste.
+    (Llamada perdida. El usuario ha sido capturado.)
+
 
 Bifurcación USU 0:
     ¡Corre!
@@ -216,6 +457,11 @@ CAZA 0:
 CAZA 1:
 
 CAZA 2:
+    - Rompió mi ropa. ¡Era gigante!
+    - ¡¿Qué es eso?!
+    - ¡No es como los otros!
+    $ ¡Ahhhhhhhh!
+    - Noooo
 
 CAZA 3:
 
