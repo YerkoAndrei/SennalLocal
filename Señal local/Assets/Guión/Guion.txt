@@ -13,6 +13,7 @@ Final Muerte:
 Final Captura:
 (Llamada perdida. El usuario ha sido capturado.)
 
+
 Bifurcación INTRO 0:
     ¿Hay algo que recuerdes?
     ¿Qué objetos tienes?
@@ -77,6 +78,19 @@ INTRO 5:
     - ¡Ahhhhhh!
     - ...
     (Final Muerte)
+
+INTRO 6:
+    - Bien, subiré la escalera.
+    - Oh no...
+    $ ¿Qué pasa?
+    - Estoy viendo algo. Hay algo arriba de la escalera.
+    - Me escondí por puro reflejo, parecía una persona, pero...
+    $ ¿Pero?
+    - No sé cómo explicarlo, era la silueta de una persona, pero demasiado grande.
+    $ ¿Tienes alguna otra opción?
+    - Mmm...
+    - No, hay una puerta, pero está llena de escombros, la única opción que me queda es subir y averiguar que está pasando.
+    - Bien, subiré la escalera.
 
 
 Bifurcación OPE 0:
@@ -295,7 +309,7 @@ OPE 9:
     # El demente siempre usa esos pseudónimos ridículos.
     # ¡Está hablando con el psicópata!
     - ¿Qué? Pero si me ayudó a llegar a salvo.
-    # ¡No! Lo ayudaste a llegar a nosotros...
+    # ¡No! Lo ayudaste a llegar a nosotros.
     # ¡Nos delataste!
     - Esperen por favor.
     - ¿Operador? ¿Que sucede? Todos están...
@@ -355,45 +369,306 @@ Bifurcación USU 3:
     Usa la llave
 
 USU 0:
+    - Bien, esa ventana me daba mala espina.
+    - Intentaré bloquear la puerta.
+    - ...
+    - Estoy en la entrada de nuevo.
+    - Oh no...
+    $ ¿Qué pasa?
+    - Estoy viendo algo. Hay algo arriba de la escalera.
+    - Me escondí por puro reflejo, era una persona pero...
+    $ ¿Pero?
+    - No sé cómo explicarlo, era una persona, pero no parecia humano, aparte era demasiado grande.
+    - Aunque por alguna razón no me dió miedo.
+    $ ¿Tienes alguna otra opción?
+    - Mmm...
+    - No, la única opción que me queda es subir y averiguar que está pasando.
+    - Bien, subiré la escalera.
 
 USU 1:
-    - (Ruidos)
-    - Ah, ah, ah...
-    - Creo que lo perdí.
-
-USU 2:
     - Me voy despacio pero no deja de mirarme.
     - Espera.
-    - Salió del borde del muro.
-    - Es enorme...
+    - Ya no lo veo, creo que no me sigue.
+    - Cómo suena este piso, toda la madera está podrida.
+    - Voy a pisar con cuidado.
     - ...
-    - Estoy escondido en una habitación.
+    - Ésta está cerrada.
+    - ...
+    $ ¿Todo bien?
+    - Sí, estoy escondido en una habitación, entré en la primera puerta abierta que encontré.
+    - Pero está oscuro, no veo nada.
+    - ¿Qué debería hacer?
+
+USU 2:
+    - Bien.
+    - Ah, ah, ah...
+    - Creo que lo perdí.
+    - No sé dónde estoy.    
+    - ¡Ahhhhhh!
+    $ ¿Qué pasa?
+    - ¡Mi pierna!
+    - El piso está podrido y se rompió.
+    - Tengo la pierna atascada...
+    - Oh no...
+    $ ¿Qué ves?
+    - Es él, me alcanzó, se está acercando.
+    - ¡No!
+    - ¡Ayuda por favor me está llevando!
+    - ...
+    (Llamada perdida. El usuario ha sido capturado.)
 
 USU 3:
+    - No veo nada pero lo intentaré.
+    - No está en cerca de la puerta.
+    - Tampoco quiero salir, esa cosa debe estar afuera.
+    - ¡Ahhhhhh!
+    - ¡Mi pierna!
+    - ¡La madera está podrida!
+    - Oh no...
+    - Se está quebrando.
+    - ¡Ayuda!
+    - ...
+    (Llamada perdida. El usuario ha muerto.)
 
 USU 4:
+    - ¡Oh!
+    - Cierto, lo había olvidado.
+    - Bueno, hay varias cosas metálicas a mi alrededor, ilumina más de lo que debería.
+    - Aún asi no veo mucho, pero lo suficiente para no pisar madera podrida.
+    - ¿Qué debería buscar?
 
 USU 5:
+    - Bien, me iré por el otro lado.
+    - Parece inofensivo, pero puede ser una trampa.
+    - ...
+    - No veo que me siga, parece que siguió caminando.
 
 USU 6:
+    - Cómo suena este piso, toda la madera está podrida.
+    - Voy a pisar con cuidado.
+    - ...
+    $ ¿Todo bien?
+    - Sí, entré a una habitación, por la primera puerta abierta que encontré.
+    - Pero está oscuro, no veo nada.
+    - ¿Qué debería hacer?
 
 USU 7:
+    - Hay una camilla, como de dentista, pero está rota y oxidada.
+    - Mmm...
+    - Parece una bodega de cosas médicas.
+    - Pero todo está roto.
+    - ¿Por qué sí recuerdo estás cosas y no mi nombre?
+    - Oh...
+    $ ¿Qué pasa?
+    - El óxido, parece que es... Sangre seca.
+    - ¿D-dónde estoy?
+    $ Mejor busca una salida.
+    - B-bien.
+    - Creo que veo una puerta de metal.
 
 USU 8:
+    - Bien.
+    - ...
+    - Sí, veo una, es de metal.
+    - Éste lugar me da mala espina.
+    - Hay algunas cosas médicas, pero hay algo extraño aquí.
 
 USU 9:
+    - ¿Algo útil?
+    - Bien, hay varios muebles, buscaré en los cajones.
+    - Hay cosas médicas aquí.
+    - Éste lugar me da mala espina.
+    $ ¿Has encontrado algo?
+    - No aún no, todos los cajones están vacíos.
+    - ¡Oh!
+    - Hay una puerta de metal.
+    - Espera, aquí encontré algo, es una caja d emadera, pero está podrida.
+    - ¿Debería intentar romperla?
+    $ Sí, prueba pisandola.
+    - Está bien.
+    - Oh, eso fue fácil.
+    $ ¿Qué tiene dentro?
+    - Es una llave, pero no es normal, es muy grande.
+    $ ¿Es cilindrica?
+    - ¡Sí!
+    - Espera. ¿ómo sabes eso?
+    $ No importa, ahora tienes que salir de ahí.
+    - E-esta bien.
 
 USU 10:
+    - Bien, auqnue no sé que puede haber por el techo.
+    - Oh, hay como tuberías.
+    - ¿Son como los de hospital?
+    - Hay una con una inscripción, voy a subirme a algo.
+    - Espera. ¿Qué es ese olor?
+    - ...
+    (Llamada perdida. El usuario ha muerto.)
 
 USU 11:
+    - Estoy frente a la puerta de metal.
+    - Ésta bodega me pone nervioso.
+    - Quiero irme de aquí.
+    - Pero la puerta está cerrada.
+    - ¿Que debería hacer?
 
 USU 12:
+    - Bien, esa puerta me pone más nervioso que esta misma habitación.
+    - ...
+    - No encuentro nada más.
+    - ¡Ah!
+    $ ¿Qué pasa?
+    - El piso se está quebrando allí.
+    - ¿Ah?
+    $ ¿Qué ves?
+    - El piso se rompió tanto que veo una luz desde abajo.
+    - Pero es roja.
+    $ ¿Luz roja?
+    - Sí.
+    - Espera, si hay luz debería haber alguien.
+    - Intentaré acercarme por otro lado, espero no caerme.
+    - ...
+    - Mmm...
+    - No veo nada.
+    - Lanzaré algo para romperlo, es la única señal de vida que he visto, tengo que saber por qué hay luz en el piso de abajo.
+    - ...
+    - ¡Ahhhhhh!
+    $ ¿Qué pasa?
+    $ ¿Estás bien?
+    - Ah... Ah... Ah...
+    - Más o menos, me caí...
+    - No, no me rompí nada.
+    $ Estás [ad portas] de la verdad.
+    - ¿De la verdad? 
+    - Espera, hay una puerta abierta, iré allí.
+    $ Tu destino ya fue escrito.
+    - ¿De qué hablas?
+    - Solo quiero encontrar a alguien.
+    $ Y lo has conseguido.
+    (Llamada perdida. El usuario ha muerto.)
 
 USU 13:
+    - Bien, esa puerta me pone más nervioso que esta misma habitación.
+    - ...
+    - Desperté en un lugar sin recordar mi propio nombre, pero sí recuerdo otras cosas.
+    - ¿Por qué esta amnesia selectiva?
+    - Ni siquiera recuerdo dónde debería estar.
+    - ...
+    - ¿Qué debería hacer?
+
+USU 13.1:
+    - Dentro de esta casa hay un monstruo no humano que da escalofrios.
+    - No es violento, pero es evidente que me mataría de un manotazo.
+    - Ahora que lo pienso, tenía cosas tecnológicas en su ropa.
+    - ¿Qué será?
+    - Quizas debí haberlo seguido.
+
+USU 13.2:
+    - Afuera está lleno de monstruos que parecen muertos.
+    - Esas cosas de afuera ni siquiera parecían animales.
+    - Es de la casa no es cómo esos, parece tener conciensia, o por lo menos autocontrol.
 
 USU 14:
+    - Sí, aquí es relativamente seguro.
+    - Por lo menos no oigo nada extraño.
+    - ...
+    - Creo que está bien descansar un poco.
+    - Quizas pueda recordar algo.
+    $ ¿Puedo ayudarte en algo?
+    - No sé...
+    - Me ayudarías no colgando.
+    - No recuerdo otra voz humana.
+    - Nada familiar sale de mi mente.
+    - Pero sí recuerdo todo lo... ¿Normal?
+    - Creo que solo se han borrado recuerdos sobre mí.
+    - ...
+    - ¿Acaso alguien lo hizo a propósito?
+    - ¿Existe esa posibilidad?
+    - ¡Oh! Si logro vincular algún recuerdo podria llegar a algo más familar, como mi nombre u otra persona.
+    - Mmm...
+    - Solo me vienen imágenes de desastres.
+    - ¿Cómo será el exterior?
+    - ...
+    - Oh no...
+    $ ¿Ocurre algo?
+    - Escucho unos pasos muy pesados.
+    - Vienen hacia aquí.
+    - Debe ser el monstruo de hace rato.
+    - No... Se escuchan con prisa.
+    - Viene hacía aquí.
+    - Ya no quiero correr, estoy muy cansado.
+    - Ayúdame por favor.
+    - No quiero morir.
+    - ...
+    (Llamada perdida. El usuario ha sido capturado.)
 
 USU 15:
+    - Mmm...
+    - No veo una cerradura.
+    - ¡Oh! Si la encontré.
+    - Estaba oculta en un dibujo.
+    - ...
+    - Sí calza.
+    - La puerta está pesada.
+    - Oh...
+    $ ¿Qué hay dentro?
+    - Es una máquina.
+    - ¡Es una terminal!
+    - ¡Ah!
+    $ ¿Estás bien?
+    - ¡La puerta se cerró!
+    - ¡No abre!
+    - Me quedé a oscuras.
+    $ Busca otra salida.
+    - Bien...
+    - ¡Oh!
+    - El interruptor funciona, ya no necesito el encendedor.
+    - Menos mal, me estaba quemando los dedos.
+    - ...
+    - Oh no...
+    $ ¿Qué pasa?
+    - Esto no está bien.
+    $ ¿Por qué lo dices?
+    - Es una habitación muy pequeña.
+    - Solo hay una puerta y la terminal.
+    $ La terminal ¿Está encendida?
+    - Tocaré un botón a ver que pasa.
+    + Pregunta incorrecta.
+    + Solo una pregunta disponible.
+    - Está prendida, creo que puedo preguntar algo.
+    - Mmmm.
+    - ¿Qué debería preguntar?
+
+USU 16.1:
+    + Pregunta reconocida.
+    + Esperando respuesta
+
+SU 16.2:
+    + Pregunta no reconocida.
+    + Reiniciando intentos.
+
+USU 17:
+    - Oh no...
+    $ ¿Qué pasa?
+    - Se cortó la electricidad.
+    - Me está faltando el aire.
+    - ...
+    - No tengo fuerzas.
+    - ¿Qué pasa?
+    - Oh... Ya entendí.
+    $ ¿Qué cosa?
+    - Estoy en una caja fuerte.
+    - Aquí no hay oxigeno.
+    - Por eso la terminal estaba tan limpia.
+    - Toda la casa está en ruinas.
+    - No tiene sentido.
+    - Ah...
+    - Se me duermen las piernas.
+    - Ayúdame, operador, porfavor.
+    - No quiero morir.
+    - No quiero...
+    - ...
+    (Llamada perdida. El usuario ha muerto.)
+
 
 Bifurcación MON 0:
     Ignoralo
@@ -420,16 +695,34 @@ MON 0:
     - Bien, estoy subiendo.
     - Todo cruje un montón.
     - ...
-    - Creo que vi a alguien.
-    - Ahi esta.
+    - Creo que lo veo.
+    - Ahí está, no se mueve.
     - ¡Oye! ¿Sabes dónd...
     - Me está mirando...
-    - No es humano.
+    - No, definitivamente no es humano.
+    - No parece violento.
+    - Tengo miedo, por favor, ayúdame.
+    - ¿Qué debería hacer?
 
 MON 1:
+    - Solo me mira.
+    - Éste no es violento, ni deambula sin rumbo, parece inteligente.
+    - ¿Crees que es buena idea hablarle?
+    $ Inténtalo, pero preparate por si algo sucede.
     - B-bueno.
     - Oye amigo..
     - ¿Puedes ayudarme?
+    - No responde, pero me sigue con la mirada.
+    - Oh...
+    $ ¿Qué pasa?
+    - Tiene varias armas en su vestimenta. ¿Será peligroso?
+    - No parece estar a la ofensiva.
+    - Oh...
+    - Dio media vuelta y empezó a caminar, se va.
+    - Oh...
+    - Se detuvo, creo que quiere que lo siga.
+    - Ayúdame por favor.
+    - ¿Qué debería hacer?
 
 MON 2:
 
@@ -446,6 +739,7 @@ MON 7:
 MON 8:
 
 MON 9:
+
 
 Bifurcación CAZA 0:
     Enfréntate a él
@@ -465,6 +759,7 @@ CAZA 2:
 
 CAZA 3:
 
+
 Bifurcación SOT 0:
     Camina a saltos
     Ve lento. Pisa firme
@@ -474,7 +769,6 @@ SOT 0:
 SOT 1:
 
 SOT 2:
-
 
 
 
