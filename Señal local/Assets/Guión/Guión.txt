@@ -652,7 +652,6 @@ USU 17:
     - Se cortó la electricidad.
     - Me está faltando el aire.
     - ...
-    - No tengo fuerzas.
     - ¿Qué pasa?
     - Oh... Ya entendí.
     $ ¿Qué cosa?
@@ -661,6 +660,7 @@ USU 17:
     - Por eso la terminal estaba tan limpia.
     - Toda la casa está en ruinas.
     - No tiene sentido.
+    - Ya no tengo fuerzas.
     - Ah...
     - Se me duermen las piernas.
     - Ayúdame, operador, porfavor.
