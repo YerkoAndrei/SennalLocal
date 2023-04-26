@@ -444,6 +444,21 @@ USU 5:
     - No veo que me siga, parece que siguió caminando.
 
 USU 6:
+    - ¿Ayuda?
+    - ¡Oh sí!
+    - Puede conocer la salida, no puede ser esa puerta.
+    - Intentaré hacer que me siga a la escalera.
+    - ...
+    - ¡Ahhhhhh!
+    $ ¿Qué pasa?
+    - ¡Empezó una rabieta!
+    $ ¿Una rabieta?
+    - Sí ¿Será que no aguanta la frustación?
+    - Esto es peligroso, mejor me voy por el otro lado.
+    - ...
+    - Bien, ya no lo veo.
+
+USU 7:
     - Cómo suena este piso, toda la madera está podrida.
     - Voy a pisar con cuidado.
     - ...
@@ -452,7 +467,7 @@ USU 6:
     - Pero está oscuro, no veo nada.
     - ¿Qué debería hacer?
 
-USU 7:
+USU 8:
     - Hay una camilla, como de dentista, pero está rota y oxidada.
     - Mmm...
     - Parece una bodega de cosas médicas.
@@ -466,14 +481,14 @@ USU 7:
     - B-bien.
     - Creo que veo una puerta de metal.
 
-USU 8:
+USU 9:
     - Bien.
     - ...
     - Sí, veo una, es de metal.
     - Éste lugar me da mala espina.
     - Hay algunas cosas médicas, pero hay algo extraño aquí.
 
-USU 9:
+USU 10:
     - ¿Algo útil?
     - Bien, hay varios muebles, buscaré en los cajones.
     - Hay cosas médicas aquí.
@@ -495,7 +510,7 @@ USU 9:
     $ No importa, ahora tienes que salir de ahí.
     - E-esta bien.
 
-USU 10:
+USU 11:
     - Bien, auqnue no sé que puede haber por el techo.
     - Oh, hay como tuberías.
     - ¿Son como los de hospital?
@@ -504,14 +519,14 @@ USU 10:
     - ...
     (Llamada perdida. El usuario ha muerto.)
 
-USU 11:
+USU 12:
     - Estoy frente a la puerta de metal.
     - Ésta bodega me pone nervioso.
     - Quiero irme de aquí.
     - Pero la puerta está cerrada.
     - ¿Que debería hacer?
 
-USU 12:
+USU 13:
     - Bien, esa puerta me pone más nervioso que esta misma habitación.
     - ...
     - No encuentro nada más.
@@ -546,7 +561,7 @@ USU 12:
     $ Y lo has conseguido.
     (Llamada perdida. El usuario ha muerto.)
 
-USU 13:
+USU 14:
     - Bien, esa puerta me pone más nervioso que esta misma habitación.
     - ...
     - Desperté en un lugar sin recordar mi propio nombre, pero sí recuerdo otras cosas.
@@ -555,19 +570,19 @@ USU 13:
     - ...
     - ¿Qué debería hacer?
 
-USU 13.1:
+USU 15.1:
     - Dentro de esta casa hay un monstruo no humano que da escalofrios.
     - No es violento, pero es evidente que me mataría de un manotazo.
     - Ahora que lo pienso, tenía cosas tecnológicas en su ropa.
     - ¿Qué será?
     - Quizas debí haberlo seguido.
 
-USU 13.2:
+USU 15.2:
     - Afuera está lleno de monstruos que parecen muertos.
     - Esas cosas de afuera ni siquiera parecían animales.
     - Es de la casa no es cómo esos, parece tener conciensia, o por lo menos autocontrol.
 
-USU 14:
+USU 16:
     - Sí, aquí es relativamente seguro.
     - Por lo menos no oigo nada extraño.
     - ...
@@ -601,7 +616,7 @@ USU 14:
     - ...
     (Llamada perdida. El usuario ha sido capturado.)
 
-USU 15:
+USU 17:
     - Mmm...
     - No veo una cerradura.
     - ¡Oh! Si la encontré.
@@ -638,15 +653,15 @@ USU 15:
     - Mmmm.
     - ¿Qué debería preguntar?
 
-USU 16.1:
+USU 18.1:
     + Pregunta reconocida.
     + Esperando respuesta
 
-SU 16.2:
+SU 18.2:
     + Pregunta no reconocida.
     + Reiniciando intentos.
 
-USU 17:
+USU 19:
     - Oh no...
     $ ¿Qué pasa?
     - Se cortó la electricidad.
@@ -699,8 +714,9 @@ MON 0:
     - Ahí está, no se mueve.
     - ¡Oye! ¿Sabes dónd...
     - Me está mirando...
+    - Solo veo el brillo de sus ojos, no puedo ver su rostro.
     - No, definitivamente no es humano.
-    - No parece violento.
+    - Aunque no parece violento.
     - Tengo miedo, por favor, ayúdame.
     - ¿Qué debería hacer?
 
@@ -710,8 +726,9 @@ MON 1:
     - ¿Crees que es buena idea hablarle?
     $ Inténtalo, pero preparate por si algo sucede.
     - B-bueno.
-    - Oye amigo..
+    - Oye amigo...
     - ¿Puedes ayudarme?
+    - ...
     - No responde, pero me sigue con la mirada.
     - Oh...
     $ ¿Qué pasa?
@@ -725,20 +742,172 @@ MON 1:
     - ¿Qué debería hacer?
 
 MON 2:
+    - Bien, me sigue mirando, voy a acercarme.
+    - ...
+    - Tiene... Un rostro humano...
+    - Pero su cuerpo es gigante y desproporcionado.
+    - Mide más de dos metros y su cabeza parece pequeña.
+    - Tiene una expresión vacía, no parece mover los músculos de su rostro.
+    - Tiene la palidez de un cadaver.
+    - ...
+    - ¿Qué eres? ¿Fuiste humano?
+    - ¡Ah!
+    - Se va.
+    - Lo seguiré.
 
 MON 3:
+    - Bien, me sigue mirando, voy a acercarme.
+    - Es enorme, pero su cabeza parece pequeña.
+    - Sigo sin lograr ver su rostro.
+    - ¡Ah!
+    - Se va.
+    - Lo seguiré lentamente.
 
 MON 4:
+    - ¡¿Qué?!
+    - ¡Mide más de dos metros!
+    $ Puedes robar su arma mientras no te mira.
+    $ No puedes confiar en algo asi.
+    $ ¿Crees poder hacerlo?
+    - No sé, pero... Puede que tengas razón...
+    - Está bien, ire corriendo a ver si puedo quitarle algo.
+    - ¡Ya!
+    - ...
+    - ¡Ahhhhhh!
+    - ...
+    (Llamada perdida. El usuario ha sido capturado.)
 
 MON 5:
+    - ...
+    - Se detuvo ante una puerta.
+    - Me está mirando.
+    - Mmm...
+    - ¡Ah!
+    - Creo que me está pidiendo ayuda.
+    - ¿Qué debería hacer?
 
 MON 6:
+    - Bien, pero me da miedo pasar a su lado, es muy grande.
+    - Oh, se movió, creo que me entiende.
+    - ¿Hola?
+    - ...
+    - No, creo que solo notó mi miedo.
+    - Algo es algo.
+    - ...
+    $ ¿Todo bien?
+    - Sí, la puerta estaba abierta, solo estaba un poco atascada.
+    - ¡Ah!
+    $ ¿Qué pasa?
+    - Pasó corriendo hacia dentro.
+    - ¿Qué es este lugar?
+    - ...
+    - Fue directo a un escritorio viejo.
+    - Parece una oficina, pero todos los muebles están podridos.
+    - Hay una puerta a su lado, está un poco abierta.
+    - La miró y luego me miró a mí.
+    - No entiendo qué me quiere decir.
+    - ¿Qué debería hacer?
 
 MON 7:
+    - Sí, creo que no lograré nada aquí.
+    - Espero que me ignore también.
+    - Bien me devolveré a la escalera.
+    - ...
+    - ¡Ahhhhhh!
+    - ¡Me está siguiendo! ¡Me está siguiendo!
+    - ¡Ayuda!
+    - ¡Ahhhhhh!
+    - ...
+    (Llamada perdida. El usuario ha sido capturado.)
 
 MON 8:
+    - Bien, tiene algún nivel de inteligencia.
+    - Creo que puede ayudarme.
+    - ...
+    - ¿Hola?
+    * Hola.
+    - ¡Ah! Puede hablar.
+    - ¿Qué debería preguntarle?
 
 MON 9:
+    - ¡Sí! Si estaba desde antes, debería saberlo.
+    - Oye...
+    - ¿Sabes quién yo?
+    * No.
+    - Umm, ¿Sabes dónde estamos?
+    * Tampoco.
+    - ¿Sabes algo?
+    * No mucho.
+    * Pero recuerdo cómo llegué aqui,
+    * Más o menos.
+    - ¡Ah! ¿Y cómo?
+    * Igual que tú.
+    * Pero ahora me cuesta controlarme.
+    * Me queda poco tiempo para ser como los demás.
+    - ¿Los demás?
+    - ¿A qué te refieres?
+    * Todos empezamos igual.
+    * Yo antes era como tú.
+    * Yo fui el usuario anterior.
+    * Despues uno de los como yo me capturó.
+    * Y ahora soy asi.
+    * No recuerdo mucho.
+    * Pero te va a pasar a ti también.
+    * No se le escapa nada.
+    * Aunque algunos mueren.
+    - ¿De qué estas hablando?
+    - ¿A quién no se le escapa nada?
+    - ¿Qué me va a pasar?
+    - ¡Responde!
+    * No entiendo.
+    * Es la orden.
+    - ¿Qué?
+    * ¡Ahhhhhh!
+    - ¡Operador! ¡Ayuda!
+    - ¡Se volvió loco!
+    - ¡La puerta se cerró!
+    * ¡Quiero volver!
+    * ¡No puedo controlarme!
+    * ¡Es más fuerte!
+    - ¡Ahhhhhh!
+    - ...
+    (Llamada perdida. El usuario ha sido capturado.)
+
+MON 10:
+    - Sí, debería empezar con eso.
+    - Oye...
+    - Eh... ¿Cómo te llamas?
+    * No sé.
+    * Ah...
+    * Recuerdo un nombre, pero no sé si es el mío.
+    - ¿Cuál es?
+    * {0}
+    - ¿E-estás seguro?
+    * No.
+    - Entonces... ¿No recuerdas nada?
+    * Un poco.
+    * ¿Cómo te llamas tú?
+    - No recuerdo mi nombre.
+    * Ah, sí.
+    * Es lo mismo para todos.
+    - ¿Cómo?
+    * No recuerdo quién soy, ni cómo llegué aquí.
+    * Despues me capturaron y me hizo cómo ellos.
+    * Nadie se le escapa, aunque algunos mueren.
+    * Me he demorado más de lo normal, pero me convertiré pronto.
+    * No soy tan fuerte.
+    - ¿De qué estás hablando?
+    * Siento que pierdo la voluntad.
+    * Es una sensación extraña.
+    * Ya no importa nada.
+    - ...
+    - ¡Operador! ¡Ayuda!
+    - ¡Se volvió loco!
+    - ¡Es demasiado rápido!
+    * ¡Solo quiero que termine pronto!
+    - ¡Ahhhhhh!
+    - ...
+    (Llamada perdida. El usuario ha sido capturado.)
 
 
 Bifurcación CAZA 0:
