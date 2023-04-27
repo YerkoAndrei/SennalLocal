@@ -1,6 +1,27 @@
 Objetivo:
 Guia al usuario a un lugar seguro.
 
+INTRO:
+Introducción a la historia.
+
+OPERADOR:
+Quién es el operador/jugador.
+
+USUARIO:
+Cómo llegó ahi el usuario y cuál es su propósito.
+
+MONSTRUO:
+Qué es el monstruo y para qué se creó.
+
+CAZA:
+Contexto del exterior.
+
+SÓTANO:
+Contexto de la mansión.
+
+AUTOR:
+Contexto del juego.
+
 - Usuario
 $ Operador
 * Monstruo
@@ -12,6 +33,9 @@ Final Muerte:
 
 Final Captura:
 (Llamada perdida. El usuario ha sido capturado.)
+
+Final Huida:
+(Llamada perdida. El usuario ha huido.)
 
 
 Bifurcación INTRO 0:
@@ -35,11 +59,17 @@ INTRO 0:
     - Estoy dentro de una casa bastante grande y antigua.
     - En una habitación desordenada.
     - Parece abandonada, no veo nada más.
+    - No sé dónde estoy, ni siquiera recuerdo mi nombre.
 
 INTRO 1:
     - No realmente...
     - Lo intento pero...
     - No logro recordar nada.
+    - Me duele un poco la cabeza.
+    - !Ah!
+    - Tengo una herida, pero está cosida.
+    - ¿Q-qué está pasando?
+    - Ayúdame por favor.
 
 INTRO 2:
     - Me reviso.
@@ -53,8 +83,9 @@ INTRO 3:
 
 INTRO 4:
     $ ¿Cómo llamaste a emergencias?
-    - Desperté con el teléfono en mi mano, tenía el número marcado y no funciona ningún botón.
-    - Todo es muy extraño. No sé dónde estoy, ayúdame por favor.
+    - Desperté con el teléfono en mi mano, tenía el número marcado.
+    - No sé de dónde salio, tiene casi todos los botones rotos y ninguno funciona.
+    - Todo es muy extraño. No sé dónde estoy, ayúdame por favor, no cortes.
     $ ¿No hay alguna puerta cerca?
     - Sí, solo una. Voy a ir.
     - La puerta está abierta.
@@ -188,8 +219,8 @@ OPE 5:
     - ...
     - ¡Me estan siguiendo!
     - ¡¿De dónde salieron?!
-    - ¡También estan frente a mí!
-    - Puedo desviarme.
+    - ¡También están frente a mí!
+    - ¡Ah! ¡Puedo desviarme!
     $ Busca un lugar seguro.
     $ ¿Qué ves?
     - ...
@@ -203,8 +234,9 @@ OPE 5:
     - ¿Qué debería hacer?
     $ ¿Ves algún lugar que parezca cerrado?
     - Mmm...
-    - Veo un par de edificios residenciales, pero la mayoría estan en ruinas.
+    - Veo un par de edificios residenciales, pero la mayoría están en ruinas.
     $ ¿Hay alguno que parezca en menos ruinas?
+    - Mmm...
     - Sí, hay tres.
     - Tienen algunas puertas y ventanas tapadas.
     - Pero siguen pareciendo ruinas. Tienen pinturas muy desgastadas.
@@ -270,10 +302,10 @@ OPE 7:
     - ¿Cómo te llamas?
 
 OPE 8:
+    $ Solo soy un operador de emergencias.
     $ Hiciste bien en llegar a salvo.
     $ E incluso descubriste una guarida de sobrevivientes.
     $ Eso es genial.
-    - ¿Operador?
     # ¿Qué es eso?
     # ¡Es uno de los grandes!
     - ¿Qué está pasando? ¿Operador?
@@ -350,7 +382,7 @@ OPE 9:
 
 Bifurcación USU 0:
     ¡Corre!
-    Alejate despacio
+    Aléjate despacio
     Intenta verlo mejor
 
 Bifurcación USU 1:
@@ -723,6 +755,7 @@ MON 0:
 MON 1:
     - Solo me mira.
     - Éste no es violento, ni deambula sin rumbo, parece inteligente.
+    - Aunque se ve increiblemente fuerte.
     - ¿Crees que es buena idea hablarle?
     $ Inténtalo, pero preparate por si algo sucede.
     - B-bueno.
@@ -912,21 +945,89 @@ MON 10:
 
 Bifurcación CAZA 0:
     Enfréntate a él
-    Síguelo
+    Acércate despacio
     Huye
 
 CAZA 0:
+    - Bien.
+    - ...
+    - Creo que no me han visto.
+    - Tuve que bajar por un derrumbe.
+    - No me pueden ver desde aquí.
+    - Está muy oscuro.
+    - ¿Sabes que son esos monstruos?
+    - Espera...
+    - Estoy dentro pero no escucho nada.
+    - Este lugar me da mala espina.
+    $ ¿Qué ves?
+    - ¡Ah!
+    - Oh no.
+    $ ¿Qué pasa?
+    - Hay algo mirándome.
+    - No es cómo esos monstruos de afuera, es más grande.
+    - Parece más humano pero con ese tamaño no puede ser.
+    - ¿Qué debería hacer?
 
 CAZA 1:
+    - ¡¿Qué?!
+    - ¡Mide más de dos metros!
+    $ ¿Puedes escalar el derrumbe o huir?
+    - Oh...
+    - No, no puedo.
+    - Bien, no tengo otra opción, me acercaré.
+    - Quizas huya, no me ha atacado.
+    - ...
+    - ¡Oye!
+    * ¡Solo quiero que termine pronto!
+    - ¡¿Qué?!
+    * ¡Ahhhhhh!
+    - ¡Ahhhhhh!
+    - ...
+    * ¡No!
+    * Murió...
+    * ¡Me van a castigar!
+    * ¡Perdón!
+    * Maestro...
+    (Llamada perdida. El usuario ha sido muerto.)
 
 CAZA 2:
-    - Rompió mi ropa. ¡Era gigante!
-    - ¡¿Qué es eso?!
-    - ¡No es como los otros!
-    $ ¡Ahhhhhhhh!
-    - Noooo
+    - ¿E-estas seguro?
+    $ ¿Puedes escalar el derrumbe o huir?
+    - Oh...
+    - No, no puedo.
+    - Bien, no tengo otra opción, me acercaré despacio.
+    - ...
+    - Oye.
+    - ¿Puedes hablar?
+    * Solo quiero que termine pronto.
+    - ¿Qué?
+    * Lo haré rápido, perdón.
+    - Espera ¿De qué hablas?
+    - ¡Alejate!
+    - ¡Operador!
+    - ¡Ayuda!
+    - ¡Ahhhhhh!
+    - ...
+    (Llamada perdida. El usuario ha sido capturado.)
 
 CAZA 3:
+    - Bien, no puede ser nada bueno.
+    - Oh...
+    $ ¿Qué pasa?
+    - No creo que pueda subir de nuevo el derurmbe.
+    - ¡Ahhhhhh!
+    - ¡Se está acercando!
+    - ...
+    - Logré escapar hacía dentro, solo rompió mi ropa. ¡Era gigante!
+    - ¡¿Qué es eso?!
+    - ¡No es como los otros!
+    - ¡Ahhhhhh!
+    - Este pasillo no tiene salida.
+    - ¡Me alcanzó!
+    - ¡Ahhhhhhhh!
+    - Noooo.
+    - ...
+    (Llamada perdida. El usuario ha sido capturado.)
 
 
 Bifurcación SOT 0:
@@ -934,49 +1035,117 @@ Bifurcación SOT 0:
     Ve lento. Pisa firme
 
 SOT 0:
+    - Oh. Creo que no puede entrar.
+    - Pero es gigante ¿Cómo no puede abrirla?
+    - Bien la patearé.
+    - Aunque no creo que sea buena idea.
+    - ...
+    - ¡Ah!
+    $ ¿Qué pasa?
+    - Salió corriendo me dejó solo.
+    - ¿Se habrá asustado?
+    - Eso no tiene sentido.
+    $ Revisa peligros por la sala.
+    - Oh sí, lo había olvidado.
+    - Voy a entrar.
+    - Hay un escritorio viejo, otras cosas viejas y una puerta.
+    $ ¿Hay algo útil por ahí?
+    - No creo, solo hay cosas viejas.
+    - Entraré a la puerta, quizás lleve a otro lugar.
 
 SOT 1:
+    - Bien, esto me da escalofríos.
+    - Creo que me dejará ir.
+    - Lo veo ocupado... ¿Está intentando escribir?
+    - Mejor entraré a la puerta, todo esto es muy extraño.
 
 SOT 2:
+    - Bien, ya estoy dentro.
+    - ¡Ah!
+    - ¡No!
+    $ ¿Qué pasa?
+    - La puerta se cerró.
+    - No puedo abrirla.
+    $ No vuelvas.
+    - ¿Qué?
+    - Oh sí, debe estar ahí.
+    - Creo que no tengo otra opción.
+    - ...
+    - El piso está horrible, cruje demasiado, me da miedo continuar.
+    - ¿Qué debería hacer?
+
+SOT 3:
+    - ¿A saltos?
+    - Ah, podría saltar en las tablas más firmes, tienes razón.
+    - Bien, lo haré rápido para no pensar.
+    - ...
+    - ¡Ah!
+    $ ¿Qué pasa?
+    $ ¿Qué fue ese ruido?
+    - Ah... Ah... Ah...
+    - Em... Em... ¿Empalado?
+    - ...
+    (Llamada perdida. El usuario ha sido muerto.)
+
+SOT 4:
+    - Lento, sí, buena idea.
+    - Podría pisar en las tablas que se vean firmes.
+    - Sí...
+    - Está bien, voy.
+    - ...
+    - Como suena esto...
+    - ¡No!
+    - ¡Ahhhhhhhh!
+    $ ¿Qué pasa?
+    $ ¿Estás bien?
+    - No...
+    - El piso se rompió.
+    - Ah... Ah... Ah...
+    - Me atravezó la pierna...
+    - Ah... No sé por qué, pero no duele tanto como debería.
+    - Espera, me estoy mareando.
+    - No... Tambien mi brazo...
+    - No me di cuenta.
+    - Me estoy desangrando.
+    - Ayudame operador.
+    - Por favor.
+    - No quiero morir.
+    - No quiero...
+    - ...
+    (Llamada perdida. El usuario ha muerto.)
 
 
+AUTOR 0:
+    - {0} (Respuesta a la pregunta válida)
 
-Inicio:
-"Acabo de despertar y no sé donde estoy."
-"Al telefono esta trizado en algunas partes y le faltan botones."
-"Estoy dentro de una casa, me resulta familiar."
-
-Rutas principales:
-
-¿Quien soy yo?
-Salir de la casa.
-    Afuera hay monstruos normales.
-    Debe esconderse y escapar.
-    Llega a otros edificios.
-    En uno hay gente.
-        Le preguntan con quién habla.
-        Soy el operador de emergencias.
-        Emergencias se acabó hace un año.
-            ¿Quien soy?
-            Soy el operador.
-
-
-¿Quién es el cliente?
-Adentrarse en la casa.
-    Hay un monstruo fuerte y grande.
-    Tiene que esconderse y correr.
-    El monstruo aparece y desaparece.
-        Puede matarlo.
-        Te encuentras con el creador.
-        El creador te conoce.
-        ¿Quien indujo al usuario en su estado de sueño?
+AUTOR 1:
+    * No puedo capturarte.
+    * Ahora tú das miedo.
+    - ...
+    - Lo recuerdo todo ahora.
+    - ...
+    - El mundo ha sido destruido.
+    - Tus monstruos me capturaron.
+    - Me robaste la memoria para tus juegos enfermizos.
+    - Tú no eres humano.
+    - Solo creas "usuarios" para tu diversión.
+    - Juegas con las vidas de las personas.
+    - ...
+    $ ¿Fue divertido, no?
+    $ Te encontraré nuevamente, no fue dificil conseguirte, no será dificil tampoco, volver a encontrarte.
+    $ En el nuevo mundo soy un dios inigualable.
+    $ Las bestias y los hombres me obedecen.
+    - Inténtalo si quieres, no volveré a rendirme.
+    - No sé lo que le hiciste a mi cerebro, pero ya no soy el de antes.
+    $ Tu mente rebalsó conocimiento, y tu vida se fue.
+    $ Jamás podrás asimilarlo, y si lo intentas, serás tan vulnerable que te volveré a capturar y me entretendrás por siempre.
+    - No.
+    - Cuando corte la llamada dejaré de existir.
+    - Pero tú también lo haras para aquel que juega contigo.
+    (Llamada perdida. El usuario ha huido.)
 
 
-Cuando cortes la llamada dejaré de existir para ti.
-Pero tú también lo haras.
-la ruta del monstruo es el usuario anterior
-
-Preguntas posibles
+Posibles preguntas:
 
 quién creo esto                 - yerko andrei
 quién es el autor               - yerko andrei
@@ -1019,11 +1188,3 @@ hay un escondite seguro         -
 dónde es más seguro             -
 si mato al monstruo, me salvo   -
 cómo termino este bucle         -
-
-
-
-
-
-
-
-
