@@ -388,12 +388,12 @@ Bifurcación USU 0:
 Bifurcación USU 1:
     Busca un interruptor a tientas
     Usa tu encendedor
+    Recoje la varilla
 
 Bifurcación USU 2:
     ¿Qué ves en la habitación?
     Busca una puerta
     Busca algo útil
-    Acerca tu encendedor
 
 Bifurcación USU 3:
     Busca un lugar tranquilo
@@ -401,10 +401,7 @@ Bifurcación USU 3:
     Usa la llave
 
 USU 0:
-    - Bien, esa ventana me daba mala espina.
-    - Intentaré bloquear la puerta.
-    - ...
-    - Estoy en la entrada de nuevo.
+    - Estoy frente a la escalera.
     - Oh no...
     $ ¿Qué pasa?
     - Estoy viendo algo. Hay algo arriba de la escalera.
@@ -418,6 +415,12 @@ USU 0:
     - Bien, subiré la escalera.
 
 USU 1:
+    - Bien, esa ventana me daba mala espina.
+    - Intentaré bloquear la puerta.
+    - ...
+    - Estoy en la entrada de nuevo.
+
+USU 2:
     - Me voy despacio pero no deja de mirarme.
     - Espera.
     - Ya no lo veo, creo que no me sigue.
@@ -429,9 +432,11 @@ USU 1:
     $ ¿Todo bien?
     - Sí, estoy escondido en una habitación, entré en la primera puerta abierta que encontré.
     - Pero está oscuro, no veo nada.
+    - ¡Ah! Que susto.
+    - Solo pateé una varilla.
     - ¿Qué debería hacer?
 
-USU 2:
+USU 3:
     - Bien.
     - Ah, ah, ah...
     - Creo que lo perdí.
@@ -449,33 +454,54 @@ USU 2:
     - ...
     (Llamada perdida. El usuario ha sido capturado.)
 
-USU 3:
-    - No veo nada pero lo intentaré.
-    - No está en cerca de la puerta.
+USU 4:
+    - No veo nada, pero lo intentaré.
+    - No está cerca de la puerta.
     - Tampoco quiero salir, esa cosa debe estar afuera.
+    - ¡Ahhhhhh!
+    - ¡Mi mano!
+    $ ¿Qué pasa?
+    $ ¿Estás bien?
+    - Sí, somo me enterré una astilla.
     - ¡Ahhhhhh!
     - ¡Mi pierna!
     - ¡La madera está podrida!
     - Oh no...
-    - Se está quebrando.
+    - ¡Se está quebrando!
+    - ¡Voy a caer!
     - ¡Ayuda!
     - ...
     (Llamada perdida. El usuario ha muerto.)
 
-USU 4:
+USU 5:
     - ¡Oh!
     - Cierto, lo había olvidado.
     - Bueno, hay varias cosas metálicas a mi alrededor, ilumina más de lo que debería.
-    - Aún asi no veo mucho, pero lo suficiente para no pisar madera podrida.
+    - Aún asi no veo mucho, pero lo suficiente para no pisar la madera podrida.
     - ¿Qué debería buscar?
 
-USU 5:
+USU 6:
+    - Bien, puedo tantear con esto.
+    - ¡Oh! Sacó chispas.
+    - ¿Se qué material será esta cosa?
+    - Es aspera.
+    - ...
+    - Hay cosas metálicas.
+    - El sonido me hace doler las muelas.
+    - Oh, arriba hay como tuberías.
+    - ¿Son como los de hospital?
+    - Hay una con una inscripción, voy a subirme a algo.
+    - Espera. ¿Qué es ese olor?
+    - ...
+    (Llamada perdida. El usuario ha muerto.)
+
+USU 7:
     - Bien, me iré por el otro lado.
     - Parece inofensivo, pero puede ser una trampa.
     - ...
     - No veo que me siga, parece que siguió caminando.
 
-USU 6:
+USU 8:
     - ¿Ayuda?
     - ¡Oh sí!
     - Puede conocer la salida, no puede ser esa puerta.
@@ -490,7 +516,7 @@ USU 6:
     - ...
     - Bien, ya no lo veo.
 
-USU 7:
+USU 9:
     - Cómo suena este piso, toda la madera está podrida.
     - Voy a pisar con cuidado.
     - ...
@@ -499,7 +525,7 @@ USU 7:
     - Pero está oscuro, no veo nada.
     - ¿Qué debería hacer?
 
-USU 8:
+USU 10:
     - Hay una camilla, como de dentista, pero está rota y oxidada.
     - Mmm...
     - Parece una bodega de cosas médicas.
@@ -513,14 +539,14 @@ USU 8:
     - B-bien.
     - Creo que veo una puerta de metal.
 
-USU 9:
+USU 11:
     - Bien.
     - ...
     - Sí, veo una, es de metal.
     - Éste lugar me da mala espina.
     - Hay algunas cosas médicas, pero hay algo extraño aquí.
 
-USU 10:
+USU 12:
     - ¿Algo útil?
     - Bien, hay varios muebles, buscaré en los cajones.
     - Hay cosas médicas aquí.
@@ -542,23 +568,14 @@ USU 10:
     $ No importa, ahora tienes que salir de ahí.
     - E-esta bien.
 
-USU 11:
-    - Bien, auqnue no sé que puede haber por el techo.
-    - Oh, hay como tuberías.
-    - ¿Son como los de hospital?
-    - Hay una con una inscripción, voy a subirme a algo.
-    - Espera. ¿Qué es ese olor?
-    - ...
-    (Llamada perdida. El usuario ha muerto.)
-
-USU 12:
+USU 13:
     - Estoy frente a la puerta de metal.
     - Ésta bodega me pone nervioso.
     - Quiero irme de aquí.
     - Pero la puerta está cerrada.
     - ¿Que debería hacer?
 
-USU 13:
+USU 14:
     - Bien, esa puerta me pone más nervioso que esta misma habitación.
     - ...
     - No encuentro nada más.
@@ -593,7 +610,7 @@ USU 13:
     $ Y lo has conseguido.
     (Llamada perdida. El usuario ha muerto.)
 
-USU 14:
+USU 15:
     - Bien, esa puerta me pone más nervioso que esta misma habitación.
     - ...
     - Desperté en un lugar sin recordar mi propio nombre, pero sí recuerdo otras cosas.
@@ -602,19 +619,19 @@ USU 14:
     - ...
     - ¿Qué debería hacer?
 
-USU 15.1:
+USU 16.1:
     - Dentro de esta casa hay un monstruo no humano que da escalofrios.
     - No es violento, pero es evidente que me mataría de un manotazo.
     - Ahora que lo pienso, tenía cosas tecnológicas en su ropa.
     - ¿Qué será?
     - Quizas debí haberlo seguido.
 
-USU 15.2:
+USU 16.2:
     - Afuera está lleno de monstruos que parecen muertos.
     - Esas cosas de afuera ni siquiera parecían animales.
     - Es de la casa no es cómo esos, parece tener conciensia, o por lo menos autocontrol.
 
-USU 16:
+USU 17:
     - Sí, aquí es relativamente seguro.
     - Por lo menos no oigo nada extraño.
     - ...
@@ -648,10 +665,10 @@ USU 16:
     - ...
     (Llamada perdida. El usuario ha sido capturado.)
 
-USU 17:
+USU 18:
     - Mmm...
     - No veo una cerradura.
-    - ¡Oh! Si la encontré.
+    - ¡Oh! Sí la encontré.
     - Estaba oculta en un dibujo.
     - ...
     - Sí calza.
@@ -685,15 +702,15 @@ USU 17:
     - Mmmm.
     - ¿Qué debería preguntar?
 
-USU 18.1:
+USU 19.1:
     + Pregunta reconocida.
     + Esperando respuesta
 
-SU 18.2:
+SU 19.2:
     + Pregunta no reconocida.
     + Reiniciando intentos.
 
-USU 19:
+USU 20:
     - Oh no...
     $ ¿Qué pasa?
     - Se cortó la electricidad.
