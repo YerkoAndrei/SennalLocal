@@ -6,6 +6,8 @@ using static Constantes;
 // sot_0
 // sot_1
 // sot_2
+// sot_3
+// sot_4
 
 public class RutaSotano : InterfazRuta
 {
@@ -13,8 +15,8 @@ public class RutaSotano : InterfazRuta
     {
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Camina a saltos", CrearSótano_1()[0]));
-        listaOpciones.Add(new ElementoOpcion("Ve lento. Pisa firme", CrearSótano_2()[0]));
+        listaOpciones.Add(new ElementoOpcion("Camina a saltos", CrearSótano_3()[0]));
+        listaOpciones.Add(new ElementoOpcion("Ve lento y pisa firme", CrearSótano_4()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(Personajes.usuario, "¿Qué hago?", listaOpciones.ToArray());
         return diálogoPregunta;
@@ -25,11 +27,10 @@ public class RutaSotano : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "0"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 0"));
 
-        // Opciones
-        listaDiálogos.Add(CrearBifurcación_Sótano_0());
-
+        // Siguiente diálogo
+        listaDiálogos.Add(CrearSótano_2()[0]);
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -38,11 +39,10 @@ public class RutaSotano : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 1"));
 
-        // Final
-        listaDiálogos.Add(CrearFinal_sotano()[0]);
-
+        // Siguiente diálogo
+        listaDiálogos.Add(CrearSótano_2()[0]);
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -51,24 +51,34 @@ public class RutaSotano : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "2"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 2"));
 
-        // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "final", TipoFinal.muerte));
-
+        // Opciones
+        listaDiálogos.Add(CrearBifurcación_Sótano_0());
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
-    private ElementoDialogo[] CrearFinal_sotano()
+    public ElementoDialogo[] CrearSótano_3()
     {
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "sotano"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 3"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "final", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL muerte", TipoFinal.muerte));
+        return AsignarContinuidadDiálogos(listaDiálogos);
+    }
 
+    public ElementoDialogo[] CrearSótano_4()
+    {
+        var listaDiálogos = new List<ElementoDialogo>();
+
+        // Diálogos
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 4"));
+
+        // Final
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL muerte", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

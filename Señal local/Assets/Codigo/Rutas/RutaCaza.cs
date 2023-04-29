@@ -15,7 +15,7 @@ public class RutaCaza : InterfazRuta
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
         listaOpciones.Add(new ElementoOpcion("Enfréntate a él", CrearCaza_1()[0]));
-        listaOpciones.Add(new ElementoOpcion("Síguelo", CrearCaza_2()[0]));
+        listaOpciones.Add(new ElementoOpcion("Acércate despacio", CrearCaza_2()[0]));
         listaOpciones.Add(new ElementoOpcion("Huye", CrearCaza_3()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(Personajes.usuario, "¿Qué hago?", listaOpciones.ToArray());
@@ -27,11 +27,10 @@ public class RutaCaza : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "0"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 0"));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_caza_0());
-
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -40,11 +39,10 @@ public class RutaCaza : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 1"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "final", TipoFinal.muerte));
-
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL muerte", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -53,11 +51,10 @@ public class RutaCaza : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "2"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 2"));
 
         // Final
-        listaDiálogos.Add(CrearFinal_captura()[0]);
-
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL captura", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -66,24 +63,10 @@ public class RutaCaza : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "3"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 3"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "final", TipoFinal.muerte));
-
-        return AsignarContinuidadDiálogos(listaDiálogos);
-    }
-
-    private ElementoDialogo[] CrearFinal_captura()
-    {
-        var listaDiálogos = new List<ElementoDialogo>();
-
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "captura"));
-
-        // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "final", TipoFinal.captura));
-
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL captura", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

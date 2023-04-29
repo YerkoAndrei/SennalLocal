@@ -51,11 +51,10 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "Ayuda no sé donde estoy."));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 0"));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_intro_0());
-
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -64,11 +63,10 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 1"));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearIntro_4()[0]);
-
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -77,11 +75,10 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "2"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 2"));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearIntro_4()[0]);
-
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -90,11 +87,10 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "3"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 3"));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearIntro_4()[0]);
-
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -103,11 +99,10 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "4"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 4"));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_intro_1());
-
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -116,11 +111,10 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "5"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 5"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "final", TipoFinal.muerte));
-
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL muerte", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

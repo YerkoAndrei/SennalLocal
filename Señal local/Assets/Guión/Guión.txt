@@ -20,7 +20,7 @@ SÓTANO:
 Contexto de la mansión.
 
 AUTOR:
-Contexto del juego.
+Contexto del mundo.
 
 - Usuario
 $ Operador
@@ -125,7 +125,7 @@ INTRO 6:
 
 
 Bifurcación OPE 0:
-    Intenta salir de la casa
+    Sal de la casa
     Adéntrate en la casa
 
 Bifurcación OPE 1:
@@ -180,19 +180,15 @@ OPE 2:
     - Hay dos puertas, una sale hacia afuera, y la otra debería ir a otra habitación.
     - ¿Qué debería hacer?
 
-OPE 3.1:
-    - ¿¿Salir?!
-    $ Adentro puede ser peor, debes huir.
-    - E-está bien.
-    - La puerta está abierta.
-    - No veo nada extraño por ningún lado.
-    - ¿Cómo debería huir?
-
-OPE 3.2:
+OPE 3:
     - ¿Salir?
+    $ Adentro puede ser peor, debes huir.
     - Está bien.
     - La puerta está abierta.
     - No hay nada extraño afuera.
+    - ...
+    - ¡Oh! Sí veo unas figuras deambulando.
+    - No alcanzo a distinguir qué son, pero eso no puede ser nada bueno.
     - ¿Cómo debería salir?
 
 OPE 4:
@@ -735,8 +731,8 @@ USU 20:
 
 
 Bifurcación MON 0:
-    Ignoralo
-    Míralo
+    Ignóralo
+    Míralo bien
     Síguelo
     Atácalo
 
@@ -747,12 +743,12 @@ Bifurcación MON 1:
 
 Bifurcación MON 2:
     Vete
-    Síguelo
+    Acércate
     Abre la puerta
 
 Bifurcación MON 3:
-    Pregunta quién eres
-    Pregunta quién es el monstruo
+    Preguntale quién eres
+    Preguntale quién es
     Pregunta...
 
 MON 0:
@@ -1049,7 +1045,7 @@ CAZA 3:
 
 Bifurcación SOT 0:
     Camina a saltos
-    Ve lento. Pisa firme
+    Ve lento y pisa firme
 
 SOT 0:
     - Oh. Creo que no puede entrar.
@@ -1164,27 +1160,28 @@ AUTOR 1:
 
 Posibles preguntas:
 
-quién creo esto                 - yerko andrei
-quién es el autor               - yerko andrei
-quién es el monstruo            - tu mismo te has convertido en uno
-quién es el usuario             - la proxima victima
-dónde estoy                     - 
-dónde está esta casa            - Valle del mapocho
-dónde está la casa              - Valle del mapocho
-dónde está la mansión           - Valle del mapocho
-qué año es                      - 2096 del calendario gregoriano
-por que hay monstruos           - En 2090 la humanidad se redujo al 10% de la poblacion. La experimentación humana comenzó con fuerza. Solo trajo miseria. La humanidad está muerta. Solo quedan 30.000 personas.
-por que hay zombies             - idem
-que son los monstruos           - 
-qué zon los zombies             - 
-quien es el operador            - mi creador, quien creo esta casa
-cómo se llama el operador       - (nombre...)
-cómo se llama el usuario        - (nombre...)
-quién soy                       - 
-cómo llegué aquí                - 
-por qué no recuerdo nada        - 
-qué pasó                        - 
-qué está pasando                - 
+1- quién creo esto                 - yerko andrei
+2- quién es el autor               - yerko andrei
+3- quién es el monstruo            - tu mismo te has convertido en uno
+4- quién es el usuario             - la proxima victima
+5- dónde estoy                     - 
+6- dónde está esta casa            - Valle del mapocho
+7- dónde está la casa              - Valle del mapocho
+8- dónde está la mansión           - Valle del mapocho
+9- qué año es                      - 2096 del calendario gregoriano
+10- por que hay monstruos           - En 2090 la humanidad se redujo al 10% de la poblacion. La experimentación humana comenzó con fuerza. Solo trajo miseria. La humanidad está muerta. Solo quedan 30.000 personas.
+11- por que hay zombies             - idem
+12- que son los monstruos           - 
+13- qué zon los zombies             - 
+14- quien es el operador            - mi creador, quien creo esta casa
+15- cómo se llama el operador       - (nombre...)
+16- cómo se llama el usuario        - (nombre...)
+17- quién soy                       - 
+18- cómo llegué aquí                - 
+19- por qué no recuerdo nada        - 
+20- qué pasó                        - 
+21- qué está pasando                - 
+
 por qué el teléfono modificado  -
 estoy soñando                   -
 es una pesadilla                -
