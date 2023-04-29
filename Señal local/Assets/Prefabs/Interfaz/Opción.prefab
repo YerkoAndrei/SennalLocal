@@ -135,10 +135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "multiplicadorTama\xF1o": 1.1
-  btnOpcion: {fileID: 8255199106874657831}
-  imgResaltado: {fileID: 310429868248434536}
+  "btnOpci\xF3n": {fileID: 8255199106874657831}
   "txtOpci\xF3n": {fileID: 2839404219085775820}
-  dialogo: {fileID: 0}
+  imgResaltado: {fileID: 310429868248434536}
 --- !u!1 &2839404219085775826
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +266,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 80, y: 0, z: 80, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
