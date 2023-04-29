@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class SistemaEscenas : MonoBehaviour
+public class SistemaMemoria : MonoBehaviour
 {
-    public static SistemaEscenas instancia;
+    public static SistemaMemoria instancia;
 
     private void Start()
     {
@@ -17,11 +17,6 @@ public class SistemaEscenas : MonoBehaviour
     }
 
     private void Iniciar()
-    {
-
-    }
-
-    public void CambiarEscena(string escena)
     {
 
     }
