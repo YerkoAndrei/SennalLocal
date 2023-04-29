@@ -20,6 +20,8 @@ public class ElementoDialogo
     }
 
     // Crear diálogos según tipo
+
+    // Diálogo normal
     public static ElementoDialogo CrearDiálogo(Personajes personaje, string texto)
     {
         var nuevoElemento = new ElementoDialogo();
@@ -30,6 +32,7 @@ public class ElementoDialogo
         return nuevoElemento;
     }
 
+    // Opciones múltiples
     public static ElementoDialogo CrearOpciones(Personajes personaje, string texto, ElementoOpcion[] opciones)
     {
         var nuevoElemento = new ElementoDialogo();
@@ -41,6 +44,7 @@ public class ElementoDialogo
         return nuevoElemento;
     }
 
+    // Escribir mensaje
     public static ElementoDialogo CrearPregunta(Personajes personaje, string texto)
     {
         var nuevoElemento = new ElementoDialogo();
@@ -51,6 +55,7 @@ public class ElementoDialogo
         return nuevoElemento;
     }
 
+    // Final de ruta
     public static ElementoDialogo CrearFinal(Personajes personaje, string texto, TipoFinal tipoFinal)
     {
         var nuevoElemento = new ElementoDialogo();

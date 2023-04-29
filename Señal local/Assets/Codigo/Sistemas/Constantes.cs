@@ -4,35 +4,36 @@ public class Constantes
 {
     public enum Estados
     {
-        pausa,
+        enPausa,
         esperandoClic,
         mostrandoDiálogo,
         mostrandoOpciones,
-        animación
+        mostrandoPregunta,
+        mostrandoAnimación
     }
 
     public enum Personajes
     {
-        usuario,
-        operador,
-        monstruo,
-        sobreviviente,
-        computador
+        usuario,        // Usuario de turno
+        operador,       // Jugador
+        monstruo,       // Usuario anterior
+        sobreviviente,  // Futuro usuario
+        computador      // Fuente de conocimiento
     }
 
     public enum TipoDiálogo
     {
-        diálogo,
-        opciones,
-        pregunta,
-        final
+        diálogo,        // Diálogo normal
+        opciones,       // Opciones múltiples
+        pregunta,       // Escribir mensaje
+        final           // Final de ruta
     }
 
     public enum TipoFinal
     {
-        nada,
-        muerte,
-        captura
+        huida,          // 1
+        muerte,         // 10
+        captura         // 10  
     }
 
     public static ElementoDialogo[] AsignarContinuidadDiálogos(List<ElementoDialogo> lista)
