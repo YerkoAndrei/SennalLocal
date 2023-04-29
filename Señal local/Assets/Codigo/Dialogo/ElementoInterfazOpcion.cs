@@ -9,47 +9,47 @@ public class ElementoInterfazOpcion : MonoBehaviour
     [SerializeField] private float multiplicadorTamaño;
 
     [Header("Referencias")]
-    [SerializeField] private Button btnOpcion;
-    [SerializeField] private GameObject imgResaltado;
+    [SerializeField] private Button btnOpción;
     [SerializeField] private TMP_Text txtOpción;
+    [SerializeField] private GameObject imgResaltado;
 
     [Header("Diálogo")]
-    [Ocultar] public ElementoDialogo dialogo;
+    [Ocultar] public ElementoDialogo diálogo;
 
-    private Action enclic;
+    private Action enClic;
 
     public void Iniciar(ElementoOpcion elementoDiálogo, Action acción)
     {
-        btnOpcion.interactable = false;
-        dialogo = elementoDiálogo.siguienteDiálogo;
+        btnOpción.interactable = false;
+        diálogo = elementoDiálogo.siguienteDiálogo;
         txtOpción.text = elementoDiálogo.texto;
-        enclic = acción;
+        enClic = acción;
 
         OnPointerExit();
     }
 
     public void ActivarBotón()
     {
-        btnOpcion.interactable = true;
+        btnOpción.interactable = true;
     }
 
     public void EnClic()
     {
-        enclic.Invoke();
+        enClic.Invoke();
     }
 
     public void OnPointerEnter()
     {
-        if (btnOpcion.interactable)
+        if (btnOpción.interactable)
         {
-            btnOpcion.transform.localScale *= multiplicadorTamaño;
+            btnOpción.transform.localScale *= multiplicadorTamaño;
             imgResaltado.SetActive(true);
         }
     }
 
     public void OnPointerExit()
     {
-        btnOpcion.transform.localScale = Vector3.one;
+        btnOpción.transform.localScale = Vector3.one;
         imgResaltado.SetActive(false);
     }
 }

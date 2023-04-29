@@ -21,6 +21,7 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private float tiempoLetra;
     [SerializeField] private float tiempoLetraEtiquetada;
     [SerializeField] private float tiempoEspacio;
+    [SerializeField] private float tiempoGuión;
     [SerializeField] private float tiempoComa;
     [SerializeField] private float tiempoPunto;
 
@@ -156,6 +157,9 @@ public class ControladorDialogos : MonoBehaviour
                 case ' ':
                     tiempoDiálogo += tiempoEspacio;
                     break;
+                case '-':
+                    tiempoDiálogo += tiempoGuión;
+                    break;
                 case ',':
                     tiempoDiálogo += tiempoComa;
                     break;
@@ -260,6 +264,9 @@ public class ControladorDialogos : MonoBehaviour
                             break;
                         case ' ':
                             yield return new WaitForSeconds(tiempoEspacio);
+                            break;
+                        case '-':
+                            yield return new WaitForSeconds(tiempoGuión);
                             break;
                         case ',':
                             yield return new WaitForSeconds(tiempoComa);
@@ -383,7 +390,7 @@ public class ControladorDialogos : MonoBehaviour
     {
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
-        IniciarDiálogo(opcion.dialogo);
+        IniciarDiálogo(opcion.diálogo);
     }
 
     private void IniciarPregunta()
