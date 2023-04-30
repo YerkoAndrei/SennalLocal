@@ -14,14 +14,14 @@ public class ElementoInterfazOpcion : MonoBehaviour
     [SerializeField] private GameObject imgResaltado;
 
     [Header("Diálogo")]
-    [Ocultar] public ElementoDialogo diálogo;
+    [Ocultar] public ElementoDialogo siguienteDiálogo;
 
     private Action enClic;
 
     public void Iniciar(ElementoOpcion elementoDiálogo, Action acción)
     {
         btnOpción.interactable = false;
-        diálogo = elementoDiálogo.siguienteDiálogo;
+        siguienteDiálogo = elementoDiálogo.siguienteDiálogo;
         txtOpción.text = elementoDiálogo.texto;
         enClic = acción;
 

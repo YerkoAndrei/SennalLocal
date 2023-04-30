@@ -14,16 +14,18 @@ public class ControladorDialogos : MonoBehaviour
 {
     [Header("Estado")]
     [Ocultar] [SerializeField] private Estados estado;
-    [Ocultar] [SerializeField] private ElementoDialogo diálogoActual;
+    /*[Ocultar]*/ [SerializeField] private ElementoDialogo diálogoActual;
 
-    [Header("Tiempos")]
-    [SerializeField] private float tiempoOpciones;
+    [Header("Tiempos textos")]
     [SerializeField] private float tiempoLetra;
     [SerializeField] private float tiempoLetraEtiquetada;
     [SerializeField] private float tiempoEspacio;
     [SerializeField] private float tiempoGuión;
     [SerializeField] private float tiempoComa;
     [SerializeField] private float tiempoPunto;
+
+    [Header("Tiempos interfaz")]
+    [SerializeField] private float tiempoOpciones;
 
     [Header("Colores")]
     [SerializeField] private Color colorCargando;
@@ -81,6 +83,7 @@ public class ControladorDialogos : MonoBehaviour
 
     private void Start()
     {
+        panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
         panelPregunta.SetActive(false);
         VerImagenContinuar(false);
@@ -92,6 +95,15 @@ public class ControladorDialogos : MonoBehaviour
         {
             Destroy(hijo.gameObject);
         }
+
+        estado = Estados.mostrandoAnimación;
+        StartCoroutine(MostrarIntroducción());
+    }
+
+    private IEnumerator MostrarIntroducción()
+    {
+        // PENDIENTE animar mono y panel
+        yield return new WaitForSeconds(2);
 
         var intro = new RutaIntro();
         IniciarDiálogo(intro.CrearPrimerDiálogo());
@@ -120,21 +132,27 @@ public class ControladorDialogos : MonoBehaviour
             case Estados.esperandoClic:
                 ContinuarSiguienteAcción();
                 break;
+            case Estados.esperandoFinal:
+                VolverAlMenú();
+                break;
         }
     }
 
     private void IniciarDiálogo(ElementoDialogo _diálogoActual)
     {
         estado = Estados.mostrandoDiálogo;
-        diálogoActual = _diálogoActual;
-        ContarTiempoDiálogo();
+        txtDiálogo.text = string.Empty;
+        panelDiálogos.SetActive(true);
 
+        diálogoActual = _diálogoActual;
+
+        ContarTiempoDiálogo();
         StartCoroutine(MostrarTexto());
     }
 
     private void ApurarDiálogo()
     {
-        if (mostrandoTexto && txtDiálogo.text.Length > 1 && !puedeContinuar)
+        if (mostrandoTexto && txtDiálogo.text.Length > 1 && !puedeContinuar && diálogoActual.visto)
             TerminarTexto();
     }
 
@@ -317,10 +335,13 @@ public class ControladorDialogos : MonoBehaviour
 
     private void ContinuarSiguienteAcción()
     {
+        // Siguiente diálogo
+        diálogoActual = diálogoActual.siguienteDiálogo;
+
         switch (diálogoActual.tipoDiálogo)
         {
             case TipoDiálogo.diálogo:
-                IniciarDiálogo(diálogoActual.siguienteDiálogo);
+                IniciarDiálogo(diálogoActual);
                 break;
             case TipoDiálogo.opciones:
                 IniciarOpciones();
@@ -351,14 +372,14 @@ public class ControladorDialogos : MonoBehaviour
 
     private void IniciarOpciones()
     {
-        estado = Estados.mostrandoOpciones;
-        panelOpciones.SetActive(true);
-
         // Borra anteriores
         foreach (Transform hijo in padreOpciones)
         {
             Destroy(hijo.gameObject);
         }
+
+        estado = Estados.mostrandoOpciones;
+        panelOpciones.SetActive(true);
 
         // Posición aleatoria
         var aleatoria = new Random(ControladorMenu.semilla);
@@ -390,11 +411,12 @@ public class ControladorDialogos : MonoBehaviour
     {
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
-        IniciarDiálogo(opcion.diálogo);
+        IniciarDiálogo(opcion.siguienteDiálogo);
     }
 
     private void IniciarPregunta()
     {
+        estado = Estados.mostrandoPregunta;
         panelPregunta.SetActive(true);
     }
 
@@ -406,10 +428,29 @@ public class ControladorDialogos : MonoBehaviour
 
     private void FinalizarPartida(TipoFinal tipoFinal)
     {
+        var diálogoFinal = new ElementoDialogo();
+        diálogoFinal.personaje = Personajes.operador;
+
+        switch(tipoFinal)
+        {
+            case TipoFinal.huida:
+                diálogoFinal.texto = "(Llamada perdida. El usuario ha huido.)";
+                break;
+            case TipoFinal.muerte:
+                diálogoFinal.texto = "(Llamada perdida. El usuario ha muerto.)";
+                break;
+            case TipoFinal.captura:
+                diálogoFinal.texto = "(Llamada perdida. El usuario ha sido capturado.)";
+                break;
+        }
+
+        estado = Estados.esperandoFinal;
+        IniciarDiálogo(diálogoFinal);
+    }
+
+    private void VolverAlMenú()
+    {
         panelDiálogos.SetActive(false);
-
-        // finales
-
-        print("final " + tipoFinal);
+        SistemaEscenas.instancia.CambiarEscena(Escenas.Menu);
     }
 }

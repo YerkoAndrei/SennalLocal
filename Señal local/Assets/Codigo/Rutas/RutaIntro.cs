@@ -26,7 +26,7 @@ public class RutaIntro : InterfazRuta
         listaOpciones.Add(new ElementoOpcion("¿Qué objetos tienes?", CrearIntro_2()[0]));
         listaOpciones.Add(new ElementoOpcion("¿Qué ves a tu alrededor?", CrearIntro_3()[0]));
 
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(Personajes.usuario, "¿Qué hago?", listaOpciones.ToArray());
+        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
     }
 
@@ -42,7 +42,7 @@ public class RutaIntro : InterfazRuta
         listaOpciones.Add(new ElementoOpcion("Intenta abrir la puerta", CrearIntro_5()[0]));
         listaOpciones.Add(new ElementoOpcion("Sube la escalera", monstruo.CrearMonstruo_0()[0]));
 
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(Personajes.usuario, "¿Qué hago?", listaOpciones.ToArray());
+        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
     }
 
@@ -114,7 +114,7 @@ public class RutaIntro : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 5"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL muerte", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

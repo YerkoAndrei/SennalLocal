@@ -1,10 +1,13 @@
-﻿using static Constantes;
+﻿using System;
+using static Constantes;
 
+[Serializable]
 public class ElementoDialogo
 {
     // Diálogo
     public Personajes personaje;
     public string texto;
+    public bool visto;
 
     // Estructura
     public TipoDiálogo tipoDiálogo;
@@ -29,39 +32,37 @@ public class ElementoDialogo
         nuevoElemento.personaje = personaje;
         nuevoElemento.texto = texto;
 
+        // Pruebas
+        if(SistemaMemoria.instancia != null)
+            nuevoElemento.visto = SistemaMemoria.instancia.VerificarDiálogoVisto(texto);
+
         return nuevoElemento;
     }
 
     // Opciones múltiples
-    public static ElementoDialogo CrearOpciones(Personajes personaje, string texto, ElementoOpcion[] opciones)
+    public static ElementoDialogo CrearOpciones(ElementoOpcion[] opciones)
     {
         var nuevoElemento = new ElementoDialogo();
         nuevoElemento.tipoDiálogo = TipoDiálogo.opciones;
-        nuevoElemento.personaje = personaje;
-        nuevoElemento.texto = texto;
         nuevoElemento.opciones = opciones;
 
         return nuevoElemento;
     }
 
     // Escribir mensaje
-    public static ElementoDialogo CrearPregunta(Personajes personaje, string texto)
+    public static ElementoDialogo CrearPregunta()
     {
         var nuevoElemento = new ElementoDialogo();
         nuevoElemento.tipoDiálogo = TipoDiálogo.pregunta;
-        nuevoElemento.personaje = personaje;
-        nuevoElemento.texto = texto;
 
         return nuevoElemento;
     }
 
     // Final de ruta
-    public static ElementoDialogo CrearFinal(Personajes personaje, string texto, TipoFinal tipoFinal)
+    public static ElementoDialogo CrearFinal(TipoFinal tipoFinal)
     {
         var nuevoElemento = new ElementoDialogo();
         nuevoElemento.tipoDiálogo = TipoDiálogo.final;
-        nuevoElemento.personaje = personaje;
-        nuevoElemento.texto = texto;
         nuevoElemento.tipoFinal = tipoFinal;
 
         return nuevoElemento;

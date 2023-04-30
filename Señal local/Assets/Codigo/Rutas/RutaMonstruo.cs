@@ -31,7 +31,7 @@ public class RutaMonstruo : InterfazRuta
         listaOpciones.Add(new ElementoOpcion("Síguelo", CrearMonstruo_3()[0]));
         listaOpciones.Add(new ElementoOpcion("Atácalo", CrearMonstruo_4()[0]));
 
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(Personajes.usuario, "¿Qué hago?", listaOpciones.ToArray());
+        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
     }
 
@@ -46,7 +46,7 @@ public class RutaMonstruo : InterfazRuta
         listaOpciones.Add(new ElementoOpcion("Ayúdale", CrearMonstruo_6()[0]));
         listaOpciones.Add(new ElementoOpcion("Fuerza la puerta", sótano.CrearSótano_0()[0]));
 
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(Personajes.usuario, "¿Qué hago?", listaOpciones.ToArray());
+        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
     }
 
@@ -60,7 +60,7 @@ public class RutaMonstruo : InterfazRuta
         listaOpciones.Add(new ElementoOpcion("Acércate", CrearMonstruo_8()[0]));
         listaOpciones.Add(new ElementoOpcion("Abre la puerta", sótano.CrearSótano_1()[0]));
 
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(Personajes.usuario, "¿Qué hago?", listaOpciones.ToArray());
+        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
     }
 
@@ -74,7 +74,7 @@ public class RutaMonstruo : InterfazRuta
         listaOpciones.Add(new ElementoOpcion("Pregúntale quién es", ResponderNombre()[0]));
         listaOpciones.Add(new ElementoOpcion("Pregunta..", autor.CrearAutor_0()[0]));
 
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(Personajes.usuario, "¿Qué hago?", listaOpciones.ToArray());
+        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
     }
 
@@ -86,7 +86,7 @@ public class RutaMonstruo : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "preparación"));
 
         // Pregunta
-        listaDiálogos.Add(ElementoDialogo.CrearPregunta(Personajes.operador, "pregunta"));
+        listaDiálogos.Add(ElementoDialogo.CrearPregunta());
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearMonstruo_10()[0]);
@@ -151,7 +151,7 @@ public class RutaMonstruo : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 4"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL captura", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -187,7 +187,7 @@ public class RutaMonstruo : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 7"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL captura", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -211,7 +211,7 @@ public class RutaMonstruo : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 9"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL captura", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -223,7 +223,7 @@ public class RutaMonstruo : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 9"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(Personajes.usuario, "FINAL captura", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }
