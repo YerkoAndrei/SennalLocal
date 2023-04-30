@@ -142,7 +142,9 @@ public class ControladorDialogos : MonoBehaviour
     private void IniciarDiálogo(ElementoDialogo _diálogoActual)
     {
         diálogoActual = _diálogoActual;
-        SistemaMemoria.instancia.MarcarDiálogo(diálogoActual.texto);
+
+        if(SistemaMemoria.instancia != null)
+            SistemaMemoria.instancia.MarcarDiálogo(diálogoActual.texto);
 
         estado = Estados.mostrandoDiálogo;
         txtDiálogo.text = string.Empty;
@@ -419,7 +421,9 @@ public class ControladorDialogos : MonoBehaviour
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
 
-        SistemaMemoria.instancia.MarcarOpción(opcion.texto);
+        if (SistemaMemoria.instancia != null)
+            SistemaMemoria.instancia.MarcarOpción(opcion.texto);
+
         IniciarDiálogo(opcion.siguienteDiálogo);
     }
 
@@ -454,13 +458,17 @@ public class ControladorDialogos : MonoBehaviour
                 break;
         }
 
-        SistemaMemoria.instancia.MarcarFinal(diálogoActual.texto, tipoFinal);
+        if (SistemaMemoria.instancia != null)
+            SistemaMemoria.instancia.MarcarFinal(diálogoActual.texto, tipoFinal);
+
         IniciarDiálogo(diálogoFinal);
     }
 
     private void VolverAlMenú()
     {
         panelDiálogos.SetActive(false);
-        SistemaEscenas.instancia.CambiarEscena(Escenas.Menu);
+
+        if (SistemaMemoria.instancia != null)
+            SistemaEscenas.instancia.CambiarEscena(Escenas.Menu);
     }
 }

@@ -31,7 +31,8 @@ public class SistemaMemoria : MonoBehaviour
         {
             // Lee archivo
             var archivo = File.ReadAllText(rutaArchivo);
-            datos = JsonConvert.DeserializeObject<ModeloDatos>(archivo);
+            var archivoDesencriptado = DesEncriptar(archivo);
+            datos = JsonConvert.DeserializeObject<ModeloDatos>(archivoDesencriptado);
         }
         else
             datos = new ModeloDatos();
@@ -40,9 +41,34 @@ public class SistemaMemoria : MonoBehaviour
     private void ActualizarArchivo()
     {
         var datosJson = JsonConvert.SerializeObject(datos);
-        File.WriteAllText(rutaArchivo, datosJson);
+        var datosEncriptados = DesEncriptar(datosJson);
+        File.WriteAllText(rutaArchivo, datosEncriptados);
+    }
+    
+    // Nombre respondido
+    public void GuardarNombre(string texto)
+    {
+        datos.últimoNombre = texto;
+        ActualizarArchivo();
     }
 
+    public string CargarNombre()
+    {
+        return datos.últimoNombre;
+    }
+
+    // Verificar para guardar
+    public bool VerificarDiálogo(string texto)
+    {
+        return datos.diálogosElegidos.Contains(texto);
+    }
+
+    public bool VerificarOpción(string texto)
+    {
+        return datos.opcionesElegidas.Contains(texto);
+    }
+
+    // Marcado visto / elegido
     public void MarcarDiálogo(string texto)
     {
         if (!datos.diálogosElegidos.Contains(texto))
@@ -83,6 +109,31 @@ public class SistemaMemoria : MonoBehaviour
         }
     }
 
+    public void MarcarPregunta(string texto)
+    {
+        if (!datos.preguntasEncontradas.Contains(texto))
+        {
+            datos.preguntasEncontradas.Add(texto);
+            ActualizarArchivo();
+        }
+    }
+
+    // Obtención de variables
+    public int ObtenerUsuariosHuidos()
+    {
+        return datos.usuariosHuidos;
+    }
+
+    public int ObtenerUsuariosMuertos()
+    {
+        return datos.usuariosMuertos;
+    }
+
+    public int ObtenerUsuariosCapturados()
+    {
+        return datos.usuariosCapturados;
+    }
+
     public int ObtenerDiálogosVistos()
     {
         return datos.diálogosElegidos.Count;
@@ -93,13 +144,8 @@ public class SistemaMemoria : MonoBehaviour
         return datos.finalesElegidos.Count;
     }
 
-    public bool VerificarDiálogo(string texto)
+    public int ObtenerPreguntasEncontradas()
     {
-        return datos.diálogosElegidos.Contains(texto);
-    }
-
-    public bool VerificarOpción(string texto)
-    {
-        return datos.opcionesElegidas.Contains(texto);
+        return datos.preguntasEncontradas.Count;
     }
 }

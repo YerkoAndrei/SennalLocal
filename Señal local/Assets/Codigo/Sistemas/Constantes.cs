@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 public class Constantes
 {
+    protected static int llave = 08021996;
+
     public enum Escenas
     {
         Menu,
@@ -54,5 +57,20 @@ public class Constantes
 
         lista.Reverse();
         return lista.ToArray();
+    }
+
+    // XOR
+    public static string DesEncriptar(string texto)
+    {
+        var input = new StringBuilder(texto);
+        var output = new StringBuilder(texto.Length);
+        char c;
+        for (int i = 0; i < texto.Length; i++)
+        {
+            c = input[i];
+            c = (char)(c ^ llave);
+            output.Append(c);
+        }
+        return output.ToString();
     }
 }

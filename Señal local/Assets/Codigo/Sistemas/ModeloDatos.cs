@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using static UnityEditor.PlayerSettings;
 
 [Serializable]
 public class ModeloDatos
 {
-    public int usuariosHuidos { get; set; }
-    public int usuariosMuertos { get; set; }
-    public int usuariosCapturados { get; set; }
+    public string últimoNombre;
 
-    public List<string> diálogosElegidos { get; set; }
-    public List<string> opcionesElegidas { get; set; }
-    public List<string> finalesElegidos { get; set; }
+    public int usuariosHuidos;
+    public int usuariosMuertos;
+    public int usuariosCapturados;
+
+    public List<string> diálogosElegidos;
+    public List<string> opcionesElegidas;
+    public List<string> finalesElegidos;
+    public List<string> preguntasEncontradas;
 
     public ModeloDatos()
     {
         // Datos vacíos
+        últimoNombre = string.Empty;
         usuariosHuidos = 0;
         usuariosMuertos = 0;
         usuariosCapturados = 0;
@@ -23,5 +26,6 @@ public class ModeloDatos
         diálogosElegidos = new List<string>();
         opcionesElegidas = new List<string>();
         finalesElegidos = new List<string>();
+        preguntasEncontradas = new List<string>();
     }
 }
