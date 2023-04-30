@@ -151,7 +151,7 @@ public class RutaMonstruo : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 4"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_4", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -187,7 +187,7 @@ public class RutaMonstruo : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 7"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_7", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -211,7 +211,7 @@ public class RutaMonstruo : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 9"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_9", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -220,10 +220,10 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 9"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 10"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_10", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

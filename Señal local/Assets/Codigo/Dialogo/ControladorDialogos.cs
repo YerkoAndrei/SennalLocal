@@ -35,6 +35,7 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private TMP_Text txtDiálogo;
     [SerializeField] private Image imgPersonaje;
     [SerializeField] private Image imgContinuar;
+    [SerializeField] private GameObject imgVisto;
 
     [Header("Referencias opciones")]
     [SerializeField] private GameObject panelOpciones;
@@ -140,11 +141,13 @@ public class ControladorDialogos : MonoBehaviour
 
     private void IniciarDiálogo(ElementoDialogo _diálogoActual)
     {
+        diálogoActual = _diálogoActual;
+        SistemaMemoria.instancia.MarcarDiálogo(diálogoActual.texto);
+
         estado = Estados.mostrandoDiálogo;
         txtDiálogo.text = string.Empty;
+        imgVisto.SetActive(diálogoActual.visto);
         panelDiálogos.SetActive(true);
-
-        diálogoActual = _diálogoActual;
 
         ContarTiempoDiálogo();
         StartCoroutine(MostrarTexto());
@@ -308,7 +311,11 @@ public class ControladorDialogos : MonoBehaviour
         txtDiálogo.text = diálogoActual.texto;
         VerImagenContinuar(true);
 
-        estado = Estados.esperandoClic;
+        // Continúa o termina guión
+        if(diálogoActual.tipoDiálogo == TipoDiálogo.final)            
+            estado = Estados.esperandoFinal;
+        else
+            estado = Estados.esperandoClic;
     }
 
     private void ActivarSonidoPersonaje()
@@ -411,6 +418,8 @@ public class ControladorDialogos : MonoBehaviour
     {
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
+
+        SistemaMemoria.instancia.MarcarOpción(opcion.texto);
         IniciarDiálogo(opcion.siguienteDiálogo);
     }
 
@@ -430,8 +439,9 @@ public class ControladorDialogos : MonoBehaviour
     {
         var diálogoFinal = new ElementoDialogo();
         diálogoFinal.personaje = Personajes.operador;
+        diálogoFinal.tipoDiálogo = TipoDiálogo.final;
 
-        switch(tipoFinal)
+        switch (tipoFinal)
         {
             case TipoFinal.huida:
                 diálogoFinal.texto = "(Llamada perdida. El usuario ha huido.)";
@@ -444,7 +454,7 @@ public class ControladorDialogos : MonoBehaviour
                 break;
         }
 
-        estado = Estados.esperandoFinal;
+        SistemaMemoria.instancia.MarcarFinal(diálogoActual.texto, tipoFinal);
         IniciarDiálogo(diálogoFinal);
     }
 

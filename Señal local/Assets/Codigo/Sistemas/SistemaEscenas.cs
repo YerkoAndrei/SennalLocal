@@ -44,8 +44,6 @@ public class SistemaEscenas : MonoBehaviour
     public void CambiarEscena(Escenas escena)
     {
         panelNegro.gameObject.SetActive(true);
-        imgCarga.gameObject.SetActive(true);
-
         panelNegro.Play("Entrar");
 
         StartCoroutine(CambiarEscenaAsíncrona(escena));

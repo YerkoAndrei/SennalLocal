@@ -114,7 +114,7 @@ public class RutaIntro : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 5"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("INTRO_5", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

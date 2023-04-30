@@ -42,7 +42,7 @@ public class RutaCaza : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 1"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_1", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -54,7 +54,7 @@ public class RutaCaza : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 2"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_2", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -66,7 +66,7 @@ public class RutaCaza : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 3"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_3", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

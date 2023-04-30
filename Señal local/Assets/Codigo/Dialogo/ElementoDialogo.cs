@@ -32,9 +32,9 @@ public class ElementoDialogo
         nuevoElemento.personaje = personaje;
         nuevoElemento.texto = texto;
 
-        // Pruebas
-        if(SistemaMemoria.instancia != null)
-            nuevoElemento.visto = SistemaMemoria.instancia.VerificarDiálogoVisto(texto);
+        // Pruebas sin sistema
+        if (SistemaMemoria.instancia != null)
+            nuevoElemento.visto = SistemaMemoria.instancia.VerificarDiálogo(texto);
 
         return nuevoElemento;
     }
@@ -59,10 +59,11 @@ public class ElementoDialogo
     }
 
     // Final de ruta
-    public static ElementoDialogo CrearFinal(TipoFinal tipoFinal)
+    public static ElementoDialogo CrearFinal(string texto, TipoFinal tipoFinal)
     {
         var nuevoElemento = new ElementoDialogo();
         nuevoElemento.tipoDiálogo = TipoDiálogo.final;
+        nuevoElemento.texto = texto;
         nuevoElemento.tipoFinal = tipoFinal;
 
         return nuevoElemento;

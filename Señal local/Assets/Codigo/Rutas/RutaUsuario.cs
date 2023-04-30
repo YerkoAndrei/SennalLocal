@@ -132,7 +132,7 @@ public class RutaUsuario : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 3"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_3", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -144,7 +144,7 @@ public class RutaUsuario : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 4"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_4", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -168,7 +168,7 @@ public class RutaUsuario : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 6"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_6", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -264,7 +264,7 @@ public class RutaUsuario : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 14"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_14", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -300,7 +300,7 @@ public class RutaUsuario : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 17"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_17", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -336,7 +336,7 @@ public class RutaUsuario : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 20"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_20", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

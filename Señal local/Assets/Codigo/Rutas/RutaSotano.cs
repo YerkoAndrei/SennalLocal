@@ -66,7 +66,7 @@ public class RutaSotano : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 3"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("SÓTANO_4", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -78,7 +78,7 @@ public class RutaSotano : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 4"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("SÓTANO_4", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

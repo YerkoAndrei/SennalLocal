@@ -139,7 +139,7 @@ public class RutaOperador : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 4"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_4", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -163,7 +163,7 @@ public class RutaOperador : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 6"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_6", TipoFinal.muerte));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -187,7 +187,7 @@ public class RutaOperador : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 8"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_8", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -199,7 +199,7 @@ public class RutaOperador : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 9"));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal(TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_9", TipoFinal.captura));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

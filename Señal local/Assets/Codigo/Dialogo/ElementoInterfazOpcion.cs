@@ -12,9 +12,11 @@ public class ElementoInterfazOpcion : MonoBehaviour
     [SerializeField] private Button btnOpción;
     [SerializeField] private TMP_Text txtOpción;
     [SerializeField] private GameObject imgResaltado;
+    [SerializeField] private GameObject imgElegido;
 
     [Header("Diálogo")]
     [Ocultar] public ElementoDialogo siguienteDiálogo;
+    [Ocultar] public string texto;
 
     private Action enClic;
 
@@ -24,6 +26,9 @@ public class ElementoInterfazOpcion : MonoBehaviour
         siguienteDiálogo = elementoDiálogo.siguienteDiálogo;
         txtOpción.text = elementoDiálogo.texto;
         enClic = acción;
+
+        texto = elementoDiálogo.texto;
+        imgElegido.SetActive(elementoDiálogo.yaElegido);
 
         OnPointerExit();
     }
