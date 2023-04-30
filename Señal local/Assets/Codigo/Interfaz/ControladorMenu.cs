@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using static Constantes;
 
 public class ControladorMenu : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicIniciar()
     {
-        SistemaEscenas.instancia.CambiarEscena("Juego");
+        SistemaEscenas.instancia.CambiarEscena(Escenas.Juego);
     }
 
     public void EnClicOpciones()

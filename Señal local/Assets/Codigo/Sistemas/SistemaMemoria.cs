@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
+using static Constantes;
 
 public class SistemaMemoria : MonoBehaviour
 {
     public static SistemaMemoria instancia;
+
+    public int diálogosVistos;
+    public int finalesVistos;
+
+    public int usuariosMuertos;
+    public int usuariosCapturados;
 
     private void Start()
     {
@@ -19,5 +26,10 @@ public class SistemaMemoria : MonoBehaviour
     private void Iniciar()
     {
 
+    }
+
+    public bool VerificarDiálogoVisto(string texto)
+    {
+        return false;
     }
 }

@@ -1,7 +1,13 @@
 ﻿using System.Collections.Generic;
 
-public class Constantes 
+public class Constantes
 {
+    public enum Escenas
+    {
+        Menu,
+        Juego
+    }
+
     public enum Estados
     {
         enPausa,
@@ -9,7 +15,8 @@ public class Constantes
         mostrandoDiálogo,
         mostrandoOpciones,
         mostrandoPregunta,
-        mostrandoAnimación
+        mostrandoAnimación,
+        esperandoFinal
     }
 
     public enum Personajes
