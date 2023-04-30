@@ -703,7 +703,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.78431374, g: 0.78431374, b: 1, a: 1}
-  m_Intensity: 4
+  m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 100
   m_InnerSpotAngle: 50
@@ -1338,7 +1338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &641127514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2808,7 +2808,7 @@ ReflectionProbe:
   m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
-  m_Resolution: 512
+  m_Resolution: 1024
   m_UpdateFrequency: 0
   m_BoxSize: {x: 6, y: 4, z: 8}
   m_BoxOffset: {x: 0, y: 0, z: 1}
@@ -4160,7 +4160,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 31
+  m_AdditionalShaderChannelsFlag: 7
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -4202,16 +4202,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   estado: 0
-  tiempoOpciones: 1
+  "di\xE1logoActual":
+    personaje: 0
+    texto: 
+    visto: 0
+    "tipoDi\xE1logo": 0
+    tipoFinal: 0
   tiempoLetra: 0.05
   tiempoLetraEtiquetada: 0.1
-  tiempoEspacio: 0.2
-  "tiempoGui\xF3n": 0.3
-  tiempoComa: 0.4
+  tiempoEspacio: 0.1
+  "tiempoGui\xF3n": 0.2
+  tiempoComa: 0.3
   tiempoPunto: 0.6
+  tiempoOpciones: 1
   colorCargando: {r: 1, g: 1, b: 1, a: 0.39215687}
   colorContinuar: {r: 1, g: 1, b: 1, a: 1}
-  "panelDi\xE1logos": {fileID: 1529396053}
+  "panelDi\xE1logos": {fileID: 641127513}
   "txtDi\xE1logo": {fileID: 974322011}
   imgPersonaje: {fileID: 446212466}
   imgContinuar: {fileID: 619678365}
