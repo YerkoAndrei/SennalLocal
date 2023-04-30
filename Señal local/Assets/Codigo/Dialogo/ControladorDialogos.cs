@@ -14,7 +14,6 @@ public class ControladorDialogos : MonoBehaviour
 {
     [Header("Estado")]
     [Ocultar] [SerializeField] private Estados estado;
-    /*[Ocultar]*/ [SerializeField] private ElementoDialogo diálogoActual;
 
     [Header("Tiempos textos")]
     [SerializeField] private float tiempoLetra;
@@ -71,6 +70,7 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private AudioClip audioSobreviviente;
     [SerializeField] private AudioClip audioComputador;
 
+    private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
     private bool mostrandoTexto;
     private bool puedeContinuar;

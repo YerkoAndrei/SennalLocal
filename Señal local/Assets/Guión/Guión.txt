@@ -28,14 +28,14 @@ $ Operador
 # Sobreviviente
 + Computador
 
+Final Huida:
+(Llamada perdida. El usuario ha huido.)
+
 Final Muerte:
 (Llamada perdida. El usuario ha muerto.)
 
 Final Captura:
 (Llamada perdida. El usuario ha sido capturado.)
-
-Final Huida:
-(Llamada perdida. El usuario ha huido.)
 
 
 Bifurcación INTRO 0:
