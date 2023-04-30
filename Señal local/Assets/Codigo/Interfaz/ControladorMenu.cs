@@ -1,12 +1,17 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using static Constantes;
 
 public class ControladorMenu : MonoBehaviour
 {
+    [Header("Paneles")]
     [SerializeField] private GameObject panelInicio;
     [SerializeField] private GameObject panelOpciones;
     [SerializeField] private GameObject panelCréditos;
+
+    [Header("Referencias")]
+    [SerializeField] private TMP_Text txtVersión;
 
     public static int semilla;
 
@@ -19,6 +24,8 @@ public class ControladorMenu : MonoBehaviour
         panelInicio.SetActive(true);
         panelOpciones.SetActive(false);
         panelCréditos.SetActive(false);
+
+        txtVersión.text = Application.version;
     }
 
     public void EnClicIniciar()

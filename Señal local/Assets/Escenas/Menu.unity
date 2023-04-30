@@ -4011,6 +4011,7 @@ MonoBehaviour:
   panelInicio: {fileID: 13416504}
   panelOpciones: {fileID: 1111239759}
   "panelCr\xE9ditos": {fileID: 1684153118}
+  "txtVersi\xF3n": {fileID: 1415345615}
 --- !u!4 &1320065147
 Transform:
   m_ObjectHideFlags: 0
@@ -6028,7 +6029,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000312475}
-  - component: {fileID: 2000312476}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -6056,20 +6056,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &2000312476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000312474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!1 &2089040859
 GameObject:
   m_ObjectHideFlags: 0
@@ -6218,3 +6204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8231366207f6abf48ba4c24b0d9b2170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  datos:
+    usuariosHuidos: 0
+    usuariosMuertos: 0
+    usuariosCapturados: 0
+    "di\xE1logosElegidos": []
+    opcionesElegidas: []
+    finalesElegidos: []
