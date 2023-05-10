@@ -255,6 +255,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoLuz: 0
   inicioPrendida: 1
+  parpadeoSingular: 0
+  multiplicadorTiempo: 1
+  tiempoParpadeo: 0.15
   luz: {fileID: 2382799752346436258}
   renderizadorLuz: {fileID: 5370559886342033548}
   luzAlta: {fileID: 2100000, guid: fa52a06da4d6ec84a80d9e9b4d4bfa41, type: 2}
@@ -273,6 +276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoLuz: 1
   inicioPrendida: 1
+  parpadeoSingular: 0
+  multiplicadorTiempo: 1
+  tiempoParpadeo: 0.15
   luz: {fileID: 7603803613187961376}
   renderizadorLuz: {fileID: 4175407942355488223}
   luzAlta: {fileID: 2100000, guid: 897308355d5bb3146a3d9bbec62d7ac3, type: 2}
@@ -291,6 +297,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoLuz: 1
   inicioPrendida: 0
+  parpadeoSingular: 0
+  multiplicadorTiempo: 1
+  tiempoParpadeo: 0.15
   luz: {fileID: 5273114331963102788}
   renderizadorLuz: {fileID: 8183297168244852003}
   luzAlta: {fileID: 2100000, guid: f3d2e4e6db0c3aa488e5ba8168baf641, type: 2}
@@ -309,6 +318,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoLuz: 1
   inicioPrendida: 1
+  parpadeoSingular: 0
+  multiplicadorTiempo: 1
+  tiempoParpadeo: 0.15
   luz: {fileID: 3969201410834926673}
   renderizadorLuz: {fileID: 2808658405624675006}
   luzAlta: {fileID: 2100000, guid: 462664d5d5016c447b1f78b137b672d8, type: 2}
@@ -327,6 +339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoLuz: 1
   inicioPrendida: 0
+  parpadeoSingular: 0
+  multiplicadorTiempo: 1
+  tiempoParpadeo: 0.15
   luz: {fileID: 5049188789947038954}
   renderizadorLuz: {fileID: 3964236224551432459}
   luzAlta: {fileID: 2100000, guid: aa1fff4634518fe488fef57cea61e4aa, type: 2}
@@ -345,6 +360,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoLuz: 1
   inicioPrendida: 0
+  parpadeoSingular: 0
+  multiplicadorTiempo: 1
+  tiempoParpadeo: 0.15
   luz: {fileID: 8733071050237377887}
   renderizadorLuz: {fileID: 9078845604208405116}
   luzAlta: {fileID: 2100000, guid: 3d22f8213e179034c804ff1417baff6d, type: 2}
@@ -989,21 +1007,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Osciloscopio
       objectReference: {fileID: 0}
-    - target: {fileID: 4536021660886356071, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: db33c1a5be551bf489b07cd177515e70, type: 2}
     - target: {fileID: 5230746575183279661, guid: 94b8d7b212dcbb041aabd05101137eb6,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8673947278109942863, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: db33c1a5be551bf489b07cd177515e70, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
 --- !u!4 &5253870891986023087 stripped
