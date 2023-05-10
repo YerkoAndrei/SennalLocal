@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089926948468874498}
+  - component: {fileID: 5285881647327270171}
   m_Layer: 0
   m_Name: "L\xE1mpara"
   m_TagString: Untagged
@@ -32,6 +33,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5285881647327270171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3338408693309956447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525fe82d6be75f24681f8d835a91c396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoLuz: 0
+  inicioPrendida: 1
+  parpadeoSingular: 1
+  multiplicadorTiempo: 3
+  tiempoParpadeo: 2
+  luz: {fileID: 6297817170644268127}
+  renderizadorLuz: {fileID: 116361867839860}
+  luzAlta: {fileID: 2100000, guid: ff4a1499358368c4c984e166316342b9, type: 2}
+  luzBaja: {fileID: 2100000, guid: 19a2ffb925f8c2b4a8e8677950560c05, type: 2}
 --- !u!1 &3615616998964600605
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +223,12 @@ PrefabInstance:
 --- !u!4 &6531259997628902361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 839e1c7ebdba0f140816467f67a84d27,
+    type: 3}
+  m_PrefabInstance: {fileID: 6712908953264507954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &116361867839860 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -2510366512958503610, guid: 839e1c7ebdba0f140816467f67a84d27,
     type: 3}
   m_PrefabInstance: {fileID: 6712908953264507954}
   m_PrefabAsset: {fileID: 0}
