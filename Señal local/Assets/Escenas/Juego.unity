@@ -702,7 +702,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.78431374, g: 0.78431374, b: 1, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1
   m_Range: 6
   m_SpotAngle: 100
   m_InnerSpotAngle: 60
@@ -5771,11 +5771,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7487252421737884008, guid: bec9f9c77be9d554ea4f4b1380d2c924,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7617388751610833776, guid: bec9f9c77be9d554ea4f4b1380d2c924,
         type: 3}

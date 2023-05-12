@@ -87,7 +87,7 @@ public class AnimadorLuzMecanica : MonoBehaviour
         else
             renderizadorLuz.material = luzAlta;
 
-        luz.gameObject.SetActive(!prendida);
+        luz.enabled = !prendida;
         prendida = !prendida;
     }
 

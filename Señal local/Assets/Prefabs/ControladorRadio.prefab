@@ -386,6 +386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoLuz: 0
   inicioPrendida: 1
+  parpadeoSingular: 0
+  multiplicadorTiempo: 1
   tiempoParpadeo: 0.15
   luz: {fileID: 8466679874353178509}
   renderizadorLuz: {fileID: 8468395286194648122}
