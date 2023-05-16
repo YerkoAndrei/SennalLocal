@@ -46,6 +46,16 @@ public class Constantes
         captura         // 10  
     }
 
+    public enum NivelEstrés
+    {
+        esperando,
+        bajo,
+        normal,
+        alto,
+        gritando,
+        muerto
+    }
+
     public static ElementoDialogo[] AsignarContinuidadDiálogos(List<ElementoDialogo> lista)
     {
         lista.Reverse();

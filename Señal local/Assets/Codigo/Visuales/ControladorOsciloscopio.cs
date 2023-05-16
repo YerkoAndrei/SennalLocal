@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using static Constantes;
 
 public class ControladorOsciloscopio : MonoBehaviour
 {
+    private static ControladorOsciloscopio instancia;
 
     [Header("Variables")]
     [SerializeField] private float velocidadHorizontal;
@@ -32,6 +34,7 @@ public class ControladorOsciloscopio : MonoBehaviour
 
         subiendo = true;
         objetivo = alto;
+        CambiarNivelEstrés(NivelEstrés.esperando);
     }
 
     private void Update()
@@ -59,7 +62,7 @@ public class ControladorOsciloscopio : MonoBehaviour
     {
         visor.position = Vector3.MoveTowards(visor.position, final.position, Time.deltaTime * velocidadHorizontal);
 
-        if (Vector3.Distance(visor.position, final.position) <= 0.01)
+        if (Vector3.Distance(visor.position, final.position) <= 0.01f)
             rastro.emitting = false;
         else
             rastro.emitting = true;
@@ -68,6 +71,43 @@ public class ControladorOsciloscopio : MonoBehaviour
         {
             subiendo = true;
             visor.position = comienzo.position;
+            luz.localPosition = new Vector3(luz.localPosition.x, 0, luz.localPosition.z);
         }
+    }
+
+    public void CambiarEstrés(NivelEstrés nivelEstrés)
+    {
+        // Centro
+        luz.localPosition = new Vector3(luz.localPosition.x, 0, luz.localPosition.z);
+
+        switch (nivelEstrés)
+        {
+            case NivelEstrés.esperando:
+                velocidadVertical = 0.04f;
+                break;
+            case NivelEstrés.bajo:
+                velocidadVertical = 0.12f;
+                break;
+            case NivelEstrés.normal:
+                velocidadVertical = 0.2f;
+                break;
+            case NivelEstrés.alto:
+                velocidadVertical = 0.8f;
+                break;
+            case NivelEstrés.gritando:
+                velocidadVertical = 1f;
+                break;
+            case NivelEstrés.muerto:
+                velocidadVertical = 0;
+                break;
+        }
+    }
+
+    public static void CambiarNivelEstrés(NivelEstrés nivelEstrés)
+    {
+        if(instancia == null)
+            instancia = FindObjectOfType<ControladorOsciloscopio>();
+
+        instancia.CambiarEstrés(nivelEstrés);
     }
 }
