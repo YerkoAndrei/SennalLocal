@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using TMPro;
+using static Constantes;
 
 public class ControladorMenu : MonoBehaviour
 {
@@ -21,22 +22,23 @@ public class ControladorMenu : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private TMP_Text txtVersión;
 
-    public static int semilla;
-
     private ControladorDialogos controladorDiálogos;
 
     private void Start()
     {
+        // Semilla aleatoria
         var fecha = DateTime.Parse("08/02/1996");
-        var segundos = (int)(DateTime.Now - fecha).TotalSeconds;
-        semilla = segundos;
+        var semilla = (int)(DateTime.Now - fecha).TotalSeconds;
 
+        aleatorio = new System.Random(semilla);
+        UnityEngine.Random.InitState(semilla);
+
+        // Diálogos
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.esperando);
         controladorDiálogos = FindObjectOfType<ControladorDialogos>();
         controladorDiálogos.gameObject.SetActive(false);
 
-        menúInicio.SetActive(true);
-        menúJuego.SetActive(false);
-
+        // Menú
         panelInicio.SetActive(true);
         panelOpciones.SetActive(false);
         panelCréditos.SetActive(false);
@@ -44,6 +46,9 @@ public class ControladorMenu : MonoBehaviour
         btnIniciar.SetActive(true);
         btnReiniciar.SetActive(false);
         btnReanudar.SetActive(false);
+
+        menúInicio.SetActive(true);
+        menúJuego.SetActive(false);
 
         txtVersión.text = Application.version;
     }
@@ -74,19 +79,21 @@ public class ControladorMenu : MonoBehaviour
         menúJuego.SetActive(true);
 
         // PENDIENTE animacion camara
+        ControladorOsciloscopio.ReanudarNivelEstrés();
         controladorDiálogos.gameObject.SetActive(true);
     }
 
     public void EnClicPausar()
     {
-        menúInicio.SetActive(true);
-        menúJuego.SetActive(false);
-
         btnIniciar.SetActive(false);
         btnReiniciar.SetActive(true);
         btnReanudar.SetActive(true);
 
+        menúInicio.SetActive(true);
+        menúJuego.SetActive(false);
+
         // PENDIENTE animacion camara
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.esperando);
         controladorDiálogos.gameObject.SetActive(false);
     }
 
@@ -116,12 +123,11 @@ public class ControladorMenu : MonoBehaviour
 
     public void FinalizarJuego()
     {
-        panelInicio.SetActive(true);
-        panelOpciones.SetActive(false);
-        panelCréditos.SetActive(false);
-
         btnIniciar.SetActive(true);
         btnReiniciar.SetActive(false);
         btnReanudar.SetActive(false);
+
+        menúInicio.SetActive(true);
+        menúJuego.SetActive(false);
     }
 }

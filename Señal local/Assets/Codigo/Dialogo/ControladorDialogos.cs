@@ -7,7 +7,6 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Random = System.Random;
 using static Constantes;
 
 public class ControladorDialogos : MonoBehaviour
@@ -360,8 +359,7 @@ public class ControladorDialogos : MonoBehaviour
         panelOpciones.SetActive(true);
 
         // Posición aleatoria
-        var aleatoria = new Random(ControladorMenu.semilla);
-        var opciones = diálogoActual.opciones.OrderBy(x => aleatoria.Next()).ToArray();
+        var opciones = diálogoActual.opciones.OrderBy(x => aleatorio.Next()).ToArray();
 
         // Instancia nuevas
         for (int i = 0; i < opciones.Length; i++)
@@ -431,8 +429,6 @@ public class ControladorDialogos : MonoBehaviour
 
     private void VolverAlMenú()
     {
-        panelDiálogos.SetActive(false);
-
         var controladorMenú = FindObjectOfType<ControladorMenu>();
         controladorMenú.FinalizarJuego();
     }

@@ -3,6 +3,7 @@ using System.Text;
 
 public class Constantes
 {
+    public static System.Random aleatorio;
     protected static int llave = 08021996;
 
     public enum Escenas
