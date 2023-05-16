@@ -4,8 +4,10 @@ using static Constantes;
 public class ControladorOsciloscopio : MonoBehaviour
 {
     private static ControladorOsciloscopio instancia;
+    private static NivelEstrés nivelEstrésAnterior;
 
     [Header("Variables")]
+    [SerializeField] private NivelEstrés nivelEstrésActual;
     [SerializeField] private float velocidadHorizontal;
     [SerializeField] private float velocidadVertical;
     [SerializeField] private float máximaSeparación;
@@ -80,7 +82,10 @@ public class ControladorOsciloscopio : MonoBehaviour
         // Centro
         luz.localPosition = new Vector3(luz.localPosition.x, 0, luz.localPosition.z);
 
-        switch (nivelEstrés)
+        nivelEstrésAnterior = nivelEstrésActual;
+        nivelEstrésActual = nivelEstrés;
+
+        switch (nivelEstrésActual)
         {
             case NivelEstrés.esperando:
                 velocidadVertical = 0.04f;
@@ -109,5 +114,10 @@ public class ControladorOsciloscopio : MonoBehaviour
             instancia = FindObjectOfType<ControladorOsciloscopio>();
 
         instancia.CambiarEstrés(nivelEstrés);
+    }
+
+    public static void ReanudarNivelEstrés()
+    {
+        CambiarNivelEstrés(nivelEstrésAnterior);
     }
 }
