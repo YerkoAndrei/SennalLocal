@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AnimadorLuz : MonoBehaviour
+public class AnimadorLuzFondo : MonoBehaviour
 {
     [Header("Paneles")]
     [SerializeField] private MeshRenderer pared;
