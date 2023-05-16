@@ -7,12 +7,7 @@ public class Constantes
     public static Random aleatorio;
     protected static int llave = 08021996;
 
-    public enum Escenas
-    {
-        Menu,
-        Juego
-    }
-
+    // Diálogos
     public enum Estados
     {
         enPausa,
@@ -48,14 +43,21 @@ public class Constantes
         captura         // 10  
     }
 
+    // Visuales
     public enum NivelEstrés
     {
-        esperando,
+        pausa,
         bajo,
         normal,
         alto,
         gritando,
         muerto
+    }
+
+    public enum ModoLuz
+    {
+        palpitar,
+        intercambiar
     }
 
     public static ElementoDialogo[] AsignarContinuidadDiálogos(List<ElementoDialogo> lista)
@@ -77,6 +79,7 @@ public class Constantes
         var entrada = new StringBuilder(texto);
         var salida = new StringBuilder(texto.Length);
         char c;
+
         for (int i = 0; i < texto.Length; i++)
         {
             c = entrada[i];

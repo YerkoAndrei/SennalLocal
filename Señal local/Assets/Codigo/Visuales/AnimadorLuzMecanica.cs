@@ -1,13 +1,8 @@
 ﻿using UnityEngine;
+using static Constantes;
 
 public class AnimadorLuzMecanica : MonoBehaviour
 {
-    public enum ModoLuz
-    {
-        palpitar,
-        intercambiar,
-    }
-
     [Header("Tipo")]
     [SerializeField] private ModoLuz tipoLuz;
     [SerializeField] private bool inicioPrendida;

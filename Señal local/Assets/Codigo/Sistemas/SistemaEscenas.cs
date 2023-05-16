@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static Constantes;
 
 public class SistemaEscenas : MonoBehaviour
 {
@@ -41,7 +40,7 @@ public class SistemaEscenas : MonoBehaviour
         imgCarga.AddClip(animaciónSalida, "Salir");
     }
 
-    public void CambiarEscena(Escenas escena)
+    public void CambiarEscena(string escena)
     {
         panelNegro.gameObject.SetActive(true);
         panelNegro.Play("Entrar");
@@ -49,14 +48,14 @@ public class SistemaEscenas : MonoBehaviour
         StartCoroutine(CambiarEscenaAsíncrona(escena));
     }
 
-    private IEnumerator CambiarEscenaAsíncrona(Escenas escena)
+    private IEnumerator CambiarEscenaAsíncrona(string escena)
     {
         yield return new WaitUntil(() => !panelNegro.isPlaying);
         imgCarga.gameObject.SetActive(true);
         imgCarga.Play("Entrar");
 
         // Carga y cambia de escena
-        var cargaAsíncrona = SceneManager.LoadSceneAsync(escena.ToString(), LoadSceneMode.Single);
+        var cargaAsíncrona = SceneManager.LoadSceneAsync(escena, LoadSceneMode.Single);
         yield return new WaitUntil(() => cargaAsíncrona.isDone);
 
         panelNegro.Play("Salir");

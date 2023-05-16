@@ -34,7 +34,7 @@ public class ControladorMenu : MonoBehaviour
         UnityEngine.Random.InitState(semilla);
 
         // Diálogos
-        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.esperando);
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         controladorDiálogos = FindObjectOfType<ControladorDialogos>();
         controladorDiálogos.gameObject.SetActive(false);
 
@@ -93,7 +93,7 @@ public class ControladorMenu : MonoBehaviour
         menúJuego.SetActive(false);
 
         // PENDIENTE animacion camara
-        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.esperando);
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         controladorDiálogos.gameObject.SetActive(false);
     }
 

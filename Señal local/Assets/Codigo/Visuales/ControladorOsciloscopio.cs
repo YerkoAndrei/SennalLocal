@@ -36,7 +36,7 @@ public class ControladorOsciloscopio : MonoBehaviour
 
         subiendo = true;
         objetivo = alto;
-        CambiarNivelEstrés(NivelEstrés.esperando);
+        CambiarNivelEstrés(NivelEstrés.pausa);
     }
 
     private void Update()
@@ -87,7 +87,7 @@ public class ControladorOsciloscopio : MonoBehaviour
 
         switch (nivelEstrésActual)
         {
-            case NivelEstrés.esperando:
+            case NivelEstrés.pausa:
                 velocidadVertical = 0.04f;
                 break;
             case NivelEstrés.bajo:
