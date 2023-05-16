@@ -32,9 +32,7 @@ public class ElementoDialogo
         nuevoElemento.personaje = personaje;
         nuevoElemento.texto = texto;
 
-        // Pruebas sin sistema
-        if (SistemaMemoria.instancia != null)
-            nuevoElemento.visto = SistemaMemoria.instancia.VerificarDiálogo(texto);
+        nuevoElemento.visto = SistemaMemoria.instancia.VerificarDiálogo(texto);
 
         return nuevoElemento;
     }

@@ -53,6 +53,9 @@ public class RutaIntro : InterfazRuta
         // Diálogos
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 0"));
 
+        // Efectos
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
+
         // Opciones
         listaDiálogos.Add(CrearBifurcación_intro_0());
         return AsignarContinuidadDiálogos(listaDiálogos);

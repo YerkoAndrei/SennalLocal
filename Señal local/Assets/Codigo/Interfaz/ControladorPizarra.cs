@@ -23,9 +23,6 @@ public class ControladorPizarra : MonoBehaviour
 
     private void Start()
     {
-        if (SistemaMemoria.instancia == null)
-            return;
-
         // Variable
         var huidos = SistemaMemoria.instancia.ObtenerUsuariosHuidos();
         var muertos = SistemaMemoria.instancia.ObtenerUsuariosMuertos();
