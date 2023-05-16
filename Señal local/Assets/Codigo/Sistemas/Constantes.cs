@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Text;
+using System.Collections.Generic;
 
 public class Constantes
 {
-    public static System.Random aleatorio;
+    public static Random aleatorio;
     protected static int llave = 08021996;
 
     public enum Escenas
@@ -73,15 +74,15 @@ public class Constantes
     // XOR
     public static string DesEncriptar(string texto)
     {
-        var input = new StringBuilder(texto);
-        var output = new StringBuilder(texto.Length);
+        var entrada = new StringBuilder(texto);
+        var salida = new StringBuilder(texto.Length);
         char c;
         for (int i = 0; i < texto.Length; i++)
         {
-            c = input[i];
+            c = entrada[i];
             c = (char)(c ^ llave);
-            output.Append(c);
+            salida.Append(c);
         }
-        return output.ToString();
+        return salida.ToString();
     }
 }
