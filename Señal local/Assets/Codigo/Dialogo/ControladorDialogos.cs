@@ -46,10 +46,6 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private GameObject panelPregunta;
     [SerializeField] private TMP_InputField inputPregunta;
 
-    [Header("Referencias audios")]
-    [SerializeField] private AudioSource fuenteMúsica;
-    [SerializeField] private AudioSource fuenteDiálogo;
-
     [Header("Personajes")]
     [SerializeField] private Sprite imagenUsuario;
     [SerializeField] private Sprite imagenOperador;
@@ -64,12 +60,7 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private TMP_FontAsset fuenteSobreviviente;
     [SerializeField] private TMP_FontAsset fuenteComputador;
 
-    [Header("Audios")]
-    [SerializeField] private AudioClip audioUsuario;
-    [SerializeField] private AudioClip audioOperador;
-    [SerializeField] private AudioClip audioMonstruo;
-    [SerializeField] private AudioClip audioSobreviviente;
-    [SerializeField] private AudioClip audioComputador;
+    private SistemaSonido sistemaSonido;
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
@@ -82,12 +73,14 @@ public class ControladorDialogos : MonoBehaviour
 
     private const char carácterEtiqueta = '#';
 
-    private void Start()
+    public void ComenzarJuego()
     {
         panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
         panelPregunta.SetActive(false);
         VerImagenContinuar(false);
+
+        sistemaSonido = FindObjectOfType<SistemaSonido>();
 
         opcionesActuales = new List<ElementoInterfazOpcion>();
         txtDiálogo.text = string.Empty;
@@ -142,9 +135,7 @@ public class ControladorDialogos : MonoBehaviour
     private void IniciarDiálogo(ElementoDialogo _diálogoActual)
     {
         diálogoActual = _diálogoActual;
-
-        if(SistemaMemoria.instancia != null)
-            SistemaMemoria.instancia.MarcarDiálogo(diálogoActual.texto);
+        SistemaMemoria.instancia.MarcarDiálogo(diálogoActual.texto);
 
         estado = Estados.mostrandoDiálogo;
         txtDiálogo.text = string.Empty;
@@ -273,7 +264,7 @@ public class ControladorDialogos : MonoBehaviour
                     // Si el carácter está dentro de una etiqueta
                     if (carácterEnTextoRico)
                     {
-                        ActivarSonidoPersonaje();
+                        sistemaSonido.ActivarSonidoPersonaje(diálogoActual.personaje);
                         yield return new WaitForSeconds(tiempoLetraEtiquetada);
                         continue;
                     }
@@ -282,7 +273,7 @@ public class ControladorDialogos : MonoBehaviour
                     switch (texto[i])
                     {
                         default:
-                            ActivarSonidoPersonaje();
+                            sistemaSonido.ActivarSonidoPersonaje(diálogoActual.personaje);
                             yield return new WaitForSeconds(tiempoLetra);
                             break;
                         case ' ':
@@ -318,28 +309,6 @@ public class ControladorDialogos : MonoBehaviour
             estado = Estados.esperandoFinal;
         else
             estado = Estados.esperandoClic;
-    }
-
-    private void ActivarSonidoPersonaje()
-    {
-        switch (diálogoActual.personaje)
-        {
-            case Personajes.usuario:
-                fuenteDiálogo.PlayOneShot(audioUsuario);
-                break;
-            case Personajes.operador:
-                fuenteDiálogo.PlayOneShot(audioOperador);
-                break;
-            case Personajes.monstruo:
-                fuenteDiálogo.PlayOneShot(audioMonstruo);
-                break;
-            case Personajes.sobreviviente:
-                fuenteDiálogo.PlayOneShot(audioSobreviviente);
-                break;
-            case Personajes.computador:
-                fuenteDiálogo.PlayOneShot(audioComputador);
-                break;
-        }
     }
 
     private void ContinuarSiguienteAcción()
@@ -421,9 +390,7 @@ public class ControladorDialogos : MonoBehaviour
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
 
-        if (SistemaMemoria.instancia != null)
-            SistemaMemoria.instancia.MarcarOpción(opcion.texto);
-
+        SistemaMemoria.instancia.MarcarOpción(opcion.texto);
         IniciarDiálogo(opcion.siguienteDiálogo);
     }
 
@@ -458,9 +425,7 @@ public class ControladorDialogos : MonoBehaviour
                 break;
         }
 
-        if (SistemaMemoria.instancia != null)
-            SistemaMemoria.instancia.MarcarFinal(diálogoActual.texto, tipoFinal);
-
+        SistemaMemoria.instancia.MarcarFinal(diálogoActual.texto, tipoFinal);
         IniciarDiálogo(diálogoFinal);
     }
 
@@ -468,7 +433,7 @@ public class ControladorDialogos : MonoBehaviour
     {
         panelDiálogos.SetActive(false);
 
-        if (SistemaMemoria.instancia != null)
-            SistemaEscenas.instancia.CambiarEscena(Escenas.Menu);
+        var controladorMenú = FindObjectOfType<ControladorMenu>();
+        controladorMenú.FinalizarJuego();
     }
 }
