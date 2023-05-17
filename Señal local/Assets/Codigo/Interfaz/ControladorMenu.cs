@@ -34,9 +34,12 @@ public class ControladorMenu : MonoBehaviour
         UnityEngine.Random.InitState(semilla);
 
         // Diálogos
-        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         controladorDiálogos = FindObjectOfType<ControladorDialogos>();
-        controladorDiálogos.gameObject.SetActive(false);
+        controladorDiálogos.MostrarPaneles(false);
+
+        // Visual
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
+        ControladorRadio.CambiarNombreRuta(Rutas.menú);
 
         // Menú
         panelInicio.SetActive(true);
@@ -53,13 +56,24 @@ public class ControladorMenu : MonoBehaviour
         txtVersión.text = Application.version;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (menúJuego.activeSelf)
+                EnClicPausar();
+            else
+                EnClicReanudar();
+        }
+    }
+
     public void EnClicIniciar()
     {
         menúInicio.SetActive(false);
         menúJuego.SetActive(true);
 
         // PENDIENTE animacion camara
-        controladorDiálogos.gameObject.SetActive(true);
+        controladorDiálogos.MostrarPaneles(true);
         controladorDiálogos.ComenzarJuego();
     }
 
@@ -69,7 +83,7 @@ public class ControladorMenu : MonoBehaviour
         menúJuego.SetActive(true);
 
         // PENDIENTE animacion camara
-        controladorDiálogos.gameObject.SetActive(true);
+        controladorDiálogos.MostrarPaneles(true);
         controladorDiálogos.ComenzarJuego();
     }
 
@@ -80,7 +94,8 @@ public class ControladorMenu : MonoBehaviour
 
         // PENDIENTE animacion camara
         ControladorOsciloscopio.ReanudarNivelEstrés();
-        controladorDiálogos.gameObject.SetActive(true);
+        ControladorRadio.ReanudarNombreRuta();
+        controladorDiálogos.MostrarPaneles(true);
     }
 
     public void EnClicPausar()
@@ -94,7 +109,8 @@ public class ControladorMenu : MonoBehaviour
 
         // PENDIENTE animacion camara
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
-        controladorDiálogos.gameObject.SetActive(false);
+        ControladorRadio.CambiarNombreRuta(Rutas.menú);
+        controladorDiálogos.MostrarPaneles(false);
     }
 
     public void EnClicOpciones()

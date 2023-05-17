@@ -18,6 +18,8 @@ using static Constantes;
 
 public class RutaOperador : InterfazRuta
 {
+    private Rutas ruta = Rutas.operador;
+
     public ElementoDialogo CrearBifurcación_operador_0()
     {
         var usuario = new RutaUsuario();
@@ -88,7 +90,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 0"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 0", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearOperador_2()[0]);
@@ -100,7 +102,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 1", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearOperador_2()[0]);
@@ -112,7 +114,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 2"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 2", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_operador_0());
@@ -124,7 +126,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 3"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 3", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_operador_1());
@@ -136,10 +138,10 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 4"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 4", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_4", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_4", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -148,7 +150,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 5"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 5", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_operador_2());
@@ -160,10 +162,10 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 6"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 6", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_6", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_6", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -172,7 +174,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 7"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 7", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_operador_3());
@@ -184,10 +186,10 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 8"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 8", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_8", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_8", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -196,10 +198,10 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 9"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 9", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_9", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_9", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

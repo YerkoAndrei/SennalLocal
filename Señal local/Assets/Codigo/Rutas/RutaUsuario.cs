@@ -25,6 +25,8 @@ using static Constantes;
 
 public class RutaUsuario : InterfazRuta
 {
+    private Rutas ruta = Rutas.usuario;
+
     public ElementoDialogo CrearBifurcación_usuario_0()
     {
         var monstruo = new RutaMonstruo();
@@ -93,7 +95,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 0"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 0", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(monstruo.CrearMonstruo_0()[0]);
@@ -105,7 +107,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 1", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_0()[0]);
@@ -117,7 +119,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 2"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 2", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_usuario_1());
@@ -129,10 +131,10 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 3"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 3", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_3", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_3", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -141,10 +143,10 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 4"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 4", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_4", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_4", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -153,7 +155,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 5"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 5", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_usuario_2());
@@ -165,10 +167,10 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 6"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 6", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_6", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_6", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -177,7 +179,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 7"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 7", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_9()[0]);
@@ -189,7 +191,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 8"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 8", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_9()[0]);
@@ -201,7 +203,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 9"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 9", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_usuario_2());
@@ -213,7 +215,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 10"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 10", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_13()[0]);
@@ -225,7 +227,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 11"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 11", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_13()[0]);
@@ -237,7 +239,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 12"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 12", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_13()[0]);
@@ -249,7 +251,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 13"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 13", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_usuario_3());
@@ -261,10 +263,10 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 14"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 14", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_14", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_14", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -273,7 +275,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 15"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 15", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_16()[0]);
@@ -285,7 +287,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 16"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 16", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_17()[0]);
@@ -297,10 +299,10 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 17"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 17", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_17", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_17", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -309,7 +311,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 18"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 18", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(HacerPregunta()[0]);
@@ -321,7 +323,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 19"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 19", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_20()[0]);
@@ -333,10 +335,10 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 20"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 20", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_20", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_20", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

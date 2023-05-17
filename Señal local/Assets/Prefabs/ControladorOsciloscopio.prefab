@@ -373,15 +373,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a095afd0a9b4d41a3afc40b6744fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "nivelEstr\xE9sActual": 0
   velocidadHorizontal: 0.1
   velocidadVertical: 0.12
   "m\xE1ximaSeparaci\xF3n": 0.02
+  "m\xEDnimaSeparaci\xF3n": 0.005
   visor: {fileID: 7729482020857129074}
   luz: {fileID: 3097435049252798002}
   rastro: {fileID: 3969593905070636349}
   comienzo: {fileID: 1103342342194153997}
   final: {fileID: 7243255441008154485}
-  aaaaaa: 0
 --- !u!1 &3197698430213579863
 GameObject:
   m_ObjectHideFlags: 0

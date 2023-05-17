@@ -20,6 +20,8 @@ using static Constantes;
 
 public class RutaMonstruo : InterfazRuta
 {
+    private Rutas ruta = Rutas.monstruo;
+
     public ElementoDialogo CrearBifurcación_monstruo_0()
     {
         var usuario = new RutaUsuario();
@@ -83,7 +85,7 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "preparación"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "preparación", ruta, NivelEstrés.normal));
 
         // Pregunta
         listaDiálogos.Add(ElementoDialogo.CrearPregunta());
@@ -100,7 +102,7 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 0"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 0", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(usuario.CrearBifurcación_usuario_0());
@@ -112,7 +114,7 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 1", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_monstruo_0());
@@ -124,7 +126,7 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 2"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 2", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearMonstruo_5()[0]);
@@ -136,7 +138,7 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 3"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 3", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearMonstruo_5()[0]);
@@ -148,10 +150,10 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 4"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 4", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_4", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_4", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -160,7 +162,7 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 5"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 5", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_monstruo_1());
@@ -172,7 +174,7 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 6"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 6", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_monstruo_2());
@@ -184,10 +186,10 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 7"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 7", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_7", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_7", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -196,7 +198,7 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 8"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 8", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_monstruo_3());
@@ -208,10 +210,10 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 9"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 9", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_9", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_9", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -220,10 +222,10 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 10"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "MONSTRUO 10", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_10", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("MONSTRUO_10", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

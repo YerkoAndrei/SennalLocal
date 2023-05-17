@@ -11,6 +11,7 @@ public class ControladorOsciloscopio : MonoBehaviour
     [SerializeField] private float velocidadHorizontal;
     [SerializeField] private float velocidadVertical;
     [SerializeField] private float máximaSeparación;
+    [SerializeField] private float mínimaSeparación;
 
     [Header("Referencias visuales")]
     [SerializeField] private Transform visor;
@@ -27,16 +28,11 @@ public class ControladorOsciloscopio : MonoBehaviour
     private Vector3 bajo;
     private Vector3 objetivo;
 
-    void Start()
+    private void Start()
     {
-        visor.position = comienzo.position;
-
-        alto = new Vector3(luz.localPosition.x, luz.localPosition.y + máximaSeparación, luz.localPosition.z);
-        bajo = new Vector3(luz.localPosition.x, luz.localPosition.y - máximaSeparación, luz.localPosition.z);
-
         subiendo = true;
         objetivo = alto;
-        CambiarNivelEstrés(NivelEstrés.pausa);
+        visor.position = comienzo.position;
     }
 
     private void Update()
@@ -77,7 +73,7 @@ public class ControladorOsciloscopio : MonoBehaviour
         }
     }
 
-    public void CambiarEstrés(NivelEstrés nivelEstrés)
+    private void CambiarEstrés(NivelEstrés nivelEstrés)
     {
         // Centro
         luz.localPosition = new Vector3(luz.localPosition.x, 0, luz.localPosition.z);
@@ -85,10 +81,16 @@ public class ControladorOsciloscopio : MonoBehaviour
         nivelEstrésAnterior = nivelEstrésActual;
         nivelEstrésActual = nivelEstrés;
 
+        alto = new Vector3(luz.localPosition.x, máximaSeparación, luz.localPosition.z);
+        bajo = new Vector3(luz.localPosition.x, -(máximaSeparación), luz.localPosition.z);
+
         switch (nivelEstrésActual)
         {
             case NivelEstrés.pausa:
-                velocidadVertical = 0.04f;
+                velocidadVertical = 0.05f;
+
+                alto = new Vector3(luz.localPosition.x, mínimaSeparación, luz.localPosition.z);
+                bajo = new Vector3(luz.localPosition.x, -(mínimaSeparación), luz.localPosition.z);
                 break;
             case NivelEstrés.bajo:
                 velocidadVertical = 0.12f;
@@ -101,6 +103,9 @@ public class ControladorOsciloscopio : MonoBehaviour
                 break;
             case NivelEstrés.gritando:
                 velocidadVertical = 1f;
+                break;
+            case NivelEstrés.capturado:
+                velocidadVertical = 0.1f;
                 break;
             case NivelEstrés.muerto:
                 velocidadVertical = 0;

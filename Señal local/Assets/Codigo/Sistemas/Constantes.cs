@@ -51,7 +51,20 @@ public class Constantes
         normal,
         alto,
         gritando,
+        capturado,
         muerto
+    }
+
+    public enum Rutas
+    {
+        menú,
+        intro,
+        operador,
+        usuario,
+        monstruo,
+        caza,
+        sótano,
+        autor
     }
 
     public enum ModoLuz

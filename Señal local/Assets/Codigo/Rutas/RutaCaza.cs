@@ -10,6 +10,8 @@ using static Constantes;
 
 public class RutaCaza : InterfazRuta
 {
+    private Rutas ruta = Rutas.caza;
+
     public ElementoDialogo CrearBifurcación_caza_0()
     {
         // Preguntas
@@ -27,7 +29,7 @@ public class RutaCaza : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 0"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 0", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_caza_0());
@@ -39,10 +41,10 @@ public class RutaCaza : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 1", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_1", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_1", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -51,10 +53,10 @@ public class RutaCaza : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 2"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 2", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_2", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_2", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
@@ -63,10 +65,10 @@ public class RutaCaza : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 3"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "CAZA 3", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_3", TipoFinal.captura));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("CAZA_3", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

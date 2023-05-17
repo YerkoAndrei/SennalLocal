@@ -63,6 +63,7 @@ public class ControladorDialogos : MonoBehaviour
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
+    private bool activo;
     private bool mostrandoTexto;
     private bool puedeContinuar;
     private bool carácterDeEtiqueta;
@@ -90,6 +91,9 @@ public class ControladorDialogos : MonoBehaviour
         }
 
         estado = Estados.mostrandoAnimación;
+        ControladorRadio.ApagarNombreRuta();
+
+        StopAllCoroutines();
         StartCoroutine(MostrarIntroducción());
     }
 
@@ -97,8 +101,10 @@ public class ControladorDialogos : MonoBehaviour
     {
         // PENDIENTE animar mono y panel
         yield return new WaitForSeconds(2);
+        yield return new WaitUntil(() => activo);
 
         var intro = new RutaIntro();
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
         IniciarDiálogo(intro.CrearPrimerDiálogo());
     }
 
@@ -111,7 +117,7 @@ public class ControladorDialogos : MonoBehaviour
             imgContinuar.fillAmount = contadorTiempo / tiempoDiálogo;
         }
 
-        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0))
+        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetKeyDown(KeyCode.Escape))
             EnClic();
     }
 
@@ -141,6 +147,7 @@ public class ControladorDialogos : MonoBehaviour
         imgVisto.SetActive(diálogoActual.visto);
         panelDiálogos.SetActive(true);
 
+        ActivarEfectos();
         ContarTiempoDiálogo();
         StartCoroutine(MostrarTexto());
     }
@@ -265,6 +272,7 @@ public class ControladorDialogos : MonoBehaviour
                     {
                         sistemaSonido.ActivarSonidoPersonaje(diálogoActual.personaje);
                         yield return new WaitForSeconds(tiempoLetraEtiquetada);
+                        yield return new WaitUntil(() => activo);
                         continue;
                     }
 
@@ -274,18 +282,23 @@ public class ControladorDialogos : MonoBehaviour
                         default:
                             sistemaSonido.ActivarSonidoPersonaje(diálogoActual.personaje);
                             yield return new WaitForSeconds(tiempoLetra);
+                            yield return new WaitUntil(() => activo);
                             break;
                         case ' ':
                             yield return new WaitForSeconds(tiempoEspacio);
+                            yield return new WaitUntil(() => activo);
                             break;
                         case '-':
                             yield return new WaitForSeconds(tiempoGuión);
+                            yield return new WaitUntil(() => activo);
                             break;
                         case ',':
                             yield return new WaitForSeconds(tiempoComa);
+                            yield return new WaitUntil(() => activo);
                             break;
                         case '.':
                             yield return new WaitForSeconds(tiempoPunto);
+                            yield return new WaitUntil(() => activo);
                             break;
                     }
                 }
@@ -327,7 +340,7 @@ public class ControladorDialogos : MonoBehaviour
                 IniciarPregunta();
                 break;
             case TipoDiálogo.final:
-                FinalizarPartida(diálogoActual.tipoFinal);
+                FinalizarPartida(diálogoActual.tipoFinal, diálogoActual.ruta);
                 break;
         }
     }
@@ -376,6 +389,7 @@ public class ControladorDialogos : MonoBehaviour
     private IEnumerator ActivarOpciones()
     {
         yield return new WaitForSeconds(tiempoOpciones);
+        yield return new WaitUntil(() => activo);
 
         foreach (var elemento in opcionesActuales)
         {
@@ -404,22 +418,32 @@ public class ControladorDialogos : MonoBehaviour
         IniciarDiálogo(diálogoActual.siguienteDiálogo);
     }
 
-    private void FinalizarPartida(TipoFinal tipoFinal)
+    public void ActivarEfectos()
+    {
+        ControladorOsciloscopio.CambiarNivelEstrés(diálogoActual.nivelEstrés);
+        ControladorRadio.CambiarNombreRuta(diálogoActual.ruta);
+    }
+
+    private void FinalizarPartida(TipoFinal tipoFinal, Rutas ruta)
     {
         var diálogoFinal = new ElementoDialogo();
         diálogoFinal.personaje = Personajes.operador;
         diálogoFinal.tipoDiálogo = TipoDiálogo.final;
+        diálogoFinal.ruta = ruta;
 
         switch (tipoFinal)
         {
             case TipoFinal.huida:
                 diálogoFinal.texto = "(Llamada perdida. El usuario ha huido.)";
+                diálogoFinal.nivelEstrés = NivelEstrés.bajo;
                 break;
             case TipoFinal.muerte:
                 diálogoFinal.texto = "(Llamada perdida. El usuario ha muerto.)";
+                diálogoFinal.nivelEstrés = NivelEstrés.muerto;
                 break;
             case TipoFinal.captura:
                 diálogoFinal.texto = "(Llamada perdida. El usuario ha sido capturado.)";
+                diálogoFinal.nivelEstrés = NivelEstrés.capturado;
                 break;
         }
 
@@ -427,8 +451,41 @@ public class ControladorDialogos : MonoBehaviour
         IniciarDiálogo(diálogoFinal);
     }
 
+    public void MostrarPaneles(bool mostrar)
+    {
+        activo = mostrar;
+
+        switch (estado)
+        {
+            case Estados.mostrandoDiálogo:
+                panelDiálogos.SetActive(mostrar);
+                break;
+            case Estados.mostrandoOpciones:
+                panelDiálogos.SetActive(mostrar);
+                panelOpciones.SetActive(mostrar);
+                break;
+            case Estados.mostrandoPregunta:
+                panelDiálogos.SetActive(mostrar);
+                panelPregunta.SetActive(mostrar);
+                break;
+            case Estados.esperandoFinal:
+                panelDiálogos.SetActive(mostrar);
+                panelOpciones.SetActive(mostrar);
+                panelPregunta.SetActive(mostrar);
+                break;
+        }
+    }
+
     private void VolverAlMenú()
     {
+        panelDiálogos.SetActive(false);
+        panelOpciones.SetActive(false);
+        panelPregunta.SetActive(false);
+
+        estado = Estados.enPausa;
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
+        ControladorRadio.CambiarNombreRuta(Rutas.menú);
+
         var controladorMenú = FindObjectOfType<ControladorMenu>();
         controladorMenú.FinalizarJuego();
     }

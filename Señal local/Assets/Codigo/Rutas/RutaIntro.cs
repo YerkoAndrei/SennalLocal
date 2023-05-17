@@ -13,6 +13,8 @@ using static Constantes;
 
 public class RutaIntro : InterfazRuta
 {
+    private Rutas ruta = Rutas.intro;
+
     public ElementoDialogo CrearPrimerDiálogo()
     {
         return CrearIntro_0()[0];
@@ -51,10 +53,11 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 0"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 0", ruta, NivelEstrés.normal));
 
         // Efectos
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
+        ControladorRadio.CambiarNombreRuta(Rutas.intro);
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_intro_0());
@@ -66,7 +69,7 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 1", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearIntro_4()[0]);
@@ -78,7 +81,7 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 2"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 2", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearIntro_4()[0]);
@@ -90,7 +93,7 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 3"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 3", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearIntro_4()[0]);
@@ -102,7 +105,7 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 4"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 4", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearBifurcación_intro_1());
@@ -114,10 +117,10 @@ public class RutaIntro : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 5"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 5", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("INTRO_5", TipoFinal.muerte));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("INTRO_5", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

@@ -6,12 +6,14 @@ using static Constantes;
 
 public class RutaAutor : InterfazRuta
 {
+    private Rutas ruta = Rutas.autor;
+
     public ElementoDialogo[] CrearAutor_0()
     {
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "AUTOR 0 (Respuesta)"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "AUTOR 0 (Respuesta)", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearAutor_1()[0]);
@@ -23,10 +25,10 @@ public class RutaAutor : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "AUTOR 1"));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "AUTOR 1", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("Autor_1", TipoFinal.huida));
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("Autor_1", TipoFinal.huida, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }
