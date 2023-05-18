@@ -67,6 +67,13 @@ public class Constantes
         autor
     }
 
+    public enum CámarasCine
+    {
+        menú,
+        juego,
+        animación
+    }
+
     public enum ModoLuz
     {
         palpitar,

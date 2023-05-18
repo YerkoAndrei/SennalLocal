@@ -23,6 +23,9 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private TMP_Text txtVersión;
 
     private ControladorDialogos controladorDiálogos;
+    private ControladorCamara controladorCamara;
+
+    private bool iniciado;
 
     private void Start()
     {
@@ -38,6 +41,8 @@ public class ControladorMenu : MonoBehaviour
         controladorDiálogos.MostrarPaneles(false);
 
         // Visual
+        controladorCamara = FindObjectOfType<ControladorCamara>();
+
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
 
@@ -58,7 +63,7 @@ public class ControladorMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && iniciado)
         {
             if (menúJuego.activeSelf)
                 EnClicPausar();
@@ -69,8 +74,8 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicIniciar()
     {
+        iniciado = true;
         menúInicio.SetActive(false);
-        menúJuego.SetActive(true);
 
         // PENDIENTE animacion camara
         controladorDiálogos.MostrarPaneles(true);
@@ -80,7 +85,7 @@ public class ControladorMenu : MonoBehaviour
     public void EnClicReiniciar()
     {
         menúInicio.SetActive(false);
-        menúJuego.SetActive(true);
+        menúJuego.SetActive(false);
 
         // PENDIENTE animacion camara
         controladorDiálogos.MostrarPaneles(true);
@@ -89,10 +94,12 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicReanudar()
     {
-        menúInicio.SetActive(false);
-        menúJuego.SetActive(true);
+        if (!controladorDiálogos.ObtenerDisponibilidad())
+            return;
 
-        // PENDIENTE animacion camara
+        menúInicio.SetActive(false);
+
+        controladorCamara.CambiarPosición(CámarasCine.juego);
         ControladorOsciloscopio.ReanudarNivelEstrés();
         ControladorRadio.ReanudarNombreRuta();
         controladorDiálogos.MostrarPaneles(true);
@@ -100,6 +107,9 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicPausar()
     {
+        if (!controladorDiálogos.ObtenerDisponibilidad())
+            return;
+
         btnIniciar.SetActive(false);
         btnReiniciar.SetActive(true);
         btnReanudar.SetActive(true);
@@ -107,7 +117,7 @@ public class ControladorMenu : MonoBehaviour
         menúInicio.SetActive(true);
         menúJuego.SetActive(false);
 
-        // PENDIENTE animacion camara
+        controladorCamara.CambiarPosición(CámarasCine.menú);
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
         controladorDiálogos.MostrarPaneles(false);
@@ -125,6 +135,11 @@ public class ControladorMenu : MonoBehaviour
             panelInicio.SetActive(false);
             panelOpciones.SetActive(true);
         }
+    }
+
+    public void MostrarMenúJuego(bool mostrar)
+    {
+        menúJuego.SetActive(mostrar);
     }
 
     public void EnClicCréditos()
