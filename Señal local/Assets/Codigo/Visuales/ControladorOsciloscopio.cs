@@ -42,6 +42,7 @@ public class ControladorOsciloscopio : MonoBehaviour
 
     private void Update()
     {
+        // En bucles es mejor Update que una corrutina
         MoverVisorHorizontal();
         MoverVertical();
     }
@@ -65,6 +66,7 @@ public class ControladorOsciloscopio : MonoBehaviour
     {
         visor.position = Vector3.MoveTowards(visor.position, final.position, Time.deltaTime * velocidadHorizontal);
 
+        // Control Trail Renderer
         if (Vector3.Distance(visor.position, final.position) <= 0.01f)
             rastro.emitting = false;
         else
