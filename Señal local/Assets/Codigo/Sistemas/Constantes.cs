@@ -71,13 +71,22 @@ public class Constantes
     {
         menú,
         juego,
-        animación
+        animación,
+        final
     }
 
     public enum ModoLuz
     {
         palpitar,
         intercambiar
+    }
+
+    // Sonidos
+    public enum TipoSonido
+    {
+        Maestro,
+        Música,
+        Efectos
     }
 
     public static ElementoDialogo[] AsignarContinuidadDiálogos(List<ElementoDialogo> lista)
