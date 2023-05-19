@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1188420008123264275
@@ -146,6 +146,9 @@ MonoBehaviour:
     visto: 0
     "tipoDi\xE1logo": 0
     tipoFinal: 0
+    ruta: 0
+    "nivelEstr\xE9s": 0
+  texto: 
 --- !u!1 &2839404219085775826
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +431,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5206684350952392679}
-          m_MethodName: OnPointerEnter
+          m_MethodName: EnCurorDentro
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -443,7 +446,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5206684350952392679}
-          m_MethodName: OnPointerExit
+          m_MethodName: EnCurorFuera
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

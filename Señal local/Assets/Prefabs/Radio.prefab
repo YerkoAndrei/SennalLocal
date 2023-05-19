@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 5684309380631972241}
   - component: {fileID: 2006365884050094647}
   m_Layer: 0
-  m_Name: ControladorRadio
+  m_Name: Radio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,7 +373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtRuta: {fileID: 4819168325454172683}
-  velocidadHorizontal: 0
 --- !u!114 &2006365884050094647
 MonoBehaviour:
   m_ObjectHideFlags: 0

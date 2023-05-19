@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 1770615484332497069}
   - component: {fileID: 1081931142415792824}
   m_Layer: 0
-  m_Name: ControladorOsciloscopio
+  m_Name: Osciloscopio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
