@@ -12,7 +12,8 @@ using static Constantes;
 public class ControladorDialogos : MonoBehaviour
 {
     [Header("Estado")]
-    [Ocultar] [SerializeField] private Estados estado;
+    [Ocultar] public Estados estado;
+    [Ocultar] public Rutas ruta;
 
     [Header("Tiempos textos")]
     [SerializeField] private float tiempoLetra;
@@ -59,7 +60,8 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private TMP_FontAsset fuenteSobreviviente;
     [SerializeField] private TMP_FontAsset fuenteComputador;
 
-    private SistemaSonido sistemaSonido;
+    private SistemaSonidos sistemaSonido;
+    private ControladorCamara controladorCamara;
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
@@ -80,7 +82,8 @@ public class ControladorDialogos : MonoBehaviour
         panelPregunta.SetActive(false);
         VerImagenContinuar(false);
 
-        sistemaSonido = FindObjectOfType<SistemaSonido>();
+        sistemaSonido = FindObjectOfType<SistemaSonidos>();
+        controladorCamara = FindObjectOfType<ControladorCamara>();
 
         opcionesActuales = new List<ElementoInterfazOpcion>();
         txtDiálogo.text = string.Empty;
@@ -91,6 +94,7 @@ public class ControladorDialogos : MonoBehaviour
         }
 
         estado = Estados.mostrandoAnimación;
+        controladorCamara.CambiarPosición(CámarasCine.animación);
         ControladorRadio.ApagarNombreRuta();
 
         StopAllCoroutines();
@@ -103,8 +107,10 @@ public class ControladorDialogos : MonoBehaviour
         yield return new WaitForSeconds(2);
         yield return new WaitUntil(() => activo);
 
-        var intro = new RutaIntro();
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
+        controladorCamara.CambiarPosición(CámarasCine.juego);
+
+        var intro = new RutaIntro();
         IniciarDiálogo(intro.CrearPrimerDiálogo());
     }
 
@@ -379,9 +385,10 @@ public class ControladorDialogos : MonoBehaviour
         {
             var nuevoObjeto = Instantiate(btnOpciónPrefab, padreOpciones);
             var elemento = nuevoObjeto.GetComponent<ElementoInterfazOpcion>();
-            Action action = () => EnClicOpción(elemento);
+
+            Action enClic = () => EnClicOpción(elemento);
             opcionesActuales.Add(elemento);
-            elemento.Iniciar(opciones[i], action);
+            elemento.Iniciar(opciones[i], enClic);
         }
         StartCoroutine(ActivarOpciones());
     }
@@ -420,6 +427,12 @@ public class ControladorDialogos : MonoBehaviour
 
     public void ActivarEfectos()
     {
+        if (ruta != diálogoActual.ruta)
+        {
+            ruta = diálogoActual.ruta;
+            SistemaSonidos.ActualizarMúsica(ruta);
+        }
+
         ControladorOsciloscopio.CambiarNivelEstrés(diálogoActual.nivelEstrés);
         ControladorRadio.CambiarNombreRuta(diálogoActual.ruta);
     }
@@ -451,12 +464,30 @@ public class ControladorDialogos : MonoBehaviour
         IniciarDiálogo(diálogoFinal);
     }
 
+    public bool ObtenerDisponibilidad()
+    {
+        switch (estado)
+        {
+            default:
+            case Estados.enPausa:
+            case Estados.esperandoClic:
+            case Estados.mostrandoDiálogo:
+            case Estados.mostrandoOpciones:
+            case Estados.mostrandoPregunta:
+                return true;
+            case Estados.mostrandoAnimación:
+            case Estados.esperandoFinal:
+                return false;
+        }
+    }
+
     public void MostrarPaneles(bool mostrar)
     {
         activo = mostrar;
 
         switch (estado)
         {
+            case Estados.esperandoClic:
             case Estados.mostrandoDiálogo:
                 panelDiálogos.SetActive(mostrar);
                 break;
@@ -486,7 +517,6 @@ public class ControladorDialogos : MonoBehaviour
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
 
-        var controladorMenú = FindObjectOfType<ControladorMenu>();
-        controladorMenú.FinalizarJuego();
+        controladorCamara.CambiarPosición(CámarasCine.final);
     }
 }

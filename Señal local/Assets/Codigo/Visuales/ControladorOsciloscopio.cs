@@ -28,6 +28,11 @@ public class ControladorOsciloscopio : MonoBehaviour
     private Vector3 bajo;
     private Vector3 objetivo;
 
+    private void Awake()
+    {
+        instancia = this;
+    }
+
     private void Start()
     {
         subiendo = true;
@@ -115,9 +120,6 @@ public class ControladorOsciloscopio : MonoBehaviour
 
     public static void CambiarNivelEstrés(NivelEstrés nivelEstrés)
     {
-        if(instancia == null)
-            instancia = FindObjectOfType<ControladorOsciloscopio>();
-
         instancia.CambiarEstrés(nivelEstrés);
     }
 

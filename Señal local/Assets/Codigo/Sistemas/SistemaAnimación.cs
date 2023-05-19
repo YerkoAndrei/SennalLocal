@@ -6,7 +6,8 @@ public class SistemaAnimación : MonoBehaviour
 {
     public static SistemaAnimación instancia;
 
-    public AnimationCurve curvaAnimaciónCámara;
+    [Header("Curvas")]
+    [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
 
     private void Start()
     {
@@ -23,5 +24,10 @@ public class SistemaAnimación : MonoBehaviour
     private void Iniciar()
     {
 
+    }
+
+    public float EvaluarCurva(float tiempo)
+    {
+        return curvaAnimaciónEstandar.Evaluate(tiempo);
     }
 }

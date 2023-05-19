@@ -6,8 +6,8 @@ using static Constantes;
 public class ControladorMenu : MonoBehaviour
 {
     [Header("Paneles")]
-    [SerializeField] private GameObject menúJuego;
     [SerializeField] private GameObject menúInicio;
+    [SerializeField] private GameObject menúJuego;
 
     [Header("Paneles")]
     [SerializeField] private GameObject panelInicio;
@@ -23,7 +23,7 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private TMP_Text txtVersión;
 
     private ControladorDialogos controladorDiálogos;
-    private ControladorCamara controladorCamara;
+    private ControladorCamara controladorCámara;
 
     private bool iniciado;
 
@@ -41,7 +41,7 @@ public class ControladorMenu : MonoBehaviour
         controladorDiálogos.MostrarPaneles(false);
 
         // Visual
-        controladorCamara = FindObjectOfType<ControladorCamara>();
+        controladorCámara = FindObjectOfType<ControladorCamara>();
 
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
@@ -94,12 +94,12 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicReanudar()
     {
-        if (!controladorDiálogos.ObtenerDisponibilidad())
+        if (!controladorDiálogos.ObtenerDisponibilidad() || !controladorCámara.ObtenerDisponibilidad())
             return;
 
         menúInicio.SetActive(false);
 
-        controladorCamara.CambiarPosición(CámarasCine.juego);
+        controladorCámara.CambiarPosición(CámarasCine.juego);
         ControladorOsciloscopio.ReanudarNivelEstrés();
         ControladorRadio.ReanudarNombreRuta();
         controladorDiálogos.MostrarPaneles(true);
@@ -107,7 +107,7 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicPausar()
     {
-        if (!controladorDiálogos.ObtenerDisponibilidad())
+        if (!controladorDiálogos.ObtenerDisponibilidad() || !controladorCámara.ObtenerDisponibilidad())
             return;
 
         btnIniciar.SetActive(false);
@@ -117,7 +117,7 @@ public class ControladorMenu : MonoBehaviour
         menúInicio.SetActive(true);
         menúJuego.SetActive(false);
 
-        controladorCamara.CambiarPosición(CámarasCine.menú);
+        controladorCámara.CambiarPosición(CámarasCine.menú);
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
         controladorDiálogos.MostrarPaneles(false);

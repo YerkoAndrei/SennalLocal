@@ -10,6 +10,11 @@ public class ControladorRadio : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private TMP_Text txtRuta;
 
+    private void Awake()
+    {
+        instancia = this;
+    }
+
     private void CambiarRuta(Rutas ruta)
     {
         switch(ruta)
@@ -48,17 +53,11 @@ public class ControladorRadio : MonoBehaviour
 
     public static void CambiarNombreRuta(Rutas ruta)
     {
-        if (instancia == null)
-            instancia = FindObjectOfType<ControladorRadio>();
-
         instancia.CambiarRuta(ruta);
     }
 
     public static void ApagarNombreRuta()
     {
-        if (instancia == null)
-            instancia = FindObjectOfType<ControladorRadio>();
-
         instancia.ApagarNombre();
     }
 

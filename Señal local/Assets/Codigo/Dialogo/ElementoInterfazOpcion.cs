@@ -1,7 +1,7 @@
 ﻿using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ElementoInterfazOpcion : MonoBehaviour
 {
@@ -30,7 +30,7 @@ public class ElementoInterfazOpcion : MonoBehaviour
         texto = elementoDiálogo.texto;
         imgElegido.SetActive(elementoDiálogo.yaElegido);
 
-        OnPointerExit();
+        EnCurorFuera();
     }
 
     public void ActivarBotón()
@@ -43,16 +43,16 @@ public class ElementoInterfazOpcion : MonoBehaviour
         enClic.Invoke();
     }
 
-    public void OnPointerEnter()
+    public void EnCurorDentro()
     {
-        if (btnOpción.interactable)
-        {
-            btnOpción.transform.localScale *= multiplicadorTamaño;
-            imgResaltado.SetActive(true);
-        }
+        if (!btnOpción.interactable)
+            return;
+
+        btnOpción.transform.localScale *= multiplicadorTamaño;
+        imgResaltado.SetActive(true);
     }
 
-    public void OnPointerExit()
+    public void EnCurorFuera()
     {
         btnOpción.transform.localScale = Vector3.one;
         imgResaltado.SetActive(false);
