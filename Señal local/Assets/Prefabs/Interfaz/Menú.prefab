@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 3655231902640444994}
   - component: {fileID: 3655231902640444995}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: "SliderM\xFAsica"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,7 +1036,18 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3655231903102957154}
+        m_MethodName: "ActualizarVolumenM\xFAsica"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3655231902684111747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,7 +1670,7 @@ GameObject:
   - component: {fileID: 3655231902776422659}
   - component: {fileID: 3655231902776422658}
   m_Layer: 5
-  m_Name: "panelVol\xFAmenEfectos"
+  m_Name: panelVolumenEfectos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2612,6 +2623,9 @@ MonoBehaviour:
   btnIniciar: {fileID: 3655231904045033285}
   btnReiniciar: {fileID: 3655231902938930669}
   btnReanudar: {fileID: 3655231902554516570}
+  volumenMaestro: {fileID: 3655231904371036623}
+  "volumenM\xFAsica": {fileID: 3655231902640444995}
+  volumenEfectos: {fileID: 3655231904071462488}
   "txtVersi\xF3n": {fileID: 3655231902714443853}
 --- !u!1 &3655231903176595601
 GameObject:
@@ -4320,7 +4334,7 @@ GameObject:
   - component: {fileID: 3655231903764743633}
   - component: {fileID: 3655231903764743632}
   m_Layer: 5
-  m_Name: "panelVol\xFAmenGeneral"
+  m_Name: panelVolumenMaestro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4396,7 +4410,7 @@ GameObject:
   - component: {fileID: 3655231903869515542}
   - component: {fileID: 3655231903869515537}
   m_Layer: 5
-  m_Name: "panelVol\xFAmenM\xFAsica"
+  m_Name: "panelVolumenM\xFAsica"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4845,7 +4859,7 @@ GameObject:
   - component: {fileID: 3655231904071462491}
   - component: {fileID: 3655231904071462488}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderEfectos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4922,7 +4936,18 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3655231903102957154}
+        m_MethodName: ActualizarVolumenEfectos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3655231904083309764
 GameObject:
   m_ObjectHideFlags: 0
@@ -6106,7 +6131,7 @@ GameObject:
   - component: {fileID: 3655231904371036622}
   - component: {fileID: 3655231904371036623}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderGeneral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6183,7 +6208,18 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3655231903102957154}
+        m_MethodName: ActualizarVolumenMaestro
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6100118481629805396
 GameObject:
   m_ObjectHideFlags: 0

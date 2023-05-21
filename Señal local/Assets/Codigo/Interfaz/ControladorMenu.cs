@@ -2,6 +2,7 @@
 using UnityEngine;
 using TMPro;
 using static Constantes;
+using UnityEngine.UI;
 
 public class ControladorMenu : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private GameObject btnIniciar;
     [SerializeField] private GameObject btnReiniciar;
     [SerializeField] private GameObject btnReanudar;
+
+    [Header("Volúmenes")]
+    [SerializeField] private Slider volumenMaestro;
+    [SerializeField] private Slider volumenMúsica;
+    [SerializeField] private Slider volumenEfectos;
 
     [Header("Referencias")]
     [SerializeField] private TMP_Text txtVersión;
@@ -160,6 +166,20 @@ public class ControladorMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void ActualizarVolumenMaestro()
+    {
+        SistemaSonidos.ActualizarVolumen(TipoSonido.Maestro, volumenMaestro.value);
+    }
+
+    public void ActualizarVolumenMúsica()
+    {
+        SistemaSonidos.ActualizarVolumen(TipoSonido.Música, volumenMúsica.value);
+    }
+
+    public void ActualizarVolumenEfectos()
+    {
+        SistemaSonidos.ActualizarVolumen(TipoSonido.Efectos, volumenEfectos.value);
+    }
     public void FinalizarJuego()
     {
         btnIniciar.SetActive(true);
