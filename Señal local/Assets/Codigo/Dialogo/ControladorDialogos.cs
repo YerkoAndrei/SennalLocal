@@ -29,9 +29,12 @@ public class ControladorDialogos : MonoBehaviour
     [Header("Colores")]
     [SerializeField] private Color colorCargando;
     [SerializeField] private Color colorContinuar;
+    [SerializeField] private Color colorPanelActivo;
+    [SerializeField] private Color colorPanelEspera;
 
     [Header("Referencias diálogos")]
     [SerializeField] private GameObject panelDiálogos;
+    [SerializeField] private Image panelDiálogo;
     [SerializeField] private TMP_Text txtDiálogo;
     [SerializeField] private Image imgPersonaje;
     [SerializeField] private Image imgContinuar;
@@ -151,6 +154,7 @@ public class ControladorDialogos : MonoBehaviour
         estado = Estados.mostrandoDiálogo;
         txtDiálogo.text = string.Empty;
         imgVisto.SetActive(diálogoActual.visto);
+        panelDiálogo.color = colorPanelActivo;
         panelDiálogos.SetActive(true);
 
         ActivarEfectos();
@@ -398,6 +402,7 @@ public class ControladorDialogos : MonoBehaviour
         yield return new WaitForSeconds(tiempoOpciones);
         yield return new WaitUntil(() => activo);
 
+        panelDiálogo.color = colorPanelEspera;
         foreach (var elemento in opcionesActuales)
         {
             elemento.ActivarBotón();
