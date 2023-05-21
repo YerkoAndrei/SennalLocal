@@ -18,6 +18,10 @@ public class SistemaSonidos : MonoBehaviour
     [SerializeField] private AudioSource fuenteDiálogo;
     [SerializeField] private AudioSource fuenteEfectos;
 
+    [Header("Botones")]
+    [SerializeField] private AudioClip botónFuerte;
+    [SerializeField] private AudioClip botónSuave;
+
     [Header("Diálogos")]
     [SerializeField] private AudioClip audioUsuario;
     [SerializeField] private AudioClip audioOperador;
@@ -150,7 +154,12 @@ public class SistemaSonidos : MonoBehaviour
     }
 
     // Efectos
-    public void ActivarSonidoPersonaje(Personajes personaje)
+    public static void ActivarSonidoPersonaje(Personajes personaje)
+    {
+        instancia.ActivarPersonaje(personaje);
+    }
+
+    private void ActivarPersonaje(Personajes personaje)
     {
         switch (personaje)
         {
@@ -170,5 +179,15 @@ public class SistemaSonidos : MonoBehaviour
                 fuenteDiálogo.PlayOneShot(audioComputador);
                 break;
         }
+    }
+
+    public static void ActivarBotónFuerte()
+    {
+        instancia.fuenteEfectos.PlayOneShot(instancia.botónFuerte);
+    }
+
+    public static void ActivarBotónSuave()
+    {
+        instancia.fuenteEfectos.PlayOneShot(instancia.botónSuave);
     }
 }
