@@ -25,6 +25,7 @@ public class ControladorDialogos : MonoBehaviour
 
     [Header("Tiempos interfaz")]
     [SerializeField] private float tiempoOpciones;
+    [SerializeField] private float tiempoElegirOpción;
 
     [Header("Colores")]
     [SerializeField] private Color colorCargando;
@@ -63,7 +64,6 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private TMP_FontAsset fuenteSobreviviente;
     [SerializeField] private TMP_FontAsset fuenteComputador;
 
-    private SistemaSonidos sistemaSonido;
     private ControladorCamara controladorCamara;
 
     private ElementoDialogo diálogoActual;
@@ -85,7 +85,6 @@ public class ControladorDialogos : MonoBehaviour
         panelPregunta.SetActive(false);
         VerImagenContinuar(false);
 
-        sistemaSonido = FindObjectOfType<SistemaSonidos>();
         controladorCamara = FindObjectOfType<ControladorCamara>();
 
         opcionesActuales = new List<ElementoInterfazOpcion>();
@@ -100,6 +99,13 @@ public class ControladorDialogos : MonoBehaviour
         controladorCamara.CambiarPosición(CámarasCine.animación);
         ControladorRadio.ApagarNombreRuta();
 
+        // Estados limpios
+        txtDiálogo.text = string.Empty;
+        imgContinuar.color = Color.clear;
+        panelDiálogo.color = colorPanelEspera;
+        imgPersonaje.gameObject.SetActive(false);
+        imgVisto.SetActive(false);
+
         StopAllCoroutines();
         StartCoroutine(MostrarIntroducción());
     }
@@ -107,11 +113,14 @@ public class ControladorDialogos : MonoBehaviour
     private IEnumerator MostrarIntroducción()
     {
         // PENDIENTE animar mono y panel
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => activo);
 
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
         controladorCamara.CambiarPosición(CámarasCine.juego);
+
+        yield return new WaitForSeconds(1.2f);
+        yield return new WaitUntil(() => activo);
 
         var intro = new RutaIntro();
         IniciarDiálogo(intro.CrearPrimerDiálogo());
@@ -152,13 +161,43 @@ public class ControladorDialogos : MonoBehaviour
         SistemaMemoria.instancia.MarcarDiálogo(diálogoActual.texto);
 
         estado = Estados.mostrandoDiálogo;
-        txtDiálogo.text = string.Empty;
         imgVisto.SetActive(diálogoActual.visto);
+        mostrandoTexto = true;
+        puedeContinuar = false;
+
+        txtDiálogo.text = string.Empty;
+        imgPersonaje.gameObject.SetActive(true);
         panelDiálogo.color = colorPanelActivo;
         panelDiálogos.SetActive(true);
 
+        // Cambio de fuentes
+        switch (diálogoActual.personaje)
+        {
+            case Personajes.usuario:
+                txtDiálogo.font = fuenteUsuario;
+                imgPersonaje.sprite = imagenUsuario;
+                break;
+            case Personajes.operador:
+                txtDiálogo.font = fuenteOperador;
+                imgPersonaje.sprite = imagenOperador;
+                break;
+            case Personajes.monstruo:
+                txtDiálogo.font = fuenteMonstruo;
+                imgPersonaje.sprite = imagenMonstruo;
+                break;
+            case Personajes.sobreviviente:
+                txtDiálogo.font = fuenteSobreviviente;
+                imgPersonaje.sprite = imagenSobreviviente;
+                break;
+            case Personajes.computador:
+                txtDiálogo.font = fuenteComputador;
+                imgPersonaje.sprite = imagenComputador;
+                break;
+        }
+
         ActivarEfectos();
         ContarTiempoDiálogo();
+        VerImagenContinuar(false);
         StartCoroutine(MostrarTexto());
     }
 
@@ -222,36 +261,6 @@ public class ControladorDialogos : MonoBehaviour
 
     private IEnumerator MostrarTexto()
     {
-        txtDiálogo.text = string.Empty;
-        mostrandoTexto = true;
-        puedeContinuar = false;
-        VerImagenContinuar(false);
-
-        // Cambio de fuentes
-        switch (diálogoActual.personaje)
-        {
-            case Personajes.usuario:
-                txtDiálogo.font = fuenteUsuario;
-                imgPersonaje.sprite = imagenUsuario;
-                break;
-            case Personajes.operador:
-                txtDiálogo.font = fuenteOperador;
-                imgPersonaje.sprite = imagenOperador;
-                break;
-            case Personajes.monstruo:
-                txtDiálogo.font = fuenteMonstruo;
-                imgPersonaje.sprite = imagenMonstruo;
-                break;
-            case Personajes.sobreviviente:
-                txtDiálogo.font = fuenteSobreviviente;
-                imgPersonaje.sprite = imagenSobreviviente;
-                break;
-            case Personajes.computador:
-                txtDiálogo.font = fuenteComputador;
-                imgPersonaje.sprite = imagenComputador;
-                break;                
-        }
-
         // Maneja texto rico
         var texto = diálogoActual.texto;
         carácterDeEtiqueta = false;
@@ -280,7 +289,7 @@ public class ControladorDialogos : MonoBehaviour
                     // Si el carácter está dentro de una etiqueta
                     if (carácterEnTextoRico)
                     {
-                        sistemaSonido.ActivarSonidoPersonaje(diálogoActual.personaje);
+                        SistemaSonidos.ActivarSonidoPersonaje(diálogoActual.personaje);
                         yield return new WaitForSeconds(tiempoLetraEtiquetada);
                         yield return new WaitUntil(() => activo);
                         continue;
@@ -290,7 +299,7 @@ public class ControladorDialogos : MonoBehaviour
                     switch (texto[i])
                     {
                         default:
-                            sistemaSonido.ActivarSonidoPersonaje(diálogoActual.personaje);
+                            SistemaSonidos.ActivarSonidoPersonaje(diálogoActual.personaje);
                             yield return new WaitForSeconds(tiempoLetra);
                             yield return new WaitUntil(() => activo);
                             break;
@@ -414,8 +423,36 @@ public class ControladorDialogos : MonoBehaviour
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
 
+        if (opcion.yaElegido)
+            SistemaSonidos.ActivarBotónFuerte();
+        else
+            SistemaSonidos.ActivarBotónSuave();
+
         SistemaMemoria.instancia.MarcarOpción(opcion.texto);
-        IniciarDiálogo(opcion.siguienteDiálogo);
+
+        // Limpia Interfaz
+        txtDiálogo.text = string.Empty;
+        imgContinuar.color = Color.clear;
+        panelDiálogo.color = colorPanelEspera;
+        imgPersonaje.gameObject.SetActive(false);
+        imgVisto.SetActive(false);
+
+        // Repite diálogo elegido y continúa
+        var diálogoElegido = new ElementoDialogo();
+        diálogoElegido.personaje = Personajes.operador;
+        diálogoElegido.tipoDiálogo = TipoDiálogo.diálogo;
+        diálogoElegido.texto = opcion.texto;
+        diálogoElegido.visto = opcion.yaElegido;
+        diálogoElegido.ruta = opcion.siguienteDiálogo.ruta;
+        diálogoElegido.siguienteDiálogo = opcion.siguienteDiálogo;
+
+        StartCoroutine(SeguirDiálogoOpción(diálogoElegido));
+    }
+
+    private IEnumerator SeguirDiálogoOpción(ElementoDialogo diálogoElegido)
+    {
+        yield return new WaitForSeconds(tiempoElegirOpción);
+        IniciarDiálogo(diálogoElegido);
     }
 
     private void IniciarPregunta()

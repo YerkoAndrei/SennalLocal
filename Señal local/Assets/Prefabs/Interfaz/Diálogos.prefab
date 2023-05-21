@@ -1227,12 +1227,13 @@ MonoBehaviour:
   tiempoEspacio: 0.1
   "tiempoGui\xF3n": 0.2
   tiempoComa: 0.3
-  tiempoPunto: 0.6
+  tiempoPunto: 0.5
   tiempoOpciones: 1
+  "tiempoElegirOpci\xF3n": 0.8
   colorCargando: {r: 1, g: 1, b: 1, a: 0.078431375}
   colorContinuar: {r: 1, g: 1, b: 1, a: 0.78431374}
   colorPanelActivo: {r: 0.23529412, g: 0.078431375, b: 0.078431375, a: 0.78431374}
-  colorPanelEspera: {r: 0.23529412, g: 0.078431375, b: 0.078431375, a: 0.39215687}
+  colorPanelEspera: {r: 0.23529412, g: 0.078431375, b: 0.078431375, a: 0.078431375}
   "panelDi\xE1logos": {fileID: 5925399365183516083}
   "panelDi\xE1logo": {fileID: 5925399365183516081}
   "txtDi\xE1logo": {fileID: 5925399364849795249}

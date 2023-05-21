@@ -17,6 +17,7 @@ public class ElementoInterfazOpcion : MonoBehaviour
     [Header("Diálogo")]
     [Ocultar] public ElementoDialogo siguienteDiálogo;
     [Ocultar] public string texto;
+    [Ocultar] public bool yaElegido;
 
     private Action enClic;
 
@@ -25,6 +26,7 @@ public class ElementoInterfazOpcion : MonoBehaviour
         btnOpción.interactable = false;
         siguienteDiálogo = elementoDiálogo.siguienteDiálogo;
         txtOpción.text = elementoDiálogo.texto;
+        yaElegido = elementoDiálogo.yaElegido;
         enClic = acción;
 
         texto = elementoDiálogo.texto;
