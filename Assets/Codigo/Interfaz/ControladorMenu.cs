@@ -44,7 +44,6 @@ public class ControladorMenu : MonoBehaviour
 
         // Diálogos
         controladorDiálogos = FindObjectOfType<ControladorDialogos>();
-        controladorDiálogos.MostrarPaneles(false);
 
         // Visual
         controladorCámara = FindObjectOfType<ControladorCamara>();

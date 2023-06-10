@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0.39215687, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 0.39215687, a: 0.78431374}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -149,6 +149,7 @@ MonoBehaviour:
     ruta: 0
     "nivelEstr\xE9s": 0
   texto: 
+  yaElegido: 0
 --- !u!1 &2839404219085775826
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39215687, g: 0.078431375, b: 0.078431375, a: 1}
+  m_Color: {r: 0.3137255, g: 0.078431375, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

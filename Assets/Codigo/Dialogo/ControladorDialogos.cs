@@ -78,7 +78,7 @@ public class ControladorDialogos : MonoBehaviour
 
     private const char carácterEtiqueta = '#';
 
-    public void ComenzarJuego()
+    private void Start()
     {
         panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
@@ -86,25 +86,27 @@ public class ControladorDialogos : MonoBehaviour
         VerImagenContinuar(false);
 
         controladorCamara = FindObjectOfType<ControladorCamara>();
-
         opcionesActuales = new List<ElementoInterfazOpcion>();
-        txtDiálogo.text = string.Empty;
-
-        foreach (Transform hijo in padreOpciones)
-        {
-            Destroy(hijo.gameObject);
-        }
-
-        estado = Estados.mostrandoAnimación;
-        controladorCamara.CambiarPosición(CámarasCine.animación);
-        ControladorRadio.ApagarNombreRuta();
 
         // Estados limpios
+        estado = Estados.enPausa;
         txtDiálogo.text = string.Empty;
         imgContinuar.color = Color.clear;
         panelDiálogo.color = colorPanelEspera;
         imgPersonaje.gameObject.SetActive(false);
         imgVisto.SetActive(false);
+
+        foreach (Transform hijo in padreOpciones)
+        {
+            Destroy(hijo.gameObject);
+        }
+    }
+
+    public void ComenzarJuego()
+    {
+        estado = Estados.mostrandoAnimación;
+        controladorCamara.CambiarPosición(CámarasCine.animación);
+        ControladorRadio.ApagarNombreRuta();
 
         StopAllCoroutines();
         StartCoroutine(MostrarIntroducción());
@@ -387,6 +389,7 @@ public class ControladorDialogos : MonoBehaviour
             Destroy(hijo.gameObject);
         }
 
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
         estado = Estados.mostrandoOpciones;
         panelOpciones.SetActive(true);
 
@@ -424,9 +427,9 @@ public class ControladorDialogos : MonoBehaviour
         opcionesActuales.Clear();
 
         if (opcion.yaElegido)
-            SistemaSonidos.ActivarBotónFuerte();
-        else
             SistemaSonidos.ActivarBotónSuave();
+        else
+            SistemaSonidos.ActivarBotónFuerte();
 
         SistemaMemoria.instancia.MarcarOpción(opcion.texto);
 
@@ -443,6 +446,7 @@ public class ControladorDialogos : MonoBehaviour
         diálogoElegido.tipoDiálogo = TipoDiálogo.diálogo;
         diálogoElegido.texto = opcion.texto;
         diálogoElegido.visto = opcion.yaElegido;
+        diálogoElegido.nivelEstrés = NivelEstrés.bajo;
         diálogoElegido.ruta = opcion.siguienteDiálogo.ruta;
         diálogoElegido.siguienteDiálogo = opcion.siguienteDiálogo;
 
