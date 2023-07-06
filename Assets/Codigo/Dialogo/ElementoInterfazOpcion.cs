@@ -43,6 +43,7 @@ public class ElementoInterfazOpcion : MonoBehaviour
     public void EnClic()
     {
         enClic.Invoke();
+
     }
 
     public void EnCurorDentro()
@@ -58,5 +59,21 @@ public class ElementoInterfazOpcion : MonoBehaviour
     {
         btnOpción.transform.localScale = Vector3.one;
         imgResaltado.SetActive(false);
+    }
+
+    public void EnClicEntra()
+    {
+        if (yaElegido)
+            SistemaSonidos.PresionarBotónSuave();
+        else
+            SistemaSonidos.PresionarBotónFuerte();
+    }
+
+    public void EnClicFuera()
+    {
+        if (yaElegido)
+            SistemaSonidos.SoltarBotónSuave();
+        else
+            SistemaSonidos.SoltarBotónFuerte();
     }
 }

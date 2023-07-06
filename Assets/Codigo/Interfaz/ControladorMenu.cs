@@ -81,7 +81,6 @@ public class ControladorMenu : MonoBehaviour
     {
         iniciado = true;
         menúInicio.SetActive(false);
-        SistemaSonidos.ActivarBotónFuerte();
 
         // PENDIENTE animacion camara
         controladorDiálogos.MostrarPaneles(true);
@@ -92,7 +91,6 @@ public class ControladorMenu : MonoBehaviour
     {
         menúInicio.SetActive(false);
         menúJuego.SetActive(false);
-        SistemaSonidos.ActivarBotónFuerte();
 
         // PENDIENTE animacion camara
         controladorDiálogos.MostrarPaneles(true);
@@ -105,7 +103,6 @@ public class ControladorMenu : MonoBehaviour
             return;
 
         menúInicio.SetActive(false);
-        SistemaSonidos.ActivarBotónFuerte();
 
         controladorCámara.CambiarPosición(CámarasCine.juego);
         ControladorOsciloscopio.ReanudarNivelEstrés();
@@ -118,7 +115,6 @@ public class ControladorMenu : MonoBehaviour
         if (!controladorDiálogos.ObtenerDisponibilidad() || !controladorCámara.ObtenerDisponibilidad())
             return;
 
-        SistemaSonidos.ActivarBotónSuave();
         btnIniciar.SetActive(false);
         btnReiniciar.SetActive(true);
         btnReanudar.SetActive(true);
@@ -134,8 +130,6 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicOpciones()
     {
-        SistemaSonidos.ActivarBotónSuave();
-
         if (panelOpciones.activeSelf)
         {
             panelInicio.SetActive(true);
@@ -155,13 +149,11 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicCréditos()
     {
-        SistemaSonidos.ActivarBotónSuave();
         panelCréditos.SetActive(!panelCréditos.activeSelf);
     }
 
     public void EnClicSalir()
     {
-        SistemaSonidos.ActivarBotónSuave();
         Application.Quit();
     }
 
@@ -179,6 +171,27 @@ public class ControladorMenu : MonoBehaviour
     {
         SistemaSonidos.ActualizarVolumen(TipoSonido.Efectos, volumenEfectos.value);
     }
+
+    public void PresionarBotónFuerte()
+    {
+        SistemaSonidos.PresionarBotónFuerte();
+    }
+
+    public void SoltarBotónFuerte()
+    {
+        SistemaSonidos.SoltarBotónFuerte();
+    }
+
+    public void PresionarBotónSuave()
+    {
+        SistemaSonidos.PresionarBotónSuave();
+    }
+
+    public void SoltarBotónSuave()
+    {
+        SistemaSonidos.SoltarBotónSuave();
+    }
+
     public void FinalizarJuego()
     {
         btnIniciar.SetActive(true);

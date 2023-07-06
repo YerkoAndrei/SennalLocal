@@ -19,8 +19,10 @@ public class SistemaSonidos : MonoBehaviour
     [SerializeField] private AudioSource fuenteEfectos;
 
     [Header("Botones")]
-    [SerializeField] private AudioClip botónFuerte;
-    [SerializeField] private AudioClip botónSuave;
+    [SerializeField] private AudioClip presionarBotónFuerte;
+    [SerializeField] private AudioClip soltarBotónFuerte;
+    [SerializeField] private AudioClip presionarbotónSuave;
+    [SerializeField] private AudioClip soltarBotónSuave;
 
     [Header("Diálogos")]
     [SerializeField] private AudioClip audioUsuario;
@@ -181,13 +183,23 @@ public class SistemaSonidos : MonoBehaviour
         }
     }
 
-    public static void ActivarBotónFuerte()
+    public static void PresionarBotónFuerte()
     {
-        instancia.fuenteEfectos.PlayOneShot(instancia.botónFuerte);
+        instancia.fuenteEfectos.PlayOneShot(instancia.presionarBotónFuerte);
     }
 
-    public static void ActivarBotónSuave()
+    public static void SoltarBotónFuerte()
     {
-        instancia.fuenteEfectos.PlayOneShot(instancia.botónSuave);
+        instancia.fuenteEfectos.PlayOneShot(instancia.soltarBotónFuerte);
+    }
+
+    public static void PresionarBotónSuave()
+    {
+        instancia.fuenteEfectos.PlayOneShot(instancia.presionarbotónSuave);
+    }
+
+    public static void SoltarBotónSuave()
+    {
+        instancia.fuenteEfectos.PlayOneShot(instancia.soltarBotónSuave);
     }
 }

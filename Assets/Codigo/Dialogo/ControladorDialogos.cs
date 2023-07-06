@@ -27,7 +27,7 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private float tiempoOpciones;
     [SerializeField] private float tiempoElegirOpción;
 
-    [Header("Colores")]
+    [Header("Colores Menú")]
     [SerializeField] private Color colorCargando;
     [SerializeField] private Color colorContinuar;
     [SerializeField] private Color colorPanelActivo;
@@ -63,6 +63,13 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private TMP_FontAsset fuenteMonstruo;
     [SerializeField] private TMP_FontAsset fuenteSobreviviente;
     [SerializeField] private TMP_FontAsset fuenteComputador;
+
+    [Header("Colores Menú")]
+    [SerializeField] private Color colorUsuario;
+    [SerializeField] private Color colorOperador;
+    [SerializeField] private Color colorMonstruo;
+    [SerializeField] private Color colorSobreviviente;
+    [SerializeField] private Color colorComputador;
 
     private ControladorCamara controladorCamara;
 
@@ -177,23 +184,33 @@ public class ControladorDialogos : MonoBehaviour
         {
             case Personajes.usuario:
                 txtDiálogo.font = fuenteUsuario;
+                txtDiálogo.color = colorUsuario;
                 imgPersonaje.sprite = imagenUsuario;
+                imgPersonaje.color = colorUsuario;
                 break;
             case Personajes.operador:
                 txtDiálogo.font = fuenteOperador;
+                txtDiálogo.color = colorOperador;
                 imgPersonaje.sprite = imagenOperador;
+                imgPersonaje.color = colorOperador;
                 break;
             case Personajes.monstruo:
                 txtDiálogo.font = fuenteMonstruo;
+                txtDiálogo.color = colorMonstruo;
                 imgPersonaje.sprite = imagenMonstruo;
+                imgPersonaje.color = colorMonstruo;
                 break;
             case Personajes.sobreviviente:
                 txtDiálogo.font = fuenteSobreviviente;
+                txtDiálogo.color = colorSobreviviente;
                 imgPersonaje.sprite = imagenSobreviviente;
+                imgPersonaje.color = colorSobreviviente;
                 break;
             case Personajes.computador:
                 txtDiálogo.font = fuenteComputador;
+                txtDiálogo.color = colorComputador;
                 imgPersonaje.sprite = imagenComputador;
+                imgPersonaje.color = colorComputador;
                 break;
         }
 
@@ -425,11 +442,6 @@ public class ControladorDialogos : MonoBehaviour
     {
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
-
-        if (opcion.yaElegido)
-            SistemaSonidos.ActivarBotónSuave();
-        else
-            SistemaSonidos.ActivarBotónFuerte();
 
         SistemaMemoria.instancia.MarcarOpción(opcion.texto);
 
