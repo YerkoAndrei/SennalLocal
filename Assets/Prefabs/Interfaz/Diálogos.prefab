@@ -1258,11 +1258,11 @@ MonoBehaviour:
   fuenteSobreviviente: {fileID: 11400000, guid: b12f5a9e14378e84b962e2a11ab3495a,
     type: 2}
   fuenteComputador: {fileID: 11400000, guid: f4d00340fe33256479ae9298f6089277, type: 2}
-  colorUsuario: {r: 1, g: 1, b: 0.78431374, a: 1}
-  colorOperador: {r: 0.78431374, g: 0.78431374, b: 1, a: 1}
+  colorUsuario: {r: 0.78431374, g: 1, b: 0.78431374, a: 1}
+  colorOperador: {r: 1, g: 1, b: 0.78431374, a: 1}
   colorMonstruo: {r: 1, g: 0.78431374, b: 0.78431374, a: 1}
   colorSobreviviente: {r: 0.78431374, g: 1, b: 1, a: 1}
-  colorComputador: {r: 0.78431374, g: 1, b: 0.78431374, a: 1}
+  colorComputador: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5925399366690884258
 GameObject:
   m_ObjectHideFlags: 0
