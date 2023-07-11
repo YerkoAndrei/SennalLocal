@@ -14,8 +14,6 @@ public class ControladorCable : MonoBehaviour
         }
 
         cable.transform.position = entradaCable.position;
-        cable.transform.rotation = entradaCable.rotation;
-
         cable.connectedBody = entradaCable;
 
         foreach (var col in colisionesCable)
