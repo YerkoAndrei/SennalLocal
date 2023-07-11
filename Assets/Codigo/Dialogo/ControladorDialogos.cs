@@ -72,7 +72,7 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private Color colorComputador;
 
     private ControladorCamara controladorCamara;
-    private ControladorOperador controladorOperador;
+    private AnimadorPersonaje controladorOperador;
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
@@ -94,7 +94,7 @@ public class ControladorDialogos : MonoBehaviour
         VerImagenContinuar(false);
 
         controladorCamara = FindObjectOfType<ControladorCamara>();
-        controladorOperador = FindObjectOfType<ControladorOperador>();
+        controladorOperador = FindObjectOfType<AnimadorPersonaje>();
         opcionesActuales = new List<ElementoInterfazOpcion>();
 
         // Estados limpios
