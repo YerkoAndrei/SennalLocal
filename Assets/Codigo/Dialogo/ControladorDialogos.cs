@@ -72,6 +72,7 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private Color colorComputador;
 
     private ControladorCamara controladorCamara;
+    private ControladorOperador controladorOperador;
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
@@ -93,6 +94,7 @@ public class ControladorDialogos : MonoBehaviour
         VerImagenContinuar(false);
 
         controladorCamara = FindObjectOfType<ControladorCamara>();
+        controladorOperador = FindObjectOfType<ControladorOperador>();
         opcionesActuales = new List<ElementoInterfazOpcion>();
 
         // Estados limpios
@@ -444,6 +446,7 @@ public class ControladorDialogos : MonoBehaviour
         opcionesActuales.Clear();
 
         SistemaMemoria.instancia.MarcarOpción(opcion.texto);
+        controladorOperador.AnimarEscribir();
 
         // Limpia Interfaz
         txtDiálogo.text = string.Empty;

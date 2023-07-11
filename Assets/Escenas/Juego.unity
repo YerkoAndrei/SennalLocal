@@ -890,6 +890,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 470841566}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &707359758 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 4561955601880463898, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &717722210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,6 +1233,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863338808}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &870549224 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6827027507215532672, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &876263524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,11 +3287,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Operador
       objectReference: {fileID: 0}
-    - target: {fileID: 580579947205945728, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4913554697826339155, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
         type: 3}
       propertyPath: m_RootOrder
@@ -4316,6 +4323,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 204027884738171695, guid: bcf4aeaf0352b334cb4978b8a30774ce,
+        type: 3}
+      propertyPath: entradaCable
+      value: 
+      objectReference: {fileID: 870549224}
+    - target: {fileID: 204027884738171695, guid: bcf4aeaf0352b334cb4978b8a30774ce,
+        type: 3}
+      propertyPath: colisionesCable.Array.data[1]
+      value: 
+      objectReference: {fileID: 707359758}
+    - target: {fileID: 204027884738171695, guid: bcf4aeaf0352b334cb4978b8a30774ce,
+        type: 3}
+      propertyPath: colisionesCable.Array.data[2]
+      value: 
+      objectReference: {fileID: 707359758}
     - target: {fileID: 2727556050286976589, guid: bcf4aeaf0352b334cb4978b8a30774ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -4375,11 +4397,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mesa
-      objectReference: {fileID: 0}
-    - target: {fileID: 2781571644966473511, guid: bcf4aeaf0352b334cb4978b8a30774ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf4aeaf0352b334cb4978b8a30774ce, type: 3}
