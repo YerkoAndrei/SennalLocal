@@ -1233,12 +1233,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863338808}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &870549224 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 6827027507215532672, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 619710450703182139}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &876263524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,6 +3279,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ce8d6e270583f4b8ed8896f011b6e8, type: 3}
+--- !u!114 &619710450703182140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2306705220297403771, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8131bd2184772964a9368ffce4d27e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &619710450703182141 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6827027507215532672, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1624398401856314732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4255,6 +4267,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5925399366157073205, guid: 5dfde969781029b448c0154d2b97d619,
+        type: 3}
+      propertyPath: animadorOperador
+      value: 
+      objectReference: {fileID: 619710450703182140}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfde969781029b448c0154d2b97d619, type: 3}
 --- !u!1001 &6383828515777553936
@@ -4268,7 +4285,7 @@ PrefabInstance:
         type: 3}
       propertyPath: entradaCable
       value: 
-      objectReference: {fileID: 870549224}
+      objectReference: {fileID: 619710450703182141}
     - target: {fileID: 204027884738171695, guid: bcf4aeaf0352b334cb4978b8a30774ce,
         type: 3}
       propertyPath: colisionesCable.Array.data[1]
