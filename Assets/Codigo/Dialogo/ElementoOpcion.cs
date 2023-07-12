@@ -8,6 +8,6 @@
     {
         this.texto = texto;
         this.siguienteDiálogo = siguienteDiálogo;
-        this.yaElegido = SistemaMemoria.instancia.VerificarOpción(texto);
+        this.yaElegido = SistemaMemoria.VerificarOpción(texto);
     }
 }

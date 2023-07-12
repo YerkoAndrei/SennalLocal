@@ -5,7 +5,7 @@ using static Constantes;
 
 public class SistemaSonidos : MonoBehaviour
 {
-    public static SistemaSonidos instancia;
+    private static SistemaSonidos instancia;
 
     [Header("Mixer")]
     [SerializeField] private AudioMixer audioMixer;

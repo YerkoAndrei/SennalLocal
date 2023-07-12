@@ -33,7 +33,7 @@ public class ElementoDialogo
         nuevoElemento.tipoDiálogo = TipoDiálogo.diálogo;
         nuevoElemento.personaje = personaje;
         nuevoElemento.texto = texto;
-        nuevoElemento.visto = SistemaMemoria.instancia.VerificarDiálogo(texto);
+        nuevoElemento.visto = SistemaMemoria.VerificarDiálogo(texto);
         nuevoElemento.ruta = ruta;
         nuevoElemento.nivelEstrés = nivelEstrés;
 

@@ -3,7 +3,7 @@ using static Constantes;
 
 public class SistemaTraduccion : MonoBehaviour
 {
-    public static SistemaTraduccion instancia;
+    private static SistemaTraduccion instancia;
 
     private void Start()
     {

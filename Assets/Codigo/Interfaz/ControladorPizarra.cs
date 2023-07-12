@@ -24,13 +24,13 @@ public class ControladorPizarra : MonoBehaviour
     private void Start()
     {
         // Variable
-        var huidos = SistemaMemoria.instancia.ObtenerUsuariosHuidos();
-        var muertos = SistemaMemoria.instancia.ObtenerUsuariosMuertos();
-        var capturados = SistemaMemoria.instancia.ObtenerUsuariosCapturados();
+        var huidos = SistemaMemoria.ObtenerUsuariosHuidos();
+        var muertos = SistemaMemoria.ObtenerUsuariosMuertos();
+        var capturados = SistemaMemoria.ObtenerUsuariosCapturados();
 
-        var diálogos = SistemaMemoria.instancia.ObtenerDiálogosVistos();
-        var finales = SistemaMemoria.instancia.ObtenerFinalesAlcanzados();
-        var preguntas = SistemaMemoria.instancia.ObtenerPreguntasEncontradas();
+        var diálogos = SistemaMemoria.ObtenerDiálogosVistos();
+        var finales = SistemaMemoria.ObtenerFinalesAlcanzados();
+        var preguntas = SistemaMemoria.ObtenerPreguntasEncontradas();
 
         // Apaga / prende objeto
         txtUsuariosHuidos.SetActive(huidos > 0);

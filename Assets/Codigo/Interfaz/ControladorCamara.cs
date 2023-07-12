@@ -69,7 +69,7 @@ public class ControladorCamara : MonoBehaviour
 
         while (tiempoLerp < duraciónObjetivo)
         {
-            evaluaciónCurva = SistemaAnimación.instancia.EvaluarCurva(tiempoLerp / duraciónObjetivo);
+            evaluaciónCurva = SistemaAnimación.EvaluarCurva(tiempoLerp / duraciónObjetivo);
             cámara.localPosition = Vector3.Lerp(posiciónInicio, posiciónObjetivo, evaluaciónCurva);
             cámara.localRotation = Quaternion.Lerp(rotaciónInicio, rotaciónObjetivo, evaluaciónCurva);
 

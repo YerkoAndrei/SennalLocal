@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SistemaAnimación : MonoBehaviour
 {
-    public static SistemaAnimación instancia;
+    private static SistemaAnimación instancia;
 
     [Header("Curvas")]
     [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
@@ -26,8 +26,8 @@ public class SistemaAnimación : MonoBehaviour
 
     }
 
-    public float EvaluarCurva(float tiempo)
+    public static float EvaluarCurva(float tiempo)
     {
-        return curvaAnimaciónEstandar.Evaluate(tiempo);
+        return instancia.curvaAnimaciónEstandar.Evaluate(tiempo);
     }
 }

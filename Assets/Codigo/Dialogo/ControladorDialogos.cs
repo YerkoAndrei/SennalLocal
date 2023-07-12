@@ -27,6 +27,9 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private float tiempoOpciones;
     [SerializeField] private float tiempoElegirOpción;
 
+    [Header("Referencias externas")]
+    [SerializeField] private AnimadorPersonaje animadorOperador;
+
     [Header("Colores Menú")]
     [SerializeField] private Color colorCargando;
     [SerializeField] private Color colorContinuar;
@@ -72,7 +75,6 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private Color colorComputador;
 
     private ControladorCamara controladorCamara;
-    private AnimadorPersonaje controladorOperador;
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
@@ -94,7 +96,6 @@ public class ControladorDialogos : MonoBehaviour
         VerImagenContinuar(false);
 
         controladorCamara = FindObjectOfType<ControladorCamara>();
-        controladorOperador = FindObjectOfType<AnimadorPersonaje>();
         opcionesActuales = new List<ElementoInterfazOpcion>();
 
         // Estados limpios
@@ -169,7 +170,7 @@ public class ControladorDialogos : MonoBehaviour
     private void IniciarDiálogo(ElementoDialogo _diálogoActual)
     {
         diálogoActual = _diálogoActual;
-        SistemaMemoria.instancia.MarcarDiálogo(diálogoActual.texto);
+        SistemaMemoria.MarcarDiálogo(diálogoActual.texto);
 
         estado = Estados.mostrandoDiálogo;
         imgVisto.SetActive(diálogoActual.visto);
@@ -445,8 +446,8 @@ public class ControladorDialogos : MonoBehaviour
         panelOpciones.SetActive(false);
         opcionesActuales.Clear();
 
-        SistemaMemoria.instancia.MarcarOpción(opcion.texto);
-        controladorOperador.AnimarEscribir();
+        SistemaMemoria.MarcarOpción(opcion.texto);
+        animadorOperador.AnimarEscribir();
 
         // Limpia Interfaz
         txtDiálogo.text = string.Empty;
@@ -521,7 +522,7 @@ public class ControladorDialogos : MonoBehaviour
                 break;
         }
 
-        SistemaMemoria.instancia.MarcarFinal(diálogoActual.texto, tipoFinal);
+        SistemaMemoria.MarcarFinal(diálogoActual.texto, tipoFinal);
         IniciarDiálogo(diálogoFinal);
     }
 

@@ -5,7 +5,7 @@ using static Constantes;
 
 public class SistemaMemoria : MonoBehaviour
 {
-    public static SistemaMemoria instancia;
+    private static SistemaMemoria instancia;
 
     [SerializeField] private ModeloDatos datos;
 
@@ -46,10 +46,10 @@ public class SistemaMemoria : MonoBehaviour
     }
     
     // Nombre respondido
-    public void GuardarNombre(string texto)
+    public static void GuardarNombre(string texto)
     {
-        datos.últimoNombre = texto;
-        ActualizarArchivo();
+        instancia.datos.últimoNombre = texto;
+        instancia.ActualizarArchivo();
     }
 
     public string CargarNombre()
@@ -58,94 +58,94 @@ public class SistemaMemoria : MonoBehaviour
     }
 
     // Verificar para guardar
-    public bool VerificarDiálogo(string texto)
+    public static bool VerificarDiálogo(string texto)
     {
-        return datos.diálogosElegidos.Contains(texto);
+        return instancia.datos.diálogosElegidos.Contains(texto);
     }
 
-    public bool VerificarOpción(string texto)
+    public static bool VerificarOpción(string texto)
     {
-        return datos.opcionesElegidas.Contains(texto);
+        return instancia.datos.opcionesElegidas.Contains(texto);
     }
 
     // Marcado visto / elegido
-    public void MarcarDiálogo(string texto)
+    public static void MarcarDiálogo(string texto)
     {
-        if (!datos.diálogosElegidos.Contains(texto))
+        if (!instancia.datos.diálogosElegidos.Contains(texto))
         {
-            datos.diálogosElegidos.Add(texto);
-            ActualizarArchivo();
+            instancia.datos.diálogosElegidos.Add(texto);
+            instancia.ActualizarArchivo();
         }
     }
 
-    public void MarcarOpción(string texto)
+    public static void MarcarOpción(string texto)
     {
-        if (!datos.opcionesElegidas.Contains(texto))
+        if (!instancia.datos.opcionesElegidas.Contains(texto))
         {
-            datos.opcionesElegidas.Add(texto);
-            ActualizarArchivo();
+            instancia.datos.opcionesElegidas.Add(texto);
+            instancia.ActualizarArchivo();
         }
     }
 
-    public void MarcarFinal(string texto, TipoFinal tipoFinal)
+    public static void MarcarFinal(string texto, TipoFinal tipoFinal)
     {
         switch(tipoFinal)
         {
             case TipoFinal.huida:
-                datos.usuariosHuidos++;
+                instancia.datos.usuariosHuidos++;
                 break;
             case TipoFinal.muerte:
-                datos.usuariosMuertos++;
+                instancia.datos.usuariosMuertos++;
                 break;
             case TipoFinal.captura:
-                datos.usuariosCapturados++;
+                instancia.datos.usuariosCapturados++;
                 break;
         }
 
-        if (!datos.finalesElegidos.Contains(texto))
+        if (!instancia.datos.finalesElegidos.Contains(texto))
         {
-            datos.finalesElegidos.Add(texto);
-            ActualizarArchivo();
+            instancia.datos.finalesElegidos.Add(texto);
+            instancia.ActualizarArchivo();
         }
     }
 
-    public void MarcarPregunta(string texto)
+    public static void MarcarPregunta(string texto)
     {
-        if (!datos.preguntasEncontradas.Contains(texto))
+        if (!instancia.datos.preguntasEncontradas.Contains(texto))
         {
-            datos.preguntasEncontradas.Add(texto);
-            ActualizarArchivo();
+            instancia.datos.preguntasEncontradas.Add(texto);
+            instancia.ActualizarArchivo();
         }
     }
 
     // Obtención de variables
-    public int ObtenerUsuariosHuidos()
+    public static int ObtenerUsuariosHuidos()
     {
-        return datos.usuariosHuidos;
+        return instancia.datos.usuariosHuidos;
     }
 
-    public int ObtenerUsuariosMuertos()
+    public static int ObtenerUsuariosMuertos()
     {
-        return datos.usuariosMuertos;
+        return instancia.datos.usuariosMuertos;
     }
 
-    public int ObtenerUsuariosCapturados()
+    public static int ObtenerUsuariosCapturados()
     {
-        return datos.usuariosCapturados;
+        return instancia.datos.usuariosCapturados;
     }
 
-    public int ObtenerDiálogosVistos()
+    public static int ObtenerDiálogosVistos()
     {
-        return datos.diálogosElegidos.Count;
+        return instancia.datos.diálogosElegidos.Count;
     }
 
-    public int ObtenerFinalesAlcanzados()
+    public static int ObtenerFinalesAlcanzados()
     {
-        return datos.finalesElegidos.Count;
+        return instancia.datos.finalesElegidos.Count;
     }
 
-    public int ObtenerPreguntasEncontradas()
+    public static int ObtenerPreguntasEncontradas()
     {
-        return datos.preguntasEncontradas.Count;
+        return instancia.datos.preguntasEncontradas.Count;
     }
 }
