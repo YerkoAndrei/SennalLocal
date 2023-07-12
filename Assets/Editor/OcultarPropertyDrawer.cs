@@ -20,6 +20,7 @@ public class OcultarPropertyDrawer : PropertyDrawer
         }
 
         GUI.enabled = wasEnabled;
+        GUIUtility.ExitGUI();
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
