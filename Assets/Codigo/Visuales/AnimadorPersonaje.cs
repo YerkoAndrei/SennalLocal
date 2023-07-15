@@ -2,27 +2,39 @@
 
 public class AnimadorPersonaje : MonoBehaviour
 {
-    [SerializeField] private Animator animador;
+    [SerializeField] private Animator animadorPersonaje;
+    [SerializeField] private Animator animadorAccesorio;
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+            AnimarSentarse();
+
+        if (Input.GetKeyDown(KeyCode.P))
+            AnimarPararse();
+    }
 
     // Operador
     public void AnimarEscribir()
     {
-        animador.SetTrigger("Escribir");
+        animadorPersonaje.SetTrigger("Escribir");
     }
 
     public void AnimarSentarse()
     {
-        animador.SetTrigger("Sentarse");
+        animadorPersonaje.SetTrigger("Sentarse");
+        animadorAccesorio.SetTrigger("Entrar");
     }
 
     public void AnimarPararse()
     {
-        animador.SetTrigger("Pararse");
+        animadorPersonaje.SetTrigger("Pararse");
+        animadorAccesorio.SetTrigger("Salir");
     }
 
     // Usuario
     public void AnimarEntrar()
     {
-        animador.SetTrigger("Entrar");
+        animadorPersonaje.SetTrigger("Entrar");
     }
 }
