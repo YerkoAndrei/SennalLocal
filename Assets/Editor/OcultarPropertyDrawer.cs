@@ -27,6 +27,7 @@ public class OcultarPropertyDrawer : PropertyDrawer
     {
         OcultarAttribute condHAtt = (OcultarAttribute)attribute;
         bool enabled = GetConditionalHideAttributeResult(condHAtt, property);
+        GUIUtility.ExitGUI();
 
         if (!condHAtt.deshabilitar || enabled)
         {

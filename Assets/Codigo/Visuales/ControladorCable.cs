@@ -2,23 +2,20 @@
 
 public class ControladorCable : MonoBehaviour
 {
+    [SerializeField] private Rigidbody rigidÚltimocable;
     [SerializeField] private Rigidbody entradaCable;
-    [SerializeField] private Collider[] colisionesCable;
-    [SerializeField] private FixedJoint cable;
 
-    private void Awake()
+    private void Start()
     {
-        foreach(var col in colisionesCable)
-        {
-            col.enabled = false;
-        }
+        rigidÚltimocable.transform.position = entradaCable.position;
+        rigidÚltimocable.transform.rotation = entradaCable.rotation;
+        rigidÚltimocable.GetComponent<FixedJoint>().connectedBody = entradaCable;
 
-        cable.transform.position = entradaCable.position;
-        cable.connectedBody = entradaCable;
+        rigidÚltimocable.constraints = RigidbodyConstraints.FreezePosition;
+    }
 
-        foreach (var col in colisionesCable)
-        {
-            col.enabled = true;
-        }
+    private void LateUpdate()
+    {
+        rigidÚltimocable.transform.position = entradaCable.position;
     }
 }
