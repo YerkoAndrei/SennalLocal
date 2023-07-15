@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using static Constantes;
-using UnityEngine.UI;
 
 public class ControladorMenu : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private GameObject menúJuego;
 
     [Header("Paneles")]
-    [SerializeField] private GameObject panelInicio;
+    [SerializeField] private GameObject panelBotones;
     [SerializeField] private GameObject panelOpciones;
     [SerializeField] private GameObject panelCréditos;
 
@@ -25,7 +25,19 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private Slider volumenMúsica;
     [SerializeField] private Slider volumenEfectos;
 
+    [Header("Animaciones")]
+    [SerializeField] private RectTransform rectJuego;
+    [SerializeField] private RectTransform rectBotones;
+    [SerializeField] private RectTransform rectOpciones;
+    [SerializeField] private RectTransform rectCréditos;
+
+    [Header("Colores")]
+    [SerializeField] private Color colorRojoClaro;
+    [SerializeField] private Color colorRojoOscuro;
+
     [Header("Referencias")]
+    [SerializeField] private Image panelOscuro;
+    [SerializeField] private Image imgTítulo;
     [SerializeField] private TMP_Text txtVersión;
 
     private ControladorDialogos controladorDiálogos;
@@ -35,6 +47,10 @@ public class ControladorMenu : MonoBehaviour
 
     private void Start()
     {
+        SistemaAnimación.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
+        SistemaAnimación.AnimarColor(panelOscuro, 4, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
+        SistemaAnimación.AnimarPanel(rectBotones, 0.5f, true, Direcciones.derecha, null);
+
         // Semilla aleatoria
         var fecha = DateTime.Parse("08/02/1996");
         var semilla = (int)(DateTime.Now - fecha).TotalSeconds;
@@ -52,7 +68,7 @@ public class ControladorMenu : MonoBehaviour
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
 
         // Menú
-        panelInicio.SetActive(true);
+        panelBotones.SetActive(true);
         panelOpciones.SetActive(false);
         panelCréditos.SetActive(false);
 
@@ -80,7 +96,9 @@ public class ControladorMenu : MonoBehaviour
     public void EnClicIniciar()
     {
         iniciado = true;
-        menúInicio.SetActive(false);
+
+        SistemaAnimación.AnimarPanel(rectBotones, 0.3f, false, Direcciones.derecha, () => menúInicio.SetActive(false));
+        SistemaAnimación.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
 
         // PENDIENTE animacion camara
         controladorDiálogos.MostrarPaneles(true);
@@ -92,6 +110,11 @@ public class ControladorMenu : MonoBehaviour
         menúInicio.SetActive(false);
         menúJuego.SetActive(false);
 
+        SistemaAnimación.AnimarPanel(rectBotones, 0.3f, false, Direcciones.derecha, () => menúInicio.SetActive(false));
+        SistemaAnimación.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
+
+        controladorDiálogos.Iniciar();
+
         // PENDIENTE animacion camara
         controladorDiálogos.MostrarPaneles(true);
         controladorDiálogos.ComenzarJuego();
@@ -102,7 +125,8 @@ public class ControladorMenu : MonoBehaviour
         if (!controladorDiálogos.ObtenerDisponibilidad() || !controladorCámara.ObtenerDisponibilidad())
             return;
 
-        menúInicio.SetActive(false);
+        SistemaAnimación.AnimarPanel(rectBotones, 0.3f, false, Direcciones.derecha, () => menúInicio.SetActive(false));
+        SistemaAnimación.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
 
         controladorCámara.CambiarPosición(CámarasCine.juego);
         ControladorOsciloscopio.ReanudarNivelEstrés();
@@ -120,7 +144,10 @@ public class ControladorMenu : MonoBehaviour
         btnReanudar.SetActive(true);
 
         menúInicio.SetActive(true);
-        menúJuego.SetActive(false);
+
+        SistemaAnimación.AnimarPanel(rectJuego, 0.2f, false, Direcciones.arriba, () => menúJuego.SetActive(false));
+        SistemaAnimación.AnimarPanel(rectBotones, 0.3f, true, Direcciones.derecha, null);
+        SistemaAnimación.AnimarColor(imgTítulo, 1, colorTransparente, Color.white, null);
 
         controladorCámara.CambiarPosición(CámarasCine.menú);
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
@@ -130,26 +157,37 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicOpciones()
     {
-        if (panelOpciones.activeSelf)
+        if (!panelOpciones.activeSelf)
         {
-            panelInicio.SetActive(true);
-            panelOpciones.SetActive(false);
+            panelOpciones.SetActive(true);
+
+            SistemaAnimación.AnimarPanel(rectBotones, 0.3f, false, Direcciones.derecha, () => panelBotones.SetActive(false));
+            SistemaAnimación.AnimarPanel(rectOpciones, 0.2f, true, Direcciones.izquierda, null);
         }
         else
         {
-            panelInicio.SetActive(false);
-            panelOpciones.SetActive(true);
+            panelBotones.SetActive(true);
+
+            SistemaAnimación.AnimarPanel(rectBotones, 0.3f, true, Direcciones.derecha, null);
+            SistemaAnimación.AnimarPanel(rectOpciones, 0.2f, false, Direcciones.izquierda, () => panelOpciones.SetActive(false));
         }
     }
 
     public void MostrarMenúJuego(bool mostrar)
     {
         menúJuego.SetActive(mostrar);
+        SistemaAnimación.AnimarPanel(rectJuego, 0.2f, mostrar, Direcciones.arriba, null);
     }
 
     public void EnClicCréditos()
     {
-        panelCréditos.SetActive(!panelCréditos.activeSelf);
+        if (!panelCréditos.activeSelf)
+        {
+            panelCréditos.SetActive(!panelCréditos.activeSelf);
+            SistemaAnimación.AnimarPanel(rectCréditos, 0.3f, true, Direcciones.izquierda, null);
+        }
+        else
+            SistemaAnimación.AnimarPanel(rectCréditos, 0.4f, false, Direcciones.izquierda, () => panelCréditos.SetActive(false));
     }
 
     public void EnClicSalir()

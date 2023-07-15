@@ -7,6 +7,8 @@ public class Constantes
     public static Random aleatorio;
     protected static int llave = 08021996;
 
+    public static UnityEngine.Color colorTransparente = new UnityEngine.Color(1, 1, 1, 0);
+
     // Diálogos
     public enum Estados
     {
@@ -79,6 +81,14 @@ public class Constantes
     {
         palpitar,
         intercambiar
+    }
+   
+    public enum Direcciones
+    {
+        arriba,
+        abajo,
+        izquierda,
+        derecha
     }
 
     // Sonidos

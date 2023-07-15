@@ -90,6 +90,11 @@ public class ControladorDialogos : MonoBehaviour
 
     private void Start()
     {
+        Iniciar();
+    }
+
+    public void Iniciar()
+    {
         panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
         panelPregunta.SetActive(false);
