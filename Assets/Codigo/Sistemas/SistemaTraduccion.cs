@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// YerkoAndrei
+using UnityEngine;
 using static Constantes;
 
 public class SistemaTraduccion : MonoBehaviour

@@ -20,14 +20,12 @@ public class OcultarPropertyDrawer : PropertyDrawer
         }
 
         GUI.enabled = wasEnabled;
-        GUIUtility.ExitGUI();
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         OcultarAttribute condHAtt = (OcultarAttribute)attribute;
         bool enabled = GetConditionalHideAttributeResult(condHAtt, property);
-        GUIUtility.ExitGUI();
 
         if (!condHAtt.deshabilitar || enabled)
         {

@@ -35,9 +35,9 @@ public class ElementoInterfazOpcion : MonoBehaviour
         EnCurorFuera();
     }
 
-    public void ActivarBotón()
+    public void ActivarBotón(bool activar)
     {
-        btnOpción.interactable = true;
+        btnOpción.interactable = activar;
     }
 
     public void EnClic()

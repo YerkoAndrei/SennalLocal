@@ -74,6 +74,10 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private Color colorSobreviviente;
     [SerializeField] private Color colorComputador;
 
+    [Header("Animaciones")]
+    [SerializeField] private RectTransform rectDiálogos;
+    [SerializeField] private RectTransform rectInteractuables;
+
     private ControladorCamara controladorCamara;
 
     private ElementoDialogo diálogoActual;
@@ -185,7 +189,12 @@ public class ControladorDialogos : MonoBehaviour
         txtDiálogo.text = string.Empty;
         imgPersonaje.gameObject.SetActive(true);
         panelDiálogo.color = colorPanelActivo;
-        panelDiálogos.SetActive(true);
+
+        if (!panelDiálogos.activeSelf)
+        {
+            panelDiálogos.SetActive(true);
+            SistemaAnimación.AnimarPanel(rectDiálogos, 0.2f, true, Direcciones.abajo, null);
+        }
 
         // Cambio de fuentes
         switch (diálogoActual.personaje)
@@ -417,6 +426,7 @@ public class ControladorDialogos : MonoBehaviour
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
         estado = Estados.mostrandoOpciones;
         panelOpciones.SetActive(true);
+        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, true, Direcciones.izquierda, null);
 
         // Posición aleatoria
         var opciones = diálogoActual.opciones.OrderBy(x => aleatorio.Next()).ToArray();
@@ -442,13 +452,18 @@ public class ControladorDialogos : MonoBehaviour
         panelDiálogo.color = colorPanelEspera;
         foreach (var elemento in opcionesActuales)
         {
-            elemento.ActivarBotón();
+            elemento.ActivarBotón(true);
         }
     }
 
     public void EnClicOpción(ElementoInterfazOpcion opcion)
     {
-        panelOpciones.SetActive(false);
+        foreach (var elemento in opcionesActuales)
+        {
+            elemento.ActivarBotón(false);
+        }
+
+        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, false, Direcciones.izquierda, () => panelOpciones.SetActive(false));
         opcionesActuales.Clear();
 
         SistemaMemoria.MarcarOpción(opcion.texto);
@@ -484,11 +499,12 @@ public class ControladorDialogos : MonoBehaviour
     {
         estado = Estados.mostrandoPregunta;
         panelPregunta.SetActive(true);
+        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, true, Direcciones.izquierda, null);
     }
 
     public void EnClicTerminarPregunta()
     {
-        panelPregunta.SetActive(false);
+        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, false, Direcciones.izquierda, () => panelPregunta.SetActive(false));
         IniciarDiálogo(diálogoActual.siguienteDiálogo);
     }
 
@@ -552,6 +568,15 @@ public class ControladorDialogos : MonoBehaviour
     {
         activo = mostrar;
 
+        if (mostrar)
+            MostrarPanelesFijo(mostrar);
+
+        SistemaAnimación.AnimarPanel(rectDiálogos, 0.2f, mostrar, Direcciones.abajo, null);
+        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, mostrar, Direcciones.izquierda, () => MostrarPanelesFijo(mostrar));
+    }
+
+    private void MostrarPanelesFijo(bool mostrar)
+    {
         switch (estado)
         {
             case Estados.esperandoClic:

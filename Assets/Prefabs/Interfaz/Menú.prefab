@@ -2754,6 +2754,13 @@ MonoBehaviour:
   btnIniciar: {fileID: 3655231904045033285}
   btnReiniciar: {fileID: 3655231902938930669}
   btnReanudar: {fileID: 3655231902554516570}
+  botones:
+  - {fileID: 3655231904045033291}
+  - {fileID: 3655231902554516568}
+  - {fileID: 3655231902938930675}
+  - {fileID: 3655231904310252936}
+  - {fileID: 3655231902302773518}
+  - {fileID: 3655231903650797139}
   volumenMaestro: {fileID: 3655231904371036623}
   "volumenM\xFAsica": {fileID: 3655231902640444995}
   volumenEfectos: {fileID: 3655231904071462488}
