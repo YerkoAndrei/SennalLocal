@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Constantes;
 
-public class SistemaAnimación : MonoBehaviour
+public class SistemaAnimacion : MonoBehaviour
 {
-    private static SistemaAnimación instancia;
+    private static SistemaAnimacion instancia;
 
     [Header("Curvas")]
     [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
@@ -34,9 +34,9 @@ public class SistemaAnimación : MonoBehaviour
         return instancia.curvaAnimaciónEstandar.Evaluate(tiempo);
     }
 
-    public static void AnimarPanel(RectTransform elemento, float duraciónLerp, bool entrando, Direcciones dirección, Action alFinal)
+    public static void AnimarPanel(RectTransform elemento, float duraciónLerp, bool entrando, bool conCurva, Direcciones dirección, Action alFinal)
     {
-        instancia.StartCoroutine(AnimaciónMovimiento(elemento, duraciónLerp, entrando, dirección, alFinal));
+        instancia.StartCoroutine(AnimaciónMovimiento(elemento, duraciónLerp, entrando, conCurva, dirección, alFinal));
     }
 
     public static void AnimarColor(Image elemento, float duraciónLerp, Color colorInicio, Color colorFinal, Action alFinal)
@@ -45,7 +45,7 @@ public class SistemaAnimación : MonoBehaviour
     }
 
     // Intercalación lineal sin curva
-    private static IEnumerator AnimaciónMovimiento(RectTransform elemento, float duraciónLerp, bool entrando, Direcciones dirección, Action alFinal)
+    private static IEnumerator AnimaciónMovimiento(RectTransform elemento, float duraciónLerp, bool entrando, bool conCurva, Direcciones dirección, Action alFinal)
     {
         var posiciónFuera = Vector2.zero;
 
@@ -71,9 +71,13 @@ public class SistemaAnimación : MonoBehaviour
             elemento.anchoredPosition = Vector2.zero;
 
         float tiempoLerp = 0;
+        float tiempo = 0;
         while (tiempoLerp < duraciónLerp)
         {
-            var tiempo = tiempoLerp / duraciónLerp;
+            if (conCurva)
+                tiempo = EvaluarCurva(tiempoLerp / duraciónLerp);
+            else
+                tiempo = tiempoLerp / duraciónLerp;
 
             if (entrando)
                 elemento.anchoredPosition = Vector2.Lerp(posiciónFuera, Vector2.zero, tiempo);

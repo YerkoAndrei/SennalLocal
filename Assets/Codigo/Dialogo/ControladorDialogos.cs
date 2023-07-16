@@ -193,7 +193,7 @@ public class ControladorDialogos : MonoBehaviour
         if (!panelDiálogos.activeSelf)
         {
             panelDiálogos.SetActive(true);
-            SistemaAnimación.AnimarPanel(rectDiálogos, 0.2f, true, Direcciones.abajo, null);
+            SistemaAnimacion.AnimarPanel(rectDiálogos, 0.2f, true, true, Direcciones.abajo, null);
         }
 
         // Cambio de fuentes
@@ -426,7 +426,7 @@ public class ControladorDialogos : MonoBehaviour
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
         estado = Estados.mostrandoOpciones;
         panelOpciones.SetActive(true);
-        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, true, Direcciones.izquierda, null);
+        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, true, true, Direcciones.izquierda, null);
 
         // Posición aleatoria
         var opciones = diálogoActual.opciones.OrderBy(x => aleatorio.Next()).ToArray();
@@ -463,7 +463,7 @@ public class ControladorDialogos : MonoBehaviour
             elemento.ActivarBotón(false);
         }
 
-        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, false, Direcciones.izquierda, () => panelOpciones.SetActive(false));
+        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, false, false, Direcciones.izquierda, () => panelOpciones.SetActive(false));
         opcionesActuales.Clear();
 
         SistemaMemoria.MarcarOpción(opcion.texto);
@@ -499,12 +499,12 @@ public class ControladorDialogos : MonoBehaviour
     {
         estado = Estados.mostrandoPregunta;
         panelPregunta.SetActive(true);
-        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, true, Direcciones.izquierda, null);
+        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, true, true, Direcciones.izquierda, null);
     }
 
     public void EnClicTerminarPregunta()
     {
-        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, false, Direcciones.izquierda, () => panelPregunta.SetActive(false));
+        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, false, false, Direcciones.izquierda, () => panelPregunta.SetActive(false));
         IniciarDiálogo(diálogoActual.siguienteDiálogo);
     }
 
@@ -571,8 +571,8 @@ public class ControladorDialogos : MonoBehaviour
         if (mostrar)
             MostrarPanelesFijo(mostrar);
 
-        SistemaAnimación.AnimarPanel(rectDiálogos, 0.2f, mostrar, Direcciones.abajo, null);
-        SistemaAnimación.AnimarPanel(rectInteractuables, 0.3f, mostrar, Direcciones.izquierda, () => MostrarPanelesFijo(mostrar));
+        SistemaAnimacion.AnimarPanel(rectDiálogos, 0.2f, mostrar, true, Direcciones.abajo, null);
+        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, mostrar, true, Direcciones.izquierda, () => MostrarPanelesFijo(mostrar));
     }
 
     private void MostrarPanelesFijo(bool mostrar)

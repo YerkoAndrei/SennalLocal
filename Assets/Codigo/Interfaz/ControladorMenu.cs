@@ -49,9 +49,9 @@ public class ControladorMenu : MonoBehaviour
 
     private void Start()
     {
-        SistemaAnimación.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
-        SistemaAnimación.AnimarColor(panelOscuro, 4, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
-        SistemaAnimación.AnimarPanel(rectBotones, 0.5f, true, Direcciones.derecha, null);
+        SistemaAnimacion.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
+        SistemaAnimacion.AnimarColor(panelOscuro, 4, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
 
         // Semilla aleatoria
         var fecha = DateTime.Parse("08/02/1996");
@@ -100,12 +100,12 @@ public class ControladorMenu : MonoBehaviour
         iniciado = true;
 
         ActivarBotones(false);
-        SistemaAnimación.AnimarPanel(rectBotones, 0.3f, false, Direcciones.derecha, () =>
+        SistemaAnimacion.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
             ActivarBotones(true);
         });
-        SistemaAnimación.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
 
         // PENDIENTE animacion camara
         controladorDiálogos.MostrarPaneles(true);
@@ -118,12 +118,12 @@ public class ControladorMenu : MonoBehaviour
         menúJuego.SetActive(false);
 
         ActivarBotones(false);
-        SistemaAnimación.AnimarPanel(rectBotones, 0.3f, false, Direcciones.derecha, () =>
+        SistemaAnimacion.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
             ActivarBotones(true);
         });
-        SistemaAnimación.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
 
         controladorDiálogos.Iniciar();
 
@@ -138,12 +138,12 @@ public class ControladorMenu : MonoBehaviour
             return;
 
         ActivarBotones(false);
-        SistemaAnimación.AnimarPanel(rectBotones, 0.3f, false, Direcciones.derecha, () =>
+        SistemaAnimacion.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
             ActivarBotones(true);
         });
-        SistemaAnimación.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
 
         controladorCámara.CambiarPosición(CámarasCine.juego);
         ControladorOsciloscopio.ReanudarNivelEstrés();
@@ -163,13 +163,13 @@ public class ControladorMenu : MonoBehaviour
         menúInicio.SetActive(true);
 
         ActivarBotones(false);
-        SistemaAnimación.AnimarPanel(rectJuego, 0.2f, false, Direcciones.arriba, () =>
+        SistemaAnimacion.AnimarColor(imgTítulo, 1, colorTransparente, Color.white, null);
+        SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, false, Direcciones.arriba, () =>
         {
             menúJuego.SetActive(false);
             ActivarBotones(true);
         });
-        SistemaAnimación.AnimarPanel(rectBotones, 0.3f, true, Direcciones.derecha, null);
-        SistemaAnimación.AnimarColor(imgTítulo, 1, colorTransparente, Color.white, null);
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, true, true, Direcciones.derecha, null);
 
         controladorCámara.CambiarPosición(CámarasCine.menú);
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
@@ -184,20 +184,20 @@ public class ControladorMenu : MonoBehaviour
             panelOpciones.SetActive(true);
 
             ActivarBotones(false);
-            SistemaAnimación.AnimarPanel(rectBotones, 0.3f, false, Direcciones.derecha, () =>
+            SistemaAnimacion.AnimarPanel(rectOpciones, 0.2f, true, true, Direcciones.izquierda, null);
+            SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
             {
                 panelBotones.SetActive(false);
                 ActivarBotones(true);
             });
-            SistemaAnimación.AnimarPanel(rectOpciones, 0.2f, true, Direcciones.izquierda, null);
         }
         else
         {
             panelBotones.SetActive(true);
 
             ActivarBotones(false);
-            SistemaAnimación.AnimarPanel(rectBotones, 0.3f, true, Direcciones.derecha, null);
-            SistemaAnimación.AnimarPanel(rectOpciones, 0.2f, false, Direcciones.izquierda, () =>
+            SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, true, true, Direcciones.derecha, null);
+            SistemaAnimacion.AnimarPanel(rectOpciones, 0.2f, false, false, Direcciones.izquierda, () =>
             {
                 panelOpciones.SetActive(false);
                 ActivarBotones(true);
@@ -208,7 +208,7 @@ public class ControladorMenu : MonoBehaviour
     public void MostrarMenúJuego(bool mostrar)
     {
         menúJuego.SetActive(mostrar);
-        SistemaAnimación.AnimarPanel(rectJuego, 0.2f, mostrar, Direcciones.arriba, null);
+        SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, mostrar, true, Direcciones.arriba, null);
     }
 
     public void EnClicCréditos()
@@ -216,10 +216,10 @@ public class ControladorMenu : MonoBehaviour
         if (!panelCréditos.activeSelf)
         {
             panelCréditos.SetActive(!panelCréditos.activeSelf);
-            SistemaAnimación.AnimarPanel(rectCréditos, 0.3f, true, Direcciones.izquierda, null);
+            SistemaAnimacion.AnimarPanel(rectCréditos, 0.3f, true, true, Direcciones.izquierda, null);
         }
         else
-            SistemaAnimación.AnimarPanel(rectCréditos, 0.4f, false, Direcciones.izquierda, () => panelCréditos.SetActive(false));
+            SistemaAnimacion.AnimarPanel(rectCréditos, 0.4f, false, false, Direcciones.izquierda, () => panelCréditos.SetActive(false));
     }
 
     public void ActivarBotones(bool activar)
@@ -278,8 +278,8 @@ public class ControladorMenu : MonoBehaviour
 
         menúInicio.SetActive(true);
 
-        SistemaAnimación.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
-        SistemaAnimación.AnimarPanel(rectBotones, 0.5f, true, Direcciones.derecha, null);
-        SistemaAnimación.AnimarPanel(rectJuego, 0.2f, false, Direcciones.arriba, () => menúJuego.SetActive(false));
+        SistemaAnimacion.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
+        SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, true, Direcciones.arriba, () => menúJuego.SetActive(false));
     }
 }
