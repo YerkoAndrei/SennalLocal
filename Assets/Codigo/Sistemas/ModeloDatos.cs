@@ -6,9 +6,9 @@ public class ModeloDatos
 {
     public string últimoNombre;
 
-    public int usuariosHuidos;
     public int usuariosMuertos;
     public int usuariosCapturados;
+    public int usuariosEscapados;
 
     public List<string> diálogosElegidos;
     public List<string> opcionesElegidas;
@@ -19,9 +19,9 @@ public class ModeloDatos
     {
         // Datos vacíos
         últimoNombre = string.Empty;
-        usuariosHuidos = 0;
         usuariosMuertos = 0;
         usuariosCapturados = 0;
+        usuariosEscapados = 0;
 
         diálogosElegidos = new List<string>();
         opcionesElegidas = new List<string>();

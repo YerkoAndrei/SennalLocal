@@ -92,14 +92,14 @@ public class SistemaMemoria : MonoBehaviour
     {
         switch(tipoFinal)
         {
-            case TipoFinal.huida:
-                instancia.datos.usuariosHuidos++;
-                break;
             case TipoFinal.muerte:
                 instancia.datos.usuariosMuertos++;
                 break;
             case TipoFinal.captura:
                 instancia.datos.usuariosCapturados++;
+                break;
+            case TipoFinal.escape:
+                instancia.datos.usuariosEscapados++;
                 break;
         }
 
@@ -120,9 +120,9 @@ public class SistemaMemoria : MonoBehaviour
     }
 
     // Obtención de variables
-    public static int ObtenerUsuariosHuidos()
+    public static int ObtenerUsuariosEscapados()
     {
-        return instancia.datos.usuariosHuidos;
+        return instancia.datos.usuariosEscapados;
     }
 
     public static int ObtenerUsuariosMuertos()
