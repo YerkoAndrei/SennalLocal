@@ -1,5 +1,6 @@
 ﻿// YerkoAndrei
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -23,7 +24,7 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private Button[] botones;
 
     [Header("Volúmenes")]
-    [SerializeField] private Slider volumenMaestro;
+    [SerializeField] private Slider volumenGeneral;
     [SerializeField] private Slider volumenMúsica;
     [SerializeField] private Slider volumenEfectos;
 
@@ -44,6 +45,8 @@ public class ControladorMenu : MonoBehaviour
 
     private ControladorDialogos controladorDiálogos;
     private ControladorCamara controladorCámara;
+    private ElementoIdioma[] idiomas;
+    private ElementoGrafico[] gráficos;
 
     private bool iniciado;
 
@@ -68,6 +71,21 @@ public class ControladorMenu : MonoBehaviour
 
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
+
+        // Volumen
+        volumenGeneral.value = SistemaSonidos.ObtenerVolumenGeneral();
+        volumenMúsica.value = SistemaSonidos.ObtenerVolumenMúsica();
+        volumenEfectos.value = SistemaSonidos.ObtenerVolumenEfectos();
+
+        // Idiomas
+        idiomas = Resources.FindObjectsOfTypeAll<ElementoIdioma>();
+        PrenderIdiomas();
+        idiomas.Where(o => o.idioma == SistemaTraduccion.idioma).FirstOrDefault().botón.interactable = false;
+
+        // Gráficos
+        gráficos = Resources.FindObjectsOfTypeAll<ElementoGrafico>();
+        PrenderGráficos();
+        gráficos.Where(o => o.gráfico == SistemaAnimacion.gráficos).FirstOrDefault().botón.interactable = false;
 
         // Menú
         panelBotones.SetActive(true);
@@ -235,9 +253,39 @@ public class ControladorMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void ActualizarVolumenMaestro()
+    public void EnClicIdioma(ElementoIdioma elemento)
     {
-        SistemaSonidos.ActualizarVolumen(TipoSonido.Maestro, volumenMaestro.value);
+        SistemaTraduccion.CambiarIdioma(elemento.idioma);
+        PrenderIdiomas();
+        elemento.botón.interactable = false;
+    }
+
+    private void PrenderIdiomas()
+    {
+        foreach (var elemento in idiomas)
+        {
+            elemento.botón.interactable = true;
+        }
+    }
+
+    public void EnClicGráficos(ElementoGrafico elemento)
+    {
+        SistemaAnimacion.CambiarGráficos(elemento.gráfico);
+        PrenderGráficos();
+        elemento.botón.interactable = false;
+    }
+
+    private void PrenderGráficos()
+    {
+        foreach (var elemento in gráficos)
+        {
+            elemento.botón.interactable = true;
+        }
+    }
+
+    public void ActualizarVolumenGeneral()
+    {
+        SistemaSonidos.ActualizarVolumen(TipoSonido.General, volumenGeneral.value);
     }
 
     public void ActualizarVolumenMúsica()

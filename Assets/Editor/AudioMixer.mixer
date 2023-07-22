@@ -71,7 +71,7 @@ AudioMixerController:
   - guid: 6f49ca045960f564a954ac78952236b6
     name: Efectos
   - guid: 316efdd7892b1f243a135a4dd18d937a
-    name: Maestro
+    name: General
   - guid: 913887c05528dc34fab35c6c4f3c6ab8
     name: "M\xFAsica"
   m_AudioMixerGroupViews:
@@ -126,7 +126,8 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: a856e7f229928c9449d691ed38efb246
-  m_FloatValues: {}
+  m_FloatValues:
+    913887c05528dc34fab35c6c4f3c6ab8: 0.04171297
   m_TransitionOverrides: {}
 --- !u!244 &5193621005809130635
 AudioMixerEffectController:

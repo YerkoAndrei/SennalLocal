@@ -61,13 +61,19 @@ public class SistemaSonidos : MonoBehaviour
 
     private void Iniciar()
     {
-        audioMixer.SetFloat(TipoSonido.Maestro.ToString(), Mathf.Log10(volumenEstandar) * 20);
-        audioMixer.SetFloat(TipoSonido.Música.ToString(), Mathf.Log10(volumenEstandar) * 20);
-        audioMixer.SetFloat(TipoSonido.Efectos.ToString(), Mathf.Log10(volumenEstandar) * 20);
+        // Recuerda anterior o usa predeterminado
+        if (ObtenerVolumenGeneral() == 0)
+            PlayerPrefs.SetFloat(TipoSonido.General.ToString(), volumenEstandar);
 
-        PlayerPrefs.SetFloat(TipoSonido.Maestro.ToString(), volumenEstandar);
-        PlayerPrefs.SetFloat(TipoSonido.Música.ToString(), volumenEstandar);
-        PlayerPrefs.SetFloat(TipoSonido.Efectos.ToString(), volumenEstandar);
+        if (ObtenerVolumenMúsica() == 0)
+            PlayerPrefs.SetFloat(TipoSonido.Música.ToString(), volumenEstandar);
+
+        if (ObtenerVolumenEfectos() == 0)
+            PlayerPrefs.SetFloat(TipoSonido.Efectos.ToString(), volumenEstandar);
+
+        ActualizarVolumen(TipoSonido.General, ObtenerVolumenGeneral());
+        ActualizarVolumen(TipoSonido.Música, ObtenerVolumenMúsica());
+        ActualizarVolumen(TipoSonido.Efectos, ObtenerVolumenEfectos());
     }
 
     public static void ActualizarVolumen(TipoSonido tipoSonido, float volumen)
@@ -80,7 +86,7 @@ public class SistemaSonidos : MonoBehaviour
 
     public static float ObtenerVolumenGeneral()
     {
-        return PlayerPrefs.GetFloat(TipoSonido.Maestro.ToString());
+        return PlayerPrefs.GetFloat(TipoSonido.General.ToString());
     }
 
     public static float ObtenerVolumenMúsica()

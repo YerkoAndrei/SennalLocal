@@ -529,10 +529,6 @@ public class ControladorDialogos : MonoBehaviour
 
         switch (tipoFinal)
         {
-            case TipoFinal.huida:
-                diálogoFinal.texto = "(Llamada perdida. El usuario ha huido.)";
-                diálogoFinal.nivelEstrés = NivelEstrés.bajo;
-                break;
             case TipoFinal.muerte:
                 diálogoFinal.texto = "(Llamada perdida. El usuario ha muerto.)";
                 diálogoFinal.nivelEstrés = NivelEstrés.muerto;
@@ -540,6 +536,10 @@ public class ControladorDialogos : MonoBehaviour
             case TipoFinal.captura:
                 diálogoFinal.texto = "(Llamada perdida. El usuario ha sido capturado.)";
                 diálogoFinal.nivelEstrés = NivelEstrés.capturado;
+                break;
+            case TipoFinal.escape:
+                diálogoFinal.texto = "(Llamada perdida. El usuario ha escapado.)";
+                diálogoFinal.nivelEstrés = NivelEstrés.bajo;
                 break;
         }
 
