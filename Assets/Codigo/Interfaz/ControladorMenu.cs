@@ -38,9 +38,13 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private Color colorRojoClaro;
     [SerializeField] private Color colorRojoOscuro;
 
+    [Header("Título")]
+    [SerializeField] private Image imgTítulo;
+    [SerializeField] private Sprite títuloEspañol;
+    [SerializeField] private Sprite títuloInglés;
+
     [Header("Referencias")]
     [SerializeField] private Image panelOscuro;
-    [SerializeField] private Image imgTítulo;
     [SerializeField] private TMP_Text txtVersión;
 
     private ControladorDialogos controladorDiálogos;
@@ -52,10 +56,6 @@ public class ControladorMenu : MonoBehaviour
 
     private void Start()
     {
-        SistemaAnimacion.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
-        SistemaAnimacion.AnimarColor(panelOscuro, 4, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
-        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
-
         // Semilla aleatoria
         var fecha = DateTime.Parse("08/02/1996");
         var semilla = (int)(DateTime.Now - fecha).TotalSeconds;
@@ -87,6 +87,18 @@ public class ControladorMenu : MonoBehaviour
         PrenderGráficos();
         gráficos.Where(o => o.gráfico == SistemaAnimacion.gráficos).FirstOrDefault().botón.interactable = false;
 
+        // Título
+        switch (SistemaTraduccion.idioma)
+        {
+            default:
+            case Idiomas.español:
+                imgTítulo.sprite = títuloEspañol;
+                break;
+            case Idiomas.inglés:
+                imgTítulo.sprite = títuloInglés;
+                break;
+        }
+
         // Menú
         panelBotones.SetActive(true);
         panelOpciones.SetActive(false);
@@ -100,6 +112,10 @@ public class ControladorMenu : MonoBehaviour
         menúJuego.SetActive(false);
 
         txtVersión.text = Application.version;
+
+        SistemaAnimacion.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
+        SistemaAnimacion.AnimarColor(panelOscuro, 4, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
     }
 
     private void Update()
@@ -126,6 +142,7 @@ public class ControladorMenu : MonoBehaviour
         });
 
         // PENDIENTE animacion camara
+        OcultarCréditos();
         controladorDiálogos.MostrarPaneles(true);
         controladorDiálogos.ComenzarJuego();
     }
@@ -146,6 +163,7 @@ public class ControladorMenu : MonoBehaviour
         controladorDiálogos.Iniciar();
 
         // PENDIENTE animacion camara
+        OcultarCréditos();
         controladorDiálogos.MostrarPaneles(true);
         controladorDiálogos.ComenzarJuego();
     }
@@ -163,6 +181,7 @@ public class ControladorMenu : MonoBehaviour
             ActivarBotones(true);
         });
 
+        OcultarCréditos();
         controladorCámara.CambiarPosición(CámarasCine.juego);
         ControladorOsciloscopio.ReanudarNivelEstrés();
         ControladorRadio.ReanudarNombreRuta();
@@ -221,6 +240,7 @@ public class ControladorMenu : MonoBehaviour
                 ActivarBotones(true);
             });
         }
+        OcultarCréditos();
     }
 
     public void MostrarMenúJuego(bool mostrar)
@@ -237,6 +257,12 @@ public class ControladorMenu : MonoBehaviour
             SistemaAnimacion.AnimarPanel(rectCréditos, 0.3f, true, true, Direcciones.izquierda, null);
         }
         else
+            SistemaAnimacion.AnimarPanel(rectCréditos, 0.4f, false, false, Direcciones.izquierda, () => panelCréditos.SetActive(false));
+    }
+
+    private void OcultarCréditos()
+    {
+        if (panelCréditos.activeSelf)
             SistemaAnimacion.AnimarPanel(rectCréditos, 0.4f, false, false, Direcciones.izquierda, () => panelCréditos.SetActive(false));
     }
 
@@ -258,6 +284,17 @@ public class ControladorMenu : MonoBehaviour
         SistemaTraduccion.CambiarIdioma(elemento.idioma);
         PrenderIdiomas();
         elemento.botón.interactable = false;
+
+        switch(SistemaTraduccion.idioma)
+        {
+            default:
+            case Idiomas.español:
+                imgTítulo.sprite = títuloEspañol;
+                break;
+            case Idiomas.inglés:
+                imgTítulo.sprite = títuloInglés;
+                break;
+        }
     }
 
     private void PrenderIdiomas()
