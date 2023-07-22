@@ -2,12 +2,14 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using static Constantes;
 
 public class SistemaAnimacion : MonoBehaviour
 {
     private static SistemaAnimacion instancia;
+    public static Gráficos gráficos;
 
     [Header("Curvas")]
     [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
@@ -26,7 +28,19 @@ public class SistemaAnimacion : MonoBehaviour
 
     private void Iniciar()
     {
+        // Recuerda anterior o usa predeterminado
+        if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
+            CambiarGráficos(Gráficos.altos);
+        else
+            CambiarGráficos((Gráficos)Enum.Parse(typeof(Gráficos), PlayerPrefs.GetString("gráficos")));
+    }
 
+    public static void CambiarGráficos(Gráficos nuevosGráficos)
+    {
+        gráficos = nuevosGráficos;
+        PlayerPrefs.SetString("gráficos", gráficos.ToString());
+
+        QualitySettings.SetQualityLevel((int)gráficos, true);
     }
 
     public static float EvaluarCurva(float tiempo)
