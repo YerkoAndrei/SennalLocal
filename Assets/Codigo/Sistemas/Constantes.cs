@@ -41,9 +41,22 @@ public class Constantes
 
     public enum TipoFinal
     {
-        huida,          // 1
         muerte,         // 10
-        captura         // 10  
+        captura,        // 10  
+        escape          // 1
+    }
+
+    public enum Idiomas
+    {
+        español,
+        inglés
+    }
+
+    public enum Gráficos
+    {
+        bajos,
+        medios,
+        altos
     }
 
     // Visuales
@@ -95,7 +108,7 @@ public class Constantes
     // Sonidos
     public enum TipoSonido
     {
-        Maestro,
+        General,
         Música,
         Efectos
     }
