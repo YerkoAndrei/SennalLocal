@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1099537288551234744
 Transform:
@@ -23,9 +23,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533407218793464345}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6102591423036037804}
   - {fileID: 183683438812495238}
@@ -38,7 +40,6 @@ Transform:
   - {fileID: 6159138565855134800}
   - {fileID: 7340154262452291403}
   m_Father: {fileID: 715267625687532924}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2748439182427014063
 GameObject:
@@ -54,7 +55,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1049563223212093622
 Transform:
@@ -63,9 +64,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748439182427014063}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2854123835929549931}
   - {fileID: 8577192265846282310}
@@ -79,7 +82,6 @@ Transform:
   - {fileID: 5174588494762570229}
   - {fileID: 5995549647578110376}
   m_Father: {fileID: 715267625687532924}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2853423567576865651
 GameObject:
@@ -95,7 +97,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &715267625687532924
 Transform:
@@ -104,9 +106,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2853423567576865651}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2380207386620979402}
   - {fileID: 7586516755651849144}
@@ -118,7 +122,6 @@ Transform:
   - {fileID: 9200449476923787777}
   - {fileID: 8291263730160290226}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4674045900096526775
 GameObject:
@@ -134,7 +137,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3145024581838164807
 Transform:
@@ -143,9 +146,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4674045900096526775}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4327372261906559745}
   - {fileID: 3074828708079804043}
@@ -160,7 +165,6 @@ Transform:
   - {fileID: 5307011581559866430}
   - {fileID: 7254295305995824377}
   m_Father: {fileID: 715267625687532924}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5627164498501330952
 GameObject:
@@ -176,7 +180,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6743900999826092823
 Transform:
@@ -185,9 +189,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5627164498501330952}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5743731796821607369}
   - {fileID: 440238662867532155}
@@ -198,7 +204,6 @@ Transform:
   - {fileID: 6779343798616423218}
   - {fileID: 6019432081816915989}
   m_Father: {fileID: 715267625687532924}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5803892599876593800
 GameObject:
@@ -214,7 +219,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8291263730160290226
 Transform:
@@ -223,9 +228,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5803892599876593800}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.28056252}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7722386256631695512}
   - {fileID: 3410573774856004294}
@@ -237,7 +244,6 @@ Transform:
   - {fileID: 7419160263009429779}
   - {fileID: 3095081398450742316}
   m_Father: {fileID: 715267625687532924}
-  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6793328950708119610
 GameObject:
@@ -253,7 +259,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7586516755651849144
 Transform:
@@ -262,9 +268,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6793328950708119610}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2522206468596524476}
   - {fileID: 8441039272795505370}
@@ -275,7 +283,6 @@ Transform:
   - {fileID: 2974969061573241085}
   - {fileID: 5281697071215496044}
   m_Father: {fileID: 715267625687532924}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7160425459759121245
 GameObject:
@@ -291,7 +298,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8964838156206658251
 Transform:
@@ -300,9 +307,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7160425459759121245}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5586562249804784849}
   - {fileID: 8200324721061462822}
@@ -315,7 +324,6 @@ Transform:
   - {fileID: 6334312325183353307}
   - {fileID: 3175884869072547125}
   m_Father: {fileID: 715267625687532924}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8268284400788301763
 GameObject:
@@ -331,7 +339,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9200449476923787777
 Transform:
@@ -340,9 +348,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8268284400788301763}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5955156828725928094}
   - {fileID: 4285432157787837120}
@@ -354,13 +364,13 @@ Transform:
   - {fileID: 986755079900068247}
   - {fileID: 3802179119561444332}
   m_Father: {fileID: 715267625687532924}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &114476504638938768
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6743900999826092823}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -438,7 +448,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &440238662867532155 stripped
 Transform:
@@ -451,6 +469,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -533,7 +552,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &401705591544489130 stripped
 Transform:
@@ -546,6 +573,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -623,7 +651,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &393047943423120161 stripped
 Transform:
@@ -636,6 +672,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -713,7 +750,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &183683438812495238 stripped
 Transform:
@@ -726,6 +771,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -808,7 +854,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &136963173596221551 stripped
 Transform:
@@ -821,6 +875,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6743900999826092823}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -903,7 +958,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &30059288373763516 stripped
 Transform:
@@ -916,6 +979,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -993,7 +1057,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &986755079900068247 stripped
 Transform:
@@ -1006,6 +1078,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1088,7 +1161,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &669185284598287064 stripped
 Transform:
@@ -1101,6 +1182,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1183,7 +1265,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &1619123907273643836 stripped
 Transform:
@@ -1196,6 +1286,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7586516755651849144}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1273,7 +1364,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &1574131494780352942 stripped
 Transform:
@@ -1286,6 +1385,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1368,7 +1468,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &1309758787368770533 stripped
 Transform:
@@ -1381,6 +1489,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1458,7 +1567,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &1220291965317808378 stripped
 Transform:
@@ -1471,6 +1588,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1548,7 +1666,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &2030101330086232228 stripped
 Transform:
@@ -1561,6 +1687,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1643,7 +1770,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &1822561946419668271 stripped
 Transform:
@@ -1656,6 +1791,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1733,7 +1869,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &1787005183192731286 stripped
 Transform:
@@ -1746,6 +1890,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1828,7 +1973,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &2854123835929549931 stripped
 Transform:
@@ -1841,6 +1994,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -1918,7 +2072,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &2651117066024578363 stripped
 Transform:
@@ -1931,6 +2093,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7586516755651849144}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2013,7 +2176,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &2522206468596524476 stripped
 Transform:
@@ -2026,6 +2197,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2108,7 +2280,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &2480607396260952740 stripped
 Transform:
@@ -2121,6 +2301,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 715267625687532924}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 33bf40526b628dc44a2d701975d8a664,
@@ -2183,7 +2364,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Repisa
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33bf40526b628dc44a2d701975d8a664,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33bf40526b628dc44a2d701975d8a664, type: 3}
 --- !u!4 &2380207386620979402 stripped
 Transform:
@@ -2196,6 +2385,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2273,7 +2463,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &2403472931970008621 stripped
 Transform:
@@ -2286,6 +2484,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2368,7 +2567,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3410573774856004294 stripped
 Transform:
@@ -2381,6 +2588,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2463,7 +2671,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3363295578530287151 stripped
 Transform:
@@ -2476,6 +2692,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2553,7 +2770,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3175884869072547125 stripped
 Transform:
@@ -2566,6 +2791,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2648,7 +2874,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3183310187836177638 stripped
 Transform:
@@ -2661,6 +2895,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2743,7 +2978,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3074828708079804043 stripped
 Transform:
@@ -2756,6 +2999,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2838,7 +3082,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3076981684650439239 stripped
 Transform:
@@ -2851,6 +3103,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -2933,7 +3186,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3095081398450742316 stripped
 Transform:
@@ -2946,6 +3207,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7586516755651849144}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3028,7 +3290,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &2974969061573241085 stripped
 Transform:
@@ -3041,6 +3311,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6743900999826092823}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3123,7 +3394,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3872387594051596062 stripped
 Transform:
@@ -3136,6 +3415,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3218,7 +3498,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3802179119561444332 stripped
 Transform:
@@ -3231,6 +3519,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3308,7 +3597,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3515945041136889278 stripped
 Transform:
@@ -3321,6 +3618,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3403,7 +3701,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &3483625607264891366 stripped
 Transform:
@@ -3416,6 +3722,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3498,7 +3805,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &4494445037960194642 stripped
 Transform:
@@ -3511,6 +3826,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3588,7 +3904,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &4389234070262132201 stripped
 Transform:
@@ -3601,6 +3925,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3683,7 +4008,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &4327372261906559745 stripped
 Transform:
@@ -3696,6 +4029,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3773,7 +4107,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &4285432157787837120 stripped
 Transform:
@@ -3786,6 +4128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3868,7 +4211,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5174588494762570229 stripped
 Transform:
@@ -3881,6 +4232,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -3958,7 +4310,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5128404702077234928 stripped
 Transform:
@@ -3971,6 +4331,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4053,7 +4414,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5008026075401016447 stripped
 Transform:
@@ -4066,6 +4435,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4148,7 +4518,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &4822869533295103773 stripped
 Transform:
@@ -4161,6 +4539,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4243,7 +4622,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &4647811810483763520 stripped
 Transform:
@@ -4256,6 +4643,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4333,7 +4721,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &4658180363209192344 stripped
 Transform:
@@ -4346,6 +4742,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6743900999826092823}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4428,7 +4825,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5743731796821607369 stripped
 Transform:
@@ -4441,6 +4846,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4518,7 +4924,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5586562249804784849 stripped
 Transform:
@@ -4531,6 +4945,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4613,7 +5028,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5307011581559866430 stripped
 Transform:
@@ -4626,6 +5049,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7586516755651849144}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4703,7 +5127,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5281697071215496044 stripped
 Transform:
@@ -4716,6 +5148,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4798,7 +5231,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &6334312325183353307 stripped
 Transform:
@@ -4811,6 +5252,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4893,7 +5335,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &6159138565855134800 stripped
 Transform:
@@ -4906,6 +5356,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -4988,7 +5439,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &6102591423036037804 stripped
 Transform:
@@ -5001,6 +5460,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5083,7 +5543,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &6123728712442163699 stripped
 Transform:
@@ -5096,6 +5564,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6743900999826092823}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5173,7 +5642,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &6019432081816915989 stripped
 Transform:
@@ -5186,6 +5663,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5268,7 +5746,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &6026759764713914221 stripped
 Transform:
@@ -5281,6 +5767,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5363,7 +5850,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5986046452842057548 stripped
 Transform:
@@ -5376,6 +5871,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5453,7 +5949,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5995549647578110376 stripped
 Transform:
@@ -5466,6 +5970,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5548,7 +6053,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5955156828725928094 stripped
 Transform:
@@ -5561,6 +6074,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6743900999826092823}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5643,7 +6157,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5825980513873900651 stripped
 Transform:
@@ -5656,6 +6178,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7586516755651849144}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5738,7 +6261,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &5771816397458100776 stripped
 Transform:
@@ -5751,6 +6282,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6743900999826092823}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5828,7 +6360,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &6779343798616423218 stripped
 Transform:
@@ -5841,6 +6381,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -5918,7 +6459,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &6421195673442207502 stripped
 Transform:
@@ -5931,6 +6480,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6013,7 +6563,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7419160263009429779 stripped
 Transform:
@@ -6026,6 +6584,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1099537288551234744}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6108,7 +6667,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7340154262452291403 stripped
 Transform:
@@ -6121,6 +6688,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6198,7 +6766,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7254295305995824377 stripped
 Transform:
@@ -6211,6 +6787,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6293,7 +6870,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7204052273545742919 stripped
 Transform:
@@ -6306,6 +6891,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6388,7 +6974,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7979173830287807894 stripped
 Transform:
@@ -6401,6 +6995,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7586516755651849144}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6478,7 +7073,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7986983218122830065 stripped
 Transform:
@@ -6491,6 +7094,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6573,7 +7177,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7941597032659111456 stripped
 Transform:
@@ -6586,6 +7198,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6668,7 +7281,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7819081268687105298 stripped
 Transform:
@@ -6681,6 +7302,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3145024581838164807}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6763,7 +7385,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7848346512272960919 stripped
 Transform:
@@ -6776,6 +7406,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8291263730160290226}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6858,7 +7489,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7722386256631695512 stripped
 Transform:
@@ -6871,6 +7510,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7586516755651849144}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -6948,7 +7588,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &7639324194725856074 stripped
 Transform:
@@ -6961,6 +7609,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -7043,7 +7692,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &8622103261328587180 stripped
 Transform:
@@ -7056,6 +7713,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -7138,7 +7796,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &8577192265846282310 stripped
 Transform:
@@ -7151,6 +7817,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6743900999826092823}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -7233,7 +7900,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &8521279898280929554 stripped
 Transform:
@@ -7246,6 +7921,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7586516755651849144}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -7328,7 +8004,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &8441039272795505370 stripped
 Transform:
@@ -7341,6 +8025,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8964838156206658251}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -7418,7 +8103,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &8200324721061462822 stripped
 Transform:
@@ -7431,6 +8124,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1049563223212093622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -7513,7 +8207,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &8130865210946146801 stripped
 Transform:
@@ -7526,6 +8228,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 9200449476923787777}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1407f1773df0904099ebeb3dafdc55a,
@@ -7608,7 +8311,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Libro (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1407f1773df0904099ebeb3dafdc55a, type: 3}
 --- !u!4 &9201769214468315923 stripped
 Transform:
