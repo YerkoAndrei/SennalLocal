@@ -463,7 +463,7 @@ public class ControladorDialogos : MonoBehaviour
             elemento.ActivarBotón(false);
         }
 
-        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, false, false, Direcciones.izquierda, () => panelOpciones.SetActive(false));
+        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.1f, false, false, Direcciones.izquierda, () => panelOpciones.SetActive(false));
         opcionesActuales.Clear();
 
         SistemaMemoria.MarcarOpción(opcion.texto);
