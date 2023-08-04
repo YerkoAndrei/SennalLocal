@@ -1281,8 +1281,8 @@ MonoBehaviour:
   "tiempoGui\xF3n": 0.2
   tiempoComa: 0.3
   tiempoPunto: 0.5
-  tiempoOpciones: 1
-  "tiempoElegirOpci\xF3n": 0.8
+  tiempoOpciones: 0.8
+  "tiempoElegirOpci\xF3n": 0.6
   animadorOperador: {fileID: 0}
   colorCargando: {r: 1, g: 1, b: 0.78431374, a: 0.078431375}
   colorContinuar: {r: 1, g: 1, b: 0.78431374, a: 0.78431374}
