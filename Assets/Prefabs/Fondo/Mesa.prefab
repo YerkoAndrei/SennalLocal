@@ -217,59 +217,6 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 20
   m_ConnectedMassScale: 20
---- !u!1 &917997861425982731
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4707135350847267087}
-  - component: {fileID: 7468164178034488138}
-  m_Layer: 0
-  m_Name: "Colisi\xF3nCable (1)"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
---- !u!4 &4707135350847267087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917997861425982731}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.52, z: 0.36}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2727556050286976589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7468164178034488138
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917997861425982731}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1, y: 0.4, z: 0.2}
-  m_Center: {x: -0.1, y: 0, z: 0}
 --- !u!1 &1329930923981935703
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,8 +538,6 @@ Transform:
   - {fileID: 4430618399028247689}
   - {fileID: 4041656245446031660}
   - {fileID: 2948258569225800233}
-  - {fileID: 8997058047104463175}
-  - {fileID: 4707135350847267087}
   - {fileID: 2021192401363055614}
   - {fileID: 805600090232808422}
   m_Father: {fileID: 0}
@@ -1019,7 +964,7 @@ GameObject:
   - component: {fileID: 2021192401363055614}
   - component: {fileID: 8918602370586729632}
   m_Layer: 0
-  m_Name: "Colisi\xF3nCable (2)"
+  m_Name: "Colisi\xF3nCable"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2244,59 +2189,6 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 20
   m_ConnectedMassScale: 20
---- !u!1 &9215004320136049971
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8997058047104463175}
-  - component: {fileID: 3472140950763993847}
-  m_Layer: 0
-  m_Name: "Colisi\xF3nCable (0)"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
---- !u!4 &8997058047104463175
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9215004320136049971}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0.4, y: 0.771, z: 0.2433}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2727556050286976589}
-  m_LocalEulerAnglesHint: {x: -50, y: 0, z: 0}
---- !u!65 &3472140950763993847
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9215004320136049971}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1, y: 0.4, z: 0.2}
-  m_Center: {x: -0.1, y: 0, z: 0}
 --- !u!1001 &414015701606179211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2319,6 +2211,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "L\xE1mpara"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3338408693309956447, guid: 759d399c94ce6f7478110cc4337d9c4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3338408693309956447, guid: 759d399c94ce6f7478110cc4337d9c4b,
         type: 3}
@@ -2509,6 +2406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1edda446d9aab24aa790409f130dbd8,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1edda446d9aab24aa790409f130dbd8,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2605,6 +2507,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Libro (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
         type: 3}
@@ -2707,6 +2614,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -2803,6 +2715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Posavaso
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21ac4de34be2672429185a322d325d24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 21ac4de34be2672429185a322d325d24,
         type: 3}
@@ -2922,6 +2839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Osciloscopio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943019353265116002, guid: 6b80f19bb3bcbb44581e74011a1b6a99,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1943019353265116002, guid: 6b80f19bb3bcbb44581e74011a1b6a99,
         type: 3}
@@ -3124,6 +3046,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -3263,6 +3190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6258123139596617662, guid: 6bc1c34ccb7a8144f82aeb699415e605,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258123139596617662, guid: 6bc1c34ccb7a8144f82aeb699415e605,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -3367,6 +3299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -3451,6 +3388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4f3a7a2d6bb10c04a8fc01e4f881aa76,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4f3a7a2d6bb10c04a8fc01e4f881aa76,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -3532,6 +3474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Libro (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1407f1773df0904099ebeb3dafdc55a,
         type: 3}
@@ -3725,6 +3672,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "L\xE1piz (0)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1edda446d9aab24aa790409f130dbd8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1edda446d9aab24aa790409f130dbd8,
         type: 3}
