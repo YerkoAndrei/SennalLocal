@@ -75,15 +75,20 @@ public class SistemaAnimacion : MonoBehaviour
                 instancia.AnimarEscribir();
                 break;
             case Animaciones.Sentarse:
-                instancia.AnimarSentarse();
+                instancia.StartCoroutine(instancia.AnimarSentarse());
                 break;
             case Animaciones.Pararse:
-                instancia.AnimarPararse();
+                instancia.StartCoroutine(instancia.AnimarPararse());
                 break;
             case Animaciones.Entrar:
-                instancia.AnimarEntrar();
+                instancia.StartCoroutine(instancia.AnimarEntrar());
                 break;
         }
+    }
+
+    public static void CancelarAnimación()
+    {
+        instancia.CancelarEscribir();
     }
 
     public void AnimarEscribir()
@@ -91,25 +96,36 @@ public class SistemaAnimacion : MonoBehaviour
         animadorOperador.SetTrigger("Escribir");
     }
 
-    public void AnimarSentarse()
+    public void CancelarEscribir()
+    {
+        animadorOperador.SetTrigger("Cancelar");
+    }
+
+    public IEnumerator AnimarSentarse()
     {
         animadorOperador.SetTrigger("Sentarse");
         animadorSilla.SetTrigger("Entrar");
+
+        yield return new WaitForSeconds(0.4f);
         SistemaSonidos.ReproducirAnimación(Animaciones.Sentarse);
     }
 
-    public void AnimarPararse()
+    public IEnumerator AnimarPararse()
     {
         animadorOperador.SetTrigger("Pararse");
         animadorSilla.SetTrigger("Salir");
+
+        yield return new WaitForSeconds(0.4f);
         SistemaSonidos.ReproducirAnimación(Animaciones.Pararse);
     }
 
-    public void AnimarEntrar()
+    public IEnumerator AnimarEntrar()
     {
         usuario.SetActive(true);
         animadorUsuario.SetTrigger("Entrar");
         animadorPuerta.SetTrigger("Abrir");
+
+        yield return new WaitForSeconds(0.5f);
         SistemaSonidos.ReproducirAnimación(Animaciones.Entrar);
     }
 

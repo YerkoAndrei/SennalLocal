@@ -113,7 +113,7 @@ public class ControladorMenu : MonoBehaviour
 
         txtVersión.text = Application.version;
 
-        SistemaAnimacion.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
+        SistemaAnimacion.AnimarColor(imgTítulo, 4, colorRojoClaro, Color.white, null);
         SistemaAnimacion.AnimarColor(panelOscuro, 4, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
         SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
     }
@@ -198,8 +198,9 @@ public class ControladorMenu : MonoBehaviour
         btnReanudar.SetActive(true);
 
         menúInicio.SetActive(true);
-
         ActivarBotones(false);
+
+        SistemaAnimacion.CancelarAnimación();
         SistemaAnimacion.AnimarColor(imgTítulo, 1, colorTransparente, Color.white, null);
         SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, false, Direcciones.arriba, () =>
         {
@@ -274,11 +275,6 @@ public class ControladorMenu : MonoBehaviour
         }
     }
 
-    public void EnClicSalir()
-    {
-        Application.Quit();
-    }
-
     public void EnClicIdioma(ElementoIdioma elemento)
     {
         SistemaTraduccion.CambiarIdioma(elemento.idioma);
@@ -295,6 +291,16 @@ public class ControladorMenu : MonoBehaviour
                 imgTítulo.sprite = títuloInglés;
                 break;
         }
+    }
+
+    public void EnClicSalir()
+    {
+        Application.Quit();
+    }
+
+    public void EnClicAutor()
+    {
+        Application.OpenURL("https://yerkoandrei.itch.io");
     }
 
     private void PrenderIdiomas()
@@ -363,7 +369,7 @@ public class ControladorMenu : MonoBehaviour
 
         menúInicio.SetActive(true);
 
-        SistemaAnimacion.AnimarColor(imgTítulo, 2, colorRojoClaro, Color.white, null);
+        SistemaAnimacion.AnimarColor(imgTítulo, 4, colorRojoClaro, Color.white, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
         SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, true, Direcciones.arriba, () => menúJuego.SetActive(false));
     }
