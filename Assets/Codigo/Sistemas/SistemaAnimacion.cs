@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 using static Constantes;
 
@@ -10,6 +9,15 @@ public class SistemaAnimacion : MonoBehaviour
 {
     private static SistemaAnimacion instancia;
     public static Gráficos gráficos;
+
+    [Header("Personajes")]
+    [SerializeField] private GameObject usuario;
+
+    [Header("Animadores")]
+    [SerializeField] private Animator animadorOperador;
+    [SerializeField] private Animator animadorUsuario;
+    [SerializeField] private Animator animadorSilla;
+    [SerializeField] private Animator animadorPuerta;
 
     [Header("Curvas")]
     [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
@@ -25,7 +33,22 @@ public class SistemaAnimacion : MonoBehaviour
             Iniciar();
         }
     }
+    
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+            MostrarAnimación(Animaciones.Escribir);
 
+        if (Input.GetKeyDown(KeyCode.I))
+            MostrarAnimación(Animaciones.Sentarse);
+
+        if (Input.GetKeyDown(KeyCode.O))
+            MostrarAnimación(Animaciones.Pararse);
+
+        if (Input.GetKeyDown(KeyCode.P))
+            MostrarAnimación(Animaciones.Entrar);
+    }
+    
     private void Iniciar()
     {
         // Recuerda anterior o usa predeterminado
@@ -43,6 +66,54 @@ public class SistemaAnimacion : MonoBehaviour
         QualitySettings.SetQualityLevel((int)gráficos, true);
     }
 
+    // Animaciones juego
+    public static void MostrarAnimación(Animaciones animación)
+    {
+        switch(animación)
+        {
+            case Animaciones.Escribir:
+                instancia.AnimarEscribir();
+                break;
+            case Animaciones.Sentarse:
+                instancia.AnimarSentarse();
+                break;
+            case Animaciones.Pararse:
+                instancia.AnimarPararse();
+                break;
+            case Animaciones.Entrar:
+                instancia.AnimarEntrar();
+                break;
+        }
+    }
+
+    public void AnimarEscribir()
+    {
+        animadorOperador.SetTrigger("Escribir");
+    }
+
+    public void AnimarSentarse()
+    {
+        animadorOperador.SetTrigger("Sentarse");
+        animadorSilla.SetTrigger("Entrar");
+        SistemaSonidos.ReproducirAnimación(Animaciones.Sentarse);
+    }
+
+    public void AnimarPararse()
+    {
+        animadorOperador.SetTrigger("Pararse");
+        animadorSilla.SetTrigger("Salir");
+        SistemaSonidos.ReproducirAnimación(Animaciones.Pararse);
+    }
+
+    public void AnimarEntrar()
+    {
+        usuario.SetActive(true);
+        animadorUsuario.SetTrigger("Entrar");
+        animadorPuerta.SetTrigger("Abrir");
+        SistemaSonidos.ReproducirAnimación(Animaciones.Entrar);
+    }
+
+    // Animaciones interfaz
     public static float EvaluarCurva(float tiempo)
     {
         return instancia.curvaAnimaciónEstandar.Evaluate(tiempo);

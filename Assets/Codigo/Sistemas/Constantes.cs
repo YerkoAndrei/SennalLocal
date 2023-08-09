@@ -105,6 +105,14 @@ public class Constantes
         derecha
     }
 
+    public enum Animaciones
+    {
+        Escribir,
+        Sentarse,
+        Pararse,
+        Entrar
+    }
+
     // Sonidos
     public enum TipoSonido
     {

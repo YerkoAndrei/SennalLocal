@@ -336,6 +336,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea0ab600a4f7164c97de44362cd3f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usuario: {fileID: 1520035966}
+  animadorOperador: {fileID: 594859613}
+  animadorUsuario: {fileID: 1384344060}
+  animadorSilla: {fileID: 786681172}
+  animadorPuerta: {fileID: 1348530524}
   "curvaAnimaci\xF3nEstandar":
     serializedVersion: 2
     m_Curve:
@@ -1093,6 +1098,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 470841566}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &594859613 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8781546634414385244, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &717722210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1345,6 +1356,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 720119533}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &786681172 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6481580324130309623, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &863338808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,8 +1491,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -684471355689469220, guid: dc2cffa0e0a179548b6b5187ed34c2b8,
     type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 68c940574546f7f49bbf9d3a2c312b0f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1622,13 +1639,9 @@ MonoBehaviour:
   audioMonstruo: {fileID: 8300000, guid: f20a2bd1c16d5f640a6319862f352977, type: 3}
   audioSobreviviente: {fileID: 8300000, guid: 7e04c42d1bdbc02498b81acee2b0f39b, type: 3}
   audioComputador: {fileID: 8300000, guid: 6afbc0c909a22b34d8fa688b2f1c1863, type: 3}
-  "m\xFAsicaIntro": {fileID: 0}
-  "m\xFAsicaOperador": {fileID: 0}
-  "m\xFAsicaUsuario": {fileID: 0}
-  "m\xFAsicaMonstruo": {fileID: 0}
-  "m\xFAsicaCaza": {fileID: 0}
-  "m\xFAsicaS\xF3tano": {fileID: 0}
-  "m\xFAsicaAutor": {fileID: 0}
+  sonidoSillaEntrar: {fileID: 8300000, guid: d4abc1239584fa14892ee245f5354235, type: 3}
+  sonidoSillaSalir: {fileID: 8300000, guid: 42b771951d39b0c4faa88babe2a35a1a, type: 3}
+  sonidoPuertaEntrar: {fileID: 0}
 --- !u!4 &932877996
 Transform:
   m_ObjectHideFlags: 0
@@ -1916,7 +1929,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cae4260b2a2792943bfa54c1d528f9bd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1348530524}
   m_SourcePrefab: {fileID: 100100000, guid: cae4260b2a2792943bfa54c1d528f9bd, type: 3}
 --- !u!4 &1021715125 stripped
 Transform:
@@ -2505,6 +2522,39 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1348530523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cae4260b2a2792943bfa54c1d528f9bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1021715124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1348530524
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348530523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!95 &1384344060 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2334404035479662186, guid: d7c0df1bf77e0c1469456f6dc42fa994,
+    type: 3}
+  m_PrefabInstance: {fileID: 8146991606417665354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1405660661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2839,6 +2889,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b61972fd26dc2b14189ea7ce3318a2b5,
     type: 3}
   m_PrefabInstance: {fileID: 1509708804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1520035966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8370088795666961328, guid: d7c0df1bf77e0c1469456f6dc42fa994,
+    type: 3}
+  m_PrefabInstance: {fileID: 8146991606417665354}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1540912270
 PrefabInstance:
@@ -3780,18 +3836,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ce8d6e270583f4b8ed8896f011b6e8, type: 3}
---- !u!114 &619710450703182140 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2306705220297403771, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 619710450703182139}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8131bd2184772964a9368ffce4d27e9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &619710450703182141 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 6827027507215532672, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
@@ -4770,7 +4814,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animadorOperador
       value: 
-      objectReference: {fileID: 619710450703182140}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

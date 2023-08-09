@@ -27,9 +27,6 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private float tiempoOpciones;
     [SerializeField] private float tiempoElegirOpción;
 
-    [Header("Referencias externas")]
-    [SerializeField] private AnimadorPersonaje animadorOperador;
-
     [Header("Colores Menú")]
     [SerializeField] private Color colorCargando;
     [SerializeField] private Color colorContinuar;
@@ -125,6 +122,7 @@ public class ControladorDialogos : MonoBehaviour
     {
         estado = Estados.mostrandoAnimación;
         controladorCamara.CambiarPosición(CámarasCine.animación);
+        SistemaAnimacion.MostrarAnimación(Animaciones.Sentarse);
         ControladorRadio.ApagarNombreRuta();
 
         StopAllCoroutines();
@@ -467,7 +465,7 @@ public class ControladorDialogos : MonoBehaviour
         opcionesActuales.Clear();
 
         SistemaMemoria.MarcarOpción(opcion.texto);
-        animadorOperador.AnimarEscribir();
+        SistemaAnimacion.MostrarAnimación(Animaciones.Escribir);
 
         // Limpia Interfaz
         txtDiálogo.text = string.Empty;
@@ -510,12 +508,6 @@ public class ControladorDialogos : MonoBehaviour
 
     public void ActivarEfectos()
     {
-        if (ruta != diálogoActual.ruta)
-        {
-            ruta = diálogoActual.ruta;
-            SistemaSonidos.ActualizarMúsica(ruta);
-        }
-
         ControladorOsciloscopio.CambiarNivelEstrés(diálogoActual.nivelEstrés);
         ControladorRadio.CambiarNombreRuta(diálogoActual.ruta);
     }
