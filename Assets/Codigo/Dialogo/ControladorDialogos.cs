@@ -79,6 +79,7 @@ public class ControladorDialogos : MonoBehaviour
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
+    private bool iniciado;
     private bool activo;
     private bool mostrandoTexto;
     private bool puedeContinuar;
@@ -121,24 +122,34 @@ public class ControladorDialogos : MonoBehaviour
     public void ComenzarJuego()
     {
         estado = Estados.mostrandoAnimación;
-        controladorCamara.CambiarPosición(CámarasCine.animación);
-        SistemaAnimacion.MostrarAnimación(Animaciones.Sentarse);
+
+        // Primer Flujo
+        if (!iniciado)
+        {
+            controladorCamara.CambiarPosición(CámarasCine.animación);
+            SistemaAnimacion.MostrarAnimación(Animaciones.Sentarse);
+        }
+
         ControladorRadio.ApagarNombreRuta();
 
         StopAllCoroutines();
         StartCoroutine(MostrarIntroducción());
+
+        iniciado = true;
     }
 
     private IEnumerator MostrarIntroducción()
     {
-        // PENDIENTE animar mono y panel
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => activo);
+        if (!iniciado)
+        {
+            yield return new WaitForSeconds(1.4f);
+            yield return new WaitUntil(() => activo);
+        }
 
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
         controladorCamara.CambiarPosición(CámarasCine.juego);
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1f);
         yield return new WaitUntil(() => activo);
 
         var intro = new RutaIntro();

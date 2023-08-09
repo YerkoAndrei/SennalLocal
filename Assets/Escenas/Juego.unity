@@ -1622,7 +1622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: dc2cffa0e0a179548b6b5187ed34c2b8, type: 2}
-  "tiempoCambioM\xFAsica": 1
+  "tiempoCambioM\xFAsica": 4
   "fuenteM\xFAsica": {fileID: 876263525}
   "fuenteDi\xE1logo": {fileID: 1200955967}
   fuenteEfectos: {fileID: 1602140546}
