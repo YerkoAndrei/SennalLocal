@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3116927000168958982}
-  - component: {fileID: 1965475836110126167}
   m_Layer: 0
   m_Name: Usuario
   m_TagString: Untagged
@@ -24,32 +23,21 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8370088795666961328}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8540325514877678608}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1965475836110126167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8370088795666961328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8131bd2184772964a9368ffce4d27e9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animador: {fileID: 2334404035479662186}
 --- !u!1001 &8146991607661483003
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3116927000168958982}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e1b1938ad611cc64ca17c5d1da2221f0,
@@ -128,16 +116,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 09efb8a75da8d5945876cf58aa9d7100, type: 2}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b1938ad611cc64ca17c5d1da2221f0, type: 3}
 --- !u!4 &8540325514877678608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e1b1938ad611cc64ca17c5d1da2221f0,
-    type: 3}
-  m_PrefabInstance: {fileID: 8146991607661483003}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2334404035479662186 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: e1b1938ad611cc64ca17c5d1da2221f0,
     type: 3}
   m_PrefabInstance: {fileID: 8146991607661483003}
   m_PrefabAsset: {fileID: 0}
