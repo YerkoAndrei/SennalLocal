@@ -74,3 +74,6 @@ Thumbs.db
 
 # Blender
 *.blend1
+
+# LMMS
+*.bak
