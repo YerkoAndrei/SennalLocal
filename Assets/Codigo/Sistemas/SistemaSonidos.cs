@@ -32,14 +32,10 @@ public class SistemaSonidos : MonoBehaviour
     [SerializeField] private AudioClip audioSobreviviente;
     [SerializeField] private AudioClip audioComputador;
 
-    [Header("Músicas")]
-    [SerializeField] private AudioClip músicaIntro;
-    [SerializeField] private AudioClip músicaOperador;
-    [SerializeField] private AudioClip músicaUsuario;
-    [SerializeField] private AudioClip músicaMonstruo;
-    [SerializeField] private AudioClip músicaCaza;
-    [SerializeField] private AudioClip músicaSótano;
-    [SerializeField] private AudioClip músicaAutor;
+    [Header("Sonidos")]
+    [SerializeField] private AudioClip sonidoSillaEntrar;
+    [SerializeField] private AudioClip sonidoSillaSalir;
+    [SerializeField] private AudioClip sonidoPuertaEntrar;
 
     private float volumenEstandar = 0.5f;
 
@@ -74,6 +70,8 @@ public class SistemaSonidos : MonoBehaviour
         ActualizarVolumen(TipoSonido.General, ObtenerVolumenGeneral());
         ActualizarVolumen(TipoSonido.Música, ObtenerVolumenMúsica());
         ActualizarVolumen(TipoSonido.Efectos, ObtenerVolumenEfectos());
+
+        ActivarMúsica(true);
     }
 
     public static void ActualizarVolumen(TipoSonido tipoSonido, float volumen)
@@ -100,65 +98,50 @@ public class SistemaSonidos : MonoBehaviour
     }
 
     // Música
-    public static void ActualizarMúsica(Rutas ruta)
+    public static void ActivarMúsica(bool activar)
     {
-        instancia.CambiarMúsica(ruta);
+        instancia.StartCoroutine(instancia.CambiarVolumenMúsica(activar));
     }
 
-    private void CambiarMúsica(Rutas ruta)
+    private IEnumerator CambiarVolumenMúsica(bool activar)
     {
-        switch (ruta)
-        {
-            case Rutas.menú:
-            case Rutas.intro:
-                StartCoroutine(CambiarMúsica(músicaIntro));
-                break;
-            case Rutas.operador:
-                StartCoroutine(CambiarMúsica(músicaOperador));
-                break;
-            case Rutas.usuario:
-                StartCoroutine(CambiarMúsica(músicaUsuario));
-                break;
-            case Rutas.monstruo:
-                StartCoroutine(CambiarMúsica(músicaMonstruo));
-                break;
-            case Rutas.caza:
-                StartCoroutine(CambiarMúsica(músicaCaza));
-                break;
-            case Rutas.sótano:
-                StartCoroutine(CambiarMúsica(músicaSótano));
-                break;
-            case Rutas.autor:
-                StartCoroutine(CambiarMúsica(músicaAutor));
-                break;
-        }
-    }
-
-    private IEnumerator CambiarMúsica(AudioClip nuevaMúsica)
-    {
-        // Intercalación lineal sin curva
+        // Intercalación lineal con curva
         tiempoLerp = 0;
+
+        if (activar)
+        {
+            fuenteMúsica.volume = 0;
+            fuenteMúsica.Play();
+        }
+        else
+            fuenteMúsica.volume = ObtenerVolumenMúsica();
 
         while (tiempoLerp < tiempoCambioMúsica)
         {
-            tiempoCambio = (tiempoLerp / tiempoCambioMúsica);
-            fuenteMúsica.volume = Mathf.Lerp(ObtenerVolumenMúsica(), 0, tiempoCambio);
+            if (activar)
+            {
+                tiempoCambio = SistemaAnimacion.EvaluarCurva(tiempoLerp / tiempoCambioMúsica);
+                fuenteMúsica.volume = Mathf.Lerp(0, ObtenerVolumenMúsica(), tiempoCambio);
+            }
+            else
+            {
+                tiempoCambio = SistemaAnimacion.EvaluarCurva(tiempoLerp / tiempoCambioMúsica);
+                fuenteMúsica.volume = Mathf.Lerp(ObtenerVolumenMúsica(), 0, tiempoCambio);
+            }
 
             tiempoLerp += Time.deltaTime;
             yield return null;
         }
 
         // Fin primer Lerp
-        fuenteMúsica.clip = nuevaMúsica;
         tiempoLerp = 0;
 
-        while (tiempoLerp < tiempoCambioMúsica)
+        if (activar)
+            fuenteMúsica.volume = ObtenerVolumenMúsica();
+        else
         {
-            tiempoCambio = (tiempoLerp / tiempoCambioMúsica);
-            fuenteMúsica.volume = Mathf.Lerp(0, ObtenerVolumenMúsica(), tiempoCambio);
-
-            tiempoLerp += Time.deltaTime;
-            yield return null;
+            fuenteMúsica.volume = 0;
+            fuenteMúsica.Stop();
         }
     }
 
@@ -186,6 +169,25 @@ public class SistemaSonidos : MonoBehaviour
                 break;
             case Personajes.computador:
                 fuenteDiálogo.PlayOneShot(audioComputador);
+                break;
+        }
+    }
+
+    // Animaciones
+    public static void ReproducirAnimación(Animaciones animación)
+    {
+        switch (animación)
+        {
+            case Animaciones.Escribir:
+                break;
+            case Animaciones.Sentarse:
+                instancia.fuenteEfectos.PlayOneShot(instancia.sonidoSillaEntrar);
+                break;
+            case Animaciones.Pararse:
+                instancia.fuenteEfectos.PlayOneShot(instancia.sonidoSillaSalir);
+                break;
+            case Animaciones.Entrar:
+                instancia.fuenteEfectos.PlayOneShot(instancia.sonidoPuertaEntrar);
                 break;
         }
     }
