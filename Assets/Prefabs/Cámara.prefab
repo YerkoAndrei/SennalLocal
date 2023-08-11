@@ -55,13 +55,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624398400597877122}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2664659, y: -0.31105295, z: 0.09647437, w: 0.9071575}
-  m_LocalPosition: {x: 1.488, y: 1.648, z: -1.124}
+  m_LocalRotation: {x: 0.2505008, y: -0.4339262, z: 0.13251749, w: 0.8552173}
+  m_LocalPosition: {x: 1.583, y: 1.648, z: -0.995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624398400678808418}
-  m_LocalEulerAnglesHint: {x: 32.920002, y: -37.666, z: 0.632}
+  m_LocalEulerAnglesHint: {x: 32.92, y: -53.618, z: 0.632}
 --- !u!1 &1624398400678808416
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,8 +111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "c\xE1mara": {fileID: 1624398401632264247}
-  "duraci\xF3nC\xE1maraCine": 1
+  "duraci\xF3nC\xE1maraCine": 1.2
   "duraci\xF3nC\xE1maraMen\xFA": 0.5
+  "duraci\xF3nC\xE1maraJuego": 1.8
   "duraci\xF3nC\xE1maraFinal": 4
   "posici\xF3nMen\xFA": {fileID: 1624398400885544051}
   "posici\xF3nJuego": {fileID: 1624398400491925614}

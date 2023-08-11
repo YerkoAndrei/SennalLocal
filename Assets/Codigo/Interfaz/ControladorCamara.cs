@@ -10,6 +10,7 @@ public class ControladorCamara : MonoBehaviour
     [Header("Variables")]
     [SerializeField] private float duraciónCámaraCine;
     [SerializeField] private float duraciónCámaraMenú;
+    [SerializeField] private float duraciónCámaraJuego;
     [SerializeField] private float duraciónCámaraFinal;
 
     [Header("Posiciones")]
@@ -45,7 +46,7 @@ public class ControladorCamara : MonoBehaviour
                 if(últimaCámara == CámarasCine.menú)
                     StartCoroutine(MoverCámara(duraciónCámaraMenú, posiciónJuego.localPosition, posiciónJuego.localRotation));
                 else
-                    StartCoroutine(MoverCámara(duraciónCámaraCine, posiciónJuego.localPosition, posiciónJuego.localRotation));
+                    StartCoroutine(MoverCámara(duraciónCámaraJuego, posiciónJuego.localPosition, posiciónJuego.localRotation));
                 break;
             case CámarasCine.animación:
                 StartCoroutine(MoverCámara(duraciónCámaraCine, posiciónAnimación.localPosition, posiciónAnimación.localRotation));

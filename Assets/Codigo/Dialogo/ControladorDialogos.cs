@@ -130,6 +130,7 @@ public class ControladorDialogos : MonoBehaviour
             SistemaAnimacion.MostrarAnimación(Animaciones.Sentarse);
         }
 
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
         ControladorRadio.ApagarNombreRuta();
 
         StopAllCoroutines();
@@ -142,11 +143,10 @@ public class ControladorDialogos : MonoBehaviour
     {
         if (!iniciado)
         {
-            yield return new WaitForSeconds(1.4f);
+            yield return new WaitForSeconds(1f);
             yield return new WaitUntil(() => activo);
         }
 
-        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
         controladorCamara.CambiarPosición(CámarasCine.juego);
 
         yield return new WaitForSeconds(1f);
