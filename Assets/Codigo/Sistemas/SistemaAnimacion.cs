@@ -1,6 +1,7 @@
 ﻿// YerkoAndrei
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static Constantes;
@@ -9,6 +10,8 @@ public class SistemaAnimacion : MonoBehaviour
 {
     private static SistemaAnimacion instancia;
     public static Gráficos gráficos;
+
+    private static Image cancelarElemento;
 
     [Header("Personajes")]
     [SerializeField] private GameObject usuario;
@@ -130,6 +133,11 @@ public class SistemaAnimacion : MonoBehaviour
     }
 
     // Animaciones interfaz
+    public static void CancelarCorrutina(Coroutine corrutina)
+    {
+        instancia.StopCoroutine(corrutina);
+    }
+
     public static float EvaluarCurva(float tiempo)
     {
         return instancia.curvaAnimaciónEstandar.Evaluate(tiempo);
@@ -140,9 +148,9 @@ public class SistemaAnimacion : MonoBehaviour
         instancia.StartCoroutine(AnimaciónMovimiento(elemento, duraciónLerp, entrando, conCurva, dirección, alFinal));
     }
 
-    public static void AnimarColor(Image elemento, float duraciónLerp, Color colorInicio, Color colorFinal, Action alFinal)
+    public static Coroutine AnimarColor(Image elemento, float duraciónLerp, bool conCurva, Color colorInicio, Color colorFinal, Action alFinal)
     {
-        instancia.StartCoroutine(AnimaciónColor(elemento, duraciónLerp, colorInicio, colorFinal, alFinal));
+        return instancia.StartCoroutine(AnimaciónColor(elemento, duraciónLerp, conCurva, colorInicio, colorFinal, alFinal));
     }
 
     // Intercalación lineal sin curva
@@ -199,16 +207,20 @@ public class SistemaAnimacion : MonoBehaviour
             alFinal.Invoke();
     }
 
-    private static IEnumerator AnimaciónColor(Image elemento, float duraciónLerp, Color colorInicio, Color colorFinal, Action alFinal)
+    private static IEnumerator AnimaciónColor(Image elemento, float duraciónLerp, bool conCurva, Color colorInicio, Color colorFinal, Action alFinal)
     {
         elemento.color = colorInicio;
 
         float tiempoLerp = 0;
+        float tiempo = 0;
         while (tiempoLerp < duraciónLerp)
         {
-            var tiempo = EvaluarCurva(tiempoLerp / duraciónLerp);
-            elemento.color = Color.Lerp(colorInicio, colorFinal, tiempo);
+            if (conCurva)
+                tiempo = EvaluarCurva(tiempoLerp / duraciónLerp);
+            else
+                tiempo = tiempoLerp / duraciónLerp;
 
+            elemento.color = Color.Lerp(colorInicio, colorFinal, tiempo);
             tiempoLerp += Time.deltaTime;
             yield return null;
         }

@@ -53,6 +53,7 @@ public class ControladorMenu : MonoBehaviour
     private ElementoGrafico[] gráficos;
 
     private bool iniciado;
+    private Coroutine corrutinaColorTítulo;
 
     private void Start()
     {
@@ -113,8 +114,8 @@ public class ControladorMenu : MonoBehaviour
 
         txtVersión.text = Application.version;
 
-        SistemaAnimacion.AnimarColor(imgTítulo, 4, colorRojoClaro, Color.white, null);
-        SistemaAnimacion.AnimarColor(panelOscuro, 4, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
+        corrutinaColorTítulo = SistemaAnimacion.AnimarColor(imgTítulo, 4, true, colorRojoClaro, Color.white, null);
+        SistemaAnimacion.AnimarColor(panelOscuro, 4, false, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
         SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
     }
 
@@ -134,14 +135,14 @@ public class ControladorMenu : MonoBehaviour
         iniciado = true;
 
         ActivarBotones(false);
-        SistemaAnimacion.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
+        SistemaAnimacion.CancelarCorrutina(corrutinaColorTítulo);
+        SistemaAnimacion.AnimarColor(imgTítulo, 1, true, Color.white, colorTransparente, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
             ActivarBotones(true);
         });
 
-        // PENDIENTE animacion camara
         OcultarCréditos();
         controladorDiálogos.MostrarPaneles(true);
         controladorDiálogos.ComenzarJuego();
@@ -153,7 +154,7 @@ public class ControladorMenu : MonoBehaviour
         menúJuego.SetActive(false);
 
         ActivarBotones(false);
-        SistemaAnimacion.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
+        SistemaAnimacion.AnimarColor(imgTítulo, 1, true, Color.white, colorTransparente, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
@@ -162,7 +163,6 @@ public class ControladorMenu : MonoBehaviour
 
         controladorDiálogos.Iniciar();
 
-        // PENDIENTE animacion camara
         OcultarCréditos();
         controladorDiálogos.MostrarPaneles(true);
         controladorDiálogos.ComenzarJuego();
@@ -174,7 +174,7 @@ public class ControladorMenu : MonoBehaviour
             return;
 
         ActivarBotones(false);
-        SistemaAnimacion.AnimarColor(imgTítulo, 1, Color.white, colorTransparente, null);
+        SistemaAnimacion.AnimarColor(imgTítulo, 1, true, Color.white, colorTransparente, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
@@ -201,7 +201,7 @@ public class ControladorMenu : MonoBehaviour
         ActivarBotones(false);
 
         SistemaAnimacion.CancelarAnimación();
-        SistemaAnimacion.AnimarColor(imgTítulo, 1, colorTransparente, Color.white, null);
+        SistemaAnimacion.AnimarColor(imgTítulo, 1, true, colorTransparente, Color.white, null);
         SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, false, Direcciones.arriba, () =>
         {
             menúJuego.SetActive(false);
@@ -369,7 +369,7 @@ public class ControladorMenu : MonoBehaviour
 
         menúInicio.SetActive(true);
 
-        SistemaAnimacion.AnimarColor(imgTítulo, 4, colorRojoClaro, Color.white, null);
+        SistemaAnimacion.AnimarColor(imgTítulo, 4, true, colorRojoClaro, Color.white, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
         SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, true, Direcciones.arriba, () => menúJuego.SetActive(false));
     }
