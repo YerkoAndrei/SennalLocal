@@ -14,7 +14,8 @@ public class SistemaAnimacion : MonoBehaviour
     private static Image cancelarElemento;
 
     [Header("Personajes")]
-    [SerializeField] private GameObject usuario;
+    [SerializeField] private Transform usuario;
+    [SerializeField] private Transform objetivoUsuario;
 
     [Header("Animadores")]
     [SerializeField] private Animator animadorOperador;
@@ -36,7 +37,9 @@ public class SistemaAnimacion : MonoBehaviour
             Iniciar();
         }
     }
-    
+
+    Vector3 aa;
+    Quaternion bb;
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
@@ -50,10 +53,20 @@ public class SistemaAnimacion : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
             MostrarAnimación(Animaciones.Entrar);
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            animadorUsuario.Rebind();
+            animadorPuerta.Rebind();
+            usuario.position = aa;
+            usuario.rotation = bb;
+        }
     }
     
     private void Iniciar()
     {
+        aa = usuario.position;
+        bb = usuario.rotation;
         // Recuerda anterior o usa predeterminado
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
             CambiarGráficos(Gráficos.altos);
@@ -124,12 +137,57 @@ public class SistemaAnimacion : MonoBehaviour
 
     public IEnumerator AnimarEntrar()
     {
-        usuario.SetActive(true);
+        usuario.gameObject.SetActive(true);
         animadorUsuario.SetTrigger("Entrar");
         animadorPuerta.SetTrigger("Abrir");
 
-        yield return new WaitForSeconds(0.5f);
-        SistemaSonidos.ReproducirAnimación(Animaciones.Entrar);
+        // Movimiento y rotación
+        var posiciónInicial = usuario.position;
+        var rotaciónInicial = usuario.rotation;
+        StartCoroutine(AnimarEntrarPosición(posiciónInicial));
+
+        //yield return new WaitForSeconds(0.4f);
+        //SistemaSonidos.ReproducirAnimación(Animaciones.Entrar);
+
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(AnimarEntrarRotación(rotaciónInicial));
+    }
+
+    public IEnumerator AnimarEntrarPosición(Vector3 posiciónInicial)
+    {
+        float tiempoLerp = 0;
+        float tiempo = 0;
+        float duraciónLerp = 1.6f;
+        while (tiempoLerp < duraciónLerp)
+        {
+            tiempo = tiempoLerp / duraciónLerp;
+
+            usuario.position = Vector3.Lerp(posiciónInicial, objetivoUsuario.position, tiempo);
+
+            tiempoLerp += Time.deltaTime;
+            yield return null;
+        }
+
+        // Fin
+        usuario.position = objetivoUsuario.position;
+    }
+
+    public IEnumerator AnimarEntrarRotación(Quaternion rotaciónInicial)
+    {
+        float tiempoLerp = 0;
+        float tiempo = 0;
+        float duraciónLerp = 0.5f;
+        while (tiempoLerp < duraciónLerp)
+        {
+            tiempo = tiempoLerp / duraciónLerp;
+            usuario.rotation = Quaternion.Lerp(rotaciónInicial, objetivoUsuario.rotation, tiempo);
+
+            tiempoLerp += Time.deltaTime;
+            yield return null;
+        }
+
+        // Fin
+        usuario.rotation = objetivoUsuario.rotation;
     }
 
     // Animaciones interfaz
