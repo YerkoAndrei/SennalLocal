@@ -157,7 +157,7 @@ public class SistemaAnimacion : MonoBehaviour
     {
         float tiempoLerp = 0;
         float tiempo = 0;
-        float duraciónLerp = 1.6f;
+        float duraciónLerp = 1.5f;
         while (tiempoLerp < duraciónLerp)
         {
             tiempo = tiempoLerp / duraciónLerp;

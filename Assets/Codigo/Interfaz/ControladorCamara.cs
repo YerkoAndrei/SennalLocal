@@ -17,6 +17,7 @@ public class ControladorCamara : MonoBehaviour
     [SerializeField] private Transform posiciónMenú;
     [SerializeField] private Transform posiciónJuego;
     [SerializeField] private Transform posiciónAnimación;
+    [SerializeField] private Transform posiciónFinal;
 
     private ControladorMenu controladorMenu;
     private CámarasCine últimaCámara;
@@ -53,7 +54,7 @@ public class ControladorCamara : MonoBehaviour
                 break;
             case CámarasCine.final:
                 controladorMenu.MostrarMenúJuego(false);
-                StartCoroutine(MoverCámara(duraciónCámaraFinal, posiciónMenú.localPosition, posiciónMenú.localRotation));
+                StartCoroutine(MoverCámara(duraciónCámaraFinal, posiciónFinal.localPosition, posiciónFinal.localRotation));
                 break;
         }
 
