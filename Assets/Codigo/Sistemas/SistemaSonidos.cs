@@ -174,19 +174,17 @@ public class SistemaSonidos : MonoBehaviour
     }
 
     // Animaciones
-    public static void ReproducirAnimación(Animaciones animación)
+    public static void ReproducirAnimación(Sonidos sonido)
     {
-        switch (animación)
+        switch (sonido)
         {
-            case Animaciones.Escribir:
-                break;
-            case Animaciones.Sentarse:
+            case Sonidos.SillaEntrar:
                 instancia.fuenteEfectos.PlayOneShot(instancia.sonidoSillaEntrar);
                 break;
-            case Animaciones.Pararse:
+            case Sonidos.SillaSalir:
                 instancia.fuenteEfectos.PlayOneShot(instancia.sonidoSillaSalir);
                 break;
-            case Animaciones.Entrar:
+            case Sonidos.PuertaEntrar:
                 instancia.fuenteEfectos.PlayOneShot(instancia.sonidoPuertaEntrar);
                 break;
         }

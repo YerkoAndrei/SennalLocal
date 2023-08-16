@@ -126,7 +126,7 @@ public class ControladorDialogos : MonoBehaviour
         // Primer Flujo
         if (!iniciado)
         {
-            controladorCamara.CambiarPosición(CámarasCine.animación);
+            controladorCamara.CambiarPosición(CámarasCine.operador);
             SistemaAnimacion.MostrarAnimación(Animaciones.Sentarse);
         }
 

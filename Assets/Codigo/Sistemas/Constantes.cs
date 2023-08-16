@@ -87,7 +87,8 @@ public class Constantes
     {
         menú,
         juego,
-        animación,
+        operador,
+        usuario,
         final
     }
 
@@ -109,8 +110,15 @@ public class Constantes
     {
         Escribir,
         Sentarse,
-        Pararse,
-        Entrar
+        LlegaUsuario,
+        FinalAutor
+    }
+
+    public enum Sonidos
+    {
+        SillaEntrar,
+        SillaSalir,
+        PuertaEntrar
     }
 
     // Sonidos

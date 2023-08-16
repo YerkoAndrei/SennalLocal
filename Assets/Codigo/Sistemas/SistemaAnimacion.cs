@@ -1,7 +1,6 @@
 ﻿// YerkoAndrei
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static Constantes;
@@ -10,8 +9,6 @@ public class SistemaAnimacion : MonoBehaviour
 {
     private static SistemaAnimacion instancia;
     public static Gráficos gráficos;
-
-    private static Image cancelarElemento;
 
     [Header("Personajes")]
     [SerializeField] private Transform usuario;
@@ -25,6 +22,8 @@ public class SistemaAnimacion : MonoBehaviour
 
     [Header("Curvas")]
     [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
+
+    private ControladorCamara controladorCamara;
 
     private void Start()
     {
@@ -42,22 +41,26 @@ public class SistemaAnimacion : MonoBehaviour
     Quaternion bb;
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.I))
             MostrarAnimación(Animaciones.Escribir);
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.O))
             MostrarAnimación(Animaciones.Sentarse);
 
-        if (Input.GetKeyDown(KeyCode.O))
-            MostrarAnimación(Animaciones.Pararse);
-
         if (Input.GetKeyDown(KeyCode.P))
-            MostrarAnimación(Animaciones.Entrar);
+            MostrarAnimación(Animaciones.LlegaUsuario);
 
         if (Input.GetKeyDown(KeyCode.L))
         {
             animadorUsuario.Rebind();
             animadorPuerta.Rebind();
+            animadorOperador.Rebind();
+            animadorSilla.Rebind();
+
+            animadorOperador.SetTrigger("Sentarse");
+            controladorCamara.CambiarPosición(CámarasCine.juego);
+            controladorCamara.CambiarDistanciaMínima(0.1f, 0.3f);
+
             usuario.position = aa;
             usuario.rotation = bb;
         }
@@ -67,6 +70,9 @@ public class SistemaAnimacion : MonoBehaviour
     {
         aa = usuario.position;
         bb = usuario.rotation;
+
+        controladorCamara = FindObjectOfType<ControladorCamara>();
+
         // Recuerda anterior o usa predeterminado
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
             CambiarGráficos(Gráficos.altos);
@@ -93,11 +99,11 @@ public class SistemaAnimacion : MonoBehaviour
             case Animaciones.Sentarse:
                 instancia.StartCoroutine(instancia.AnimarSentarse());
                 break;
-            case Animaciones.Pararse:
-                instancia.StartCoroutine(instancia.AnimarPararse());
+            case Animaciones.LlegaUsuario:
+                instancia.StartCoroutine(instancia.AnimarLlegadaUsuario());
                 break;
-            case Animaciones.Entrar:
-                instancia.StartCoroutine(instancia.AnimarEntrar());
+            case Animaciones.FinalAutor:
+
                 break;
         }
     }
@@ -123,20 +129,12 @@ public class SistemaAnimacion : MonoBehaviour
         animadorSilla.SetTrigger("Entrar");
 
         yield return new WaitForSeconds(0.4f);
-        SistemaSonidos.ReproducirAnimación(Animaciones.Sentarse);
+        SistemaSonidos.ReproducirAnimación(Sonidos.SillaEntrar);
     }
 
-    public IEnumerator AnimarPararse()
+    public IEnumerator AnimarLlegadaUsuario()
     {
-        animadorOperador.SetTrigger("Pararse");
-        animadorSilla.SetTrigger("Salir");
-
-        yield return new WaitForSeconds(0.4f);
-        SistemaSonidos.ReproducirAnimación(Animaciones.Pararse);
-    }
-
-    public IEnumerator AnimarEntrar()
-    {
+        // Usuario
         usuario.gameObject.SetActive(true);
         animadorUsuario.SetTrigger("Entrar");
         animadorPuerta.SetTrigger("Abrir");
@@ -146,11 +144,25 @@ public class SistemaAnimacion : MonoBehaviour
         var rotaciónInicial = usuario.rotation;
         StartCoroutine(AnimarEntrarPosición(posiciónInicial));
 
+        // Sonido
         //yield return new WaitForSeconds(0.4f);
-        //SistemaSonidos.ReproducirAnimación(Animaciones.Entrar);
+        //SistemaSonidos.ReproducirAnimación(Sonidos.PuertaEntrar);
 
-        yield return new WaitForSeconds(1f);
+        // Cámara
+        yield return new WaitForSeconds(0.6f);
+        controladorCamara.CambiarPosición(CámarasCine.usuario);
+
+        yield return new WaitForSeconds(0.2f);
+        controladorCamara.CambiarDistanciaMínima(0.2f, 0.1f);
+
+        // Operador
+        yield return new WaitForSeconds(0.2f);
+        animadorOperador.SetTrigger("Pararse");
+        animadorSilla.SetTrigger("Salir");
+
+        SistemaSonidos.ReproducirAnimación(Sonidos.SillaSalir);
         StartCoroutine(AnimarEntrarRotación(rotaciónInicial));
+
     }
 
     public IEnumerator AnimarEntrarPosición(Vector3 posiciónInicial)
