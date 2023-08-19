@@ -12,15 +12,19 @@ public class ControladorCamara : MonoBehaviour
     [SerializeField] private float duraciónCámaraMenú;
     [SerializeField] private float duraciónCámaraJuego;
     [SerializeField] private float duraciónCámaraOperador;
-    [SerializeField] private float duraciónCámaraUsuario;
-    [SerializeField] private float duraciónCámaraFinal;
+    [SerializeField] private float duraciónCámaraUsuario0;
+    [SerializeField] private float duraciónCámaraUsuario1;
+    [SerializeField] private float duraciónCámaraFinal0;
+    [SerializeField] private float duraciónCámaraFinal1;
 
     [Header("Posiciones")]
     [SerializeField] private Transform posiciónMenú;
     [SerializeField] private Transform posiciónJuego;
     [SerializeField] private Transform posiciónOperador;
-    [SerializeField] private Transform posiciónUsuario;
-    [SerializeField] private Transform posiciónFinal;
+    [SerializeField] private Transform posiciónUsuario0;
+    [SerializeField] private Transform posiciónUsuario1;
+    [SerializeField] private Transform posiciónFinal0;
+    [SerializeField] private Transform posiciónFinal1;
 
     private ControladorMenu controladorMenu;
     private CámarasCine últimaCámara;
@@ -43,17 +47,20 @@ public class ControladorCamara : MonoBehaviour
                 StartCoroutine(MoverCámara(duraciónCámaraMenú, posiciónMenú.localPosition, posiciónMenú.localRotation));
                 break;
             case CámarasCine.juego:
-                StartCoroutine(MoverCámara(duraciónCámaraJuego, posiciónJuego.localPosition, posiciónJuego.localRotation));
+                if(últimaCámara == CámarasCine.menú)
+                    StartCoroutine(MoverCámara(duraciónCámaraMenú, posiciónJuego.localPosition, posiciónJuego.localRotation));
+                else
+                    StartCoroutine(MoverCámara(duraciónCámaraJuego, posiciónJuego.localPosition, posiciónJuego.localRotation));
                 break;
             case CámarasCine.operador:
                 StartCoroutine(MoverCámara(duraciónCámaraOperador, posiciónOperador.localPosition, posiciónOperador.localRotation));
                 break;
             case CámarasCine.usuario:
-                StartCoroutine(MoverCámara(duraciónCámaraUsuario, posiciónUsuario.localPosition, posiciónUsuario.localRotation));
+                StartCoroutine(MoverCámara(duraciónCámaraUsuario0, posiciónUsuario0.localPosition, posiciónUsuario0.localRotation));
                 break;
             case CámarasCine.final:
                 controladorMenu.MostrarMenúJuego(false);
-                StartCoroutine(MoverCámara(duraciónCámaraFinal, posiciónFinal.localPosition, posiciónFinal.localRotation));
+                StartCoroutine(MoverCámara(duraciónCámaraFinal0, posiciónFinal0.localPosition, posiciónFinal0.localRotation));
                 break;
         }
 
@@ -94,11 +101,15 @@ public class ControladorCamara : MonoBehaviour
                 break;
             case CámarasCine.menú:
             case CámarasCine.operador:
-            case CámarasCine.usuario:
                 controladorMenu.MostrarMenúJuego(false);
                 break;
+            case CámarasCine.usuario:
+                controladorMenu.MostrarMenúJuego(false);
+                StartCoroutine(MoverCámara(duraciónCámaraUsuario1, posiciónUsuario1.localPosition, posiciónUsuario1.localRotation));
+                break;
             case CámarasCine.final:
-                controladorMenu.FinalizarJuego();
+                SistemaAnimacion.MostrarAnimación(Animaciones.FinalAutor);
+                StartCoroutine(MoverCámara(duraciónCámaraFinal1, posiciónFinal1.localPosition, posiciónFinal1.localRotation));
                 break;
         }
     }

@@ -97,6 +97,7 @@ Transform:
   - {fileID: 1624398400491925614}
   - {fileID: 1624398400597877123}
   - {fileID: 852408361099794596}
+  - {fileID: 6484862996036009132}
   - {fileID: 769739473672948749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -117,13 +118,17 @@ MonoBehaviour:
   "duraci\xF3nC\xE1maraMen\xFA": 0.5
   "duraci\xF3nC\xE1maraJuego": 1.8
   "duraci\xF3nC\xE1maraOperador": 1.2
-  "duraci\xF3nC\xE1maraUsuario": 6
-  "duraci\xF3nC\xE1maraFinal": 8
+  "duraci\xF3nC\xE1maraUsuario0": 1
+  "duraci\xF3nC\xE1maraUsuario1": 6
+  "duraci\xF3nC\xE1maraFinal0": 1
+  "duraci\xF3nC\xE1maraFinal1": 6
   "posici\xF3nMen\xFA": {fileID: 1624398400885544051}
   "posici\xF3nJuego": {fileID: 1624398400491925614}
   "posici\xF3nOperador": {fileID: 1624398400597877123}
-  "posici\xF3nUsuario": {fileID: 852408361099794596}
-  "posici\xF3nFinal": {fileID: 769739473672948749}
+  "posici\xF3nUsuario0": {fileID: 852408361099794596}
+  "posici\xF3nUsuario1": {fileID: 6484862996036009132}
+  "posici\xF3nFinal0": {fileID: 0}
+  "posici\xF3nFinal1": {fileID: 0}
 --- !u!1 &1624398400885544050
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852408361099794596}
   m_Layer: 0
-  m_Name: "Posici\xF3nUsuario"
+  m_Name: "Posici\xF3nUsuario (0)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,13 +382,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763995438941215408}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.186286, y: -0.2124629, z: 0.04129859, w: 0.95835876}
-  m_LocalPosition: {x: 1.101, y: 1.7, z: -0.924}
+  m_LocalRotation: {x: 0.06211719, y: -0.1489382, z: 0.019151645, w: 0.98670775}
+  m_LocalPosition: {x: 0.941, y: 1.321, z: -1.017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624398400678808418}
-  m_LocalEulerAnglesHint: {x: 22, y: -25, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.371, y: -17.096, z: 1.115}
 --- !u!1 &6683922105706209547
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,3 +420,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624398400678808418}
   m_LocalEulerAnglesHint: {x: 0, y: -136, z: 0}
+--- !u!1 &6885346642323519228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6484862996036009132}
+  m_Layer: 0
+  m_Name: "Posici\xF3nUsuario (1)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6484862996036009132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6885346642323519228}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.186286, y: -0.2124629, z: 0.04129859, w: 0.95835876}
+  m_LocalPosition: {x: 1.101, y: 1.7, z: -0.924}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1624398400678808418}
+  m_LocalEulerAnglesHint: {x: 22, y: -25, z: 0}
