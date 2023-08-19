@@ -82,6 +82,7 @@ public class RutaOperador : InterfazRuta
         // Siguiente diálogo
         listaDiálogos.Add(CrearOperador_9()[0]);
 
+        SistemaAnimacion.MarcarAnimación(Animaciones.MiraManos);
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 

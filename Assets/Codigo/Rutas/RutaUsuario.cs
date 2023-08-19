@@ -266,6 +266,7 @@ public class RutaUsuario : InterfazRuta
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 14", ruta, NivelEstrés.normal));
 
         // Final
+        SistemaAnimacion.MarcarAnimación(Animaciones.LlegaUsuario);
         listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_14", TipoFinal.muerte, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }

@@ -180,7 +180,7 @@ public class ControladorDialogos : MonoBehaviour
                 ContinuarSiguienteAcción();
                 break;
             case Estados.esperandoFinal:
-                VolverAlMenú();
+                VerificarFinal();
                 break;
         }
     }
@@ -602,8 +602,29 @@ public class ControladorDialogos : MonoBehaviour
         }
     }
 
+    public void MostrarÚltimoTextoFinalUsuario()
+    {
+        FinalizarPartida(TipoFinal.captura, Rutas.usuario);
+    }
+
+    private void VerificarFinal()
+    {
+        switch(SistemaAnimacion.animaciónFinal)
+        {
+            default:
+                VolverAlMenú();
+                break;
+            case Animaciones.MiraManos:
+            case Animaciones.LlegaUsuario:
+            case Animaciones.FinalAutor:
+                SistemaAnimacion.MostrarAnimación(SistemaAnimacion.animaciónFinal);
+                break;
+        }
+    }
+
     private void VolverAlMenú()
     {
+        controladorCamara.CambiarPosición(CámarasCine.final);
         panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
         panelPregunta.SetActive(false);
@@ -611,7 +632,5 @@ public class ControladorDialogos : MonoBehaviour
         estado = Estados.enPausa;
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
-
-        controladorCamara.CambiarPosición(CámarasCine.final);
     }
 }

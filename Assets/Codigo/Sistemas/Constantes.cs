@@ -110,6 +110,7 @@ public class Constantes
     {
         Escribir,
         Sentarse,
+        MiraManos,
         LlegaUsuario,
         FinalAutor
     }

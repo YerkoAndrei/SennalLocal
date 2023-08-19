@@ -9,6 +9,7 @@ public class SistemaAnimacion : MonoBehaviour
 {
     private static SistemaAnimacion instancia;
     public static Gráficos gráficos;
+    public static Animaciones animaciónFinal;
 
     [Header("Personajes")]
     [SerializeField] private Transform usuario;
@@ -24,6 +25,7 @@ public class SistemaAnimacion : MonoBehaviour
     [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
 
     private ControladorCamara controladorCamara;
+    private ControladorDialogos controladorDiálogos;
 
     private void Start()
     {
@@ -49,6 +51,9 @@ public class SistemaAnimacion : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
             MostrarAnimación(Animaciones.LlegaUsuario);
+
+        if (Input.GetKeyDown(KeyCode.U))
+            MostrarAnimación(Animaciones.FinalAutor);
 
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -99,13 +104,21 @@ public class SistemaAnimacion : MonoBehaviour
             case Animaciones.Sentarse:
                 instancia.StartCoroutine(instancia.AnimarSentarse());
                 break;
+            case Animaciones.MiraManos:
+                instancia.AnimarMirarManos();
+                break;
             case Animaciones.LlegaUsuario:
                 instancia.StartCoroutine(instancia.AnimarLlegadaUsuario());
                 break;
             case Animaciones.FinalAutor:
-
+                instancia.StartCoroutine(instancia.AnimarFinalAutor());
                 break;
         }
+    }
+
+    public static void MarcarAnimación(Animaciones animación)
+    {
+        animaciónFinal = animación;
     }
 
     public static void CancelarAnimación()
@@ -121,6 +134,21 @@ public class SistemaAnimacion : MonoBehaviour
     public void CancelarEscribir()
     {
         animadorOperador.SetTrigger("Cancelar");
+    }
+
+    public void AnimarMirarManos()
+    {
+        animadorOperador.SetTrigger("MirarManos");
+    }
+
+    public IEnumerator AnimarFinalAutor()
+    {
+        animadorOperador.SetTrigger("Mirar");
+
+        yield return new WaitForSeconds(1f);
+
+        // Salida forzosa
+        Application.Quit();
     }
 
     public IEnumerator AnimarSentarse()
@@ -152,17 +180,19 @@ public class SistemaAnimacion : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         controladorCamara.CambiarPosición(CámarasCine.usuario);
 
-        yield return new WaitForSeconds(0.2f);
-        controladorCamara.CambiarDistanciaMínima(0.2f, 0.1f);
-
         // Operador
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         animadorOperador.SetTrigger("Pararse");
         animadorSilla.SetTrigger("Salir");
 
+        controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
         SistemaSonidos.ReproducirAnimación(Sonidos.SillaSalir);
         StartCoroutine(AnimarEntrarRotación(rotaciónInicial));
 
+        // Final con diálogos
+        yield return new WaitForSeconds(1f);
+        controladorDiálogos.MostrarÚltimoTextoFinalUsuario();
+        Application.Quit();
     }
 
     public IEnumerator AnimarEntrarPosición(Vector3 posiciónInicial)
