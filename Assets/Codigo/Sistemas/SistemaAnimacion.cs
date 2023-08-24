@@ -15,6 +15,10 @@ public class SistemaAnimacion : MonoBehaviour
     [SerializeField] private Transform usuario;
     [SerializeField] private Transform objetivoUsuario;
 
+    [Header("Ojo Operador")]
+    [SerializeField] private Transform ojoOperador;
+    [SerializeField] private Transform objetivoOjo;
+
     [Header("Animadores")]
     [SerializeField] private Animator animadorOperador;
     [SerializeField] private Animator animadorUsuario;
@@ -54,6 +58,9 @@ public class SistemaAnimacion : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
             MostrarAnimación(Animaciones.FinalAutor);
+
+        if (Input.GetKeyDown(KeyCode.Y))
+            StartCoroutine(AnimarRotaciónOjo(objetivoOjo));
 
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -143,9 +150,12 @@ public class SistemaAnimacion : MonoBehaviour
 
     public IEnumerator AnimarFinalAutor()
     {
+        controladorCamara.CambiarPosición(CámarasCine.final);
         animadorOperador.SetTrigger("Mirar");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(7f);
+        StartCoroutine(AnimarRotaciónOjo(objetivoOjo));
+        yield return new WaitForSeconds(0.3f);
 
         // Salida forzosa
         Application.Quit();
@@ -188,11 +198,10 @@ public class SistemaAnimacion : MonoBehaviour
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
         SistemaSonidos.ReproducirAnimación(Sonidos.SillaSalir);
         StartCoroutine(AnimarEntrarRotación(rotaciónInicial));
-
+        
         // Final con diálogos
         yield return new WaitForSeconds(1f);
         controladorDiálogos.MostrarÚltimoTextoFinalUsuario();
-        Application.Quit();
     }
 
     public IEnumerator AnimarEntrarPosición(Vector3 posiciónInicial)
@@ -230,6 +239,31 @@ public class SistemaAnimacion : MonoBehaviour
 
         // Fin
         usuario.rotation = objetivoUsuario.rotation;
+    }
+
+    public IEnumerator AnimarRotaciónOjo(Transform objetivo)
+    {
+        float tiempoLerp = 0;
+        float tiempo = 0;
+        float duraciónLerp = 0.2f;
+
+        var posiciónInicial = ojoOperador.position;
+        var rotaciónInicial = ojoOperador.rotation;
+
+        while (tiempoLerp < duraciónLerp)
+        {
+            tiempo = tiempoLerp / duraciónLerp;
+
+            ojoOperador.position = Vector3.Lerp(posiciónInicial, objetivo.position, tiempo);
+            ojoOperador.rotation = Quaternion.Lerp(rotaciónInicial, objetivo.rotation, tiempo);
+
+            tiempoLerp += Time.deltaTime;
+            yield return null;
+        }
+
+        // Fin
+        ojoOperador.position = objetivo.position;
+        ojoOperador.rotation = objetivo.rotation;
     }
 
     // Animaciones interfaz

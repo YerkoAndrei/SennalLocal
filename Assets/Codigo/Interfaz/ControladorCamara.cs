@@ -5,7 +5,7 @@ using static Constantes;
 public class ControladorCamara : MonoBehaviour
 {
     [Header("Referencias")]
-    [SerializeField] private Transform transformCámara;
+    public Transform transformCámara;
     [SerializeField] private Camera cámara;
 
     [Header("Variables")]

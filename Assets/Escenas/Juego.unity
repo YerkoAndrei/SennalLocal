@@ -340,6 +340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usuario: {fileID: 8146991606417665356}
   objetivoUsuario: {fileID: 1092305357}
+  ojoOperador: {fileID: 619710450703182140}
+  objetivoOjo: {fileID: 619710450703182142}
   animadorOperador: {fileID: 594859613}
   animadorUsuario: {fileID: 1384344060}
   animadorSilla: {fileID: 786681172}
@@ -8825,9 +8827,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ce8d6e270583f4b8ed8896f011b6e8, type: 3}
+--- !u!4 &619710450703182140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2386274246025185984, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &619710450703182141 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 6827027507215532672, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &619710450703182142 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6593800429951931171, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
     type: 3}
   m_PrefabInstance: {fileID: 619710450703182139}
   m_PrefabAsset: {fileID: 0}

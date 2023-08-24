@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using static Constantes;
+using UnityEngine.SceneManagement;
 
 public class ControladorDialogos : MonoBehaviour
 {
@@ -605,6 +606,9 @@ public class ControladorDialogos : MonoBehaviour
     public void MostrarÚltimoTextoFinalUsuario()
     {
         FinalizarPartida(TipoFinal.captura, Rutas.usuario);
+
+        // Despues
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
     private void VerificarFinal()
