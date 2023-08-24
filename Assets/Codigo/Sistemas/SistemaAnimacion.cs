@@ -11,25 +11,10 @@ public class SistemaAnimacion : MonoBehaviour
     public static Gráficos gráficos;
     public static Animaciones animaciónFinal;
 
-    [Header("Personajes")]
-    [SerializeField] private Transform usuario;
-    [SerializeField] private Transform objetivoUsuario;
-
-    [Header("Ojo Operador")]
-    [SerializeField] private Transform ojoOperador;
-    [SerializeField] private Transform objetivoOjo;
-
-    [Header("Animadores")]
-    [SerializeField] private Animator animadorOperador;
-    [SerializeField] private Animator animadorUsuario;
-    [SerializeField] private Animator animadorSilla;
-    [SerializeField] private Animator animadorPuerta;
-
     [Header("Curvas")]
     [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
 
-    private ControladorCamara controladorCamara;
-    private ControladorDialogos controladorDiálogos;
+    private ControladorAnimaciones controladorAnimaciones;
 
     private void Start()
     {
@@ -42,48 +27,10 @@ public class SistemaAnimacion : MonoBehaviour
             Iniciar();
         }
     }
-
-    Vector3 aa;
-    Quaternion bb;
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-            MostrarAnimación(Animaciones.Escribir);
-
-        if (Input.GetKeyDown(KeyCode.O))
-            MostrarAnimación(Animaciones.Sentarse);
-
-        if (Input.GetKeyDown(KeyCode.P))
-            MostrarAnimación(Animaciones.LlegaUsuario);
-
-        if (Input.GetKeyDown(KeyCode.U))
-            MostrarAnimación(Animaciones.FinalAutor);
-
-        if (Input.GetKeyDown(KeyCode.Y))
-            StartCoroutine(AnimarRotaciónOjo(objetivoOjo));
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            animadorUsuario.Rebind();
-            animadorPuerta.Rebind();
-            animadorOperador.Rebind();
-            animadorSilla.Rebind();
-
-            animadorOperador.SetTrigger("Sentarse");
-            controladorCamara.CambiarPosición(CámarasCine.juego);
-            controladorCamara.CambiarDistanciaMínima(0.1f, 0.3f);
-
-            usuario.position = aa;
-            usuario.rotation = bb;
-        }
-    }
     
     private void Iniciar()
     {
-        aa = usuario.position;
-        bb = usuario.rotation;
-
-        controladorCamara = FindObjectOfType<ControladorCamara>();
+        controladorAnimaciones = FindObjectOfType<ControladorAnimaciones>();
 
         // Recuerda anterior o usa predeterminado
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
@@ -103,24 +50,7 @@ public class SistemaAnimacion : MonoBehaviour
     // Animaciones juego
     public static void MostrarAnimación(Animaciones animación)
     {
-        switch(animación)
-        {
-            case Animaciones.Escribir:
-                instancia.AnimarEscribir();
-                break;
-            case Animaciones.Sentarse:
-                instancia.StartCoroutine(instancia.AnimarSentarse());
-                break;
-            case Animaciones.MiraManos:
-                instancia.AnimarMirarManos();
-                break;
-            case Animaciones.LlegaUsuario:
-                instancia.StartCoroutine(instancia.AnimarLlegadaUsuario());
-                break;
-            case Animaciones.FinalAutor:
-                instancia.StartCoroutine(instancia.AnimarFinalAutor());
-                break;
-        }
+        instancia.controladorAnimaciones.MostrarAnimación(animación);
     }
 
     public static void MarcarAnimación(Animaciones animación)
@@ -130,140 +60,7 @@ public class SistemaAnimacion : MonoBehaviour
 
     public static void CancelarAnimación()
     {
-        instancia.CancelarEscribir();
-    }
-
-    public void AnimarEscribir()
-    {
-        animadorOperador.SetTrigger("Escribir");
-    }
-
-    public void CancelarEscribir()
-    {
-        animadorOperador.SetTrigger("Cancelar");
-    }
-
-    public void AnimarMirarManos()
-    {
-        animadorOperador.SetTrigger("MirarManos");
-    }
-
-    public IEnumerator AnimarFinalAutor()
-    {
-        controladorCamara.CambiarPosición(CámarasCine.final);
-        animadorOperador.SetTrigger("Mirar");
-
-        yield return new WaitForSeconds(7f);
-        StartCoroutine(AnimarRotaciónOjo(objetivoOjo));
-        yield return new WaitForSeconds(0.3f);
-
-        // Salida forzosa
-        Application.Quit();
-    }
-
-    public IEnumerator AnimarSentarse()
-    {
-        animadorOperador.SetTrigger("Sentarse");
-        animadorSilla.SetTrigger("Entrar");
-
-        yield return new WaitForSeconds(0.4f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.SillaEntrar);
-    }
-
-    public IEnumerator AnimarLlegadaUsuario()
-    {
-        // Usuario
-        usuario.gameObject.SetActive(true);
-        animadorUsuario.SetTrigger("Entrar");
-        animadorPuerta.SetTrigger("Abrir");
-
-        // Movimiento y rotación
-        var posiciónInicial = usuario.position;
-        var rotaciónInicial = usuario.rotation;
-        StartCoroutine(AnimarEntrarPosición(posiciónInicial));
-
-        // Sonido
-        //yield return new WaitForSeconds(0.4f);
-        //SistemaSonidos.ReproducirAnimación(Sonidos.PuertaEntrar);
-
-        // Cámara
-        yield return new WaitForSeconds(0.6f);
-        controladorCamara.CambiarPosición(CámarasCine.usuario);
-
-        // Operador
-        yield return new WaitForSeconds(0.4f);
-        animadorOperador.SetTrigger("Pararse");
-        animadorSilla.SetTrigger("Salir");
-
-        controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.SillaSalir);
-        StartCoroutine(AnimarEntrarRotación(rotaciónInicial));
-        
-        // Final con diálogos
-        yield return new WaitForSeconds(1f);
-        controladorDiálogos.MostrarÚltimoTextoFinalUsuario();
-    }
-
-    public IEnumerator AnimarEntrarPosición(Vector3 posiciónInicial)
-    {
-        float tiempoLerp = 0;
-        float tiempo = 0;
-        float duraciónLerp = 1.5f;
-        while (tiempoLerp < duraciónLerp)
-        {
-            tiempo = tiempoLerp / duraciónLerp;
-
-            usuario.position = Vector3.Lerp(posiciónInicial, objetivoUsuario.position, tiempo);
-
-            tiempoLerp += Time.deltaTime;
-            yield return null;
-        }
-
-        // Fin
-        usuario.position = objetivoUsuario.position;
-    }
-
-    public IEnumerator AnimarEntrarRotación(Quaternion rotaciónInicial)
-    {
-        float tiempoLerp = 0;
-        float tiempo = 0;
-        float duraciónLerp = 0.5f;
-        while (tiempoLerp < duraciónLerp)
-        {
-            tiempo = tiempoLerp / duraciónLerp;
-            usuario.rotation = Quaternion.Lerp(rotaciónInicial, objetivoUsuario.rotation, tiempo);
-
-            tiempoLerp += Time.deltaTime;
-            yield return null;
-        }
-
-        // Fin
-        usuario.rotation = objetivoUsuario.rotation;
-    }
-
-    public IEnumerator AnimarRotaciónOjo(Transform objetivo)
-    {
-        float tiempoLerp = 0;
-        float tiempo = 0;
-        float duraciónLerp = 0.2f;
-
-        var posiciónInicial = ojoOperador.position;
-        var rotaciónInicial = ojoOperador.rotation;
-
-        while (tiempoLerp < duraciónLerp)
-        {
-            tiempo = tiempoLerp / duraciónLerp;
-
-            ojoOperador.position = Vector3.Lerp(posiciónInicial, objetivo.position, tiempo);
-            ojoOperador.rotation = Quaternion.Lerp(rotaciónInicial, objetivo.rotation, tiempo);
-
-            tiempoLerp += Time.deltaTime;
-            yield return null;
-        }
-
-        // Fin
-        ojoOperador.position = objetivo.position;
-        ojoOperador.rotation = objetivo.rotation;
+        instancia.controladorAnimaciones.CancelarAnimación();
     }
 
     // Animaciones interfaz

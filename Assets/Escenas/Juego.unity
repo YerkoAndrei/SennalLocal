@@ -207,6 +207,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1392196}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &17080750 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6593800429951931171, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &40270092 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5547814152359337216, guid: bcf4aeaf0352b334cb4978b8a30774ce,
@@ -338,14 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea0ab600a4f7164c97de44362cd3f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usuario: {fileID: 8146991606417665356}
-  objetivoUsuario: {fileID: 1092305357}
-  ojoOperador: {fileID: 619710450703182140}
-  objetivoOjo: {fileID: 619710450703182142}
-  animadorOperador: {fileID: 594859613}
-  animadorUsuario: {fileID: 1384344060}
-  animadorSilla: {fileID: 786681172}
-  animadorPuerta: {fileID: 1348530524}
   "curvaAnimaci\xF3nEstandar":
     serializedVersion: 2
     m_Curve:
@@ -2761,6 +2759,58 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 932877996}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1612893897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612893899}
+  - component: {fileID: 1612893898}
+  m_Layer: 0
+  m_Name: ControladorAnimaciones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1612893898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612893897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f7372f1ad097a449b95f226be2b94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usuario: {fileID: 8146991606417665356}
+  objetivoUsuario: {fileID: 1092305357}
+  ojoOperador: {fileID: 619710450703182140}
+  objetivoOjo: {fileID: 17080750}
+  animadorOperador: {fileID: 594859613}
+  animadorUsuario: {fileID: 1384344060}
+  animadorSilla: {fileID: 786681172}
+  animadorPuerta: {fileID: 1348530524}
+--- !u!4 &1612893899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612893897}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1630223139
 PrefabInstance:
@@ -8839,12 +8889,6 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 619710450703182139}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &619710450703182142 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6593800429951931171, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 619710450703182139}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1624398401856314732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10291,6 +10335,7 @@ SceneRoots:
   - {fileID: 56775348}
   - {fileID: 8146991606417665354}
   - {fileID: 619710450703182139}
+  - {fileID: 1612893899}
   - {fileID: 932877996}
   - {fileID: 2118653015}
   - {fileID: 120897678}
