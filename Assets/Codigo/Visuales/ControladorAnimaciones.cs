@@ -10,7 +10,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
     [Header("Ojo Operador")]
     [SerializeField] private Transform ojoOperador;
-    [SerializeField] private Transform objetivoOjo;
+    [SerializeField] private Transform objetivoOjoOperador;
 
     [Header("Animadores")]
     [SerializeField] private Animator animadorOperador;
@@ -20,10 +20,14 @@ public class ControladorAnimaciones : MonoBehaviour
 
     private ControladorCamara controladorCamara;
     private ControladorDialogos controladorDiálogos;
+    private Vector3 ajusteMirada;
+    private float rotaciónInicialXOjo;
 
     private void Start()
     {
         controladorCamara = FindObjectOfType<ControladorCamara>();
+        ojoOperador.gameObject.SetActive(false);
+        ajusteMirada = new Vector3(-0.1f, 0.2f, 0);
 
         aa = usuario.position;
         bb = usuario.rotation;
@@ -46,8 +50,11 @@ public class ControladorAnimaciones : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
             MostrarAnimación(Animaciones.FinalAutor);
 
-        if (Input.GetKeyDown(KeyCode.Y))
-            StartCoroutine(AnimarRotaciónOjo(objetivoOjo));
+        if (Input.GetKeyDown(KeyCode.H))
+            StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
+
+        if (Input.GetKeyDown(KeyCode.J))
+            StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
 
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -59,6 +66,7 @@ public class ControladorAnimaciones : MonoBehaviour
             animadorOperador.SetTrigger("Sentarse");
             controladorCamara.CambiarPosición(CámarasCine.juego);
             controladorCamara.CambiarDistanciaMínima(0.1f, 0.3f);
+            StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
 
             usuario.position = aa;
             usuario.rotation = bb;
@@ -107,14 +115,17 @@ public class ControladorAnimaciones : MonoBehaviour
     private IEnumerator AnimarFinalAutor()
     {
         controladorCamara.CambiarPosición(CámarasCine.final);
+        controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
         animadorOperador.SetTrigger("Mirar");
 
-        yield return new WaitForSeconds(7f);
-        StartCoroutine(AnimarRotaciónOjo(objetivoOjo));
+        StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
+        yield return new WaitForSeconds(10f);
+        StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
         yield return new WaitForSeconds(0.3f);
 
         // Salida forzosa
-        Application.Quit();
+        print("chao");
+        //Application.Quit();
     }
 
     private IEnumerator AnimarSentarse()
@@ -168,7 +179,6 @@ public class ControladorAnimaciones : MonoBehaviour
         while (tiempoLerp < duraciónLerp)
         {
             tiempo = tiempoLerp / duraciónLerp;
-
             usuario.position = Vector3.Lerp(posiciónInicial, objetivoUsuario.position, tiempo);
 
             tiempoLerp += Time.deltaTime;
@@ -197,28 +207,35 @@ public class ControladorAnimaciones : MonoBehaviour
         usuario.rotation = objetivoUsuario.rotation;
     }
 
-    private IEnumerator AnimarRotaciónOjo(Transform objetivo)
+    private IEnumerator AnimarRotaciónOjo(Vector3 objetivo)
     {
+        // Prende ojo y guarda su rotación base
+        if (!ojoOperador.gameObject.activeSelf)
+        {
+            rotaciónInicialXOjo = ojoOperador.rotation.eulerAngles.x;
+            ojoOperador.gameObject.SetActive(true);
+        }
+
         float tiempoLerp = 0;
         float tiempo = 0;
-        float duraciónLerp = 0.2f;
+        float duraciónLerp = 0.1f;
 
-        var posiciónInicial = ojoOperador.position;
         var rotaciónInicial = ojoOperador.rotation;
+        var posiciónRelativa = (objetivo + ajusteMirada) - ojoOperador.position;
+        var rotaciónRelativa = Quaternion.LookRotation(posiciónRelativa, Vector3.up).eulerAngles + new Vector3(rotaciónInicialXOjo, 0, 0);
+        var rotaciónObjetivo = Quaternion.Euler(rotaciónRelativa);
 
         while (tiempoLerp < duraciónLerp)
         {
             tiempo = tiempoLerp / duraciónLerp;
 
-            ojoOperador.position = Vector3.Lerp(posiciónInicial, objetivo.position, tiempo);
-            ojoOperador.rotation = Quaternion.Lerp(rotaciónInicial, objetivo.rotation, tiempo);
+            ojoOperador.rotation = Quaternion.Lerp(rotaciónInicial, rotaciónObjetivo, tiempo);
 
             tiempoLerp += Time.deltaTime;
             yield return null;
         }
 
         // Fin
-        ojoOperador.position = objetivo.position;
-        ojoOperador.rotation = objetivo.rotation;
+        ojoOperador.rotation = rotaciónObjetivo;
     }
 }
