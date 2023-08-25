@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using static Constantes;
-using UnityEngine.SceneManagement;
 
 public class ControladorDialogos : MonoBehaviour
 {
