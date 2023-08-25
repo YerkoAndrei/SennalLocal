@@ -147,37 +147,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &7353948703600019223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6593800429951931171}
-  m_Layer: 0
-  m_Name: ObjetivoOjo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6593800429951931171
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7353948703600019223}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7862514, y: 0.11064162, z: 0.16329779, w: 0.58557755}
-  m_LocalPosition: {x: 1.6457672, y: -14.179902, z: 3.7900343}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 857446434924777993}
-  m_LocalEulerAnglesHint: {x: -73.128, y: -154.004, z: 176.59}
 --- !u!1001 &492762838020284812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -439,6 +408,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Operador
       objectReference: {fileID: 0}
+    - target: {fileID: 4947488628831940643, guid: e118b587ef5df8a4cb77c4328b2e5506,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e118b587ef5df8a4cb77c4328b2e5506,
         type: 3}
       propertyPath: m_Controller
@@ -455,10 +429,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 97984412155315815}
-    - targetCorrespondingSourceObject: {fileID: -6678128549031409724, guid: e118b587ef5df8a4cb77c4328b2e5506,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6593800429951931171}
     - targetCorrespondingSourceObject: {fileID: -6678128549031409724, guid: e118b587ef5df8a4cb77c4328b2e5506,
         type: 3}
       insertIndex: -1

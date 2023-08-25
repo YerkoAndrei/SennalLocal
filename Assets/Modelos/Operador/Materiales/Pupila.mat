@@ -103,8 +103,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_514932F2: {r: 0.31372547, g: 0.19607839, b: 0, a: 1}
-    - Color_EC75D829: {r: 0.62745106, g: 0.35294116, b: 0, a: 1}
+    - Color_514932F2: {r: 0.3529412, g: 0.15686275, b: 0, a: 1}
+    - Color_EC75D829: {r: 0.78431374, g: 0.39215687, b: 0.039215688, a: 1}
     - _BaseColor: {r: 1, g: 0, b: 0.011549477, a: 1}
     - _Color: {r: 1, g: 0, b: 0.011549477, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
