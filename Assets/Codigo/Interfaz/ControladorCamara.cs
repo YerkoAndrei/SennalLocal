@@ -5,7 +5,8 @@ using static Constantes;
 public class ControladorCamara : MonoBehaviour
 {
     [Header("Referencias")]
-    public Transform transformCámara;
+    public Transform posicionadorCámara;
+    [SerializeField] private Transform vibradorCámara;
     [SerializeField] private Camera cámara;
 
     [Header("Variables")]
@@ -28,15 +29,18 @@ public class ControladorCamara : MonoBehaviour
 
     private ControladorMenu controladorMenu;
     private CámarasCine últimaCámara;
+    private Vector3 vibraciónAnterior;
     private bool moviendo;
 
     private void Start()
     {
         controladorMenu = FindObjectOfType<ControladorMenu>();
+        vibraciónAnterior = Vector3.zero;
+        StartCoroutine(VibrarCámara());
 
         últimaCámara = CámarasCine.menú;
-        transformCámara.localPosition = posiciónMenú.localPosition;
-        transformCámara.localRotation = posiciónMenú.localRotation;
+        posicionadorCámara.localPosition = posiciónMenú.localPosition;
+        posicionadorCámara.localRotation = posiciónMenú.localRotation;
     }
 
     public void CambiarPosición(CámarasCine cámaraCine)
@@ -44,23 +48,23 @@ public class ControladorCamara : MonoBehaviour
         switch (cámaraCine)
         {
             case CámarasCine.menú:
-                StartCoroutine(MoverCámara(duraciónCámaraMenú, posiciónMenú.localPosition, posiciónMenú.localRotation));
+                StartCoroutine(MoverCámara(duraciónCámaraMenú, false, posiciónMenú.localPosition, posiciónMenú.localRotation));
                 break;
             case CámarasCine.juego:
                 if(últimaCámara == CámarasCine.menú)
-                    StartCoroutine(MoverCámara(duraciónCámaraMenú, posiciónJuego.localPosition, posiciónJuego.localRotation));
+                    StartCoroutine(MoverCámara(duraciónCámaraMenú, false, posiciónJuego.localPosition, posiciónJuego.localRotation));
                 else
-                    StartCoroutine(MoverCámara(duraciónCámaraJuego, posiciónJuego.localPosition, posiciónJuego.localRotation));
+                    StartCoroutine(MoverCámara(duraciónCámaraJuego, false, posiciónJuego.localPosition, posiciónJuego.localRotation));
                 break;
             case CámarasCine.operador:
-                StartCoroutine(MoverCámara(duraciónCámaraOperador, posiciónOperador.localPosition, posiciónOperador.localRotation));
+                StartCoroutine(MoverCámara(duraciónCámaraOperador, false, posiciónOperador.localPosition, posiciónOperador.localRotation));
                 break;
             case CámarasCine.usuario:
-                StartCoroutine(MoverCámara(duraciónCámaraUsuario0, posiciónUsuario0.localPosition, posiciónUsuario0.localRotation));
+                StartCoroutine(MoverCámara(duraciónCámaraUsuario0, true, posiciónUsuario0.localPosition, posiciónUsuario0.localRotation));
                 break;
             case CámarasCine.final:
                 controladorMenu.MostrarMenúJuego(false);
-                StartCoroutine(MoverCámara(duraciónCámaraFinal0, posiciónFinal0.localPosition, posiciónFinal0.localRotation));
+                StartCoroutine(MoverCámara(duraciónCámaraFinal0, true, posiciónFinal0.localPosition, posiciónFinal0.localRotation));
                 break;
         }
 
@@ -72,21 +76,23 @@ public class ControladorCamara : MonoBehaviour
         StartCoroutine(ModificarDistanciaMínima(duraciónObjetivo, distanciaObjetivo));
     }
     
-    private IEnumerator MoverCámara(float duraciónObjetivo, Vector3 posiciónObjetivo, Quaternion rotaciónObjetivo)
+    private IEnumerator MoverCámara(float duraciónObjetivo, bool secuencia, Vector3 posiciónObjetivo, Quaternion rotaciónObjetivo)
     {
         // Intercalación lineal con curva
         moviendo = true;
-        var posiciónInicio = transformCámara.localPosition;
-        var rotaciónInicio = transformCámara.localRotation;
+        var posiciónInicio = posicionadorCámara.localPosition;
+        var rotaciónInicio = posicionadorCámara.localRotation;
 
         float tiempoLerp = 0;
         float evaluaciónCurva = 0;
+        float evaluaciónCurvaRotación = 0;
 
         while (tiempoLerp < duraciónObjetivo)
         {
             evaluaciónCurva = SistemaAnimacion.EvaluarCurva(tiempoLerp / duraciónObjetivo);
-            transformCámara.localPosition = Vector3.Lerp(posiciónInicio, posiciónObjetivo, evaluaciónCurva);
-            transformCámara.localRotation = Quaternion.Lerp(rotaciónInicio, rotaciónObjetivo, evaluaciónCurva);
+            evaluaciónCurvaRotación = SistemaAnimacion.EvaluarCurvaCámara(tiempoLerp / duraciónObjetivo);
+            posicionadorCámara.localPosition = Vector3.Lerp(posiciónInicio, posiciónObjetivo, evaluaciónCurva);
+            posicionadorCámara.localRotation = Quaternion.Lerp(rotaciónInicio, rotaciónObjetivo, evaluaciónCurvaRotación);
 
             tiempoLerp += Time.deltaTime;
             yield return null;
@@ -104,19 +110,49 @@ public class ControladorCamara : MonoBehaviour
                 controladorMenu.MostrarMenúJuego(false);
                 break;
             case CámarasCine.usuario:
-                controladorMenu.MostrarMenúJuego(false);
-                StartCoroutine(MoverCámara(duraciónCámaraUsuario1, posiciónUsuario1.localPosition, posiciónUsuario1.localRotation));
+                if (secuencia)
+                {
+                    controladorMenu.MostrarMenúJuego(false);
+                    StartCoroutine(MoverCámara(duraciónCámaraUsuario1, false, posiciónUsuario1.localPosition, posiciónUsuario1.localRotation));
+                }
                 break;
             case CámarasCine.final:
-                SistemaAnimacion.MostrarAnimación(Animaciones.FinalAutor);
-                StartCoroutine(MoverCámara(duraciónCámaraFinal1, posiciónFinal1.localPosition, posiciónFinal1.localRotation));
+                if (secuencia)
+                    StartCoroutine(MoverCámara(duraciónCámaraFinal1, false, posiciónFinal1.localPosition, posiciónFinal1.localRotation));
                 break;
         }
     }
 
+    // Vibración natural
+    private IEnumerator VibrarCámara()
+    {
+        var x = Random.Range(-0.002f, 0.002f);
+        var y = Random.Range(-0.006f, 0.006f);
+        var z = Random.Range(-0.001f, 0.001f);
+
+        var posiciónObjetivo = new Vector3(x, y, z);
+        float duraciónObjetivo = 1.5f;
+        float tiempoLerp = 0;
+        float evaluación = 0;
+
+        while (tiempoLerp < duraciónObjetivo)
+        {
+            evaluación = SistemaAnimacion.EvaluarCurvaCámara(tiempoLerp / duraciónObjetivo);
+            vibradorCámara.localPosition = Vector3.Lerp(vibraciónAnterior, posiciónObjetivo, evaluación);
+
+            tiempoLerp += Time.deltaTime;
+            yield return null;
+        }
+
+        // Fin Lerp
+        vibraciónAnterior = posiciónObjetivo;
+        vibradorCámara.localPosition = posiciónObjetivo;
+        StartCoroutine(VibrarCámara());
+    }
+
     private IEnumerator ModificarDistanciaMínima(float duraciónObjetivo, float distanciaObjetivo)
     {
-        // Intercalación lineal con curva
+        // Intercalación lineal sin curva
         moviendo = true;
         var distanciaActual = cámara.nearClipPlane;
         float tiempoLerp = 0;
