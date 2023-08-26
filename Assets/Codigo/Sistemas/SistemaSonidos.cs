@@ -11,9 +11,6 @@ public class SistemaSonidos : MonoBehaviour
     [Header("Mixer")]
     [SerializeField] private AudioMixer audioMixer;
 
-    [Header("Variables")]
-    [SerializeField] private float tiempoCambioMúsica;
-
     [Header("Referencias audios")]
     [SerializeField] private AudioSource fuenteMúsica;
     [SerializeField] private AudioSource fuenteDiálogo;
@@ -106,6 +103,7 @@ public class SistemaSonidos : MonoBehaviour
     private IEnumerator CambiarVolumenMúsica(bool activar)
     {
         // Intercalación lineal con curva
+        float tiempoCambioVolumen = 4;
         tiempoLerp = 0;
 
         if (activar)
@@ -116,16 +114,16 @@ public class SistemaSonidos : MonoBehaviour
         else
             fuenteMúsica.volume = ObtenerVolumenMúsica();
 
-        while (tiempoLerp < tiempoCambioMúsica)
+        while (tiempoLerp < tiempoCambioVolumen)
         {
             if (activar)
             {
-                tiempoCambio = SistemaAnimacion.EvaluarCurva(tiempoLerp / tiempoCambioMúsica);
+                tiempoCambio = SistemaAnimacion.EvaluarCurva(tiempoLerp / tiempoCambioVolumen);
                 fuenteMúsica.volume = Mathf.Lerp(0, ObtenerVolumenMúsica(), tiempoCambio);
             }
             else
             {
-                tiempoCambio = SistemaAnimacion.EvaluarCurva(tiempoLerp / tiempoCambioMúsica);
+                tiempoCambio = SistemaAnimacion.EvaluarCurva(tiempoLerp / tiempoCambioVolumen);
                 fuenteMúsica.volume = Mathf.Lerp(ObtenerVolumenMúsica(), 0, tiempoCambio);
             }
 
