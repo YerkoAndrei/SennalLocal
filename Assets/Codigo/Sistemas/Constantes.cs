@@ -87,9 +87,9 @@ public class Constantes
     {
         menú,
         juego,
-        operador,
+        inicio,
         usuario,
-        final
+        autor
     }
 
     public enum ModoLuz

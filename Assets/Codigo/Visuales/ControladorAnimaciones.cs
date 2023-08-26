@@ -114,9 +114,11 @@ public class ControladorAnimaciones : MonoBehaviour
 
     private IEnumerator AnimarFinalAutor()
     {
-        controladorCamara.CambiarPosición(CámarasCine.final);
+        controladorCamara.CambiarPosición(CámarasCine.autor);
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
         animadorOperador.SetTrigger("Mirar");
+
+        SistemaSonidos.ActivarMúsica(false);
 
         StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
         yield return new WaitForSeconds(10f);
@@ -152,6 +154,7 @@ public class ControladorAnimaciones : MonoBehaviour
         // Sonido
         //yield return new WaitForSeconds(0.4f);
         //SistemaSonidos.ReproducirAnimación(Sonidos.PuertaEntrar);
+        SistemaSonidos.ActivarMúsica(false);
 
         // Cámara
         yield return new WaitForSeconds(0.6f);

@@ -87,13 +87,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624398400597877122}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23060952, y: -0.4385211, z: 0.11750139, w: 0.86064625}
-  m_LocalPosition: {x: 1.583, y: 1.648, z: -0.995}
+  m_LocalRotation: {x: 0.19498868, y: -0.5920486, z: 0.15044363, w: 0.76734906}
+  m_LocalPosition: {x: 1.625, y: 1.648, z: -0.817}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624398400678808418}
-  m_LocalEulerAnglesHint: {x: 30, y: -54, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.515, y: -75.304, z: 0}
 --- !u!1 &1624398400678808416
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,9 +128,7 @@ Transform:
   - {fileID: 1624398400885544051}
   - {fileID: 1624398400491925614}
   - {fileID: 1624398400597877123}
-  - {fileID: 852408361099794596}
   - {fileID: 6484862996036009132}
-  - {fileID: 769739473672948749}
   - {fileID: 7617976851564239706}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -149,20 +147,155 @@ MonoBehaviour:
   "posicionadorC\xE1mara": {fileID: 5381803611520750791}
   "vibradorC\xE1mara": {fileID: 1624398401632264247}
   "c\xE1mara": {fileID: 1624398401632264246}
+  curvaSuave:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curvaInicio:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.8
+      value: 0.5
+      inSlope: 1.5625001
+      outSlope: 1.5625001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curvaUsuario:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 6
+      outSlope: 6
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.6
+      inSlope: 2.224099
+      outSlope: 2.224099
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.18000117
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.96
+      inSlope: 0.15929285
+      outSlope: 0.15929285
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.47564647
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curvaAutor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 5
+      outSlope: 5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.5
+      inSlope: 2.224099
+      outSlope: 2.224099
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.18000117
+    - serializedVersion: 3
+      time: 0.6
+      value: 0.9
+      inSlope: 0.35520822
+      outSlope: 0.35520822
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.20715994
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.47564647
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   "duraci\xF3nC\xE1maraMen\xFA": 0.5
-  "duraci\xF3nC\xE1maraJuego": 1.8
-  "duraci\xF3nC\xE1maraOperador": 1.2
-  "duraci\xF3nC\xE1maraUsuario0": 1
-  "duraci\xF3nC\xE1maraUsuario1": 6
-  "duraci\xF3nC\xE1maraFinal0": 1
-  "duraci\xF3nC\xE1maraFinal1": 8
+  "duraci\xF3nC\xE1maraInicio": 2.5
+  "duraci\xF3nC\xE1maraUsuario": 6
+  "duraci\xF3nC\xE1maraAutor": 8
   "posici\xF3nMen\xFA": {fileID: 1624398400885544051}
   "posici\xF3nJuego": {fileID: 1624398400491925614}
-  "posici\xF3nOperador": {fileID: 1624398400597877123}
-  "posici\xF3nUsuario0": {fileID: 852408361099794596}
-  "posici\xF3nUsuario1": {fileID: 6484862996036009132}
-  "posici\xF3nFinal0": {fileID: 769739473672948749}
-  "posici\xF3nFinal1": {fileID: 7617976851564239706}
+  "posici\xF3nUsuario": {fileID: 6484862996036009132}
+  "posici\xF3nAutor": {fileID: 7617976851564239706}
 --- !u!1 &1624398400885544050
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,68 +525,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!1 &1763995438941215408
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 852408361099794596}
-  m_Layer: 0
-  m_Name: "Posici\xF3nUsuario (0)"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &852408361099794596
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763995438941215408}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.06211719, y: -0.1489382, z: 0.019151645, w: 0.98670775}
-  m_LocalPosition: {x: 0.941, y: 1.321, z: -1.017}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1624398400678808418}
-  m_LocalEulerAnglesHint: {x: 7.371, y: -17.096, z: 1.115}
---- !u!1 &6683922105706209547
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 769739473672948749}
-  m_Layer: 0
-  m_Name: "Posici\xF3nFinal (0)"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &769739473672948749
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6683922105706209547}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.21199332, y: -0.13902076, z: 0.043912884, w: 0.9663352}
-  m_LocalPosition: {x: 0.81, y: 1.274, z: -0.698}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1624398400678808418}
-  m_LocalEulerAnglesHint: {x: 24.956, y: -16.011, z: 1.639}
 --- !u!1 &6885346642323519228
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6484862996036009132}
   m_Layer: 0
-  m_Name: "Posici\xF3nUsuario (1)"
+  m_Name: "Posici\xF3nUsuario"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7617976851564239706}
   m_Layer: 0
-  m_Name: "Posici\xF3nFinal (1)"
+  m_Name: "Posici\xF3nAutor"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

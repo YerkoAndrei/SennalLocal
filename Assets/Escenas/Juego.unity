@@ -315,30 +315,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  "curvaAnimaci\xF3nC\xE1mara":
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &120897678
 Transform:
   m_ObjectHideFlags: 0
@@ -1017,6 +993,12 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 619710450703182139}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &598967789 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6827027507215532672, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &717722210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1569,7 +1551,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: dc2cffa0e0a179548b6b5187ed34c2b8, type: 2}
-  "tiempoCambioM\xFAsica": 4
   "fuenteM\xFAsica": {fileID: 876263525}
   "fuenteDi\xE1logo": {fileID: 1200955967}
   fuenteEfectos: {fileID: 1602140546}
@@ -2053,7 +2034,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 1
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2550,7 +2531,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 1
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -8804,6 +8785,91 @@ PrefabInstance:
       propertyPath: m_Name
       value: "C\xE1mara"
       objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: "duraci\xF3nC\xE1maraJuego"
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaJuego.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaJuego.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaJuego.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaJuego.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaJuego.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaJuego.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaJuego.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624398400678808417, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
+        type: 3}
+      propertyPath: curvaOperador.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1624398400678808418, guid: 24b74c6954da1b743a9c34d53bf3fdbf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9772,6 +9838,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 204027884738171695, guid: bcf4aeaf0352b334cb4978b8a30774ce,
+        type: 3}
+      propertyPath: entradaCable
+      value: 
+      objectReference: {fileID: 598967789}
     - target: {fileID: 2727556050286976589, guid: bcf4aeaf0352b334cb4978b8a30774ce,
         type: 3}
       propertyPath: m_LocalPosition.x

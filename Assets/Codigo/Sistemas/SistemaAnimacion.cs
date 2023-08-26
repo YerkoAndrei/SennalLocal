@@ -12,8 +12,7 @@ public class SistemaAnimacion : MonoBehaviour
     public static Animaciones animaciónFinal;
 
     [Header("Curvas")]
-    [SerializeField] private AnimationCurve curvaAnimaciónEstandar;
-    [SerializeField] private AnimationCurve curvaAnimaciónCámara;
+    public AnimationCurve curvaAnimaciónEstandar;
 
     private ControladorAnimaciones controladorAnimaciones;
 
@@ -70,14 +69,14 @@ public class SistemaAnimacion : MonoBehaviour
         instancia.StopCoroutine(corrutina);
     }
 
+    public static AnimationCurve ObtenerCurva()
+    {
+        return instancia.curvaAnimaciónEstandar;
+    }
+
     public static float EvaluarCurva(float tiempo)
     {
         return instancia.curvaAnimaciónEstandar.Evaluate(tiempo);
-    }
-
-    public static float EvaluarCurvaCámara(float tiempo)
-    {
-        return instancia.curvaAnimaciónCámara.Evaluate(tiempo);
     }
 
     public static void AnimarPanel(RectTransform elemento, float duraciónLerp, bool entrando, bool conCurva, Direcciones dirección, Action alFinal)

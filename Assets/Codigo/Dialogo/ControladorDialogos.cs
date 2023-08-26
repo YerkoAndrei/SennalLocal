@@ -127,7 +127,7 @@ public class ControladorDialogos : MonoBehaviour
         // Primer Flujo
         if (!iniciado)
         {
-            controladorCamara.CambiarPosición(CámarasCine.operador);
+            controladorCamara.CambiarPosición(CámarasCine.inicio);
             SistemaAnimacion.MostrarAnimación(Animaciones.Sentarse);
         }
 
@@ -147,8 +147,8 @@ public class ControladorDialogos : MonoBehaviour
             yield return new WaitForSeconds(1f);
             yield return new WaitUntil(() => activo);
         }
-
-        controladorCamara.CambiarPosición(CámarasCine.juego);
+        else
+            controladorCamara.CambiarPosición(CámarasCine.juego);
 
         yield return new WaitForSeconds(1f);
         yield return new WaitUntil(() => activo);
@@ -628,7 +628,7 @@ public class ControladorDialogos : MonoBehaviour
 
     private void VolverAlMenú()
     {
-        controladorCamara.CambiarPosición(CámarasCine.final);
+        controladorCamara.CambiarPosición(CámarasCine.menú);
         panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
         panelPregunta.SetActive(false);
