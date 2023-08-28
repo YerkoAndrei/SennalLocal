@@ -18,6 +18,7 @@ public class ControladorCamara : MonoBehaviour
     [Header("Variables")]
     [SerializeField] private float duraciónCámaraMenú;
     [SerializeField] private float duraciónCámaraInicio;
+    [SerializeField] private float duraciónCámaraFinal;
     [SerializeField] private float duraciónCámaraUsuario;
     [SerializeField] private float duraciónCámaraAutor;
 
@@ -55,6 +56,9 @@ public class ControladorCamara : MonoBehaviour
                 break;
             case CámarasCine.inicio:
                 StartCoroutine(MoverCámara(duraciónCámaraInicio, curvaInicio, posiciónJuego.localPosition, posiciónJuego.localRotation));
+                break;
+            case CámarasCine.final:
+                StartCoroutine(MoverCámara(duraciónCámaraFinal, curvaInicio, posiciónMenú.localPosition, posiciónMenú.localRotation));
                 break;
             case CámarasCine.usuario:
                 StartCoroutine(MoverCámara(duraciónCámaraUsuario, curvaUsuario, posiciónUsuario.localPosition, posiciónUsuario.localRotation));
@@ -101,6 +105,9 @@ public class ControladorCamara : MonoBehaviour
             case CámarasCine.juego:
             case CámarasCine.inicio:
                 controladorMenu.MostrarMenúJuego(true);
+                break;
+            case CámarasCine.final:
+                controladorMenu.IniciarMenú();
                 break;
             case CámarasCine.menú:
             case CámarasCine.usuario:

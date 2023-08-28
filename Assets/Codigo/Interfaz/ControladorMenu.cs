@@ -100,23 +100,10 @@ public class ControladorMenu : MonoBehaviour
                 break;
         }
 
-        // Menú
-        panelBotones.SetActive(true);
-        panelOpciones.SetActive(false);
-        panelCréditos.SetActive(false);
-
-        btnIniciar.SetActive(true);
-        btnReiniciar.SetActive(false);
-        btnReanudar.SetActive(false);
-
-        menúInicio.SetActive(true);
-        menúJuego.SetActive(false);
-
         txtVersión.text = Application.version;
 
-        corrutinaColorTítulo = SistemaAnimacion.AnimarColor(imgTítulo, 4, true, colorRojoClaro, Color.white, null);
-        SistemaAnimacion.AnimarColor(panelOscuro, 4, false, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
-        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
+        // Menú
+        IniciarMenú();
     }
 
     private void Update()
@@ -128,6 +115,25 @@ public class ControladorMenu : MonoBehaviour
             else
                 EnClicReanudar();
         }
+    }
+
+    public void IniciarMenú()
+    {
+        panelBotones.SetActive(true);
+        panelOpciones.SetActive(false);
+        panelCréditos.SetActive(false);
+
+        btnIniciar.SetActive(true);
+        btnReiniciar.SetActive(false);
+        btnReanudar.SetActive(false);
+
+        menúInicio.SetActive(true);
+        menúJuego.SetActive(false);
+
+        corrutinaColorTítulo = SistemaAnimacion.AnimarColor(imgTítulo, 4, true, colorRojoClaro, Color.white, null);
+        SistemaAnimacion.AnimarColor(panelOscuro, 4, false, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
+        SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, true, Direcciones.arriba, null);
     }
 
     public void EnClicIniciar()

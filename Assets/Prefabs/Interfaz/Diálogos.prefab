@@ -1364,6 +1364,7 @@ MonoBehaviour:
   colorPanelActivo: {r: 0.019607844, g: 0.019607844, b: 0.019607844, a: 0.98039216}
   colorPanelEspera: {r: 0.019607844, g: 0.019607844, b: 0.019607844, a: 0.39215687}
   "panelDi\xE1logos": {fileID: 5925399365183516083}
+  panelOscuro: {fileID: 6181776944298570332}
   "panelDi\xE1logo": {fileID: 5925399365183516081}
   "txtDi\xE1logo": {fileID: 5925399364849795249}
   imgPersonaje: {fileID: 5925399365395468440}

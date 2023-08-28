@@ -50,17 +50,23 @@ public class SistemaAnimacion : MonoBehaviour
     // Animaciones juego
     public static void MostrarAnimación(Animaciones animación)
     {
+        if (instancia.controladorAnimaciones == null)
+            instancia.controladorAnimaciones = FindObjectOfType<ControladorAnimaciones>();
+
         instancia.controladorAnimaciones.MostrarAnimación(animación);
+    }
+
+    public static void CancelarAnimación()
+    {
+        if (instancia.controladorAnimaciones == null)
+            instancia.controladorAnimaciones = FindObjectOfType<ControladorAnimaciones>();
+
+        instancia.controladorAnimaciones.CancelarAnimación();
     }
 
     public static void MarcarAnimación(bool animando)
     {
         mostrandoAnimación = animando;
-    }
-
-    public static void CancelarAnimación()
-    {
-        instancia.controladorAnimaciones.CancelarAnimación();
     }
 
     // Animaciones interfaz

@@ -88,6 +88,7 @@ public class Constantes
         menú,
         juego,
         inicio,
+        final,
         usuario,
         autor
     }
@@ -120,7 +121,8 @@ public class Constantes
     {
         SillaEntrar,
         SillaSalir,
-        PuertaEntrar
+        PuertaEntrar,
+        MatarUsuario
     }
 
     // Sonidos

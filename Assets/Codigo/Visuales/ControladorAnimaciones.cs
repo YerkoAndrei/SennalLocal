@@ -145,6 +145,7 @@ public class ControladorAnimaciones : MonoBehaviour
     private IEnumerator AnimarLlegadaUsuario()
     {
         SistemaAnimacion.MarcarAnimación(true);
+        CancelarAnimación();
 
         // Usuario
         usuario.gameObject.SetActive(true);

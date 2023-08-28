@@ -631,8 +631,11 @@ public class ControladorDialogos : MonoBehaviour
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
             return;
         }
+        // Final Especial Operador
+        else if (animaciónMostrada == Animaciones.MiraManos)
+            SistemaAnimacion.CancelarAnimación();
 
-        controladorCamara.CambiarPosición(CámarasCine.menú);
+        controladorCamara.CambiarPosición(CámarasCine.final);
         panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
         panelPregunta.SetActive(false);
@@ -640,6 +643,7 @@ public class ControladorDialogos : MonoBehaviour
         estado = Estados.enPausa;
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
+
     }
 
     // Final Especial Usuario
@@ -648,7 +652,10 @@ public class ControladorDialogos : MonoBehaviour
         panelOscuro.gameObject.SetActive(true);
         SistemaAnimacion.AnimarColor(panelOscuro, 1, false, Color.clear, Color.black, null);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        SistemaSonidos.ReproducirAnimación(Sonidos.MatarUsuario);
+
+        yield return new WaitForSeconds(1);
         FinalizarPartida(tipoFinal, ruta);
     }
 }

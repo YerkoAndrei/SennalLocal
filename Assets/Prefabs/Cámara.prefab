@@ -290,6 +290,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   "duraci\xF3nC\xE1maraMen\xFA": 0.5
   "duraci\xF3nC\xE1maraInicio": 2.5
+  "duraci\xF3nC\xE1maraFinal": 2
   "duraci\xF3nC\xE1maraUsuario": 6
   "duraci\xF3nC\xE1maraAutor": 8
   "posici\xF3nMen\xFA": {fileID: 1624398400885544051}

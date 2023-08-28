@@ -33,6 +33,7 @@ public class SistemaSonidos : MonoBehaviour
     [SerializeField] private AudioClip sonidoSillaEntrar;
     [SerializeField] private AudioClip sonidoSillaSalir;
     [SerializeField] private AudioClip sonidoPuertaEntrar;
+    [SerializeField] private AudioClip sonidoMatarUsuario;
 
     private float volumenEstandar = 0.5f;
 
@@ -184,6 +185,9 @@ public class SistemaSonidos : MonoBehaviour
                 break;
             case Sonidos.PuertaEntrar:
                 instancia.fuenteEfectos.PlayOneShot(instancia.sonidoPuertaEntrar);
+                break;
+            case Sonidos.MatarUsuario:
+                instancia.fuenteEfectos.PlayOneShot(instancia.sonidoMatarUsuario);
                 break;
         }
     }
