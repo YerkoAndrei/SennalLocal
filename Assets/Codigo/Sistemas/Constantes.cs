@@ -108,6 +108,7 @@ public class Constantes
 
     public enum Animaciones
     {
+        Nada,
         Escribir,
         Sentarse,
         MiraManos,

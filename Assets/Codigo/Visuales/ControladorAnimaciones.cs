@@ -28,11 +28,11 @@ public class ControladorAnimaciones : MonoBehaviour
         controladorCamara = FindObjectOfType<ControladorCamara>();
         ojoOperador.gameObject.SetActive(false);
         ajusteMirada = new Vector3(-0.1f, 0.2f, 0);
-
+        /*
         aa = usuario.position;
-        bb = usuario.rotation;
+        bb = usuario.rotation;*/
     }
-
+    /*
     // Pruebas
     Vector3 aa;
     Quaternion bb;
@@ -71,7 +71,7 @@ public class ControladorAnimaciones : MonoBehaviour
             usuario.position = aa;
             usuario.rotation = bb;
         }
-    }
+    }*/
 
     // Sistema animación
     public void MostrarAnimación(Animaciones animación)
@@ -85,7 +85,7 @@ public class ControladorAnimaciones : MonoBehaviour
                 StartCoroutine(AnimarSentarse());
                 break;
             case Animaciones.MiraManos:
-                AnimarMirarManos();
+                StartCoroutine(AnimarMirarManos());
                 break;
             case Animaciones.LlegaUsuario:
                 StartCoroutine(AnimarLlegadaUsuario());
@@ -107,9 +107,12 @@ public class ControladorAnimaciones : MonoBehaviour
         animadorOperador.SetTrigger("Escribir");
     }
 
-    private void AnimarMirarManos()
+    private IEnumerator AnimarMirarManos()
     {
+        SistemaAnimacion.MarcarAnimación(true);
         animadorOperador.SetTrigger("MirarManos");
+        yield return new WaitForSeconds(2f);
+        SistemaAnimacion.MarcarAnimación(false);
     }
 
     private IEnumerator AnimarFinalAutor()
@@ -141,6 +144,8 @@ public class ControladorAnimaciones : MonoBehaviour
 
     private IEnumerator AnimarLlegadaUsuario()
     {
+        SistemaAnimacion.MarcarAnimación(true);
+
         // Usuario
         usuario.gameObject.SetActive(true);
         animadorUsuario.SetTrigger("Entrar");
@@ -171,7 +176,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
         // Final con diálogos
         yield return new WaitForSeconds(1f);
-        controladorDiálogos.MostrarÚltimoTextoFinalUsuario();
+        SistemaAnimacion.MarcarAnimación(false);
     }
 
     private IEnumerator AnimarEntrarPosición(Vector3 posiciónInicial)

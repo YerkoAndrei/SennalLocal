@@ -36,6 +36,7 @@ public class ControladorDialogos : MonoBehaviour
 
     [Header("Referencias diálogos")]
     [SerializeField] private GameObject panelDiálogos;
+    [SerializeField] private Image panelOscuro;
     [SerializeField] private Image panelDiálogo;
     [SerializeField] private TMP_Text txtDiálogo;
     [SerializeField] private Image imgPersonaje;
@@ -80,6 +81,7 @@ public class ControladorDialogos : MonoBehaviour
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
+    private Animaciones animaciónMostrada;
     private bool iniciado;
     private bool activo;
     private bool mostrandoTexto;
@@ -123,6 +125,7 @@ public class ControladorDialogos : MonoBehaviour
     public void ComenzarJuego()
     {
         estado = Estados.mostrandoAnimación;
+        animaciónMostrada = Animaciones.Nada;
 
         // Primer Flujo
         if (!iniciado)
@@ -172,6 +175,10 @@ public class ControladorDialogos : MonoBehaviour
 
     public void EnClic()
     {
+        // Finales
+        if (SistemaAnimacion.mostrandoAnimación)
+            return;
+
         switch (estado)
         {
             case Estados.mostrandoDiálogo:
@@ -181,7 +188,7 @@ public class ControladorDialogos : MonoBehaviour
                 ContinuarSiguienteAcción();
                 break;
             case Estados.esperandoFinal:
-                VerificarFinal();
+                VolverAlMenú();
                 break;
         }
     }
@@ -245,6 +252,15 @@ public class ControladorDialogos : MonoBehaviour
         ContarTiempoDiálogo();
         VerImagenContinuar(false);
         StartCoroutine(MostrarTexto());
+
+        // Excepción animaciones
+        if (diálogoActual.animación != Animaciones.Nada)
+        {
+            panelDiálogos.SetActive(false);
+            animaciónMostrada = diálogoActual.animación;
+
+            SistemaAnimacion.MostrarAnimación(diálogoActual.animación);
+        }
     }
 
     private void ApurarDiálogo()
@@ -382,7 +398,7 @@ public class ControladorDialogos : MonoBehaviour
         VerImagenContinuar(true);
 
         // Continúa o termina guión
-        if(diálogoActual.tipoDiálogo == TipoDiálogo.final)            
+        if (diálogoActual.tipoDiálogo == TipoDiálogo.final)
             estado = Estados.esperandoFinal;
         else
             estado = Estados.esperandoClic;
@@ -405,7 +421,11 @@ public class ControladorDialogos : MonoBehaviour
                 IniciarPregunta();
                 break;
             case TipoDiálogo.final:
-                FinalizarPartida(diálogoActual.tipoFinal, diálogoActual.ruta);
+                // Final Especial Usuario
+                if (animaciónMostrada == Animaciones.LlegaUsuario)
+                    StartCoroutine(FinalizarEspecialUsuario(diálogoActual.tipoFinal, diálogoActual.ruta));
+                else
+                    FinalizarPartida(diálogoActual.tipoFinal, diálogoActual.ruta);
                 break;
         }
     }
@@ -603,31 +623,15 @@ public class ControladorDialogos : MonoBehaviour
         }
     }
 
-    public void MostrarÚltimoTextoFinalUsuario()
-    {
-        FinalizarPartida(TipoFinal.captura, Rutas.usuario);
-
-        // Despues
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-    }
-
-    private void VerificarFinal()
-    {
-        switch(SistemaAnimacion.animaciónFinal)
-        {
-            default:
-                VolverAlMenú();
-                break;
-            case Animaciones.MiraManos:
-            case Animaciones.LlegaUsuario:
-            case Animaciones.FinalAutor:
-                SistemaAnimacion.MostrarAnimación(SistemaAnimacion.animaciónFinal);
-                break;
-        }
-    }
-
     private void VolverAlMenú()
     {
+        // Final Especial Usuario
+        if (animaciónMostrada == Animaciones.LlegaUsuario)
+        {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+            return;
+        }
+
         controladorCamara.CambiarPosición(CámarasCine.menú);
         panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
@@ -636,5 +640,15 @@ public class ControladorDialogos : MonoBehaviour
         estado = Estados.enPausa;
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
+    }
+
+    // Final Especial Usuario
+    private IEnumerator FinalizarEspecialUsuario(TipoFinal tipoFinal, Rutas ruta)
+    {
+        panelOscuro.gameObject.SetActive(true);
+        SistemaAnimacion.AnimarColor(panelOscuro, 1, false, Color.clear, Color.black, null);
+
+        yield return new WaitForSeconds(2);
+        FinalizarPartida(tipoFinal, ruta);
     }
 }

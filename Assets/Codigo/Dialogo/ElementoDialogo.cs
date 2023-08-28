@@ -14,6 +14,7 @@ public class ElementoDialogo
     public ElementoDialogo siguienteDiálogo;
 
     // Especiales
+    public Animaciones animación;
     public TipoFinal tipoFinal;
     public Rutas ruta;
     public NivelEstrés nivelEstrés;
@@ -27,7 +28,7 @@ public class ElementoDialogo
     // Crear diálogos según tipo
 
     // Diálogo normal
-    public static ElementoDialogo CrearDiálogo(Personajes personaje, string texto, Rutas ruta, NivelEstrés nivelEstrés)
+    public static ElementoDialogo CrearDiálogo(Personajes personaje, string texto, Rutas ruta, NivelEstrés nivelEstrés, Animaciones animación = Animaciones.Nada)
     {
         var nuevoElemento = new ElementoDialogo();
         nuevoElemento.tipoDiálogo = TipoDiálogo.diálogo;
@@ -36,6 +37,7 @@ public class ElementoDialogo
         nuevoElemento.visto = SistemaMemoria.VerificarDiálogo(texto);
         nuevoElemento.ruta = ruta;
         nuevoElemento.nivelEstrés = nivelEstrés;
+        nuevoElemento.animación = animación;
 
         return nuevoElemento;
     }

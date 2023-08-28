@@ -9,7 +9,7 @@ public class SistemaAnimacion : MonoBehaviour
 {
     private static SistemaAnimacion instancia;
     public static Gráficos gráficos;
-    public static Animaciones animaciónFinal;
+    public static bool mostrandoAnimación;
 
     [Header("Curvas")]
     public AnimationCurve curvaAnimaciónEstandar;
@@ -53,9 +53,9 @@ public class SistemaAnimacion : MonoBehaviour
         instancia.controladorAnimaciones.MostrarAnimación(animación);
     }
 
-    public static void MarcarAnimación(Animaciones animación)
+    public static void MarcarAnimación(bool animando)
     {
-        animaciónFinal = animación;
+        mostrandoAnimación = animando;
     }
 
     public static void CancelarAnimación()

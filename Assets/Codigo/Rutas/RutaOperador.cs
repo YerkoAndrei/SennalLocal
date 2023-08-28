@@ -78,11 +78,11 @@ public class RutaOperador : InterfazRuta
 
         // Pregunta
         listaDiálogos.Add(ElementoDialogo.CrearPregunta());
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.normal, Animaciones.MiraManos));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearOperador_9()[0]);
 
-        SistemaAnimacion.MarcarAnimación(Animaciones.MiraManos);
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
