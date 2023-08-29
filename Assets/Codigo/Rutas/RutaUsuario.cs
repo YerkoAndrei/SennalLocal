@@ -264,7 +264,7 @@ public class RutaUsuario : InterfazRuta
 
         // Diálogos
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 14", ruta, NivelEstrés.normal));
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN USUARIO", ruta, NivelEstrés.gritando, Animaciones.LlegaUsuario));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN USUARIO", ruta, NivelEstrés.alto, Animaciones.LlegaUsuario));
 
         // Final
         listaDiálogos.Add(ElementoDialogo.CrearFinal("USUARIO_14", TipoFinal.muerte, ruta));
