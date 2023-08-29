@@ -28,11 +28,11 @@ public class ControladorAnimaciones : MonoBehaviour
         controladorCamara = FindObjectOfType<ControladorCamara>();
         ojoOperador.gameObject.SetActive(false);
         ajusteMirada = new Vector3(-0.1f, 0.2f, 0);
-        /*
+        
         aa = usuario.position;
-        bb = usuario.rotation;*/
+        bb = usuario.rotation;
     }
-    /*
+    
     // Pruebas
     Vector3 aa;
     Quaternion bb;
@@ -49,6 +49,9 @@ public class ControladorAnimaciones : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
             MostrarAnimación(Animaciones.FinalAutor);
+
+        if (Input.GetKeyDown(KeyCode.G))
+            MostrarAnimación(Animaciones.MiraManos);
 
         if (Input.GetKeyDown(KeyCode.H))
             StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
@@ -71,7 +74,7 @@ public class ControladorAnimaciones : MonoBehaviour
             usuario.position = aa;
             usuario.rotation = bb;
         }
-    }*/
+    }
 
     // Sistema animación
     public void MostrarAnimación(Animaciones animación)
