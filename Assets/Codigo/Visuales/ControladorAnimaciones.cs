@@ -38,29 +38,27 @@ public class ControladorAnimaciones : MonoBehaviour
     Quaternion bb;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-            MostrarAnimación(Animaciones.Escribir);
-
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Y))
             MostrarAnimación(Animaciones.Sentarse);
 
-        if (Input.GetKeyDown(KeyCode.P))
-            MostrarAnimación(Animaciones.LlegaUsuario);
-
         if (Input.GetKeyDown(KeyCode.U))
-            MostrarAnimación(Animaciones.FinalAutor);
+            MostrarAnimación(Animaciones.Escribir);
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.I))
             MostrarAnimación(Animaciones.MiraManos);
 
-        if (Input.GetKeyDown(KeyCode.H))
-            StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
+        if (Input.GetKeyDown(KeyCode.O))
+            MostrarAnimación(Animaciones.LlegaUsuario);
 
-        if (Input.GetKeyDown(KeyCode.J))
-            StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
+        if (Input.GetKeyDown(KeyCode.P))
+            MostrarAnimación(Animaciones.FinalAutor);
+
+        if (Input.GetKeyDown(KeyCode.K))
+            MostrarAnimación(Animaciones.CierreAutor);
 
         if (Input.GetKeyDown(KeyCode.L))
         {
+            StopAllCoroutines();
             animadorUsuario.Rebind();
             animadorPuerta.Rebind();
             animadorOperador.Rebind();
@@ -68,7 +66,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
             animadorOperador.SetTrigger("Sentarse");
             controladorCamara.CambiarPosición(CámarasCine.juego);
-            controladorCamara.CambiarDistanciaMínima(0.1f, 0.3f);
+            controladorCamara.CambiarDistanciaMínima(0.1f, 0.33f);
             StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
 
             usuario.position = aa;
@@ -96,6 +94,9 @@ public class ControladorAnimaciones : MonoBehaviour
             case Animaciones.FinalAutor:
                 StartCoroutine(AnimarFinalAutor());
                 break;
+            case Animaciones.CierreAutor:
+                StartCoroutine(AnimarCierreAutor());
+                break;
         }
     }
 
@@ -122,12 +123,20 @@ public class ControladorAnimaciones : MonoBehaviour
     {
         controladorCamara.CambiarPosición(CámarasCine.autor);
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
-        animadorOperador.SetTrigger("Mirar");
 
         SistemaSonidos.ActivarMúsica(false);
 
+        // Mirada
         StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
+        animadorOperador.SetTrigger("Mirar");
+
+        yield return new WaitForSeconds(0.2f);
+        StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
+    }
+
+    private IEnumerator AnimarCierreAutor()
+    {
         StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
         yield return new WaitForSeconds(0.3f);
 

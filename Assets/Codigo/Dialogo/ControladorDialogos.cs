@@ -642,16 +642,22 @@ public class ControladorDialogos : MonoBehaviour
 
     private void VolverAlMenú()
     {
-        // Final Especial Usuario
-        if (animaciónMostrada == Animaciones.LlegaUsuario)
+        // Finales especiales
+        switch(animaciónMostrada)
         {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-            return;
+            case Animaciones.LlegaUsuario:
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+                return;
+            case Animaciones.FinalAutor:
+                ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.muerto);
+                SistemaAnimacion.MostrarAnimación(Animaciones.CierreAutor);
+                return;
+            case Animaciones.MiraManos:
+                SistemaAnimacion.CancelarAnimación();
+                break;
         }
-        // Final Especial Operador
-        else if (animaciónMostrada == Animaciones.MiraManos)
-            SistemaAnimacion.CancelarAnimación();
 
+        // Volver a Menú
         controladorCamara.CambiarPosición(CámarasCine.final);
         panelDiálogos.SetActive(false);
         panelOpciones.SetActive(false);
@@ -660,7 +666,6 @@ public class ControladorDialogos : MonoBehaviour
         estado = Estados.enPausa;
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
-
     }
 
     // Final Especial Usuario

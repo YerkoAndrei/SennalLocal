@@ -13,11 +13,13 @@ public class ElementoDialogo
     public TipoDiálogo tipoDiálogo;
     public ElementoDialogo siguienteDiálogo;
 
+    // Visuales
+    public Rutas ruta;
+    public NivelEstrés nivelEstrés;
+
     // Especiales
     public Animaciones animación;
     public TipoFinal tipoFinal;
-    public Rutas ruta;
-    public NivelEstrés nivelEstrés;
     public ElementoOpcion[] opciones;
     public ElementoDialogo siguienteDiálogoNegativo;
 

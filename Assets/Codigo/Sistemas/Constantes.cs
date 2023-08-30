@@ -108,7 +108,8 @@ public class Constantes
         Sentarse,
         MiraManos,
         LlegaUsuario,
-        FinalAutor
+        FinalAutor,
+        CierreAutor
     }
 
     public enum CámarasCine
