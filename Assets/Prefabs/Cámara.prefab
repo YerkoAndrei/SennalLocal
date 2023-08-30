@@ -184,10 +184,10 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.8
+      time: 0.85
       value: 0.5
-      inSlope: 1.5625001
-      outSlope: 1.5625001
+      inSlope: 1.9607847
+      outSlope: 1.9607847
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -394,7 +394,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.33
   far clip plane: 100
   field of view: 80
   orthographic: 0
