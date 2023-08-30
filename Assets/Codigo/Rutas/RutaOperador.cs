@@ -77,13 +77,10 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Pregunta
-        listaDiálogos.Add(ElementoDialogo.CrearPregunta());
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.normal, Animaciones.MiraManos));
+        listaDiálogos.Add(ElementoDialogo.CrearPregunta(CrearOperador_9()[0], CrearOperador_9()[0]));
 
-        // Siguiente diálogo
-        listaDiálogos.Add(CrearOperador_9()[0]);
-
-        return AsignarContinuidadDiálogos(listaDiálogos);
+        // Siguiente diálogo Neutro
+        return listaDiálogos.ToArray();
     }
 
     public ElementoDialogo[] CrearOperador_0()
@@ -199,6 +196,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN OPERADOR", ruta, NivelEstrés.normal, Animaciones.MiraManos));
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 9", ruta, NivelEstrés.normal));
 
         // Final

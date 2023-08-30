@@ -53,9 +53,9 @@ public class SistemaMemoria : MonoBehaviour
         instancia.ActualizarArchivo();
     }
 
-    public string CargarNombre()
+    public static string ObtenerNombreDado()
     {
-        return datos.últimoNombre;
+        return instancia.datos.últimoNombre;
     }
 
     // Verificar para guardar
@@ -117,6 +117,11 @@ public class SistemaMemoria : MonoBehaviour
             instancia.datos.preguntasEncontradas.Add(texto);
             instancia.ActualizarArchivo();
         }
+    }
+
+    public static string[] ObtenerPreguntas()
+    {
+        return instancia.datos.preguntasEncontradas.ToArray();
     }
 
     // Obtención de variables

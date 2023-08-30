@@ -82,11 +82,10 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Pregunta
-        listaDiálogos.Add(ElementoDialogo.CrearPregunta());
+        listaDiálogos.Add(ElementoDialogo.CrearPregunta(CrearUsuario_19_1()[0], CrearUsuario_19_2()[0]));
 
-        // Siguiente diálogo
-        listaDiálogos.Add(CrearUsuario_19()[0]);
-        return AsignarContinuidadDiálogos(listaDiálogos);
+        // Siguiente diálogo Positivo/Negativo
+        return listaDiálogos.ToArray();
     }
 
     public ElementoDialogo[] CrearUsuario_0()
@@ -319,12 +318,24 @@ public class RutaUsuario : InterfazRuta
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
-    public ElementoDialogo[] CrearUsuario_19()
+    public ElementoDialogo[] CrearUsuario_19_1()
     {
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 19", ruta, NivelEstrés.normal));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 19.1", ruta, NivelEstrés.normal));
+
+        // Siguiente diálogo
+        listaDiálogos.Add(CrearUsuario_20()[0]);
+        return AsignarContinuidadDiálogos(listaDiálogos);
+    }
+
+    public ElementoDialogo[] CrearUsuario_19_2()
+    {
+        var listaDiálogos = new List<ElementoDialogo>();
+
+        // Diálogos
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "USUARIO 19.2", ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearUsuario_20()[0]);

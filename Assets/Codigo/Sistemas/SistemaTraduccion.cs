@@ -119,4 +119,54 @@ public class SistemaTraduccion : MonoBehaviour
             return string.Empty;
         }
     }
+
+    public static bool VerificarPreguntaVálida(string pregunta)
+    {
+        var posiblePregunta = SimplificaTexto(pregunta);
+        var encontrada = string.Empty;
+
+        // Busca y modifica preguntas
+        foreach (var elemento in diccionario)
+        {
+            if (SimplificaTexto(elemento.Value) == posiblePregunta)
+                encontrada = elemento.Key;
+        }
+
+        if(!string.IsNullOrEmpty(encontrada))
+        {
+            SistemaMemoria.MarcarPregunta(encontrada);
+            return true;
+        }
+        else
+            return false;
+    }
+
+    private static string SimplificaTexto(string texto)
+    {
+        // Unicode
+        texto = texto.Normalize(System.Text.NormalizationForm.FormC);
+        texto = texto.ToLower();
+        texto = texto.Trim();
+
+        // Tildes
+        texto.Replace("á", "a").Replace("é", "e").Replace("í", "i").Replace("ó", "o").Replace("ú", "u");
+        texto.Replace("à", "a").Replace("è", "e").Replace("ì", "i").Replace("ò", "o").Replace("ù", "u");
+        texto.Replace("ä", "a").Replace("ë", "e").Replace("ï", "i").Replace("ö", "o").Replace("ü", "u");
+        texto.Replace("â", "a").Replace("ê", "e").Replace("î", "i").Replace("ô", "o").Replace("û", "u");
+
+        // Signos de puntuación
+        texto.Replace("¿", "").Replace("?", "");
+        texto.Replace("¡", "").Replace("!", "");
+        texto.Replace(",", "").Replace(".", "");
+        texto.Replace(":", "").Replace(";", "");
+        texto.Replace("_", "").Replace("-", "");
+        texto.Replace("(", "").Replace(")", "");
+        texto.Replace("[", "").Replace("]", "");
+        texto.Replace("{", "").Replace("}", "");
+
+        // Espacios
+        texto.Replace(" ", "");
+
+        return texto;
+    }
 }

@@ -74,7 +74,13 @@ public class RutaMonstruo : InterfazRuta
         var listaOpciones = new List<ElementoOpcion>();
         listaOpciones.Add(new ElementoOpcion("Pregúntale quién eres", CrearMonstruo_9()[0]));
         listaOpciones.Add(new ElementoOpcion("Pregúntale quién es", ResponderNombre()[0]));
-        listaOpciones.Add(new ElementoOpcion("Pregunta..", autor.CrearAutor_0()[0]));
+
+        // Preguntas encontradas
+        var preguntasEncontradas = SistemaMemoria.ObtenerPreguntas();
+        foreach(var pregunta in preguntasEncontradas)
+        {
+            listaOpciones.Add(new ElementoOpcion(pregunta, autor.CrearAutor_0()[0]));
+        }
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -85,10 +91,8 @@ public class RutaMonstruo : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "preparación", ruta, NivelEstrés.normal));
-
-        // Pregunta
-        listaDiálogos.Add(ElementoDialogo.CrearPregunta());
+        var últimoNombreDado = SistemaMemoria.ObtenerNombreDado();
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.monstruo, últimoNombreDado, ruta, NivelEstrés.normal));
 
         // Siguiente diálogo
         listaDiálogos.Add(CrearMonstruo_10()[0]);
