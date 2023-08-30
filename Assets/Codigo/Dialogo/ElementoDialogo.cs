@@ -19,6 +19,7 @@ public class ElementoDialogo
     public Rutas ruta;
     public NivelEstrés nivelEstrés;
     public ElementoOpcion[] opciones;
+    public ElementoDialogo siguienteDiálogoNegativo;
 
     public void AsignarSiguienteDiálogo(ElementoDialogo elementoDialogo)
     {
@@ -53,10 +54,12 @@ public class ElementoDialogo
     }
 
     // Escribir mensaje
-    public static ElementoDialogo CrearPregunta()
+    public static ElementoDialogo CrearPregunta(ElementoDialogo diálogoPositivo, ElementoDialogo diálogoNegativo)
     {
         var nuevoElemento = new ElementoDialogo();
         nuevoElemento.tipoDiálogo = TipoDiálogo.pregunta;
+        nuevoElemento.siguienteDiálogo = diálogoPositivo;
+        nuevoElemento.siguienteDiálogoNegativo = diálogoNegativo;
 
         return nuevoElemento;
     }

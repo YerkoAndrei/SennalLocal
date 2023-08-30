@@ -10,6 +10,7 @@ public class ElementoInterfazOpcion : MonoBehaviour
 
     [Header("Referencias")]
     [SerializeField] private Button btnOpción;
+    [SerializeField] private Image imgOpción;
     [SerializeField] private TMP_Text txtOpción;
     [SerializeField] private GameObject imgResaltado;
     [SerializeField] private GameObject imgElegido;
@@ -43,7 +44,6 @@ public class ElementoInterfazOpcion : MonoBehaviour
     public void EnClic()
     {
         enClic.Invoke();
-
     }
 
     public void EnCurorDentro()
@@ -52,12 +52,14 @@ public class ElementoInterfazOpcion : MonoBehaviour
             return;
 
         btnOpción.transform.localScale *= multiplicadorTamaño;
+        imgOpción.maskable = false;
         imgResaltado.SetActive(true);
     }
 
     public void EnCurorFuera()
     {
         btnOpción.transform.localScale = Vector3.one;
+        imgOpción.maskable = true;
         imgResaltado.SetActive(false);
     }
 

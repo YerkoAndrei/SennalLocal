@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 0.39215687, a: 0.39215687}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "multiplicadorTama\xF1o": 1.1
   "btnOpci\xF3n": {fileID: 8255199106874657831}
+  "imgOpci\xF3n": {fileID: 1862003535748368032}
   "txtOpci\xF3n": {fileID: 2839404219085775820}
   imgResaltado: {fileID: 310429868248434536}
   imgElegido: {fileID: 8423932580656016122}
@@ -146,6 +147,7 @@ MonoBehaviour:
     texto: 
     visto: 0
     "tipoDi\xE1logo": 0
+    "animaci\xF3n": 0
     tipoFinal: 0
     ruta: 0
     "nivelEstr\xE9s": 0

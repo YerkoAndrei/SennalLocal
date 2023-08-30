@@ -9,6 +9,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using static Constantes;
+using System.Net.WebSockets;
 
 public class ControladorDialogos : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class ControladorDialogos : MonoBehaviour
     [Header("Referencias opciones")]
     [SerializeField] private GameObject panelOpciones;
     [SerializeField] private Transform padreOpciones;
+    [SerializeField] private ContentSizeFitter tamañoContenido;
     [SerializeField] private GameObject btnOpciónPrefab;
 
     [Header("Referencias preguntas")]
@@ -461,6 +463,16 @@ public class ControladorDialogos : MonoBehaviour
         // Posición aleatoria
         var opciones = diálogoActual.opciones.OrderBy(x => aleatorio.Next()).ToArray();
 
+        // Tamaño para cuando sean más de 4 preguntas
+        if (opciones.Length >= 4)
+            tamañoContenido.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+        else
+        {
+            tamañoContenido.verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+            padreOpciones.GetComponent<RectTransform>().offsetMax = Vector2.zero;
+            padreOpciones.GetComponent<RectTransform>().offsetMin = Vector2.zero;
+        }
+
         // Instancia nuevas
         for (int i = 0; i < opciones.Length; i++)
         {
@@ -535,7 +547,12 @@ public class ControladorDialogos : MonoBehaviour
     public void EnClicTerminarPregunta()
     {
         SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, false, false, Direcciones.izquierda, () => panelPregunta.SetActive(false));
-        IniciarDiálogo(diálogoActual.siguienteDiálogo);
+
+        // Verificar pregunta válida
+        if(SistemaTraduccion.VerificarPreguntaVálida(inputPregunta.text))
+            IniciarDiálogo(diálogoActual.siguienteDiálogo);
+        else
+            IniciarDiálogo(diálogoActual.siguienteDiálogoNegativo);
     }
 
     public void ActivarEfectos()
