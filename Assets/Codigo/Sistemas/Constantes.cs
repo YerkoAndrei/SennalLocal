@@ -46,6 +46,16 @@ public class Constantes
         escape          // 1
     }
 
+    public enum RespuestasClave
+    {
+        encendedorEncontrado,
+        peligroExterior,
+        llaveComputador,
+        monstruoObservado,
+        nombreDado
+    }
+
+    // Configuración
     public enum Idiomas
     {
         español,
@@ -60,6 +70,14 @@ public class Constantes
     }
 
     // Visuales
+    public enum Direcciones
+    {
+        arriba,
+        abajo,
+        izquierda,
+        derecha
+    }
+
     public enum NivelEstrés
     {
         pausa,
@@ -83,6 +101,16 @@ public class Constantes
         autor
     }
 
+    public enum Animaciones
+    {
+        Nada,
+        Escribir,
+        Sentarse,
+        MiraManos,
+        LlegaUsuario,
+        FinalAutor
+    }
+
     public enum CámarasCine
     {
         menú,
@@ -98,23 +126,13 @@ public class Constantes
         palpitar,
         intercambiar
     }
-   
-    public enum Direcciones
-    {
-        arriba,
-        abajo,
-        izquierda,
-        derecha
-    }
 
-    public enum Animaciones
+    // Sonidos
+    public enum TipoSonido
     {
-        Nada,
-        Escribir,
-        Sentarse,
-        MiraManos,
-        LlegaUsuario,
-        FinalAutor
+        General,
+        Música,
+        Efectos
     }
 
     public enum Sonidos
@@ -123,14 +141,6 @@ public class Constantes
         SillaSalir,
         PuertaEntrar,
         MatarUsuario
-    }
-
-    // Sonidos
-    public enum TipoSonido
-    {
-        General,
-        Música,
-        Efectos
     }
 
     public static ElementoDialogo[] AsignarContinuidadDiálogos(List<ElementoDialogo> lista)

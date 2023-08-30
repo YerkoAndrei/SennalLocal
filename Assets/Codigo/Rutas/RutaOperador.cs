@@ -41,7 +41,10 @@ public class RutaOperador : InterfazRuta
         var listaOpciones = new List<ElementoOpcion>();
         listaOpciones.Add(new ElementoOpcion("Ve lento", CrearOperador_4()[0]));
         listaOpciones.Add(new ElementoOpcion("Corre rápido", CrearOperador_5()[0]));
-        listaOpciones.Add(new ElementoOpcion("Devuélvete", usuario.CrearUsuario_1()[0]));
+
+        // Opción limitada
+        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.peligroExterior))
+            listaOpciones.Add(new ElementoOpcion("Devuélvete", usuario.CrearUsuario_1()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;

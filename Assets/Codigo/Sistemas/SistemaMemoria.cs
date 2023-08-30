@@ -124,6 +124,25 @@ public class SistemaMemoria : MonoBehaviour
         return instancia.datos.preguntasEncontradas.ToArray();
     }
 
+    public static bool ObtenerRespuestaClave(RespuestasClave respuesta)
+    {
+        switch(respuesta)
+        {
+            case RespuestasClave.encendedorEncontrado:
+                return instancia.datos.opcionesElegidas.Contains("bifurcacion_intro0_2");
+            case RespuestasClave.peligroExterior:
+                return instancia.datos.opcionesElegidas.Contains("bifurcacion_operador1_3");
+            case RespuestasClave.llaveComputador:
+                return instancia.datos.opcionesElegidas.Contains("bifurcacion_usuario2_3");
+            case RespuestasClave.monstruoObservado:
+                return instancia.datos.opcionesElegidas.Contains("bifurcacion_monstruo0_2");
+            case RespuestasClave.nombreDado:
+                return instancia.datos.opcionesElegidas.Contains("bifurcacion_monstruo3_2");
+            default:
+                return false;
+        }
+    }
+
     // Obtención de variables
     public static int ObtenerUsuariosEscapados()
     {

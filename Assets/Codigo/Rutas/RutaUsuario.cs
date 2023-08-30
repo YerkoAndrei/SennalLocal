@@ -46,8 +46,11 @@ public class RutaUsuario : InterfazRuta
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
         listaOpciones.Add(new ElementoOpcion("Busca un interruptor a tientas", CrearUsuario_4()[0]));
-        listaOpciones.Add(new ElementoOpcion("Usa tu encendedor", CrearUsuario_5()[0]));
         listaOpciones.Add(new ElementoOpcion("Recoje la varilla", CrearUsuario_6()[0]));
+
+        // Opción limitada
+        if(SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.encendedorEncontrado))
+            listaOpciones.Add(new ElementoOpcion("Usa tu encendedor", CrearUsuario_5()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -71,7 +74,10 @@ public class RutaUsuario : InterfazRuta
         var listaOpciones = new List<ElementoOpcion>();
         listaOpciones.Add(new ElementoOpcion("Busca un lugar tranquilo", CrearUsuario_14()[0]));
         listaOpciones.Add(new ElementoOpcion("Quédate ahi", CrearUsuario_15()[0]));
-        listaOpciones.Add(new ElementoOpcion("Usa la llave", CrearUsuario_18()[0]));
+
+        // Opción limitada
+        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.llaveComputador))
+            listaOpciones.Add(new ElementoOpcion("Usa la llave", CrearUsuario_18()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;

@@ -59,8 +59,11 @@ public class RutaMonstruo : InterfazRuta
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
         listaOpciones.Add(new ElementoOpcion("Vete", CrearMonstruo_7()[0]));
-        listaOpciones.Add(new ElementoOpcion("Acércate", CrearMonstruo_8()[0]));
         listaOpciones.Add(new ElementoOpcion("Abre la puerta", sótano.CrearSótano_1()[0]));
+
+        // Opción limitada
+        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.monstruoObservado))
+            listaOpciones.Add(new ElementoOpcion("Acércate", CrearMonstruo_8()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -73,7 +76,10 @@ public class RutaMonstruo : InterfazRuta
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
         listaOpciones.Add(new ElementoOpcion("Pregúntale quién eres", CrearMonstruo_9()[0]));
-        listaOpciones.Add(new ElementoOpcion("Pregúntale quién es", ResponderNombre()[0]));
+
+        // Opción limitada
+        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.nombreDado))
+            listaOpciones.Add(new ElementoOpcion("Pregúntale quién es", ResponderNombre()[0]));
 
         // Preguntas encontradas
         var preguntasEncontradas = SistemaMemoria.ObtenerPreguntas();
