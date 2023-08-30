@@ -1570,6 +1570,7 @@ MonoBehaviour:
   sonidoSillaEntrar: {fileID: 8300000, guid: d4abc1239584fa14892ee245f5354235, type: 3}
   sonidoSillaSalir: {fileID: 8300000, guid: 42b771951d39b0c4faa88babe2a35a1a, type: 3}
   sonidoPuertaEntrar: {fileID: 0}
+  sonidoMatarUsuario: {fileID: 0}
 --- !u!4 &932877996
 Transform:
   m_ObjectHideFlags: 0

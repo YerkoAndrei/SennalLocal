@@ -1158,7 +1158,7 @@ AUTOR 1:
     (Llamada perdida. El usuario ha huido.)
 
 
-Posibles preguntas:
+Posibles preguntas que responde el monstruo:
 
 1- quién creo esto                 - yerko andrei
 2- quién es el autor               - yerko andrei
@@ -1172,7 +1172,7 @@ Posibles preguntas:
 10- por que hay monstruos           - En 2090 la humanidad se redujo al 10% de la poblacion. La experimentación humana comenzó con fuerza. Solo trajo miseria. La humanidad está muerta. Solo quedan 30.000 personas.
 11- por que hay zombies             - idem
 12- que son los monstruos           - 
-13- qué zon los zombies             - 
+13- qué son los zombies             - 
 14- quien es el operador            - mi creador, quien creo esta casa
 15- cómo se llama el operador       - (nombre...)
 16- cómo se llama el usuario        - (nombre...)
