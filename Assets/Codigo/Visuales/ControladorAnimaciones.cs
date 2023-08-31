@@ -111,6 +111,15 @@ public class ControladorAnimaciones : MonoBehaviour
         animadorOperador.SetTrigger("Escribir");
     }
 
+    private IEnumerator AnimarSentarse()
+    {
+        animadorOperador.SetTrigger("Sentarse");
+        animadorSilla.SetTrigger("Entrar");
+
+        yield return new WaitForSeconds(0.4f);
+        SistemaSonidos.ReproducirAnimación(Sonidos.SillaEntrar);
+    }
+
     private IEnumerator AnimarMirarManos()
     {
         SistemaAnimacion.MarcarAnimación(true);
@@ -145,15 +154,6 @@ public class ControladorAnimaciones : MonoBehaviour
         //Application.Quit();
     }
 
-    private IEnumerator AnimarSentarse()
-    {
-        animadorOperador.SetTrigger("Sentarse");
-        animadorSilla.SetTrigger("Entrar");
-
-        yield return new WaitForSeconds(0.4f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.SillaEntrar);
-    }
-
     private IEnumerator AnimarLlegadaUsuario()
     {
         SistemaAnimacion.MarcarAnimación(true);
@@ -170,12 +170,12 @@ public class ControladorAnimaciones : MonoBehaviour
         StartCoroutine(AnimarEntrarPosición(posiciónInicial));
 
         // Sonido
-        //yield return new WaitForSeconds(0.4f);
-        //SistemaSonidos.ReproducirAnimación(Sonidos.PuertaEntrar);
+        yield return new WaitForSeconds(0.4f);
+        SistemaSonidos.ReproducirAnimación(Sonidos.PuertaEntrar);
         SistemaSonidos.ActivarMúsica(false);
 
         // Cámara
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.2f);
         controladorCamara.CambiarPosición(CámarasCine.usuario);
 
         // Operador
