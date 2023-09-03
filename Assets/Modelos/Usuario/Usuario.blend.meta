@@ -49,18 +49,23 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Armature|Entrar' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'index_01_r' has translation animation that
-      will be discarded.\n\t'middle_01_r' has translation animation that will be
-      discarded.\n\t'little_01_r' has translation animation that will be discarded.\n\t'ring_01_r'
-      has translation animation that will be discarded.\n\t'lower_leg_r' has translation
-      animation that will be discarded.\n\nClip 'Armature|Mirar' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'index_01_l' has translation
-      animation that will be discarded.\n\t'middle_01_l' has translation animation
-      that will be discarded.\n\t'little_01_l' has translation animation that will
-      be discarded.\n\t'ring_01_l' has translation animation that will be discarded.\n"
-    animationRetargetingWarnings: 
+      that might lower retargeting quality:\n\t'index_01_r' has translation animation
+      that will be discarded.\n\t'middle_01_r' has translation animation that will
+      be discarded.\n\t'little_01_r' has translation animation that will be discarded.\n\t'ring_01_r'
+      has translation animation that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Armature|Entrar':\n\tLeftFoot
+      average position error 0.3 mm and maximum position error 2.2 mm at time 0:
+      0 (0.0%) Frame 0\n\tRightFoot average position error 1.4 mm and maximum position
+      error 3.5 mm at time 1:15 (56.3%) Frame 45\n\tLeftHand average position error
+      0.4 mm and maximum position error 3.4 mm at time 2:20 (100.0%) Frame 80\n\nRetargeting
+      quality report for clip 'Armature|Mirar':\n\tLeftFoot average position error
+      2.1 mm and maximum position error 2.9 mm at time 0:20 (50.0%) Frame 20\n\tRightFoot
+      average position error 1.2 mm and maximum position error 1.2 mm at time 0:21
+      (52.5%) Frame 21\n\tLeftHand average position error 3.9 mm and maximum position
+      error 4.4 mm at time 0:19 (47.5%) Frame 19\n\nRetargeting quality report for
+      clip 'Armature|Pose':\n\tLeftFoot average position error 1.9 mm and maximum
+      position error 1.9 mm at time 0: 0 (0.0%) Frame 0\n\tRightFoot average position
+      error 1.9 mm and maximum position error 1.9 mm at time 0: 0 (0.0%) Frame 0\n"
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -106,7 +111,7 @@ ModelImporter:
       takeName: Armature|Entrar
       internalID: 0
       firstFrame: 0
-      lastFrame: 55
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -133,7 +138,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Armature|Mirar
       takeName: Armature|Mirar
-      internalID: 0
+      internalID: 7893766108845661046
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -142,7 +147,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -181,8 +186,8 @@ ModelImporter:
     weldVertices: 1
     bakeAxisConversion: 0
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
+    skinWeightsMode: 1
+    maxBonesPerVertex: 16
     minBoneWeight: 0.001
     optimizeBones: 1
     meshOptimizationFlags: -1
@@ -1000,7 +1005,7 @@ ModelImporter:
     feetSpacing: 0
     globalScale: 1
     rootMotionBoneName: 
-    hasTranslationDoF: 0
+    hasTranslationDoF: 1
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
