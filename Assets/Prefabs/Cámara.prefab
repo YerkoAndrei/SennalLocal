@@ -269,7 +269,7 @@ MonoBehaviour:
       outWeight: 0.18000117
     - serializedVersion: 3
       time: 0.6
-      value: 0.9
+      value: 0.95
       inSlope: 0.35520822
       outSlope: 0.35520822
       tangentMode: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   "duraci\xF3nC\xE1maraInicio": 2.5
   "duraci\xF3nC\xE1maraFinal": 2
   "duraci\xF3nC\xE1maraUsuario": 6
-  "duraci\xF3nC\xE1maraAutor": 8
+  "duraci\xF3nC\xE1maraAutor": 10
   "posici\xF3nMen\xFA": {fileID: 1624398400885544051}
   "posici\xF3nJuego": {fileID: 1624398400491925614}
   "posici\xF3nUsuario": {fileID: 6484862996036009132}
@@ -582,7 +582,7 @@ Transform:
   m_GameObject: {fileID: 7042430131956780183}
   serializedVersion: 2
   m_LocalRotation: {x: 0.10440555, y: -0.89155054, z: 0.2634632, w: 0.35330486}
-  m_LocalPosition: {x: 0.865, y: 1.504, z: -0.296}
+  m_LocalPosition: {x: 0.621, y: 1.504, z: -0.066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

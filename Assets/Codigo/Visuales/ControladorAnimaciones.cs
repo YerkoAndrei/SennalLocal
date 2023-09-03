@@ -19,7 +19,6 @@ public class ControladorAnimaciones : MonoBehaviour
     [SerializeField] private Animator animadorPuerta;
 
     private ControladorCamara controladorCamara;
-    private ControladorDialogos controladorDiálogos;
     private Vector3 ajusteMirada;
     private float rotaciónInicialXOjo;
 
@@ -27,7 +26,7 @@ public class ControladorAnimaciones : MonoBehaviour
     {
         controladorCamara = FindObjectOfType<ControladorCamara>();
         ojoOperador.gameObject.SetActive(false);
-        ajusteMirada = new Vector3(-0.1f, 0.2f, 0);
+        ajusteMirada = new Vector3(-0.05f, 0.1f, 0);
         
         aa = usuario.position;
         bb = usuario.rotation;
@@ -147,11 +146,10 @@ public class ControladorAnimaciones : MonoBehaviour
     private IEnumerator AnimarCierreAutor()
     {
         StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
 
         // Salida forzosa
-        print("chao");
-        //Application.Quit();
+        Application.Quit();
     }
 
     private IEnumerator AnimarLlegadaUsuario()
@@ -159,15 +157,11 @@ public class ControladorAnimaciones : MonoBehaviour
         SistemaAnimacion.MarcarAnimación(true);
         CancelarAnimación();
 
-        // Usuario
+        // Movimiento Usuario
         usuario.gameObject.SetActive(true);
         animadorUsuario.SetTrigger("Entrar");
         animadorPuerta.SetTrigger("Abrir");
-
-        // Movimiento y rotación
-        var posiciónInicial = usuario.position;
-        var rotaciónInicial = usuario.rotation;
-        StartCoroutine(AnimarEntrarPosición(posiciónInicial));
+        StartCoroutine(AnimarEntrarPosición(usuario.position));
 
         // Sonido
         yield return new WaitForSeconds(0.4f);
@@ -185,7 +179,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
         SistemaSonidos.ReproducirAnimación(Sonidos.SillaSalir);
-        StartCoroutine(AnimarEntrarRotación(rotaciónInicial));
+        StartCoroutine(AnimarEntrarRotación(usuario.rotation));
 
         // Final con diálogos
         yield return new WaitForSeconds(1f);
