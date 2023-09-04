@@ -23,6 +23,11 @@ public class ControladorPizarra : MonoBehaviour
 
     private void Start()
     {
+        ActualizarTextos();
+    }
+
+    public void ActualizarTextos()
+    {
         // Variable
         var muertos = SistemaMemoria.ObtenerUsuariosMuertos();
         var capturados = SistemaMemoria.ObtenerUsuariosCapturados();

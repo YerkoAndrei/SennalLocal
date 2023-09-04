@@ -167,9 +167,8 @@ public class ControladorMenu : MonoBehaviour
             ActivarBotones(true);
         });
 
-        controladorDiálogos.Iniciar();
-
         OcultarCréditos();
+        controladorDiálogos.Iniciar();
         controladorDiálogos.MostrarPaneles(true);
         controladorDiálogos.ComenzarJuego();
     }
@@ -365,18 +364,5 @@ public class ControladorMenu : MonoBehaviour
     public void SoltarBotónSuave()
     {
         SistemaSonidos.SoltarBotónSuave();
-    }
-
-    public void FinalizarJuego()
-    {
-        btnIniciar.SetActive(true);
-        btnReiniciar.SetActive(false);
-        btnReanudar.SetActive(false);
-
-        menúInicio.SetActive(true);
-
-        SistemaAnimacion.AnimarColor(imgTítulo, 4, true, colorRojoClaro, Color.white, null);
-        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
-        SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, true, Direcciones.arriba, () => menúJuego.SetActive(false));
     }
 }

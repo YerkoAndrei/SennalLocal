@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 104853282971275313}
   - component: {fileID: 7977872872218972738}
   m_Layer: 5
-  m_Name: txtCantidadHuidos
+  m_Name: txtCantidadEscapados
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   txtPreguntasEncontradas: {fileID: 1843208140671189517}
   txtCantidadUsuariosMuertos: {fileID: 6019346842638767567}
   txtCantidadUsuariosCapturados: {fileID: 3135403162952482335}
-  txtCantidadUsuariosEscapados: {fileID: 3135403162952482335}
+  txtCantidadUsuariosEscapados: {fileID: 7977872872218972738}
   "txtCantidadDi\xE1logosVistos": {fileID: 6245396217104935938}
   txtCantidadFinalesLogrados: {fileID: 3055602614238601720}
   txtCantidadPreguntasEncontradas: {fileID: 2077580372637990741}

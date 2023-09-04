@@ -11,6 +11,7 @@ public class SistemaMemoria : MonoBehaviour
     [SerializeField] private ModeloDatos datos;
 
     private string rutaArchivo;
+    private ControladorPizarra controladorPizarra;
 
     private void Start()
     {
@@ -44,6 +45,12 @@ public class SistemaMemoria : MonoBehaviour
         var datosJson = JsonConvert.SerializeObject(datos);
         var datosEncriptados = DesEncriptar(datosJson);
         File.WriteAllText(rutaArchivo, datosEncriptados);
+
+        // Pizarra
+        if(controladorPizarra == null)
+            controladorPizarra = FindObjectOfType<ControladorPizarra>();
+
+        controladorPizarra.ActualizarTextos();
     }
     
     // Nombre respondido
@@ -104,10 +111,9 @@ public class SistemaMemoria : MonoBehaviour
         }
 
         if (!instancia.datos.finalesElegidos.Contains(texto))
-        {
             instancia.datos.finalesElegidos.Add(texto);
-            instancia.ActualizarArchivo();
-        }
+
+        instancia.ActualizarArchivo();
     }
 
     public static void MarcarPregunta(string texto)
