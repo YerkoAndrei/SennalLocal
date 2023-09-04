@@ -85,13 +85,6 @@ ModelImporter:
       warnings that might lower retargeting quality:\n\t'middle_01_r' has translation
       animation that will be discarded.\n\t'little_01_r' has translation animation
       that will be discarded.\n\t'ring_01_r' has translation animation that will
-      be discarded.\n\nClip 'Armature|Pararse' has import animation warnings that
-      might lower retargeting quality:\n\t'middle_01_l' has translation animation
-      that will be discarded.\n\t'little_01_l' has translation animation that will
-      be discarded.\n\t'ring_01_l' has translation animation that will be discarded.\n\t'index_01_r'
-      has translation animation that will be discarded.\n\t'middle_01_r' has translation
-      animation that will be discarded.\n\t'little_01_r' has translation animation
-      that will be discarded.\n\t'ring_01_r' has translation animation that will
       be discarded.\n\nClip 'Armature|Sentado' has import animation warnings that
       might lower retargeting quality:\n\t'middle_01_l' has translation animation
       that will be discarded.\n\t'little_01_l' has translation animation that will
@@ -322,6 +315,35 @@ ModelImporter:
       name: Armature|MirandoManos
       takeName: Armature|MirandoManos
       internalID: 7966266615176846730
+      firstFrame: 0
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Preparado
+      takeName: Armature|Preparado
+      internalID: 3692672243240334747
       firstFrame: 0
       lastFrame: 200
       wrapMode: 0
