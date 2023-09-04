@@ -527,6 +527,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!54 &291116075 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6827027507215532672, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 619710450703182139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &319880358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -990,12 +996,6 @@ Transform:
 --- !u!95 &594859613 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8781546634414385244, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 619710450703182139}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &598967789 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 6827027507215532672, guid: 16ce8d6e270583f4b8ed8896f011b6e8,
     type: 3}
   m_PrefabInstance: {fileID: 619710450703182139}
   m_PrefabAsset: {fileID: 0}
@@ -9783,7 +9783,7 @@ PrefabInstance:
         type: 3}
       propertyPath: entradaCable
       value: 
-      objectReference: {fileID: 598967789}
+      objectReference: {fileID: 291116075}
     - target: {fileID: 2727556050286976589, guid: bcf4aeaf0352b334cb4978b8a30774ce,
         type: 3}
       propertyPath: m_LocalPosition.x
