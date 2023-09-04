@@ -104,6 +104,7 @@ public class Constantes
     public enum Animaciones
     {
         Nada,
+        SoloEfectos,
         Escribir,
         Sentarse,
         MiraManos,

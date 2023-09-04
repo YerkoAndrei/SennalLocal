@@ -1,5 +1,8 @@
 using System.Collections;
+using System.Diagnostics.Eventing.Reader;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using static Constantes;
 
 public class ControladorAnimaciones : MonoBehaviour
@@ -18,16 +21,29 @@ public class ControladorAnimaciones : MonoBehaviour
     [SerializeField] private Animator animadorSilla;
     [SerializeField] private Animator animadorPuerta;
 
+    [Header("Efectos")]
+    [SerializeField] private Volume efectos;
+    private FilmGrain granosCámara;
+    private ChromaticAberration aberraciónCromática;
+
     private ControladorCamara controladorCamara;
     private Vector3 ajusteMirada;
     private float rotaciónInicialXOjo;
+    private float granosBase;
+    private float aberraciónBas;
 
     private void Start()
     {
         controladorCamara = FindObjectOfType<ControladorCamara>();
         ojoOperador.gameObject.SetActive(false);
         ajusteMirada = new Vector3(-0.05f, 0.1f, 0);
-        
+
+        // Post procesado
+        efectos.profile.TryGet(out granosCámara);
+        efectos.profile.TryGet(out aberraciónCromática);
+        granosBase = 0.2f;
+        aberraciónBas = 0.5f;
+
         aa = usuario.position;
         bb = usuario.rotation;
     }
@@ -68,6 +84,9 @@ public class ControladorAnimaciones : MonoBehaviour
             controladorCamara.CambiarDistanciaMínima(0.1f, 0.33f);
             StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
 
+            granosCámara.intensity.value = 0.2f;
+            aberraciónCromática.intensity.value = 0;
+
             usuario.position = aa;
             usuario.rotation = bb;
         }
@@ -78,8 +97,14 @@ public class ControladorAnimaciones : MonoBehaviour
     {
         switch (animación)
         {
+            case Animaciones.Nada:
+                StartCoroutine(AnimarEfectos(false));
+                break;
             case Animaciones.Escribir:
                 AnimarEscribir();
+                break;
+            case Animaciones.SoloEfectos:
+                StartCoroutine(AnimarEfectos(true));
                 break;
             case Animaciones.Sentarse:
                 StartCoroutine(AnimarSentarse());
@@ -108,6 +133,7 @@ public class ControladorAnimaciones : MonoBehaviour
     private void AnimarEscribir()
     {
         animadorOperador.SetTrigger("Escribir");
+        StartCoroutine(AnimarEfectosEscribir());
     }
 
     private IEnumerator AnimarSentarse()
@@ -122,6 +148,7 @@ public class ControladorAnimaciones : MonoBehaviour
     private IEnumerator AnimarMirarManos()
     {
         SistemaAnimacion.MarcarAnimación(true);
+        StartCoroutine(AnimarEfectos(true));
         animadorOperador.SetTrigger("MirarManos");
         yield return new WaitForSeconds(2f);
         SistemaAnimacion.MarcarAnimación(false);
@@ -133,6 +160,7 @@ public class ControladorAnimaciones : MonoBehaviour
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
 
         SistemaSonidos.ActivarMúsica(false);
+        StartCoroutine(AnimarEfectos(true));
 
         // Mirada
         StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
@@ -167,6 +195,7 @@ public class ControladorAnimaciones : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         SistemaSonidos.ReproducirAnimación(Sonidos.PuertaEntrar);
         SistemaSonidos.ActivarMúsica(false);
+        StartCoroutine(AnimarEfectos(true));
 
         // Cámara
         yield return new WaitForSeconds(0.2f);
@@ -252,5 +281,81 @@ public class ControladorAnimaciones : MonoBehaviour
 
         // Fin
         ojoOperador.rotation = rotaciónObjetivo;
+    }
+
+    private IEnumerator AnimarEfectosEscribir()
+    {
+        float tiempoLerp = 0;
+        float tiempo = 0;
+        float duraciónLerpInicio = 0.1f;
+
+        while (tiempoLerp < duraciónLerpInicio)
+        {
+            tiempo = tiempoLerp / duraciónLerpInicio;
+
+            granosCámara.intensity.value = Mathf.Lerp(granosBase, 1f, tiempo);
+            aberraciónCromática.intensity.value = Mathf.Lerp(0, 1, tiempo);
+
+            tiempoLerp += Time.deltaTime;
+            yield return null;
+        }
+
+        // Fin
+        granosCámara.intensity.value = 1;
+        aberraciónCromática.intensity.value = 1;
+        float duraciónLerpFin = 2f;
+
+        while (tiempoLerp < duraciónLerpFin)
+        {
+            tiempo = tiempoLerp / duraciónLerpFin;
+
+            granosCámara.intensity.value = Mathf.Lerp(1f, granosBase, tiempo);
+            aberraciónCromática.intensity.value = Mathf.Lerp(1, 0, tiempo);
+
+            tiempoLerp += Time.deltaTime;
+            yield return null;
+        }
+
+        // Fin
+        granosCámara.intensity.value = granosBase;
+        aberraciónCromática.intensity.value = 0;
+    }
+
+    private IEnumerator AnimarEfectos(bool mostrar)
+    {
+        float tiempoLerp = 0;
+        float tiempo = 0;
+        float duraciónLerp = 2f;
+
+        while (tiempoLerp < duraciónLerp)
+        {
+            tiempo = tiempoLerp / duraciónLerp;
+
+            if (mostrar)
+            {
+                granosCámara.intensity.value = Mathf.Lerp(granosBase, 1f, tiempo);
+                aberraciónCromática.intensity.value = Mathf.Lerp(0, aberraciónBas, tiempo);
+            }
+            else
+            {
+                granosCámara.intensity.value = Mathf.Lerp(1, granosBase, tiempo);
+                aberraciónCromática.intensity.value = Mathf.Lerp(aberraciónBas, 0, tiempo);
+            }
+
+            tiempoLerp += Time.deltaTime;
+            yield return null;
+        }
+
+        // Fin
+        if (mostrar)
+        {
+            granosCámara.intensity.value = 1;
+            aberraciónCromática.intensity.value = aberraciónBas;
+        }
+        else
+        {
+            granosCámara.intensity.value = granosBase;
+            aberraciónCromática.intensity.value = 0;
+        }
     }
 }

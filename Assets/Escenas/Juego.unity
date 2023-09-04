@@ -2662,6 +2662,7 @@ MonoBehaviour:
   animadorUsuario: {fileID: 1384344060}
   animadorSilla: {fileID: 786681172}
   animadorPuerta: {fileID: 1348530524}
+  efectos: {fileID: 996408647}
 --- !u!4 &1612893899
 Transform:
   m_ObjectHideFlags: 0

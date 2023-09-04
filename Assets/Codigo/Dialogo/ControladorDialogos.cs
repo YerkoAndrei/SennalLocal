@@ -585,6 +585,7 @@ public class ControladorDialogos : MonoBehaviour
         }
 
         SistemaMemoria.MarcarFinal(diálogoActual.texto, tipoFinal);
+        SistemaAnimacion.MostrarAnimación(Animaciones.SoloEfectos);
         IniciarDiálogo(diálogoFinal);
     }
 
@@ -664,6 +665,7 @@ public class ControladorDialogos : MonoBehaviour
         panelPregunta.SetActive(false);
 
         estado = Estados.enPausa;
+        SistemaAnimacion.MostrarAnimación(Animaciones.Nada);
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
     }
