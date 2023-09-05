@@ -31,7 +31,7 @@ public class ElementoDialogo
     // Crear diálogos según tipo
 
     // Diálogo normal
-    public static ElementoDialogo CrearDiálogo(Personajes personaje, string texto, Rutas ruta, NivelEstrés nivelEstrés, Animaciones animación = Animaciones.Nada)
+    public static ElementoDialogo CrearDiálogo(Personajes personaje, string texto, Rutas ruta, NivelEstrés nivelEstrés, Animaciones animación = Animaciones.nada)
     {
         var nuevoElemento = new ElementoDialogo();
         nuevoElemento.tipoDiálogo = TipoDiálogo.diálogo;

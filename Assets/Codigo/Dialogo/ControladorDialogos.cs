@@ -127,13 +127,13 @@ public class ControladorDialogos : MonoBehaviour
     public void ComenzarJuego()
     {
         estado = Estados.mostrandoAnimación;
-        animaciónMostrada = Animaciones.Nada;
+        animaciónMostrada = Animaciones.nada;
 
         // Primer Flujo
         if (!iniciado)
         {
             controladorCamara.CambiarPosición(CámarasCine.inicio);
-            SistemaAnimacion.MostrarAnimación(Animaciones.Sentarse);
+            SistemaAnimacion.MostrarAnimación(Animaciones.sentarse);
         }
 
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.bajo);
@@ -256,7 +256,7 @@ public class ControladorDialogos : MonoBehaviour
         StartCoroutine(MostrarTexto());
 
         // Excepción animaciones
-        if (diálogoActual.animación != Animaciones.Nada)
+        if (diálogoActual.animación != Animaciones.nada)
         {
             panelDiálogos.SetActive(false);
             animaciónMostrada = diálogoActual.animación;
@@ -424,7 +424,7 @@ public class ControladorDialogos : MonoBehaviour
                 break;
             case TipoDiálogo.final:
                 // Final Especial Usuario
-                if (animaciónMostrada == Animaciones.LlegaUsuario)
+                if (animaciónMostrada == Animaciones.llegaUsuario)
                     StartCoroutine(FinalizarEspecialUsuario(diálogoActual.tipoFinal, diálogoActual.ruta));
                 else
                     FinalizarPartida(diálogoActual.tipoFinal, diálogoActual.ruta);
@@ -509,7 +509,7 @@ public class ControladorDialogos : MonoBehaviour
         opcionesActuales.Clear();
 
         SistemaMemoria.MarcarOpción(opcion.texto);
-        SistemaAnimacion.MostrarAnimación(Animaciones.Escribir);
+        SistemaAnimacion.MostrarAnimación(Animaciones.escribir);
 
         // Limpia Interfaz
         txtDiálogo.text = string.Empty;
@@ -585,7 +585,7 @@ public class ControladorDialogos : MonoBehaviour
         }
 
         SistemaMemoria.MarcarFinal(diálogoActual.texto, tipoFinal);
-        SistemaAnimacion.MostrarAnimación(Animaciones.SoloEfectos);
+        SistemaAnimacion.MostrarAnimación(Animaciones.soloEfectos);
         IniciarDiálogo(diálogoFinal);
     }
 
@@ -646,14 +646,14 @@ public class ControladorDialogos : MonoBehaviour
         // Finales especiales
         switch(animaciónMostrada)
         {
-            case Animaciones.LlegaUsuario:
+            case Animaciones.llegaUsuario:
                 SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
                 return;
-            case Animaciones.FinalAutor:
+            case Animaciones.finalAutor:
                 ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.muerto);
-                SistemaAnimacion.MostrarAnimación(Animaciones.CierreAutor);
+                SistemaAnimacion.MostrarAnimación(Animaciones.cierreAutor);
                 return;
-            case Animaciones.MiraManos:
+            case Animaciones.miraManos:
                 SistemaAnimacion.CancelarAnimación();
                 break;
         }
@@ -665,7 +665,7 @@ public class ControladorDialogos : MonoBehaviour
         panelPregunta.SetActive(false);
 
         estado = Estados.enPausa;
-        SistemaAnimacion.MostrarAnimación(Animaciones.Nada);
+        SistemaAnimacion.MostrarAnimación(Animaciones.nada);
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
     }
@@ -677,7 +677,7 @@ public class ControladorDialogos : MonoBehaviour
         SistemaAnimacion.AnimarColor(panelOscuro, 1, false, Color.clear, Color.black, null);
 
         yield return new WaitForSeconds(1);
-        SistemaSonidos.ReproducirAnimación(Sonidos.MatarUsuario);
+        SistemaSonidos.ReproducirAnimación(Sonidos.matarUsuario);
 
         yield return new WaitForSeconds(1);
         FinalizarPartida(tipoFinal, ruta);

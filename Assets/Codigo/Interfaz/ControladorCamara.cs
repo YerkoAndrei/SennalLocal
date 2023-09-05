@@ -28,14 +28,14 @@ public class ControladorCamara : MonoBehaviour
     [SerializeField] private Transform posiciónUsuario;
     [SerializeField] private Transform posiciónAutor;
 
-    private ControladorMenu controladorMenu;
+    private ControladorMenu controladorMenú;
     private CámarasCine últimaCámara;
     private Vector3 vibraciónAnterior;
     private bool moviendo;
 
     private void Start()
     {
-        controladorMenu = FindObjectOfType<ControladorMenu>();
+        controladorMenú = FindObjectOfType<ControladorMenu>();
         vibraciónAnterior = Vector3.zero;
         StartCoroutine(VibrarCámara());
 
@@ -104,15 +104,15 @@ public class ControladorCamara : MonoBehaviour
         {
             case CámarasCine.juego:
             case CámarasCine.inicio:
-                controladorMenu.MostrarMenúJuego(true);
+                controladorMenú.MostrarMenúJuego(true);
                 break;
             case CámarasCine.final:
-                controladorMenu.IniciarMenú();
+                controladorMenú.IniciarMenú();
                 break;
             case CámarasCine.menú:
             case CámarasCine.usuario:
             case CámarasCine.autor:
-                controladorMenu.MostrarMenúJuego(false);
+                controladorMenú.MostrarMenúJuego(false);
                 break;
         }
     }

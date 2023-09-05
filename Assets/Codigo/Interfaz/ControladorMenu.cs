@@ -333,17 +333,17 @@ public class ControladorMenu : MonoBehaviour
 
     public void ActualizarVolumenGeneral()
     {
-        SistemaSonidos.ActualizarVolumen(TipoSonido.General, volumenGeneral.value);
+        SistemaSonidos.ActualizarVolumen(TipoSonido.general, volumenGeneral.value);
     }
 
     public void ActualizarVolumenMúsica()
     {
-        SistemaSonidos.ActualizarVolumen(TipoSonido.Música, volumenMúsica.value);
+        SistemaSonidos.ActualizarVolumen(TipoSonido.música, volumenMúsica.value);
     }
 
     public void ActualizarVolumenEfectos()
     {
-        SistemaSonidos.ActualizarVolumen(TipoSonido.Efectos, volumenEfectos.value);
+        SistemaSonidos.ActualizarVolumen(TipoSonido.efectos, volumenEfectos.value);
     }
 
     public void PresionarBotónFuerte()

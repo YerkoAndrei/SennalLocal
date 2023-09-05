@@ -199,7 +199,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN OPERADOR", ruta, NivelEstrés.normal, Animaciones.MiraManos));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN OPERADOR", ruta, NivelEstrés.normal, Animaciones.miraManos));
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 9", ruta, NivelEstrés.normal));
 
         // Final

@@ -26,7 +26,7 @@ public class RutaAutor : InterfazRuta
 
         // Diálogos
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "AUTOR 1", ruta, NivelEstrés.normal));
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.normal, Animaciones.FinalAutor));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.normal, Animaciones.finalAutor));
 
         // Final
         listaDiálogos.Add(ElementoDialogo.CrearFinal("Autor_1", TipoFinal.escape, ruta));

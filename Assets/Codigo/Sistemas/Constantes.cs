@@ -103,14 +103,14 @@ public class Constantes
 
     public enum Animaciones
     {
-        Nada,
-        SoloEfectos,
-        Escribir,
-        Sentarse,
-        MiraManos,
-        LlegaUsuario,
-        FinalAutor,
-        CierreAutor
+        nada,
+        soloEfectos,
+        escribir,
+        sentarse,
+        miraManos,
+        llegaUsuario,
+        finalAutor,
+        cierreAutor
     }
 
     public enum CámarasCine
@@ -132,17 +132,18 @@ public class Constantes
     // Sonidos
     public enum TipoSonido
     {
-        General,
-        Música,
-        Efectos
+        general,
+        música,
+        efectos
     }
 
     public enum Sonidos
     {
-        SillaEntrar,
-        SillaSalir,
-        PuertaEntrar,
-        MatarUsuario
+        sillaEntrar,
+        sillaSalir,
+        puertaEntrar,
+        matarUsuario,
+        estática
     }
 
     public static ElementoDialogo[] AsignarContinuidadDiálogos(List<ElementoDialogo> lista)
