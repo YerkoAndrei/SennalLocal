@@ -27,6 +27,7 @@ public class ControladorAnimaciones : MonoBehaviour
     private ChromaticAberration aberraciónCromática;
 
     private ControladorCamara controladorCamara;
+    private AnimadorLuzFondo animadorLuzFondo;
     private Vector3 ajusteMirada;
     private float rotaciónInicialXOjo;
     private float granosBase;
@@ -35,6 +36,7 @@ public class ControladorAnimaciones : MonoBehaviour
     private void Start()
     {
         controladorCamara = FindObjectOfType<ControladorCamara>();
+        animadorLuzFondo = FindObjectOfType<AnimadorLuzFondo>();
         ojoOperador.gameObject.SetActive(false);
         ajusteMirada = new Vector3(-0.05f, 0.1f, 0);
 
@@ -158,6 +160,7 @@ public class ControladorAnimaciones : MonoBehaviour
     {
         controladorCamara.CambiarPosición(CámarasCine.autor);
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
+        animadorLuzFondo.AnimarOperador();
 
         SistemaSonidos.ActivarMúsica(false);
         StartCoroutine(AnimarEfectos(true));
@@ -183,6 +186,7 @@ public class ControladorAnimaciones : MonoBehaviour
     private IEnumerator AnimarLlegadaUsuario()
     {
         SistemaAnimacion.MarcarAnimación(true);
+        animadorLuzFondo.AnimarEncuentro();
         CancelarAnimación();
 
         // Movimiento Usuario
@@ -325,7 +329,7 @@ public class ControladorAnimaciones : MonoBehaviour
     {
         float tiempoLerp = 0;
         float tiempo = 0;
-        float duraciónLerp = 2f;
+        float duraciónLerp = 4f;
 
         while (tiempoLerp < duraciónLerp)
         {
