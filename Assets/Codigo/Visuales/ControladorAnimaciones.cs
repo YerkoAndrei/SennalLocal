@@ -27,7 +27,9 @@ public class ControladorAnimaciones : MonoBehaviour
     private ChromaticAberration aberraciónCromática;
 
     private ControladorCamara controladorCamara;
+    private ControladorMenu controladorMenú;
     private AnimadorLuzFondo animadorLuzFondo;
+
     private Vector3 ajusteMirada;
     private float rotaciónInicialXOjo;
     private float granosBase;
@@ -36,9 +38,10 @@ public class ControladorAnimaciones : MonoBehaviour
     private void Start()
     {
         controladorCamara = FindObjectOfType<ControladorCamara>();
+        controladorMenú = FindObjectOfType<ControladorMenu>();
         animadorLuzFondo = FindObjectOfType<AnimadorLuzFondo>();
         ojoOperador.gameObject.SetActive(false);
-        ajusteMirada = new Vector3(-0.05f, 0.1f, 0);
+        ajusteMirada = new Vector3(-0.05f, 0.05f, 0);
 
         // Post procesado
         efectos.profile.TryGet(out granosCámara);
@@ -56,22 +59,22 @@ public class ControladorAnimaciones : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Y))
-            MostrarAnimación(Animaciones.Sentarse);
+            MostrarAnimación(Animaciones.sentarse);
 
         if (Input.GetKeyDown(KeyCode.U))
-            MostrarAnimación(Animaciones.Escribir);
+            MostrarAnimación(Animaciones.escribir);
 
         if (Input.GetKeyDown(KeyCode.I))
-            MostrarAnimación(Animaciones.MiraManos);
+            MostrarAnimación(Animaciones.miraManos);
 
         if (Input.GetKeyDown(KeyCode.O))
-            MostrarAnimación(Animaciones.LlegaUsuario);
+            MostrarAnimación(Animaciones.llegaUsuario);
 
         if (Input.GetKeyDown(KeyCode.P))
-            MostrarAnimación(Animaciones.FinalAutor);
+            MostrarAnimación(Animaciones.finalAutor);
 
         if (Input.GetKeyDown(KeyCode.K))
-            MostrarAnimación(Animaciones.CierreAutor);
+            MostrarAnimación(Animaciones.cierreAutor);
 
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -99,28 +102,28 @@ public class ControladorAnimaciones : MonoBehaviour
     {
         switch (animación)
         {
-            case Animaciones.Nada:
+            case Animaciones.nada:
                 StartCoroutine(AnimarEfectos(false));
                 break;
-            case Animaciones.Escribir:
+            case Animaciones.escribir:
                 AnimarEscribir();
                 break;
-            case Animaciones.SoloEfectos:
+            case Animaciones.soloEfectos:
                 StartCoroutine(AnimarEfectos(true));
                 break;
-            case Animaciones.Sentarse:
+            case Animaciones.sentarse:
                 StartCoroutine(AnimarSentarse());
                 break;
-            case Animaciones.MiraManos:
+            case Animaciones.miraManos:
                 StartCoroutine(AnimarMirarManos());
                 break;
-            case Animaciones.LlegaUsuario:
+            case Animaciones.llegaUsuario:
                 StartCoroutine(AnimarLlegadaUsuario());
                 break;
-            case Animaciones.FinalAutor:
+            case Animaciones.finalAutor:
                 StartCoroutine(AnimarFinalAutor());
                 break;
-            case Animaciones.CierreAutor:
+            case Animaciones.cierreAutor:
                 StartCoroutine(AnimarCierreAutor());
                 break;
         }
@@ -144,7 +147,7 @@ public class ControladorAnimaciones : MonoBehaviour
         animadorSilla.SetTrigger("Entrar");
 
         yield return new WaitForSeconds(0.4f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.SillaEntrar);
+        SistemaSonidos.ReproducirAnimación(Sonidos.sillaEntrar);
     }
 
     private IEnumerator AnimarMirarManos()
@@ -158,6 +161,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
     private IEnumerator AnimarFinalAutor()
     {
+        controladorMenú.MostrarMenúJuego(false);
         controladorCamara.CambiarPosición(CámarasCine.autor);
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
         animadorLuzFondo.AnimarOperador();
@@ -176,6 +180,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
     private IEnumerator AnimarCierreAutor()
     {
+        SistemaSonidos.ReproducirAnimación(Sonidos.estática);
         StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
         yield return new WaitForSeconds(0.4f);
 
@@ -186,6 +191,7 @@ public class ControladorAnimaciones : MonoBehaviour
     private IEnumerator AnimarLlegadaUsuario()
     {
         SistemaAnimacion.MarcarAnimación(true);
+        controladorMenú.MostrarMenúJuego(false);
         animadorLuzFondo.AnimarEncuentro();
         CancelarAnimación();
 
@@ -197,7 +203,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
         // Sonido
         yield return new WaitForSeconds(0.4f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.PuertaEntrar);
+        SistemaSonidos.ReproducirAnimación(Sonidos.puertaEntrar);
         SistemaSonidos.ActivarMúsica(false);
         StartCoroutine(AnimarEfectos(true));
 
@@ -211,7 +217,7 @@ public class ControladorAnimaciones : MonoBehaviour
         animadorSilla.SetTrigger("Salir");
 
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.SillaSalir);
+        SistemaSonidos.ReproducirAnimación(Sonidos.sillaSalir);
         StartCoroutine(AnimarEntrarRotación(usuario.rotation));
 
         // Final con diálogos

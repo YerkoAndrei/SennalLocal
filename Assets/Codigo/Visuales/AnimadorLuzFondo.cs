@@ -78,7 +78,7 @@ public class AnimadorLuzFondo : MonoBehaviour
 
     private IEnumerator AnimaciónLuzOperador()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.5f);
 
         float duraciónLerp = 8;
         float tiempoLerp = 0;
