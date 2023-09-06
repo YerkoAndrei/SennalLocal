@@ -132,16 +132,16 @@ public class Constantes
     // Sonidos
     public enum TipoSonido
     {
-        general,
-        música,
-        efectos
+        General,
+        Música,
+        Efectos
     }
 
     public enum Sonidos
     {
         sillaEntrar,
         sillaSalir,
-        puertaEntrar,
+        puertaAbrir,
         matarUsuario,
         estática
     }

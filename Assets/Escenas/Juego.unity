@@ -1689,8 +1689,8 @@ MonoBehaviour:
   audioComputador: {fileID: 8300000, guid: 6afbc0c909a22b34d8fa688b2f1c1863, type: 3}
   sonidoSillaEntrar: {fileID: 8300000, guid: d4abc1239584fa14892ee245f5354235, type: 3}
   sonidoSillaSalir: {fileID: 8300000, guid: 42b771951d39b0c4faa88babe2a35a1a, type: 3}
-  sonidoPuertaEntrar: {fileID: 0}
-  sonidoMatarUsuario: {fileID: 0}
+  sonidoPuertaAbrir: {fileID: 8300000, guid: 09ce9f0f8b3d1af428a4afd842ba54e1, type: 3}
+  sonidoMatarUsuario: {fileID: 8300000, guid: 218f9910b6520414da0f4ffc4a36ffcf, type: 3}
   "sonidoEst\xE1tica": {fileID: 8300000, guid: d936473ce0f6cc448bb3ca49137852a3, type: 3}
 --- !u!4 &932877996
 Transform:

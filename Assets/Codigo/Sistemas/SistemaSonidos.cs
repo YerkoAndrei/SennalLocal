@@ -32,7 +32,7 @@ public class SistemaSonidos : MonoBehaviour
     [Header("Sonidos")]
     [SerializeField] private AudioClip sonidoSillaEntrar;
     [SerializeField] private AudioClip sonidoSillaSalir;
-    [SerializeField] private AudioClip sonidoPuertaEntrar;
+    [SerializeField] private AudioClip sonidoPuertaAbrir;
     [SerializeField] private AudioClip sonidoMatarUsuario;
     [SerializeField] private AudioClip sonidoEstática;
 
@@ -58,19 +58,17 @@ public class SistemaSonidos : MonoBehaviour
     {
         // Recuerda anterior o usa predeterminado
         if (ObtenerVolumenGeneral() == 0)
-            PlayerPrefs.SetFloat(TipoSonido.general.ToString(), volumenEstandar);
+            PlayerPrefs.SetFloat(TipoSonido.General.ToString(), volumenEstandar);
 
         if (ObtenerVolumenMúsica() == 0)
-            PlayerPrefs.SetFloat(TipoSonido.música.ToString(), volumenEstandar);
+            PlayerPrefs.SetFloat(TipoSonido.Música.ToString(), volumenEstandar);
 
         if (ObtenerVolumenEfectos() == 0)
-            PlayerPrefs.SetFloat(TipoSonido.efectos.ToString(), volumenEstandar);
+            PlayerPrefs.SetFloat(TipoSonido.Efectos.ToString(), volumenEstandar);
 
-        ActualizarVolumen(TipoSonido.general, ObtenerVolumenGeneral());
-        ActualizarVolumen(TipoSonido.música, ObtenerVolumenMúsica());
-        ActualizarVolumen(TipoSonido.efectos, ObtenerVolumenEfectos());
-
-        ActivarMúsica(true);
+        ActualizarVolumen(TipoSonido.General, ObtenerVolumenGeneral());
+        ActualizarVolumen(TipoSonido.Música, ObtenerVolumenMúsica());
+        ActualizarVolumen(TipoSonido.Efectos, ObtenerVolumenEfectos());
     }
 
     public static void ActualizarVolumen(TipoSonido tipoSonido, float volumen)
@@ -83,17 +81,17 @@ public class SistemaSonidos : MonoBehaviour
 
     public static float ObtenerVolumenGeneral()
     {
-        return PlayerPrefs.GetFloat(TipoSonido.general.ToString());
+        return PlayerPrefs.GetFloat(TipoSonido.General.ToString());
     }
 
     public static float ObtenerVolumenMúsica()
     {
-        return PlayerPrefs.GetFloat(TipoSonido.música.ToString());
+        return PlayerPrefs.GetFloat(TipoSonido.Música.ToString());
     }
 
     public static float ObtenerVolumenEfectos()
     {
-        return PlayerPrefs.GetFloat(TipoSonido.efectos.ToString());
+        return PlayerPrefs.GetFloat(TipoSonido.Efectos.ToString());
     }
 
     // Música
@@ -105,7 +103,7 @@ public class SistemaSonidos : MonoBehaviour
     private IEnumerator CambiarVolumenMúsica(bool activar)
     {
         // Intercalación lineal con curva
-        float tiempoCambioVolumen = 4;
+        float tiempoCambioVolumen = 5;
         tiempoLerp = 0;
 
         if (activar)
@@ -184,8 +182,8 @@ public class SistemaSonidos : MonoBehaviour
             case Sonidos.sillaSalir:
                 instancia.fuenteEfectos.PlayOneShot(instancia.sonidoSillaSalir);
                 break;
-            case Sonidos.puertaEntrar:
-                instancia.fuenteEfectos.PlayOneShot(instancia.sonidoPuertaEntrar);
+            case Sonidos.puertaAbrir:
+                instancia.fuenteEfectos.PlayOneShot(instancia.sonidoPuertaAbrir);
                 break;
             case Sonidos.matarUsuario:
                 instancia.fuenteEfectos.PlayOneShot(instancia.sonidoMatarUsuario);

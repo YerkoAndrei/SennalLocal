@@ -49,6 +49,8 @@ public class ControladorAnimaciones : MonoBehaviour
         granosBase = 0.2f;
         aberraciónBas = 0.5f;
 
+        SistemaSonidos.ActivarMúsica(true);
+
         aa = usuario.position;
         bb = usuario.rotation;
     }
@@ -202,23 +204,26 @@ public class ControladorAnimaciones : MonoBehaviour
         StartCoroutine(AnimarEntrarPosición(usuario.position));
 
         // Sonido
-        yield return new WaitForSeconds(0.4f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.puertaEntrar);
         SistemaSonidos.ActivarMúsica(false);
-        StartCoroutine(AnimarEfectos(true));
+
+        yield return new WaitForSeconds(0.2f);
+        SistemaSonidos.ReproducirAnimación(Sonidos.puertaAbrir);
 
         // Cámara
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
+        StartCoroutine(AnimarEfectos(true));
         controladorCamara.CambiarPosición(CámarasCine.usuario);
 
         // Operador
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
         animadorOperador.SetTrigger("Pararse");
         animadorSilla.SetTrigger("Salir");
 
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.sillaSalir);
         StartCoroutine(AnimarEntrarRotación(usuario.rotation));
+
+        yield return new WaitForSeconds(0.6f);
+        SistemaSonidos.ReproducirAnimación(Sonidos.sillaSalir);
 
         // Final con diálogos
         yield return new WaitForSeconds(1f);
