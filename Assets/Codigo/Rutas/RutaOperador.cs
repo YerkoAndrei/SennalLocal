@@ -26,8 +26,8 @@ public class RutaOperador : InterfazRuta
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Sal de la casa", CrearOperador_3()[0]));
-        listaOpciones.Add(new ElementoOpcion("Adéntrate en la casa", usuario.CrearUsuario_0()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador0_0", CrearOperador_3()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador0_1", usuario.CrearUsuario_0()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -39,12 +39,9 @@ public class RutaOperador : InterfazRuta
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Ve lento", CrearOperador_4()[0]));
-        listaOpciones.Add(new ElementoOpcion("Corre rápido", CrearOperador_5()[0]));
-
-        // Opción limitada
-        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.peligroExterior))
-            listaOpciones.Add(new ElementoOpcion("Devuélvete", usuario.CrearUsuario_1()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador1_0", CrearOperador_4()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador1_1", CrearOperador_5()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador1_2", usuario.CrearUsuario_1()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -56,9 +53,9 @@ public class RutaOperador : InterfazRuta
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Ve al edificio verde", caza.CrearCaza_0()[0]));
-        listaOpciones.Add(new ElementoOpcion("Ve al edificio rojo", CrearOperador_7()[0]));
-        listaOpciones.Add(new ElementoOpcion("Ve al edificio azul", CrearOperador_6()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador2_0", caza.CrearCaza_0()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador2_1", CrearOperador_7()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador2_2", CrearOperador_6()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -68,8 +65,8 @@ public class RutaOperador : InterfazRuta
     {
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Es irrelevante", CrearOperador_8()[0]));
-        listaOpciones.Add(new ElementoOpcion("Me llamo...", DarNombre()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador3_0", CrearOperador_8()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_operador3_1", DarNombre()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -80,7 +77,7 @@ public class RutaOperador : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Pregunta
-        listaDiálogos.Add(ElementoDialogo.CrearPregunta(CrearOperador_9()[0], CrearOperador_9()[0]));
+        listaDiálogos.Add(ElementoDialogo.CrearPregunta(CrearOperador_9_1()[0], CrearOperador_9_2()[0], TipoDiálogo.nombre));
 
         // Siguiente diálogo Neutro
         return listaDiálogos.ToArray();
@@ -194,16 +191,40 @@ public class RutaOperador : InterfazRuta
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 
-    public ElementoDialogo[] CrearOperador_9()
+    public ElementoDialogo[] CrearOperador_9_1()
     {
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
         listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN OPERADOR", ruta, NivelEstrés.normal, Animaciones.miraManos));
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 9", ruta, NivelEstrés.normal));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 9.1", ruta, NivelEstrés.normal));
 
         // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_9", TipoFinal.captura, ruta));
+        listaDiálogos.Add(CrearOperador_10()[0]);
+        return AsignarContinuidadDiálogos(listaDiálogos);
+    }
+
+    public ElementoDialogo[] CrearOperador_9_2()
+    {
+        var listaDiálogos = new List<ElementoDialogo>();
+
+        // Diálogos
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 9.2", ruta, NivelEstrés.normal));
+
+        // Final
+        listaDiálogos.Add(CrearOperador_10()[0]);
+        return AsignarContinuidadDiálogos(listaDiálogos);
+    }
+
+    public ElementoDialogo[] CrearOperador_10()
+    {
+        var listaDiálogos = new List<ElementoDialogo>();
+
+        // Diálogos
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "OPERADOR 10", ruta, NivelEstrés.normal));
+
+        // Final
+        listaDiálogos.Add(ElementoDialogo.CrearFinal("OPERADOR_10", TipoFinal.captura, ruta));
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

@@ -24,9 +24,9 @@ public class RutaIntro : InterfazRuta
     {
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("¿Hay algo que recuerdes?", CrearIntro_1()[0]));
-        listaOpciones.Add(new ElementoOpcion("¿Qué objetos tienes?", CrearIntro_2()[0]));
-        listaOpciones.Add(new ElementoOpcion("¿Qué ves a tu alrededor?", CrearIntro_3()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_intro0_0", CrearIntro_1()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_intro0_1", CrearIntro_2()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_intro0_2", CrearIntro_3()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -35,14 +35,13 @@ public class RutaIntro : InterfazRuta
     public ElementoDialogo CrearBifurcación_intro_1()
     {
         var operador = new RutaOperador();
-        var monstruo = new RutaMonstruo();
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Mira por la ventana", operador.CrearOperador_0()[0]));
-        listaOpciones.Add(new ElementoOpcion("Busca a alguien", operador.CrearOperador_1()[0]));
-        listaOpciones.Add(new ElementoOpcion("Intenta abrir la puerta", CrearIntro_5()[0]));
-        listaOpciones.Add(new ElementoOpcion("Sube la escalera", monstruo.CrearMonstruo_0()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_intro1_0", operador.CrearOperador_0()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_intro1_1", operador.CrearOperador_1()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_intro1_2", CrearIntro_5()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_intro1_3", CrearIntro_6()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -121,6 +120,19 @@ public class RutaIntro : InterfazRuta
 
         // Final
         listaDiálogos.Add(ElementoDialogo.CrearFinal("INTRO_5", TipoFinal.muerte, ruta));
+        return AsignarContinuidadDiálogos(listaDiálogos);
+    }
+
+    private ElementoDialogo[] CrearIntro_6()
+    {
+        var listaDiálogos = new List<ElementoDialogo>();
+        var monstruo = new RutaMonstruo();
+
+        // Diálogos
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 6", ruta, NivelEstrés.normal));
+
+        // Siguiente diálogo
+        listaDiálogos.Add(monstruo.CrearMonstruo_0()[0]);
         return AsignarContinuidadDiálogos(listaDiálogos);
     }
 }

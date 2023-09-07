@@ -13,7 +13,8 @@ public class RutaAutor : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "AUTOR 0 (Respuesta)", ruta, NivelEstrés.normal));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "AUTOR 0", ruta, NivelEstrés.normal));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "RESPUESTA 0", ruta, NivelEstrés.normal));
 
         // Opciones
         listaDiálogos.Add(CrearAutor_1()[0]);

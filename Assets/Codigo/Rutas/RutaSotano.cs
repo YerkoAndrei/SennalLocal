@@ -17,8 +17,8 @@ public class RutaSotano : InterfazRuta
     {
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Camina a saltos", CrearSótano_3()[0]));
-        listaOpciones.Add(new ElementoOpcion("Ve lento y pisa firme", CrearSótano_4()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_sotano0_0", CrearSótano_3()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_sotano0_1", CrearSótano_4()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;

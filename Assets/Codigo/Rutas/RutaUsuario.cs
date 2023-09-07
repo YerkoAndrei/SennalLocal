@@ -33,9 +33,12 @@ public class RutaUsuario : InterfazRuta
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("¡Corre!", CrearUsuario_2()[0]));
-        listaOpciones.Add(new ElementoOpcion("Alejate despacio", CrearUsuario_3()[0]));
-        listaOpciones.Add(new ElementoOpcion("Intenta verlo mejor", monstruo.CrearMonstruo_1()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario0_0", CrearUsuario_2()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario0_1", CrearUsuario_3()[0]));
+
+        // Opción limitada
+        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.peligroExterior))
+            listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario0_2", monstruo.CrearMonstruo_1()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -45,12 +48,12 @@ public class RutaUsuario : InterfazRuta
     {
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Busca un interruptor a tientas", CrearUsuario_4()[0]));
-        listaOpciones.Add(new ElementoOpcion("Recoje la varilla", CrearUsuario_6()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario1_0", CrearUsuario_4()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario1_2", CrearUsuario_6()[0]));
 
         // Opción limitada
         if(SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.encendedorEncontrado))
-            listaOpciones.Add(new ElementoOpcion("Usa tu encendedor", CrearUsuario_5()[0]));
+            listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario1_1", CrearUsuario_5()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -60,9 +63,9 @@ public class RutaUsuario : InterfazRuta
     {
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("¿Qué ves en la habitación?", CrearUsuario_10()[0]));
-        listaOpciones.Add(new ElementoOpcion("Busca una puerta", CrearUsuario_11()[0]));
-        listaOpciones.Add(new ElementoOpcion("Busca algo útil", CrearUsuario_12()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario2_0", CrearUsuario_10()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario2_1", CrearUsuario_11()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario2_2", CrearUsuario_12()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -72,12 +75,12 @@ public class RutaUsuario : InterfazRuta
     {
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Busca un lugar tranquilo", CrearUsuario_14()[0]));
-        listaOpciones.Add(new ElementoOpcion("Quédate ahi", CrearUsuario_15()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario3_0", CrearUsuario_14()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario3_1", CrearUsuario_15()[0]));
 
         // Opción limitada
         if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.llaveComputador))
-            listaOpciones.Add(new ElementoOpcion("Usa la llave", CrearUsuario_18()[0]));
+            listaOpciones.Add(new ElementoOpcion("bifurcacion_usuario3_2", CrearUsuario_18()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -88,7 +91,7 @@ public class RutaUsuario : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Pregunta
-        listaDiálogos.Add(ElementoDialogo.CrearPregunta(CrearUsuario_19_1()[0], CrearUsuario_19_2()[0]));
+        listaDiálogos.Add(ElementoDialogo.CrearPregunta(CrearUsuario_19_1()[0], CrearUsuario_19_2()[0], TipoDiálogo.pregunta));
 
         // Siguiente diálogo Positivo/Negativo
         return listaDiálogos.ToArray();

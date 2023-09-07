@@ -16,9 +16,9 @@ public class RutaCaza : InterfazRuta
     {
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Enfréntate a él", CrearCaza_1()[0]));
-        listaOpciones.Add(new ElementoOpcion("Acércate despacio", CrearCaza_2()[0]));
-        listaOpciones.Add(new ElementoOpcion("Huye", CrearCaza_3()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_caza0_0", CrearCaza_1()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_caza0_1", CrearCaza_2()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_caza0_2", CrearCaza_3()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;

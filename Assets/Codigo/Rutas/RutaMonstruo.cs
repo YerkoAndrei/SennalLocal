@@ -28,10 +28,10 @@ public class RutaMonstruo : InterfazRuta
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Ignoralo", usuario.CrearUsuario_7()[0]));
-        listaOpciones.Add(new ElementoOpcion("Míralo bien", CrearMonstruo_2()[0]));
-        listaOpciones.Add(new ElementoOpcion("Síguelo", CrearMonstruo_3()[0]));
-        listaOpciones.Add(new ElementoOpcion("Atácalo", CrearMonstruo_4()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo0_0", usuario.CrearUsuario_7()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo0_1", CrearMonstruo_2()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo0_2", CrearMonstruo_3()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo0_3", CrearMonstruo_4()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -44,9 +44,9 @@ public class RutaMonstruo : InterfazRuta
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Pídele ayuda", usuario.CrearUsuario_8()[0]));
-        listaOpciones.Add(new ElementoOpcion("Ayúdale", CrearMonstruo_6()[0]));
-        listaOpciones.Add(new ElementoOpcion("Fuerza la puerta", sótano.CrearSótano_0()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo1_0", usuario.CrearUsuario_8()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo1_1", CrearMonstruo_6()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo1_2", sótano.CrearSótano_0()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -58,12 +58,12 @@ public class RutaMonstruo : InterfazRuta
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Vete", CrearMonstruo_7()[0]));
-        listaOpciones.Add(new ElementoOpcion("Abre la puerta", sótano.CrearSótano_1()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo2_0", CrearMonstruo_7()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo2_2", sótano.CrearSótano_1()[0]));
 
         // Opción limitada
         if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.monstruoObservado))
-            listaOpciones.Add(new ElementoOpcion("Acércate", CrearMonstruo_8()[0]));
+            listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo2_1", CrearMonstruo_8()[0]));
 
         var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
         return diálogoPregunta;
@@ -75,11 +75,11 @@ public class RutaMonstruo : InterfazRuta
 
         // Preguntas
         var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("Pregúntale quién eres", CrearMonstruo_9()[0]));
+        listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo3_0", CrearMonstruo_9()[0]));
 
         // Opción limitada
         if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.nombreDado))
-            listaOpciones.Add(new ElementoOpcion("Pregúntale quién es", ResponderNombre()[0]));
+            listaOpciones.Add(new ElementoOpcion("bifurcacion_monstruo3_1", ResponderNombre()[0]));
 
         // Preguntas encontradas
         var preguntasEncontradas = SistemaMemoria.ObtenerPreguntas();
