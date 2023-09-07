@@ -35,6 +35,7 @@ public class Constantes
     {
         diálogo,        // Diálogo normal
         opciones,       // Opciones múltiples
+        nombre,         // Escribir nombre
         pregunta,       // Escribir mensaje
         final           // Final de ruta
     }

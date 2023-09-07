@@ -171,7 +171,7 @@ public class ControladorDialogos : MonoBehaviour
             imgContinuar.fillAmount = contadorTiempo / tiempoDiálogo;
         }
 
-        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetKeyDown(KeyCode.Escape))
+        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetKeyDown(KeyCode.Escape) && !panelPregunta.activeSelf)
             EnClic();
     }
 
@@ -251,17 +251,23 @@ public class ControladorDialogos : MonoBehaviour
         }
 
         ActivarEfectos();
-        ContarTiempoDiálogo();
         VerImagenContinuar(false);
-        StartCoroutine(MostrarTexto());
 
         // Excepción animaciones
         if (diálogoActual.animación != Animaciones.nada)
         {
             panelDiálogos.SetActive(false);
             animaciónMostrada = diálogoActual.animación;
-
             SistemaAnimacion.MostrarAnimación(diálogoActual.animación);
+            TerminarTexto();
+        }
+        else
+        {
+            //var textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
+            //ContarTiempoDiálogo(textoReal);
+            //StartCoroutine(MostrarTexto(textoReal));
+            ContarTiempoDiálogo(diálogoActual.texto);
+            StartCoroutine(MostrarTexto(diálogoActual.texto));
         }
     }
 
@@ -271,11 +277,11 @@ public class ControladorDialogos : MonoBehaviour
             TerminarTexto();
     }
 
-    private void ContarTiempoDiálogo()
+    private void ContarTiempoDiálogo(string texto)
     {
         // Cuánto tiempo se demorará (texto rico se reemplaza por carácterEtiqueta)
         tiempoDiálogo = 0;
-        var textoLimpio = ReemplazarEtiquetas(diálogoActual.texto);
+        var textoLimpio = ReemplazarEtiquetas(texto);
 
         for (int i = 0; i < textoLimpio.Length; i++)
         {
@@ -323,10 +329,9 @@ public class ControladorDialogos : MonoBehaviour
         return textoEncontrado;
     }
 
-    private IEnumerator MostrarTexto()
+    private IEnumerator MostrarTexto(string texto)
     {
         // Maneja texto rico
-        var texto = diálogoActual.texto;
         carácterDeEtiqueta = false;
         carácterEnTextoRico = false;
 
@@ -419,6 +424,7 @@ public class ControladorDialogos : MonoBehaviour
             case TipoDiálogo.opciones:
                 IniciarOpciones();
                 break;
+            case TipoDiálogo.nombre:
             case TipoDiálogo.pregunta:
                 IniciarPregunta();
                 break;
@@ -547,9 +553,19 @@ public class ControladorDialogos : MonoBehaviour
     public void EnClicTerminarPregunta()
     {
         SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, false, false, Direcciones.izquierda, () => panelPregunta.SetActive(false));
+        var respuestaVálida = false;
 
-        // Verificar pregunta válida
-        if(SistemaTraduccion.VerificarPreguntaVálida(inputPregunta.text))
+        //  Verificar nombre o pregunta válida
+        if (diálogoActual.tipoDiálogo == TipoDiálogo.nombre)
+        {
+            respuestaVálida = (inputPregunta.text.Length > 3);
+            if (respuestaVálida)
+                SistemaMemoria.GuardarNombre(inputPregunta.text);
+        }
+        else if (diálogoActual.tipoDiálogo == TipoDiálogo.pregunta)
+            respuestaVálida = SistemaTraduccion.VerificarPreguntaVálida(inputPregunta.text);
+
+        if (respuestaVálida)
             IniciarDiálogo(diálogoActual.siguienteDiálogo);
         else
             IniciarDiálogo(diálogoActual.siguienteDiálogoNegativo);
@@ -571,15 +587,15 @@ public class ControladorDialogos : MonoBehaviour
         switch (tipoFinal)
         {
             case TipoFinal.muerte:
-                diálogoFinal.texto = "(Llamada perdida. El usuario ha muerto.)";
+                diálogoFinal.texto = SistemaTraduccion.ObtenerTraducción("final_muerte");
                 diálogoFinal.nivelEstrés = NivelEstrés.muerto;
                 break;
             case TipoFinal.captura:
-                diálogoFinal.texto = "(Llamada perdida. El usuario ha sido capturado.)";
+                diálogoFinal.texto = SistemaTraduccion.ObtenerTraducción("final_captura");
                 diálogoFinal.nivelEstrés = NivelEstrés.capturado;
                 break;
             case TipoFinal.escape:
-                diálogoFinal.texto = "(Llamada perdida. El usuario ha escapado.)";
+                diálogoFinal.texto = SistemaTraduccion.ObtenerTraducción("final_escape");
                 diálogoFinal.nivelEstrés = NivelEstrés.bajo;
                 break;
         }

@@ -56,10 +56,10 @@ public class ElementoDialogo
     }
 
     // Escribir mensaje
-    public static ElementoDialogo CrearPregunta(ElementoDialogo diálogoPositivo, ElementoDialogo diálogoNegativo)
+    public static ElementoDialogo CrearPregunta(ElementoDialogo diálogoPositivo, ElementoDialogo diálogoNegativo, TipoDiálogo tipoPregunta)
     {
         var nuevoElemento = new ElementoDialogo();
-        nuevoElemento.tipoDiálogo = TipoDiálogo.pregunta;
+        nuevoElemento.tipoDiálogo = tipoPregunta;
         nuevoElemento.siguienteDiálogo = diálogoPositivo;
         nuevoElemento.siguienteDiálogoNegativo = diálogoNegativo;
 

@@ -26,13 +26,13 @@ public class ElementoInterfazOpcion : MonoBehaviour
     {
         btnOpción.interactable = false;
         siguienteDiálogo = elementoDiálogo.siguienteDiálogo;
-        txtOpción.text = elementoDiálogo.texto;
         yaElegido = elementoDiálogo.yaElegido;
         enClic = acción;
 
+        txtOpción.text = SistemaTraduccion.ObtenerTraducción(elementoDiálogo.texto);
         texto = elementoDiálogo.texto;
-        imgElegido.SetActive(elementoDiálogo.yaElegido);
 
+        imgElegido.SetActive(elementoDiálogo.yaElegido);
         EnCurorFuera();
     }
 

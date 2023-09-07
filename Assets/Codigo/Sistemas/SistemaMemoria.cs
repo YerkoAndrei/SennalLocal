@@ -79,7 +79,7 @@ public class SistemaMemoria : MonoBehaviour
     // Marcado visto / elegido
     public static void MarcarDiálogo(string texto)
     {
-        if (!instancia.datos.diálogosElegidos.Contains(texto))
+        if (!instancia.datos.diálogosElegidos.Contains(texto) && texto != instancia.datos.últimoNombre)
         {
             instancia.datos.diálogosElegidos.Add(texto);
             instancia.ActualizarArchivo();
@@ -135,15 +135,15 @@ public class SistemaMemoria : MonoBehaviour
         switch(respuesta)
         {
             case RespuestasClave.encendedorEncontrado:
-                return instancia.datos.opcionesElegidas.Contains("bifurcacion_intro0_2");
+                return instancia.datos.opcionesElegidas.Contains("bifurcacion_intro0_1");
             case RespuestasClave.peligroExterior:
-                return instancia.datos.opcionesElegidas.Contains("bifurcacion_operador1_3");
+                return (instancia.datos.opcionesElegidas.Contains("bifurcacion_intro1_0") || instancia.datos.opcionesElegidas.Contains("bifurcacion_operador1_2"));
             case RespuestasClave.llaveComputador:
-                return instancia.datos.opcionesElegidas.Contains("bifurcacion_usuario2_3");
+                return instancia.datos.opcionesElegidas.Contains("bifurcacion_usuario2_2");
             case RespuestasClave.monstruoObservado:
-                return instancia.datos.opcionesElegidas.Contains("bifurcacion_monstruo0_2");
+                return instancia.datos.opcionesElegidas.Contains("bifurcacion_monstruo0_1");
             case RespuestasClave.nombreDado:
-                return instancia.datos.opcionesElegidas.Contains("bifurcacion_monstruo3_2");
+                return !string.IsNullOrEmpty(instancia.datos.últimoNombre);
             default:
                 return false;
         }
