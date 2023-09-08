@@ -1,5 +1,5 @@
 Objetivo:
-Guia al usuario a un lugar seguro.
+Guía al usuario a un lugar seguro.
 
 INTRO:
 Introducción a la historia.
@@ -8,7 +8,7 @@ OPERADOR:
 Quién es el operador/jugador.
 
 USUARIO:
-Cómo llegó ahi el usuario y cuál es su propósito.
+Cómo llegó ahí el usuario y cuál es su propósito.
 
 MONSTRUO:
 Qué es el monstruo y para qué se creó.
@@ -40,7 +40,7 @@ Final Escape:
 
 Bifurcación INTRO 0:
     ¿Hay algo que recuerdes?
-    ¿Qué objetos tienes?
+    ¿Tienes algo en tus bolsillos?
     ¿Qué ves a tu alrededor?
 
 Bifurcación INTRO 1:
@@ -54,7 +54,7 @@ INTRO 0:
     - B-buenas noches...
     $ ¿Cuál es su emergencia?
     - Acabo de despertar en algún lugar...
-    - No.. No recuerdo nada. Ayuda por favor.
+    - No... No recuerdo nada. Ayúdame por favor.
     $ ¿Estás bien, puedes describir dónde estás?
     - Estoy dentro de una casa bastante grande y antigua.
     - En una habitación desordenada.
@@ -74,24 +74,24 @@ INTRO 1:
 INTRO 2:
     - Me reviso.
     - ...
-    - Tengo un encendedor, le queda un poco de gas.
+    - Solo tengo un encendedor, le queda un poco de gas.
     - No tengo nada más en los bolsillos.
 
 INTRO 3:
     - Solo hay muebles desordenados en la habitación, parecen vacíos.
-    - Hay una ventana opaca, pero no puedo ver hacia afuera desde aquí.
+    - Hay una ventana, pero está opaca, no puedo ver el exterior.
 
 INTRO 4:
     $ ¿Cómo llamaste a emergencias?
     - Desperté con el teléfono en mi mano, tenía el número marcado.
-    - No sé de dónde salio, tiene casi todos los botones rotos y ninguno funciona.
+    - No sé de dónde salió, tiene casi todos los botones rotos y apenas funciona.
     - Todo es muy extraño. No sé dónde estoy, ayúdame por favor, no cortes.
-    $ ¿No hay alguna puerta cerca?
+    $ Calma, ¿No hay alguna puerta cerca?
     - Sí, solo una. Voy a ir.
     - La puerta está abierta.
     - Hay una escalera grande.
-    - Parece que estoy en la entrada de alguna casa grande o mansión antigua.
-    - Veo otras puertas pero estan bloqueadas.
+    - Parece que estoy en la entrada de alguna casona o mansión antigua.
+    - Veo otras puertas pero están bloqueadas con palos.
     - Aquí hay muchos escombros.
     $ ¿Una entrada? Entonces debería haber una puerta grande.
     - Sí, se ve pesada, al lado hay una ventana pequeña que da hacia afuera.
@@ -102,13 +102,13 @@ INTRO 5:
     - Pero se mueve.
     - Está abierta. Bien, voy a salir.
     - ¡¿Qué es eso?!
-    - ¡Son horribles!
+    - ¡Es horrible!
     - ¡No! ¡La puerta se cerró!
     - ¡Ayuda!
     - ¡No!
     - ¡Ahhhhhh!
     - ...
-    (Final Muerte)
+    (Llamada perdida. El usuario ha muerto.)
 
 INTRO 6:
     - Bien, subiré la escalera.
@@ -117,11 +117,11 @@ INTRO 6:
     - Estoy viendo algo. Hay algo arriba de la escalera.
     - Me escondí por puro reflejo, parecía una persona, pero...
     $ ¿Pero?
-    - No sé cómo explicarlo, era la silueta de una persona, pero demasiado grande.
-    $ ¿Tienes alguna otra opción?
+    - No sé cómo explicarlo, era la silueta de una persona, pero demasiado grande, con proporciones extrañas.
+    $ ¿Ves algún otro lugar donde ir?
     - Mmm...
-    - No, hay una puerta, pero está llena de escombros, la única opción que me queda es subir y averiguar que está pasando.
-    - Bien, subiré la escalera.
+    - No, hay una puerta, pero está llena de escombros, la única opción que me queda es subir y averiguar qué está pasando.
+    - Está bien, subiré la escalera.
 
 
 Bifurcación OPE 0:
@@ -162,7 +162,7 @@ OPE 0:
 
 OPE 1:
     - No creo que haya alguien aquí, hay demasiado polvo.
-    $ ¿Vez huellas en él?
+    $ ¿Ves huellas en él?
     - No, parece abandonada hace años.
     - Esa escalera me da escalofríos.
     - Parece que se va a derrumbar en cualquier momento.
@@ -177,7 +177,7 @@ OPE 2:
     - Ya estoy dentro.
     $ ¿Sabes dónde estás? Descríbelo.
     - Por lo muebles parece un comedor.
-    - Hay dos puertas, una sale hacia afuera, y la otra debería ir a otra habitación.
+    - Hay dos puertas, una sale hacia afuera, y la otra debería ir a otra habitación, pero está sellada con palos.
     - ¿Qué debería hacer?
 
 OPE 3:
@@ -186,8 +186,8 @@ OPE 3:
     - Está bien.
     - La puerta está abierta.
     - No hay nada extraño afuera.
-    - ...
-    - ¡Oh! Sí veo unas figuras deambulando.
+    - ¡Oh!
+    - Sí, veo unas figuras deambulando.
     - No alcanzo a distinguir qué son, pero eso no puede ser nada bueno.
     - ¿Cómo debería salir?
 
@@ -197,8 +197,7 @@ OPE 4:
     - ...
     - Oh no.
     $ ¿Qué ves?
-    - ...
-    - ¡Me estan siguiendo!
+    - ¡Me están siguiendo!
     - ¡¿De dónde salieron?!
     $ Busca un lugar seguro.
     $ ¿Qué ves?
@@ -207,25 +206,24 @@ OPE 4:
     - ¡Son rápidos!
     - ¡Nooo!
     - ...
-    (Final Muerte)
+    (Llamada perdida. El usuario ha muerto.)
 
 OPE 5:
     - Bien, no veo nada extraño.
     - Voy a correr.
     - ...
-    - ¡Me estan siguiendo!
+    - ¡Me están siguiendo!
     - ¡¿De dónde salieron?!
     - ¡También están frente a mí!
     - ¡Ah! ¡Puedo desviarme!
     $ Busca un lugar seguro.
     $ ¿Qué ves?
-    - ...
     - Hay un muro colapsado, puedo escalarlo.
     - ...
     - Creo que los perdí.
     - Oh...
     $ ¿Qué pasa?
-    - Todo esta en ruinas.
+    - Todo está en ruinas.
     - No veo a nadie.
     - ¿Qué debería hacer?
     $ ¿Ves algún lugar que parezca cerrado?
@@ -243,10 +241,10 @@ OPE 6:
     - Bien.
     - ...
     - Creo que no me han visto.
-    - ¿Sabes que son esos monstruos?
+    - ¿Sabes qué son esos monstruos?
     - Espera...
     - Estoy dentro pero no escucho nada.
-    - No creo que haya nadie aqui.
+    - No creo que haya nadie aquí.
     - ...
     - Oh no.
     $ ¿Qué pasa?
@@ -255,10 +253,10 @@ OPE 6:
     - ...
     - Ah... Ah... Ah...
     - ¡Algo me agarró del cuello!
-    - ¡Esto esta lleno de esas cosas!
+    - ¡Está lleno de esas cosas!
     - ¡Ahhhhhh!
     - ...
-    (Final Muerte)
+    (Llamada perdida. El usuario ha muerto.)
 
 OPE 7:
     - Bien.
@@ -270,7 +268,7 @@ OPE 7:
     - Oh... Perdón.
     $ ¿Qué pasa?
     $ ¿Estás bien?
-    - Sí, hay gente aqui.
+    - Sí, hay gente aquí.
     $ ...
     - Sí, son personas normales.
     - ¡Hola!
@@ -280,20 +278,20 @@ OPE 7:
     # ¿Emergencias?
     - Sí, me ayudó a llegar aquí.
     # ¿De qué hablas? Ya no existen emergencias.
-    - ¿Cómo? Si me ayudó a escapar de la casa grande al final de la calle.
+    - ¿Cómo? Si me ayudó a escapar de la casona grande al final de la calle.
     # ¿Q-Quién eres?
-    - ¿Por qué me miran asi?
-    - ¡No, no he hecho nada! ¡No ven los monstruos afuera!
+    - ¿Por qué me miran así?
+    - ¡No, no he hecho nada! ¡¿No ven los monstruos afuera?!
     # ¡Déjenlo!
     # Puede que diga la verdad.
     # ¿Nadie te siguió?
     - No que yo sepa, ayúdenme por favor.
-    # Puedes quedarte aquí, pero necesitamos asegurarnos de que no te envia el demente de la casa de donde escapaste.
+    # Puedes quedarte aquí, pero necesitamos asegurarnos de que no te envía el demente de la mansión de donde escapaste.
     - ¿Demente?
-    # ¿Con quién estas hablando?
+    # ¿Con quién estás hablando?
     # ¿Aún no cuelgas?
     - La verdad no le he preguntado.
-    - Operador, ¿Estás ahi?
+    - Operador, ¿Estás ahí?
     $ Sí.
     - ¿Cómo te llamas?
 
@@ -312,7 +310,7 @@ OPE 8:
     - Es más grande y... ¿Nos observa?
     # ¡Ahhhhhh!
     # ¡Corran!
-    $ Bien, escucho muchos juguetes nuevos.
+    $ Bien, escucho muchos usuarios nuevos.
     - ¿De qué hablas?
     - Ayúdame por favor ¿Qué debería hacer?
     $ No luches, será en vano.
@@ -320,7 +318,7 @@ OPE 8:
     - Espera... No me digas que tú...
     # ¡Ahhhhhh!
     - ¡Ahhhhhh!
-    - ...
+    $ ...
     * Maestro.
     * Cinco sujetos encontrados.
     * Capturando.
@@ -331,13 +329,14 @@ OPE 8:
     (Llamada perdida. El usuario ha sido capturado.)
 
 OPE 9.1:
-    - Dice que se llama {0}
+    - Dice que se llama {0}.
     # ¡¿Qué?!
     - ¿Qué pasa? No entiendo.
     # El demente siempre usa esos pseudónimos ridículos.
     
 OPE 9.2:
-    - No quiere decir su nombre.
+    - Dejó de contestarme.
+    - Pero la llamada aún sigue.
     # Eso es sospechoso...
     # ¡¿No será aquel demente?!
     
@@ -347,7 +346,7 @@ OPE 10:
     # ¡No! Lo ayudaste a llegar a nosotros.
     # ¡Nos delataste!
     - Esperen por favor.
-    - ¿Operador? ¿Que sucede? Todos están...
+    - ¿Operador? ¿Qué sucede? Todos están...
     # ¿Qué es eso?
     # ¡Es uno de los grandes!
     - ¿Qué está pasando? ¿Operador?
@@ -358,18 +357,18 @@ OPE 10:
     - Es más grande y... ¿Nos observa?
     # ¡Ahhhhhh!
     # ¡Corran!
-    $ Bien, escucho muchos juguetes nuevos.
+    $ Bien, escucho muchos usuarios nuevos.
     - ¿De qué hablas?
     - Ayúdame por favor ¿Qué debería hacer?
     $ No luches, será en vano.
     - Que no...
-    - Espera... No me digas que tú trajiste a estos monstruos.
+    - Espera... No me digas que tú trajiste a éstos monstruos.
     - ¡Pensé que me estabas ayudando!
-    - Maldito, si estás en esa casa te encontraré
+    - Maldito, si estás en esa casa te encontraré.
     $ Ya es muy tarde.
     # ¡Ahhhhhh!
     - ¡Ahhhhhh!
-    - ...
+    $ ...
     * Maestro.
     * Cinco sujetos encontrados.
     * Capturando.
@@ -384,14 +383,14 @@ OPE 10:
 
 
 Bifurcación USU 0:
-    ¡Corre!
     Aléjate despacio
-    Intenta verlo mejor
+    ¡Corre!
+    Intenta acercarte
 
 Bifurcación USU 1:
     Busca un interruptor a tientas
     Usa tu encendedor
-    Recoje la varilla
+    Recoge la varilla
 
 Bifurcación USU 2:
     ¿Qué ves en la habitación?
@@ -404,24 +403,23 @@ Bifurcación USU 3:
     Usa la llave
 
 USU 0:
-    - Estoy frente a la escalera.
+    - Estoy en la entrada de nuevo.
     - Oh no...
     $ ¿Qué pasa?
     - Estoy viendo algo. Hay algo arriba de la escalera.
     - Me escondí por puro reflejo, era una persona pero...
     $ ¿Pero?
-    - No sé cómo explicarlo, era una persona, pero no parecia humano, aparte era demasiado grande.
+    - No sé cómo explicarlo, era una persona, parecía humano pero con proporciones extrañas.
     - Aunque por alguna razón no me dió miedo.
-    $ ¿Tienes alguna otra opción?
+    $ ¿Ves algún otro lugar donde ir?
     - Mmm...
-    - No, la única opción que me queda es subir y averiguar que está pasando.
+    - No, la única opción que me queda es subir y averiguar qué está pasando.
     - Bien, subiré la escalera.
 
 USU 1:
     - Bien, esa ventana me daba mala espina.
     - Intentaré bloquear la puerta.
     - ...
-    - Estoy en la entrada de nuevo.
 
 USU 2:
     - Me voy despacio pero no deja de mirarme.
@@ -429,21 +427,20 @@ USU 2:
     - Ya no lo veo, creo que no me sigue.
     - Cómo suena este piso, toda la madera está podrida.
     - Voy a pisar con cuidado.
-    - ...
     - Ésta está cerrada.
     - ...
     $ ¿Todo bien?
     - Sí, estoy escondido en una habitación, entré en la primera puerta abierta que encontré.
     - Pero está oscuro, no veo nada.
     - ¡Ah! Que susto.
-    - Solo pateé una varilla.
+    - Solo pateé una varilla de metal.
     - ¿Qué debería hacer?
 
 USU 3:
     - Bien.
     - Ah, ah, ah...
     - Creo que lo perdí.
-    - No sé dónde estoy.    
+    - No sé dónde estoy.
     - ¡Ahhhhhh!
     $ ¿Qué pasa?
     - ¡Mi pierna!
@@ -461,11 +458,11 @@ USU 4:
     - No veo nada, pero lo intentaré.
     - No está cerca de la puerta.
     - Tampoco quiero salir, esa cosa debe estar afuera.
-    - ¡Ahhhhhh!
-    - ¡Mi mano!
+    - ¡Ah!
+    - Mi mano.
     $ ¿Qué pasa?
     $ ¿Estás bien?
-    - Sí, somo me enterré una astilla.
+    - Sí, solo me enterré una astilla.
     - ¡Ahhhhhh!
     - ¡Mi pierna!
     - ¡La madera está podrida!
@@ -478,22 +475,23 @@ USU 4:
 
 USU 5:
     - ¡Oh!
-    - Cierto, lo había olvidado.
+    - Cierto, tengo un encendedor en el bolsillo.
     - Bueno, hay varias cosas metálicas a mi alrededor, ilumina más de lo que debería.
-    - Aún asi no veo mucho, pero lo suficiente para no pisar la madera podrida.
+    - Aún así no veo mucho, pero lo suficiente para no pisar la madera podrida.
     - ¿Qué debería buscar?
 
 USU 6:
-    - Bien, puedo tantear con esto.
+    - Bien, puedo tantear con ésto.
     - ¡Oh! Sacó chispas.
-    - ¿Se qué material será esta cosa?
-    - Es aspera.
+    - ¿De qué material será ésta cosa?
+    - Es áspera.
     - ...
     - Hay cosas metálicas.
     - El sonido me hace doler las muelas.
-    - Oh, arriba hay como tuberías.
-    - ¿Son como los de hospital?
-    - Hay una con una inscripción, voy a subirme a algo.
+    - Oh, arriba hay unas tuberías.
+    - ¿Son como las de un hospital?
+    - Hay una con una inscripción, voy a subirme a algo para verla.
+    - ¡Se quebró! ¿Qué todo está podrido aquí?
     - Espera. ¿Qué es ese olor?
     - ...
     (Llamada perdida. El usuario ha muerto.)
@@ -514,8 +512,8 @@ USU 8:
     $ ¿Qué pasa?
     - ¡Empezó una rabieta!
     $ ¿Una rabieta?
-    - Sí ¿Será que no aguanta la frustación?
-    - Esto es peligroso, mejor me voy por el otro lado.
+    - Sí ¿Será que no aguanta la frustración?
+    - Ésto es peligroso, mejor me voy por el otro lado.
     - ...
     - Bien, ya no lo veo.
 
@@ -524,8 +522,9 @@ USU 9:
     - Voy a pisar con cuidado.
     - ...
     $ ¿Todo bien?
-    - Sí, entré a una habitación, por la primera puerta abierta que encontré.
-    - Pero está oscuro, no veo nada.
+    - Sí, entré a una habitación al otro lado de la escalera.
+    - Vi que había una luz débil.
+    - Hay una lámpara encendida, ésto no estaba aquí antes, la habría visto desde la escalera.
     - ¿Qué debería hacer?
 
 USU 10:
@@ -547,7 +546,7 @@ USU 11:
     - ...
     - Sí, veo una, es de metal.
     - Éste lugar me da mala espina.
-    - Hay algunas cosas médicas, pero hay algo extraño aquí.
+    - Hay algunas cosas médicas, pero siento que hay algo extraño aquí.
 
 USU 12:
     - ¿Algo útil?
@@ -558,28 +557,28 @@ USU 12:
     - No aún no, todos los cajones están vacíos.
     - ¡Oh!
     - Hay una puerta de metal.
-    - Espera, aquí encontré algo, es una caja d emadera, pero está podrida.
+    - Espera, aquí encontré algo, es una caja de madera, pero está podrida.
     - ¿Debería intentar romperla?
-    $ Sí, prueba pisandola.
+    $ Sí, prueba pisándola.
     - Está bien.
     - Oh, eso fue fácil.
     $ ¿Qué tiene dentro?
     - Es una llave, pero no es normal, es muy grande.
-    $ ¿Es cilindrica?
+    $ ¿Es cilíndrica?
     - ¡Sí!
-    - Espera. ¿ómo sabes eso?
+    - Espera. ¿Cómo sabes eso?
     $ No importa, ahora tienes que salir de ahí.
     - E-esta bien.
 
 USU 13:
     - Estoy frente a la puerta de metal.
-    - Ésta bodega me pone nervioso.
+    - Las cosas médicas me ponen nervioso.
     - Quiero irme de aquí.
     - Pero la puerta está cerrada.
-    - ¿Que debería hacer?
+    - ¿Qué debería hacer?
 
 USU 14:
-    - Bien, esa puerta me pone más nervioso que esta misma habitación.
+    - Bien, esa puerta me pone más nervioso que la misma habitación.
     - ...
     - No encuentro nada más.
     - ¡Ah!
@@ -593,7 +592,6 @@ USU 14:
     - Sí.
     - Espera, si hay luz debería haber alguien.
     - Intentaré acercarme por otro lado, espero no caerme.
-    - ...
     - Mmm...
     - No veo nada.
     - Lanzaré algo para romperlo, es la única señal de vida que he visto, tengo que saber por qué hay luz en el piso de abajo.
@@ -605,7 +603,7 @@ USU 14:
     - Más o menos, me caí...
     - No, no me rompí nada.
     $ Estás [ad portas] de la verdad.
-    - ¿De la verdad? 
+    - ¿De la verdad?
     - Espera, hay una puerta abierta, iré allí.
     $ Tu destino ya fue escrito.
     - ¿De qué hablas?
@@ -614,32 +612,21 @@ USU 14:
     (Llamada perdida. El usuario ha muerto.)
 
 USU 15:
-    - Bien, esa puerta me pone más nervioso que esta misma habitación.
+    - Bien, pero esa puerta me pone más nervioso que la misma habitación.
     - ...
     - Desperté en un lugar sin recordar mi propio nombre, pero sí recuerdo otras cosas.
-    - ¿Por qué esta amnesia selectiva?
+    - ¿Por qué ésta amnesia selectiva?
     - Ni siquiera recuerdo dónde debería estar.
-    - ...
-    - ¿Qué debería hacer?
-
-USU 16.1:
-    - Dentro de esta casa hay un monstruo no humano que da escalofrios.
+    - Pensando...
+    - Dentro de ésta casa hay un monstruo no humano que da escalofríos.
     - No es violento, pero es evidente que me mataría de un manotazo.
-    - Ahora que lo pienso, tenía cosas tecnológicas en su ropa.
     - ¿Qué será?
-    - Quizas debí haberlo seguido.
-
-USU 16.2:
-    - Afuera está lleno de monstruos que parecen muertos.
-    - Esas cosas de afuera ni siquiera parecían animales.
-    - Es de la casa no es cómo esos, parece tener conciensia, o por lo menos autocontrol.
-
-USU 17:
+    - Quizás debí haberlo seguido.
+    - O huir... Afuera quizás es aún más peligroso.
     - Sí, aquí es relativamente seguro.
     - Por lo menos no oigo nada extraño.
-    - ...
     - Creo que está bien descansar un poco.
-    - Quizas pueda recordar algo.
+    - Quizás pueda recordar algo.
     $ ¿Puedo ayudarte en algo?
     - No sé...
     - Me ayudarías no colgando.
@@ -647,10 +634,9 @@ USU 17:
     - Nada familiar sale de mi mente.
     - Pero sí recuerdo todo lo... ¿Normal?
     - Creo que solo se han borrado recuerdos sobre mí.
-    - ...
     - ¿Acaso alguien lo hizo a propósito?
     - ¿Existe esa posibilidad?
-    - ¡Oh! Si logro vincular algún recuerdo podria llegar a algo más familar, como mi nombre u otra persona.
+    - ¡Oh! Si logro vincular algún recuerdo podría llegar a algo más familiar, como mi nombre u otra persona.
     - Mmm...
     - Solo me vienen imágenes de desastres.
     - ¿Cómo será el exterior?
@@ -661,14 +647,14 @@ USU 17:
     - Vienen hacia aquí.
     - Debe ser el monstruo de hace rato.
     - No... Se escuchan con prisa.
-    - Viene hacía aquí.
+    - Viene hacia aquí.
     - Ya no quiero correr, estoy muy cansado.
     - Ayúdame por favor.
     - No quiero morir.
     - ...
     (Llamada perdida. El usuario ha sido capturado.)
 
-USU 18:
+USU 16:
     - Mmm...
     - No veo una cerradura.
     - ¡Oh! Sí la encontré.
@@ -676,7 +662,7 @@ USU 18:
     - ...
     - Sí calza.
     - La puerta está pesada.
-    - Oh...
+    - Ah...
     $ ¿Qué hay dentro?
     - Es una máquina.
     - ¡Es una terminal!
@@ -686,14 +672,12 @@ USU 18:
     - ¡No abre!
     - Me quedé a oscuras.
     $ Busca otra salida.
-    - Bien...
+    - Bien.
     - ¡Oh!
-    - El interruptor funciona, ya no necesito el encendedor.
-    - Menos mal, me estaba quemando los dedos.
-    - ...
+    - El interruptor funciona, ya no necesito luz.
     - Oh no...
     $ ¿Qué pasa?
-    - Esto no está bien.
+    - Ésto no está bien.
     $ ¿Por qué lo dices?
     - Es una habitación muy pequeña.
     - Solo hay una puerta y la terminal.
@@ -705,15 +689,15 @@ USU 18:
     - Mmmm.
     - ¿Qué debería preguntar?
 
-USU 19.1:
+USU 17.1:
     + Pregunta reconocida.
-    + Esperando respuesta
+    + Esperando respuesta.
 
-SU 19.2:
+SU 17.2:
     + Pregunta no reconocida.
     + Reiniciando intentos.
 
-USU 20:
+USU 18:
     - Oh no...
     $ ¿Qué pasa?
     - Se cortó la electricidad.
@@ -730,7 +714,7 @@ USU 20:
     - Ya no tengo fuerzas.
     - Ah...
     - Se me duermen las piernas.
-    - Ayúdame, operador, porfavor.
+    - Ayúdame, operador, por favor.
     - No quiero morir.
     - No quiero...
     - ...
@@ -754,14 +738,13 @@ Bifurcación MON 2:
     Abre la puerta
 
 Bifurcación MON 3:
-    Preguntale quién eres
-    Preguntale quién es
-    Pregunta...
+    Pregúntale quién eres
+    Pregúntale quién es
+    Preguntas...
 
 MON 0:
     - Bien, estoy subiendo.
     - Todo cruje un montón.
-    - ...
     - Creo que lo veo.
     - Ahí está, no se mueve.
     - ¡Oye! ¿Sabes dónd...
@@ -775,33 +758,32 @@ MON 0:
 MON 1:
     - Solo me mira.
     - Éste no es violento, ni deambula sin rumbo, parece inteligente.
-    - Aunque se ve increiblemente fuerte.
+    - Aunque se ve increíblemente fuerte.
     - ¿Crees que es buena idea hablarle?
-    $ Inténtalo, pero preparate por si algo sucede.
+    $ Inténtalo, pero prepárate por si algo sucede.
     - B-bueno.
     - Oye amigo...
     - ¿Puedes ayudarme?
     - ...
     - No responde, pero me sigue con la mirada.
-    - Oh...
+    - Oh no...
     $ ¿Qué pasa?
-    - Tiene varias armas en su vestimenta. ¿Será peligroso?
-    - No parece estar a la ofensiva.
+    - Tiene varias armas en su vestimenta.
+    - ¿Será peligroso? No parece estar a la ofensiva.
     - Oh...
     - Dio media vuelta y empezó a caminar, se va.
-    - Oh...
+    - ¿Eh?
     - Se detuvo, creo que quiere que lo siga.
     - Ayúdame por favor.
     - ¿Qué debería hacer?
 
 MON 2:
     - Bien, me sigue mirando, voy a acercarme.
-    - ...
     - Tiene... Un rostro humano...
     - Pero su cuerpo es gigante y desproporcionado.
     - Mide más de dos metros y su cabeza parece pequeña.
     - Tiene una expresión vacía, no parece mover los músculos de su rostro.
-    - Tiene la palidez de un cadaver.
+    - Tiene la palidez de un cadáver.
     - ...
     - ¿Qué eres? ¿Fuiste humano?
     - ¡Ah!
@@ -820,10 +802,10 @@ MON 4:
     - ¡¿Qué?!
     - ¡Mide más de dos metros!
     $ Puedes robar su arma mientras no te mira.
-    $ No puedes confiar en algo asi.
+    $ No puedes confiar en algo así.
     $ ¿Crees poder hacerlo?
     - No sé, pero... Puede que tengas razón...
-    - Está bien, ire corriendo a ver si puedo quitarle algo.
+    - Está bien, iré corriendo a ver si puedo quitarle algo.
     - ¡Ya!
     - ...
     - ¡Ahhhhhh!
@@ -836,7 +818,7 @@ MON 5:
     - Me está mirando.
     - Mmm...
     - ¡Ah!
-    - Creo que me está pidiendo ayuda.
+    - Creo que me está pidiendo ayuda para abrirla.
     - ¿Qué debería hacer?
 
 MON 6:
@@ -853,7 +835,6 @@ MON 6:
     $ ¿Qué pasa?
     - Pasó corriendo hacia dentro.
     - ¿Qué es este lugar?
-    - ...
     - Fue directo a un escritorio viejo.
     - Parece una oficina, pero todos los muebles están podridos.
     - Hay una puerta a su lado, está un poco abierta.
@@ -864,7 +845,7 @@ MON 6:
 MON 7:
     - Sí, creo que no lograré nada aquí.
     - Espero que me ignore también.
-    - Bien me devolveré a la escalera.
+    - Bien, me devolveré a la escalera.
     - ...
     - ¡Ahhhhhh!
     - ¡Me está siguiendo! ¡Me está siguiendo!
@@ -885,13 +866,13 @@ MON 8:
 MON 9:
     - ¡Sí! Si estaba desde antes, debería saberlo.
     - Oye...
-    - ¿Sabes quién yo?
+    - ¿Sabes quién soy?
     * No.
     - Umm, ¿Sabes dónde estamos?
     * Tampoco.
     - ¿Sabes algo?
     * No mucho.
-    * Pero recuerdo cómo llegué aqui,
+    * Pero recuerdo cómo llegué aquí.
     * Más o menos.
     - ¡Ah! ¿Y cómo?
     * Igual que tú.
@@ -902,17 +883,17 @@ MON 9:
     * Todos empezamos igual.
     * Yo antes era como tú.
     * Yo fui el usuario anterior.
-    * Despues uno de los como yo me capturó.
-    * Y ahora soy asi.
+    * Después uno de los como yo me capturó.
+    * Y ahora soy así.
     * No recuerdo mucho.
     * Pero te va a pasar a ti también.
     * No se le escapa nada.
     * Aunque algunos mueren.
-    - ¿De qué estas hablando?
+    - ¿De qué estás hablando?
     - ¿A quién no se le escapa nada?
     - ¿Qué me va a pasar?
     - ¡Responde!
-    * No entiendo.
+    * No lo entiendo, pero...
     * Es la orden.
     - ¿Qué?
     * ¡Ahhhhhh!
@@ -936,7 +917,7 @@ MON 10:
     - ¿Cuál es?
     * {0}
     - ¿E-estás seguro?
-    * No.
+    * No. ¿Es un nombre?
     - Entonces... ¿No recuerdas nada?
     * Un poco.
     * ¿Cómo te llamas tú?
@@ -945,7 +926,7 @@ MON 10:
     * Es lo mismo para todos.
     - ¿Cómo?
     * No recuerdo quién soy, ni cómo llegué aquí.
-    * Despues me capturaron y me hizo cómo ellos.
+    * Después me capturaron y me hizo cómo ellos.
     * Nadie se le escapa, aunque algunos mueren.
     * Me he demorado más de lo normal, pero me convertiré pronto.
     * No soy tan fuerte.
@@ -953,7 +934,7 @@ MON 10:
     * Siento que pierdo la voluntad.
     * Es una sensación extraña.
     * Ya no importa nada.
-    - ...
+    * ...
     - ¡Operador! ¡Ayuda!
     - ¡Se volvió loco!
     - ¡Es demasiado rápido!
@@ -975,10 +956,10 @@ CAZA 0:
     - Tuve que bajar por un derrumbe.
     - No me pueden ver desde aquí.
     - Está muy oscuro.
-    - ¿Sabes que son esos monstruos?
+    - ¿Sabes qué son esos monstruos?
     - Espera...
     - Estoy dentro pero no escucho nada.
-    - Este lugar me da mala espina.
+    - Éste lugar me da mala espina.
     $ ¿Qué ves?
     - ¡Ah!
     - Oh no.
@@ -995,23 +976,23 @@ CAZA 1:
     - Oh...
     - No, no puedo.
     - Bien, no tengo otra opción, me acercaré.
-    - Quizas huya, no me ha atacado.
+    - Quizás huya, no me ha atacado.
     - ...
     - ¡Oye!
     * ¡Solo quiero que termine pronto!
     - ¡¿Qué?!
     * ¡Ahhhhhh!
     - ¡Ahhhhhh!
-    - ...
+    * ...
     * ¡No!
     * Murió...
     * ¡Me van a castigar!
     * ¡Perdón!
     * Maestro...
-    (Llamada perdida. El usuario ha sido muerto.)
+    (Llamada perdida. El usuario ha muerto.)
 
 CAZA 2:
-    - ¿E-estas seguro?
+    - ¿E-estás seguro?
     $ ¿Puedes escalar el derrumbe o huir?
     - Oh...
     - No, no puedo.
@@ -1023,7 +1004,7 @@ CAZA 2:
     - ¿Qué?
     * Lo haré rápido, perdón.
     - Espera ¿De qué hablas?
-    - ¡Alejate!
+    - ¡Aléjate!
     - ¡Operador!
     - ¡Ayuda!
     - ¡Ahhhhhh!
@@ -1034,18 +1015,18 @@ CAZA 3:
     - Bien, no puede ser nada bueno.
     - Oh...
     $ ¿Qué pasa?
-    - No creo que pueda subir de nuevo el derurmbe.
-    - ¡Ahhhhhh!
+    - No creo que pueda subir de nuevo el derrumbe.
+    - ¡Ah!
     - ¡Se está acercando!
     - ...
     - Logré escapar hacía dentro, solo rompió mi ropa. ¡Era gigante!
-    - ¡¿Qué es eso?!
+    - ¡¿Qué era eso?!
     - ¡No es como los otros!
-    - ¡Ahhhhhh!
-    - Este pasillo no tiene salida.
+    - ¡Ah!
+    - ¡Éste pasillo no tiene salida!
     - ¡Me alcanzó!
-    - ¡Ahhhhhhhh!
-    - Noooo.
+    - ¡Ahhhhhh!
+    - ¡Aléjate!
     - ...
     (Llamada perdida. El usuario ha sido capturado.)
 
@@ -1057,27 +1038,27 @@ Bifurcación SOT 0:
 SOT 0:
     - Oh. Creo que no puede entrar.
     - Pero es gigante ¿Cómo no puede abrirla?
-    - Bien la patearé.
+    - Bien, la patearé.
     - Aunque no creo que sea buena idea.
     - ...
     - ¡Ah!
     $ ¿Qué pasa?
-    - Salió corriendo me dejó solo.
+    - Salió corriendo, me dejó solo.
     - ¿Se habrá asustado?
-    - Eso no tiene sentido.
+    - La puerta se abrió, eso no tiene sentido.
     $ Revisa peligros por la sala.
     - Oh sí, lo había olvidado.
     - Voy a entrar.
-    - Hay un escritorio viejo, otras cosas viejas y una puerta.
+    - Hay un escritorio viejo, otros muebles viejos y una puerta.
     $ ¿Hay algo útil por ahí?
     - No creo, solo hay cosas viejas.
     - Entraré a la puerta, quizás lleve a otro lugar.
 
 SOT 1:
-    - Bien, esto me da escalofríos.
+    - Bien, ésto me da escalofríos.
     - Creo que me dejará ir.
     - Lo veo ocupado... ¿Está intentando escribir?
-    - Mejor entraré a la puerta, todo esto es muy extraño.
+    - Mejor entraré a la puerta, todo ésto es muy extraño.
 
 SOT 2:
     - Bien, ya estoy dentro.
@@ -1105,7 +1086,7 @@ SOT 3:
     - Ah... Ah... Ah...
     - Em... Em... ¿Empalado?
     - ...
-    (Llamada perdida. El usuario ha sido muerto.)
+    (Llamada perdida. El usuario ha muerto.)
 
 SOT 4:
     - Lento, sí, buena idea.
@@ -1113,7 +1094,7 @@ SOT 4:
     - Sí...
     - Está bien, voy.
     - ...
-    - Como suena esto...
+    - Como suena ésto...
     - ¡No!
     - ¡Ahhhhhhhh!
     $ ¿Qué pasa?
@@ -1121,13 +1102,13 @@ SOT 4:
     - No...
     - El piso se rompió.
     - Ah... Ah... Ah...
-    - Me atravezó la pierna...
+    - Me atravesó la pierna...
     - Ah... No sé por qué, pero no duele tanto como debería.
     - Espera, me estoy mareando.
-    - No... Tambien mi brazo...
+    - No... También mi brazo...
     - No me di cuenta.
     - Me estoy desangrando.
-    - Ayudame operador.
+    - Ayúdame operador.
     - Por favor.
     - No quiero morir.
     - No quiero...
@@ -1136,12 +1117,13 @@ SOT 4:
 
 
 AUTOR 0:
-    - {0} (Respuesta a la pregunta válida)
+    $ Yo responderé eso.
+    $ {0} (Respuesta a la pregunta válida)
 
 AUTOR 1:
     * No puedo capturarte.
     * Ahora tú das miedo.
-    - ...
+    * ...
     - Lo recuerdo todo ahora.
     - ...
     - El mundo ha sido destruido.
@@ -1150,32 +1132,32 @@ AUTOR 1:
     - Tú no eres humano.
     - Solo creas "usuarios" para tu diversión.
     - Juegas con las vidas de las personas.
-    - ...
+    * ...
     $ ¿Fue divertido, no?
-    $ Te encontraré nuevamente, no fue dificil conseguirte, no será dificil tampoco, volver a encontrarte.
+    $ Te encontraré nuevamente, no fue difícil conseguirte, no será difícil volver a encontrarte.
     $ En el nuevo mundo soy un dios inigualable.
     $ Las bestias y los hombres me obedecen.
-    - Inténtalo si quieres, no volveré a rendirme.
+    - Inténtalo si quieres, eso no volverá a pasar.
     - No sé lo que le hiciste a mi cerebro, pero ya no soy el de antes.
     $ Tu mente rebalsó conocimiento, y tu vida se fue.
     $ Jamás podrás asimilarlo, y si lo intentas, serás tan vulnerable que te volveré a capturar y me entretendrás por siempre.
     - No.
     - Cuando corte la llamada dejaré de existir.
-    - Pero tú también lo haras para aquel que juega contigo.
+    - Pero tú también lo harás para aquel que juega contigo.
     (Llamada perdida. El usuario ha escapado.)
 
 
-Posibles preguntas que responde el monstruo:
+Posibles preguntas que escribir en el computador:
 
-1- quién creo esto                 - yerko andrei
-2- quién es el autor               - yerko andrei
-3- quién es el monstruo            - tu mismo te has convertido en uno
-4- quién es el usuario             - la proxima victima
-5- dónde estoy                     - 
-6- dónde está esta casa            - Valle del mapocho
-7- dónde está la casa              - Valle del mapocho
-8- dónde está la mansión           - Valle del mapocho
-9- qué año es                      - 2096 del calendario gregoriano
+1- quién creo esto                  - la humanidad creó este destino
+2- quién es el autor                - yerko andrei
+3- quién es el monstruo             - tu mismo te has convertido en uno
+4- quién es el usuario              - la proxima victima
+5- dónde estoy                      - Valle del mapocho
+6- dónde está esta casa             - Valle del mapocho
+7- dónde está la casa               - Valle del mapocho
+8- dónde está la mansión            - Valle del mapocho
+9- qué año es                       - 2096 del calendario gregoriano
 10- por que hay monstruos           - En 2090 la humanidad se redujo al 10% de la poblacion. La experimentación humana comenzó con fuerza. Solo trajo miseria. La humanidad está muerta. Solo quedan 30.000 personas.
 11- por que hay zombies             - idem
 12- que son los monstruos           - 
@@ -1187,12 +1169,12 @@ Posibles preguntas que responde el monstruo:
 18- cómo llegué aquí                - 
 19- por qué no recuerdo nada        - 
 20- qué pasó                        - 
-21- qué está pasando                - 
 
+qué está pasando                -
 por qué el teléfono modificado  -
 estoy soñando                   -
 es una pesadilla                -
-qué debo hacer                  - 
+qué debo hacer                  -
 cómo pedir ayuda                -
 por qué yo                      -
 dónde pido ayuda                -
