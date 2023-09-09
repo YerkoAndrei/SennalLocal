@@ -13,7 +13,7 @@ public class RutaAutor : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "RESPUESTA 0", ruta, NivelEstrés.normal));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "RESPUESTA 0", ruta));
 
         // Opciones
         listaDiálogos.Add(CrearAutor_1()[0]);
@@ -25,8 +25,8 @@ public class RutaAutor : InterfazRuta
         var listaDiálogos = new List<ElementoDialogo>();
 
         // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "AUTOR 1", ruta, NivelEstrés.normal));
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.normal, Animaciones.finalAutor));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "AUTOR 1", ruta));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.muerto, Animaciones.finalAutor));
 
         // Final
         listaDiálogos.Add(ElementoDialogo.CrearFinal("Autor_1", TipoFinal.escape, ruta));

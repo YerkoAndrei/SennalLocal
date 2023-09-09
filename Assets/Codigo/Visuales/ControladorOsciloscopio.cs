@@ -82,6 +82,9 @@ public class ControladorOsciloscopio : MonoBehaviour
 
     private void CambiarEstrés(NivelEstrés nivelEstrés)
     {
+        if (nivelEstrésActual == nivelEstrés)
+            return;
+
         // Centro
         luz.localPosition = new Vector3(luz.localPosition.x, 0, luz.localPosition.z);
 

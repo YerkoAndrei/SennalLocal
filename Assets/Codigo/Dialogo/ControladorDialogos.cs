@@ -579,8 +579,10 @@ public class ControladorDialogos : MonoBehaviour
 
     public void ActivarEfectos()
     {
-        ControladorOsciloscopio.CambiarNivelEstrés(diálogoActual.nivelEstrés);
         ControladorRadio.CambiarNombreRuta(diálogoActual.ruta);
+
+        if (diálogoActual.nivelEstrés != NivelEstrés.pausa)
+            ControladorOsciloscopio.CambiarNivelEstrés(diálogoActual.nivelEstrés);
     }
 
     private void FinalizarPartida(TipoFinal tipoFinal, Rutas ruta)
