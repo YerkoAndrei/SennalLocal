@@ -158,7 +158,7 @@ public class SistemaTraduccion : MonoBehaviour
         texto = texto.Replace("¿", "").Replace("?", "");
         texto = texto.Replace("¡", "").Replace("!", "");
         texto = texto.Replace(",", "").Replace(".", "");
-        texto = texto.Replace(",", "").Replace(".", "");
+        texto = texto.Replace("'", "").Replace("\"", "");
         texto = texto.Replace(":", "").Replace(";", "");
         texto = texto.Replace("_", "").Replace("-", "");
         texto = texto.Replace("(", "").Replace(")", "");
