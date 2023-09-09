@@ -135,13 +135,13 @@ public class SistemaMemoria : MonoBehaviour
         switch(respuesta)
         {
             case RespuestasClave.encendedorEncontrado:
-                return instancia.datos.opcionesElegidas.Contains("bifurcacion_intro0_1");
+                return instancia.datos.opcionesElegidas.Contains("opcion_intro0_1");
             case RespuestasClave.peligroExterior:
-                return (instancia.datos.opcionesElegidas.Contains("bifurcacion_intro1_0") || instancia.datos.opcionesElegidas.Contains("bifurcacion_operador1_2"));
+                return (instancia.datos.opcionesElegidas.Contains("opcion_intro1_0") || instancia.datos.opcionesElegidas.Contains("opcion_operador1_2"));
             case RespuestasClave.llaveComputador:
-                return instancia.datos.opcionesElegidas.Contains("bifurcacion_usuario2_2");
+                return instancia.datos.opcionesElegidas.Contains("opcion_usuario2_2");
             case RespuestasClave.monstruoObservado:
-                return instancia.datos.opcionesElegidas.Contains("bifurcacion_monstruo0_1");
+                return instancia.datos.opcionesElegidas.Contains("opcion_monstruo0_1");
             case RespuestasClave.nombreDado:
                 return !string.IsNullOrEmpty(instancia.datos.últimoNombre);
             default:
