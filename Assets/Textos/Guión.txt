@@ -46,7 +46,7 @@ Bifurcación INTRO 0:
 Bifurcación INTRO 1:
     Mira por la ventana
     Busca a alguien
-    Intenta abrir la puerta
+    Sal por la puerta
     Sube la escalera
 
 INTRO 0:
@@ -385,20 +385,20 @@ OPE 10:
 Bifurcación USU 0:
     Aléjate despacio
     ¡Corre!
-    Intenta acercarte
+    Acércarte
 
 Bifurcación USU 1:
-    Busca un interruptor a tientas
+    Busca un interruptor
     Usa tu encendedor
     Recoge la varilla
 
 Bifurcación USU 2:
-    ¿Qué ves en la habitación?
+    Observa la habitación
     Busca una puerta
     Busca algo útil
 
 Bifurcación USU 3:
-    Busca un lugar tranquilo
+    Busca un lugar seguro
     Quédate ahí
     Usa la llave
 
@@ -1034,7 +1034,7 @@ CAZA 3:
 
 Bifurcación SOT 0:
     Camina a saltos
-    Ve lento y pisa firme
+    Ve firme y lento
 
 SOT 0:
     - Oh. Creo que no puede entrar.
@@ -1120,9 +1120,12 @@ SOT 4:
 AUTOR 0:
     $ Yo responderé eso.
     $ {0} (Respuesta a la pregunta válida)
-    $ En este mundo desolado la humanidad ha muerto.
 
 AUTOR 1:
+    $ La civilización ha muerto.
+    $ Soy el único que mantiene y conoce la tecnología ya olvidada.
+    $ En este mundo desolado tengo todo el poder.
+    $ ...
     * No puedo capturarte.
     * Ahora tú das miedo.
     * ...
@@ -1156,25 +1159,25 @@ Posibles preguntas que escribir en el computador y que luego el operador respond
 4 Dónde     (3)
 5 Por qué   (3)
 6 Quién     (3)
-7 Cuántas    (2)
+7 Cuántas   (2)
 
-1- ¿Qué año es?                     - Es el 2123 del calendario gregoriano, aproximadamente. Desde el fin de la civilización en 2106 no se lleva registro oficial del calendario y tras tanto tiempo sin ver el sol es difícil saber. Ya a nadie le improta.
-2- ¿Qué está pasando?               - Estás en un juego. Mi juego. Tu único propósito de existencia es darme entretención.
+1- ¿Qué año es?                     - Es el 2123 del calendario gregoriano, aproximadamente. Desde el fin de la civilización en 2096 no se lleva registro oficial del calendario y tras tanto tiempo sin ver el sol es difícil saber. Ya a nadie le importa.
+2- ¿Qué está pasando?               - Estás en un juego. Mi juego. Tu único propósito de existencia es darme entretención. Te capturé y robé tus recuerdos para mi diversión.
 3- ¿Qué es el monstruo?             - Es mi esclavo, antes era un usuario como tú, pero mi tecnología puede convertirlo en lo que yo quiera y someterlo a voluntad.
 4- ¿Cómo llegué aquí?               - Uno de mis monstruos te capturó, estabas a unos 20 kilómetros de aquí. Te quité tus recuerdos y te congelé hasta que llegara tu turno de entretenerme.
-5- ¿Cómo puedo escapar?             - Por la puerta principal, pero solo te espera la muerte a manos de esas aberraciones que quisieron ser humanos. Y si logras sobrevivir, te capturaré nuevamente.
+5- ¿Cómo puedo escapar?             - Por la puerta principal, pero solo te espera la muerte a manos de esas aberraciones que aparentan ser humanos. Y si logras sobrevivir, te capturaré nuevamente.
 6- ¿Cómo perdí la memoria?          - Poseo la tecnología suficiente para hacerte un esclavo sin cerebro, pero eso no es divertido, jugar con mis usuarios sí lo es.
 7- ¿Cuándo podré irme?              - Cuando dejes de divertirme y me canse de ti, podrás irte al mundo de la muerte. De mí no hay escapatoria.
-8- ¿Cuándo llegué aquí?             - Te capturé hace 1 año, pero te mantuve congelado. Hoy te tocó ser el usuario y entretenerme.
-9- ¿Cuándo perdí la memoria?        - Cuanto te capturé hace 1 año. Mi tecnología demora un par de semanas en borrar todo rastro de personalidad pasado, y despues te congelé hasta que llegara tu turno.
-10- ¿Dónde estoy?                   - En una casona colonial que adapté para ser mi laboratorio, estás en el valle del mapocho, gracias a la extinción humana volvió a ser hermoso.
-11- ¿Dónde está la salida?          - Solo puedes salir por la puerta principal, pero solo te espera la muerte a manos de esas aberraciones que quisieron ser humanos. Y si logras sobrevivir, te capturaré nuevamente.
-12- ¿Dónde está el operador?        - Estoy cerca tuyo, asi es más divertido. Y también porque la niebla tóxica interrumpe la señal y corta el alcance de mis antenas.
-13- ¿Por qué estoy aquí?            - Para participar en mi juego, nada más. Tu único propósito de existencia es darme entretención.
+8- ¿Cuándo llegué aquí?             - Te capturé hace unos meses, pero te mantuve congelado. Hoy te tocó ser el usuario y entretenerme. De mí no hay escapatoria.
+9- ¿Cuándo perdí la memoria?        - Cuando te capturé hace unos meses. Mi tecnología demora un par de semanas en borrar todo rastro de personalidad pasado, y después te congelé hasta que llegara tu turno.
+10- ¿Dónde estoy?                   - En una casona colonial que adapté para ser mi laboratorio, estás en el valle del Mapocho, gracias a la extinción humana volvió a ser hermoso.
+11- ¿Dónde está la salida?          - Solo puedes salir por la puerta principal, pero solo te espera la muerte a manos de esas aberraciones que aparentan ser humanos. Y si logras sobrevivir, te capturaré nuevamente.
+12- ¿Dónde está el operador?        - Estoy cerca tuyo, así es más divertido. Y también porque la niebla tóxica interrumpe la señal y corta el alcance de mis antenas.
+13- ¿Por qué estoy aquí?            - Para participar en mi juego, nada más. Tu único propósito de existencia es darme entretención. De mí no hay escapatoria.
 14- ¿Por qué hay monstruos?         - En 2096 la humanidad se destruyó a sí misma. La experimentación humana comenzó con fuerza para volver a repoblar la tierra. Pero solo trajo miseria y esas cosas que parecen humanas. La humanidad está muerta.
-15- ¿Por qué perdí la memoria?      - Porque así es más divertido, si no sabes dónde estás entonces eres más suseptible a obedecer mis ordenes. Todo ésto es tan divertido.
+15- ¿Por qué perdí la memoria?      - Porque así es más divertido, si no sabes dónde estás entonces eres más susceptible a obedecer mis órdenes. Todo ésto es tan divertido.
 16- ¿Quién soy?                     - Ahora eres un usuario de la línea de emergencia, un juguete para mi diversión, antes de eso solo eras un mendigo intentando sobrevivir en este mundo desolado.
-17- ¿Quién es el operador?          - Soy el nuevo dios de este valle. Soy el único que mantiene y conoce la tecnología ya olvidada.
+17- ¿Quién es el operador?          - Soy el nuevo dios de este valle. El jugador de este juego. El protagonista de este mundo. En ésta tierra desolada no hay quién me iguale.
 18- ¿Quién es el monstruo?          - Era un usuario como tú, su ruta fue más corta, pero fue muy entretenida. Es el mismo destino que te espera a ti.
 19- ¿Cuántas respuestas hay?        - Solo registré 20 respuestas, tres "Qué", tres "Cómo", tres "Cuándo", tres "Dónde",  tres "Por qué", tres "Quién" y dos "Cuántas".
 20- ¿Cuántas preguntas hay?         - Solo registré 20 preguntas, tres "Qué", tres "Cómo", tres "Cuándo", tres "Dónde",  tres "Por qué", tres "Quién" y dos "Cuántas".
