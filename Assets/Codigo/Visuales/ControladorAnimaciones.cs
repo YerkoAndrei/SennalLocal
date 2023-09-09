@@ -163,6 +163,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
     private IEnumerator AnimarFinalAutor()
     {
+        SistemaAnimacion.MarcarAnimación(true);
         controladorMenú.MostrarMenúJuego(false);
         controladorCamara.CambiarPosición(CámarasCine.autor);
         controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
@@ -178,10 +179,14 @@ public class ControladorAnimaciones : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
         StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
+
+        yield return new WaitForSeconds(8.8f);
+        SistemaAnimacion.MarcarAnimación(false);
     }
 
     private IEnumerator AnimarCierreAutor()
     {
+        SistemaAnimacion.MarcarAnimación(true);
         SistemaSonidos.ReproducirAnimación(Sonidos.estática);
         StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
         yield return new WaitForSeconds(0.4f);
