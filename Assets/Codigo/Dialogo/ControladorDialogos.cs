@@ -511,18 +511,13 @@ public class ControladorDialogos : MonoBehaviour
             elemento.ActivarBotón(false);
         }
 
+        LimpiarInterfaz();
+
         SistemaAnimacion.AnimarPanel(rectInteractuables, 0.1f, false, false, Direcciones.izquierda, () => panelOpciones.SetActive(false));
         opcionesActuales.Clear();
 
         SistemaMemoria.MarcarOpción(opcion.texto);
         SistemaAnimacion.MostrarAnimación(Animaciones.escribir);
-
-        // Limpia Interfaz
-        txtDiálogo.text = string.Empty;
-        imgContinuar.color = Color.clear;
-        panelDiálogo.color = colorPanelEspera;
-        imgPersonaje.gameObject.SetActive(false);
-        imgVisto.SetActive(false);
 
         // Repite diálogo elegido y continúa
         var diálogoElegido = new ElementoDialogo();
@@ -552,6 +547,8 @@ public class ControladorDialogos : MonoBehaviour
 
     public void EnClicTerminarPregunta()
     {
+        LimpiarInterfaz();
+
         SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, false, false, Direcciones.izquierda, () => panelPregunta.SetActive(false));
         var respuestaVálida = false;
 
@@ -569,6 +566,15 @@ public class ControladorDialogos : MonoBehaviour
             IniciarDiálogo(diálogoActual.siguienteDiálogo);
         else
             IniciarDiálogo(diálogoActual.siguienteDiálogoNegativo);
+    }
+
+    private void LimpiarInterfaz()
+    {
+        txtDiálogo.text = string.Empty;
+        imgContinuar.color = Color.clear;
+        panelDiálogo.color = colorPanelEspera;
+        imgPersonaje.gameObject.SetActive(false);
+        imgVisto.SetActive(false);
     }
 
     public void ActivarEfectos()
