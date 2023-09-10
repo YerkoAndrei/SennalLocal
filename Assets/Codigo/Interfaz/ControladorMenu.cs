@@ -303,11 +303,15 @@ public class ControladorMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void EnClicAutor()
+    public void EnClicEnlaceAutor()
     {
         Application.OpenURL("https://yerkoandrei.itch.io");
     }
 
+    public void EnClicEnlaceJuego()
+    {
+        Application.OpenURL("https://yerkoandrei.itch.io/sennal-local");
+    }
     private void PrenderIdiomas()
     {
         foreach (var elemento in idiomas)

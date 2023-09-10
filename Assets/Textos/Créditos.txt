@@ -1,0 +1,21 @@
+YerkoAndrei:
+Programación, diseño, guión, arte, animaciones, sonidos.
+
+Fuentes Fontlibrary:
+Avrile serif        Monotype Design Team
+Avrile sans         Monotype Design Team
+Avrile sans UI      Monotype Design Team
+Destruck v1         Malre
+Teleindicadores1    Cuatrocientos cuarenta
+
+VST DSK Music:
+The Grand
+ChoirZ
+
+Software usado:
+Unity
+Blender
+Krita
+MakeHuman
+LMMS
+Audacity
