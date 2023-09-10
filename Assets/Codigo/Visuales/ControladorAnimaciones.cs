@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Diagnostics.Eventing.Reader;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -50,55 +49,8 @@ public class ControladorAnimaciones : MonoBehaviour
         aberraciónBas = 0.5f;
 
         SistemaSonidos.ActivarMúsica(true);
-
-        aa = usuario.position;
-        bb = usuario.rotation;
     }
     
-    // Pruebas
-    Vector3 aa;
-    Quaternion bb;
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Y))
-            MostrarAnimación(Animaciones.sentarse);
-
-        if (Input.GetKeyDown(KeyCode.U))
-            MostrarAnimación(Animaciones.escribir);
-
-        if (Input.GetKeyDown(KeyCode.I))
-            MostrarAnimación(Animaciones.miraManos);
-
-        if (Input.GetKeyDown(KeyCode.O))
-            MostrarAnimación(Animaciones.llegaUsuario);
-
-        if (Input.GetKeyDown(KeyCode.P))
-            MostrarAnimación(Animaciones.finalAutor);
-
-        if (Input.GetKeyDown(KeyCode.K))
-            MostrarAnimación(Animaciones.cierreAutor);
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            StopAllCoroutines();
-            animadorUsuario.Rebind();
-            animadorPuerta.Rebind();
-            animadorOperador.Rebind();
-            animadorSilla.Rebind();
-
-            animadorOperador.SetTrigger("Sentarse");
-            controladorCamara.CambiarPosición(CámarasCine.juego);
-            controladorCamara.CambiarDistanciaMínima(0.1f, 0.33f);
-            StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
-
-            granosCámara.intensity.value = 0.2f;
-            aberraciónCromática.intensity.value = 0;
-
-            usuario.position = aa;
-            usuario.rotation = bb;
-        }
-    }
-
     // Sistema animación
     public void MostrarAnimación(Animaciones animación)
     {
