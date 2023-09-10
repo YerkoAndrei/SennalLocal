@@ -55,7 +55,7 @@ INTRO 0:
     $ ¿Cuál es su emergencia?
     - Acabo de despertar en algún lugar...
     - No... No recuerdo nada. Ayúdame por favor.
-    $ ¿Estás bien, puedes describir dónde estás?
+    $ ¿Estás bien? ¿Puedes describir dónde estás?
     - Estoy dentro de una casa bastante grande y antigua.
     - En una habitación desordenada.
     - Parece abandonada, no veo nada más.
