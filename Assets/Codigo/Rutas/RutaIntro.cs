@@ -30,7 +30,6 @@ public class RutaIntro : InterfazRuta
     private ElementoDialogo CrearBifurcación_intro_1()
     {
         var operador = new RutaOperador();
-
         var listaOpciones = new List<ElementoOpcion>
         {
             new ElementoOpcion("opcion_intro1_0", operador.CrearOperador_0()),
@@ -45,7 +44,16 @@ public class RutaIntro : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_7", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_8", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_9", ruta),
 
             // Opciones
             CrearBifurcación_intro_0()
@@ -57,7 +65,14 @@ public class RutaIntro : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro1_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro1_1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro1_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro1_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro1_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro1_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro1_6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro1_7", ruta),
 
             // Siguiente diálogo
             CrearIntro_4()
@@ -69,7 +84,10 @@ public class RutaIntro : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro2_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro2_1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro2_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro2_3", ruta),
 
             // Siguiente diálogo
             CrearIntro_4()
@@ -81,7 +99,8 @@ public class RutaIntro : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro3_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro3_1", ruta),
 
             // Siguiente diálogo
             CrearIntro_4()
@@ -93,7 +112,19 @@ public class RutaIntro : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_7", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_8", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_9", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_10", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_11", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro4_12", ruta),
 
             // Opciones
             CrearBifurcación_intro_1()
@@ -105,7 +136,17 @@ public class RutaIntro : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_7", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_8", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_9", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro5_10", ruta),
 
             // Final
             ElementoDialogo.CrearFinal("INTRO_5", TipoFinal.muerte, ruta)
@@ -118,7 +159,17 @@ public class RutaIntro : InterfazRuta
         var monstruo = new RutaMonstruo();
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_7", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_8", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_9", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro6_10", ruta),
 
             // Siguiente diálogo
             monstruo.CrearMonstruo_0()

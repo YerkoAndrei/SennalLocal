@@ -262,11 +262,9 @@ public class ControladorDialogos : MonoBehaviour
         }
         else
         {
-            //var textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
-            //ContarTiempoDiálogo(textoReal);
-            //StartCoroutine(MostrarTexto(textoReal));
-            ContarTiempoDiálogo(diálogoActual.texto);
-            StartCoroutine(MostrarTexto(diálogoActual.texto));
+            var textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
+            ContarTiempoDiálogo(textoReal);
+            StartCoroutine(MostrarTexto(textoReal));
         }
     }
 
@@ -400,7 +398,7 @@ public class ControladorDialogos : MonoBehaviour
     {
         puedeContinuar = true;
         mostrandoTexto = false;
-        txtDiálogo.text = diálogoActual.texto;
+        txtDiálogo.text = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
         VerImagenContinuar(true);
 
         // Continúa o termina guión
