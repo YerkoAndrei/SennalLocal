@@ -83,7 +83,7 @@ public class RutaUsuario : InterfazRuta
 
         // Opción limitada
         if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.llaveComputador))
-            listaOpciones.Add(new ElementoOpcion("opcion_usuario3_2", CrearUsuario_18()));
+            listaOpciones.Add(new ElementoOpcion("opcion_usuario3_2", CrearUsuario_16()));
 
         return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
     }
