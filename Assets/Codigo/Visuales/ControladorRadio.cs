@@ -54,6 +54,9 @@ public class ControladorRadio : MonoBehaviour
     public static void CambiarNombreRuta(Rutas ruta)
     {
         instancia.CambiarRuta(ruta);
+
+        if(ruta != Rutas.menú)
+            rutaAnterior = ruta;
     }
 
     public static void ApagarNombreRuta()
