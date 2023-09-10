@@ -50,7 +50,7 @@ public class SistemaMemoria : MonoBehaviour
         if(controladorPizarra == null)
             controladorPizarra = FindObjectOfType<ControladorPizarra>();
 
-        controladorPizarra.ActualizarTextos();
+        controladorPizarra.ActualizarPizarra();
     }
     
     // Nombre respondido
@@ -134,6 +134,9 @@ public class SistemaMemoria : MonoBehaviour
     {
         switch(respuesta)
         {
+            default:
+            case RespuestasClave.nada:
+                return true;
             case RespuestasClave.encendedorEncontrado:
                 return instancia.datos.opcionesElegidas.Contains("opcion_intro0_1");
             case RespuestasClave.peligroExterior:
@@ -144,8 +147,6 @@ public class SistemaMemoria : MonoBehaviour
                 return instancia.datos.opcionesElegidas.Contains("opcion_monstruo0_1");
             case RespuestasClave.nombreDado:
                 return !string.IsNullOrEmpty(instancia.datos.últimoNombre);
-            default:
-                return false;
         }
     }
 

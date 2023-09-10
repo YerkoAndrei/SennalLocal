@@ -1,13 +1,17 @@
-﻿public class ElementoOpcion
+﻿using static Constantes;
+
+public class ElementoOpcion
 {
     public string texto;
-    public ElementoDialogo siguienteDiálogo;
     public bool yaElegido;
+    public ElementoDialogo siguienteDiálogo;
+    public RespuestasClave respuestaClave;
 
-    public ElementoOpcion (string texto, ElementoDialogo siguienteDiálogo)
+    public ElementoOpcion (string texto, ElementoDialogo siguienteDiálogo, RespuestasClave respuestaClave = RespuestasClave.nada)
     {
         this.texto = texto;
-        this.siguienteDiálogo = siguienteDiálogo;
         this.yaElegido = SistemaMemoria.VerificarOpción(texto);
+        this.siguienteDiálogo = siguienteDiálogo;
+        this.respuestaClave = respuestaClave;
     }
 }

@@ -49,6 +49,7 @@ public class Constantes
 
     public enum RespuestasClave
     {
+        nada,
         encendedorEncontrado,
         peligroExterior,
         llaveComputador,

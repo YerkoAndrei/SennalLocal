@@ -37,13 +37,11 @@ public class RutaUsuario : InterfazRuta
         var listaOpciones = new List<ElementoOpcion>
         {
             new ElementoOpcion("opcion_usuario0_0", CrearUsuario_2()),
-            new ElementoOpcion("opcion_usuario0_1", CrearUsuario_3())
+            new ElementoOpcion("opcion_usuario0_1", CrearUsuario_3()),
+            
+            // Opción limitada
+            new ElementoOpcion("opcion_usuario0_2", monstruo.CrearMonstruo_1(), RespuestasClave.peligroExterior)
         };
-
-        // Opción limitada
-        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.peligroExterior))
-            listaOpciones.Add(new ElementoOpcion("opcion_usuario0_2", monstruo.CrearMonstruo_1()));
-
         return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
     }
 
@@ -52,13 +50,11 @@ public class RutaUsuario : InterfazRuta
         var listaOpciones = new List<ElementoOpcion>
         {
             new ElementoOpcion("opcion_usuario1_0", CrearUsuario_4()),
-            new ElementoOpcion("opcion_usuario1_2", CrearUsuario_6())
+            new ElementoOpcion("opcion_usuario1_2", CrearUsuario_6()),
+            
+            // Opción limitada
+            new ElementoOpcion("opcion_usuario1_1", CrearUsuario_5(), RespuestasClave.encendedorEncontrado)
         };
-
-        // Opción limitada
-        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.encendedorEncontrado))
-            listaOpciones.Add(new ElementoOpcion("opcion_usuario1_1", CrearUsuario_5()));
-
         return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
     }
 
@@ -78,13 +74,11 @@ public class RutaUsuario : InterfazRuta
         var listaOpciones = new List<ElementoOpcion>
         {
             new ElementoOpcion("opcion_usuario3_0", CrearUsuario_14()),
-            new ElementoOpcion("opcion_usuario3_1", CrearUsuario_15())
+            new ElementoOpcion("opcion_usuario3_1", CrearUsuario_15()),
+
+            // Opción limitada
+            new ElementoOpcion("opcion_usuario3_2", CrearUsuario_16(), RespuestasClave.llaveComputador)
         };
-
-        // Opción limitada
-        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.llaveComputador))
-            listaOpciones.Add(new ElementoOpcion("opcion_usuario3_2", CrearUsuario_16()));
-
         return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
     }
 

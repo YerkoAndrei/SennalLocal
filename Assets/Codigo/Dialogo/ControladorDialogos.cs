@@ -482,6 +482,10 @@ public class ControladorDialogos : MonoBehaviour
         // Instancia nuevas
         for (int i = 0; i < opciones.Length; i++)
         {
+            // Verifica que respuesta exista
+            if (!SistemaMemoria.ObtenerRespuestaClave(opciones[i].respuestaClave))
+                continue;
+
             var nuevoObjeto = Instantiate(btnOpciónPrefab, padreOpciones);
             var elemento = nuevoObjeto.GetComponent<ElementoInterfazOpcion>();
 

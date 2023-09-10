@@ -54,13 +54,11 @@ public class RutaMonstruo : InterfazRuta
         var listaOpciones = new List<ElementoOpcion>
         {
             new ElementoOpcion("opcion_monstruo2_0", CrearMonstruo_7()),
-            new ElementoOpcion("opcion_monstruo2_2", sótano.CrearSótano_1())
+            new ElementoOpcion("opcion_monstruo2_2", sótano.CrearSótano_1()),
+            
+            // Opción limitada
+            new ElementoOpcion("opcion_monstruo2_1", CrearMonstruo_8(), RespuestasClave.monstruoObservado)
         };
-
-        // Opción limitada
-        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.monstruoObservado))
-            listaOpciones.Add(new ElementoOpcion("opcion_monstruo2_1", CrearMonstruo_8()));
-
         return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
     }
 
@@ -69,12 +67,11 @@ public class RutaMonstruo : InterfazRuta
         var autor = new RutaAutor();
         var listaOpciones = new List<ElementoOpcion>
         {
-            new ElementoOpcion("opcion_monstruo3_0", CrearMonstruo_9())
-        };
+            new ElementoOpcion("opcion_monstruo3_0", CrearMonstruo_9()),
 
-        // Opción limitada
-        if (SistemaMemoria.ObtenerRespuestaClave(RespuestasClave.nombreDado))
-            listaOpciones.Add(new ElementoOpcion("opcion_monstruo3_1", ResponderNombre()));
+            // Opción limitada
+            new ElementoOpcion("opcion_monstruo3_1", ResponderNombre(), RespuestasClave.nombreDado)
+        };
 
         // Preguntas encontradas
         var preguntasEncontradas = SistemaMemoria.ObtenerPreguntas();
