@@ -9,7 +9,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using static Constantes;
-using System.Net.WebSockets;
 
 public class ControladorDialogos : MonoBehaviour
 {

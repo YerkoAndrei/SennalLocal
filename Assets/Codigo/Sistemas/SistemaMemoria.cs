@@ -76,12 +76,24 @@ public class SistemaMemoria : MonoBehaviour
         return instancia.datos.opcionesElegidas.Contains(texto);
     }
 
-    // Marcado visto / elegido
+    // Marcado bloque de diálogo visto
     public static void MarcarDiálogo(string texto)
     {
-        if (!instancia.datos.diálogosElegidos.Contains(texto) && texto != instancia.datos.últimoNombre)
+        // Base:        intro0_03
+        // Excepción:   operador9_1_0, operador9_2_0
+        var bloques = texto.Split("_");
+        var bloque = string.Empty;
+
+        if (bloques.Length <= 2)
+            bloque = bloques[0];
+        else
+            bloque = bloques[0] + "_" + bloques[1];
+
+        if (!instancia.datos.diálogosElegidos.Contains(bloque) &&
+            !instancia.datos.opcionesElegidas.Contains(texto) &&
+            texto != instancia.datos.últimoNombre)
         {
-            instancia.datos.diálogosElegidos.Add(texto);
+            instancia.datos.diálogosElegidos.Add(bloque);
             instancia.ActualizarArchivo();
         }
     }
