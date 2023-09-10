@@ -13,74 +13,73 @@ public class RutaSotano : InterfazRuta
 {
     private Rutas ruta = Rutas.sótano;
 
-    public ElementoDialogo CrearBifurcación_Sótano_0()
+    private ElementoDialogo CrearBifurcación_Sótano_0()
     {
-        // Preguntas
-        var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("opcion_sotano0_0", CrearSótano_3()[0]));
-        listaOpciones.Add(new ElementoOpcion("opcion_sotano0_1", CrearSótano_4()[0]));
-
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
-        return diálogoPregunta;
+        var listaOpciones = new List<ElementoOpcion>
+        {
+            new ElementoOpcion("opcion_sotano0_0", CrearSótano_3()),
+            new ElementoOpcion("opcion_sotano0_1", CrearSótano_4())
+        };
+        return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
     }
 
-    public ElementoDialogo[] CrearSótano_0()
+    public ElementoDialogo CrearSótano_0()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 0", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 0", ruta));
-
-        // Siguiente diálogo
-        listaDiálogos.Add(CrearSótano_2()[0]);
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Siguiente diálogo
+            CrearSótano_2()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    public ElementoDialogo[] CrearSótano_1()
+    public ElementoDialogo CrearSótano_1()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 1", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 1", ruta));
-
-        // Siguiente diálogo
-        listaDiálogos.Add(CrearSótano_2()[0]);
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Siguiente diálogo
+            CrearSótano_2()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    public ElementoDialogo[] CrearSótano_2()
+    private ElementoDialogo CrearSótano_2()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 2", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 2", ruta));
-
-        // Opciones
-        listaDiálogos.Add(CrearBifurcación_Sótano_0());
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Opciones
+            CrearBifurcación_Sótano_0()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    public ElementoDialogo[] CrearSótano_3()
+    private ElementoDialogo CrearSótano_3()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 3", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 3", ruta));
-
-        // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("SÓTANO_4", TipoFinal.muerte, ruta));
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Final
+            ElementoDialogo.CrearFinal("SÓTANO_4", TipoFinal.muerte, ruta)
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    public ElementoDialogo[] CrearSótano_4()
+    private ElementoDialogo CrearSótano_4()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 4", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "SÓTANO 4", ruta));
-
-        // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("SÓTANO_4", TipoFinal.muerte, ruta));
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Final
+            ElementoDialogo.CrearFinal("SÓTANO_4", TipoFinal.muerte, ruta)
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 }

@@ -10,125 +10,119 @@ using static Constantes;
 // intro_3
 // intro_4
 // intro_5
+// intro_6
 
 public class RutaIntro : InterfazRuta
 {
     private Rutas ruta = Rutas.intro;
 
-    public ElementoDialogo CrearPrimerDiálogo()
+    private ElementoDialogo CrearBifurcación_intro_0()
     {
-        return CrearIntro_0()[0];
+        var listaOpciones = new List<ElementoOpcion>
+        {
+            new ElementoOpcion("opcion_intro0_0", CrearIntro_1()),
+            new ElementoOpcion("opcion_intro0_1", CrearIntro_2()),
+            new ElementoOpcion("opcion_intro0_2", CrearIntro_3())
+        };
+        return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
     }
 
-    public ElementoDialogo CrearBifurcación_intro_0()
-    {
-        // Preguntas
-        var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("opcion_intro0_0", CrearIntro_1()[0]));
-        listaOpciones.Add(new ElementoOpcion("opcion_intro0_1", CrearIntro_2()[0]));
-        listaOpciones.Add(new ElementoOpcion("opcion_intro0_2", CrearIntro_3()[0]));
-
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
-        return diálogoPregunta;
-    }
-
-    public ElementoDialogo CrearBifurcación_intro_1()
+    private ElementoDialogo CrearBifurcación_intro_1()
     {
         var operador = new RutaOperador();
 
-        // Preguntas
-        var listaOpciones = new List<ElementoOpcion>();
-        listaOpciones.Add(new ElementoOpcion("opcion_intro1_0", operador.CrearOperador_0()[0]));
-        listaOpciones.Add(new ElementoOpcion("opcion_intro1_1", operador.CrearOperador_1()[0]));
-        listaOpciones.Add(new ElementoOpcion("opcion_intro1_2", CrearIntro_5()[0]));
-        listaOpciones.Add(new ElementoOpcion("opcion_intro1_3", CrearIntro_6()[0]));
-
-        var diálogoPregunta = ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
-        return diálogoPregunta;
+        var listaOpciones = new List<ElementoOpcion>
+        {
+            new ElementoOpcion("opcion_intro1_0", operador.CrearOperador_0()),
+            new ElementoOpcion("opcion_intro1_1", operador.CrearOperador_1()),
+            new ElementoOpcion("opcion_intro1_2", CrearIntro_5()),
+            new ElementoOpcion("opcion_intro1_3", CrearIntro_6())
+        };
+        return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
     }
 
-    public ElementoDialogo[] CrearIntro_0()
+    public ElementoDialogo CrearIntro_0()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 0", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 0", ruta));
-
-        // Opciones
-        listaDiálogos.Add(CrearBifurcación_intro_0());
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Opciones
+            CrearBifurcación_intro_0()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    private ElementoDialogo[] CrearIntro_1()
+    private ElementoDialogo CrearIntro_1()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 1", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 1", ruta));
-
-        // Siguiente diálogo
-        listaDiálogos.Add(CrearIntro_4()[0]);
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Siguiente diálogo
+            CrearIntro_4()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    private ElementoDialogo[] CrearIntro_2()
+    private ElementoDialogo CrearIntro_2()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 2", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 2", ruta));
-
-        // Siguiente diálogo
-        listaDiálogos.Add(CrearIntro_4()[0]);
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Siguiente diálogo
+            CrearIntro_4()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    private ElementoDialogo[] CrearIntro_3()
+    private ElementoDialogo CrearIntro_3()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 3", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 3", ruta));
-
-        // Siguiente diálogo
-        listaDiálogos.Add(CrearIntro_4()[0]);
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Siguiente diálogo
+            CrearIntro_4()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    private ElementoDialogo[] CrearIntro_4()
+    private ElementoDialogo CrearIntro_4()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 4", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 4", ruta));
-
-        // Opciones
-        listaDiálogos.Add(CrearBifurcación_intro_1());
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Opciones
+            CrearBifurcación_intro_1()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    private ElementoDialogo[] CrearIntro_5()
+    private ElementoDialogo CrearIntro_5()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 5", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 5", ruta));
-
-        // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("INTRO_5", TipoFinal.muerte, ruta));
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Final
+            ElementoDialogo.CrearFinal("INTRO_5", TipoFinal.muerte, ruta)
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    private ElementoDialogo[] CrearIntro_6()
+    private ElementoDialogo CrearIntro_6()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
         var monstruo = new RutaMonstruo();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 6", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.usuario, "INTRO 6", ruta));
-
-        // Siguiente diálogo
-        listaDiálogos.Add(monstruo.CrearMonstruo_0()[0]);
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Siguiente diálogo
+            monstruo.CrearMonstruo_0()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 }

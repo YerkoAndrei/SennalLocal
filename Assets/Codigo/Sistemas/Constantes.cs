@@ -147,17 +147,18 @@ public class Constantes
         estática
     }
 
-    public static ElementoDialogo[] AsignarContinuidadDiálogos(List<ElementoDialogo> lista)
+    public static ElementoDialogo AsignarDiálogosYObtenerPrimero(List<ElementoDialogo> lista)
     {
         lista.Reverse();
-
+        // Asigna siguiente diálogo
         for (int i = 1; i < lista.Count; i++)
         {
             lista[i].AsignarSiguienteDiálogo(lista[i - 1]);
         }
-
         lista.Reverse();
-        return lista.ToArray();
+
+        // Devuelve primero de la lista
+        return lista.ToArray()[0];
     }
 
     // XOR

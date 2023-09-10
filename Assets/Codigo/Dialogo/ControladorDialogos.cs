@@ -159,7 +159,7 @@ public class ControladorDialogos : MonoBehaviour
         yield return new WaitUntil(() => activo);
 
         var intro = new RutaIntro();
-        IniciarDiálogo(intro.CrearPrimerDiálogo());
+        IniciarDiálogo(intro.CrearIntro_0());
     }
 
     private void Update()

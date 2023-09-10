@@ -8,28 +8,29 @@ public class RutaAutor : InterfazRuta
 {
     private Rutas ruta = Rutas.autor;
 
-    public ElementoDialogo[] CrearAutor_0()
+    public ElementoDialogo CrearAutor_0()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            // Respuesta a pregunta encontrada
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "RESPUESTA 0", ruta),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "RESPUESTA 0", ruta));
-
-        // Opciones
-        listaDiálogos.Add(CrearAutor_1()[0]);
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Siguiente diálogo
+            CrearAutor_1()
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
-    public ElementoDialogo[] CrearAutor_1()
+    private ElementoDialogo CrearAutor_1()
     {
-        var listaDiálogos = new List<ElementoDialogo>();
+        var listaDiálogos = new List<ElementoDialogo>
+        {
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "AUTOR 1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.muerto, Animaciones.finalAutor),
 
-        // Diálogos
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "AUTOR 1", ruta));
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.muerto, Animaciones.finalAutor));
-
-        // Final
-        listaDiálogos.Add(ElementoDialogo.CrearFinal("Autor_1", TipoFinal.escape, ruta));
-        return AsignarContinuidadDiálogos(listaDiálogos);
+            // Final
+            ElementoDialogo.CrearFinal("Autor_1", TipoFinal.escape, ruta)
+        };
+        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 }
