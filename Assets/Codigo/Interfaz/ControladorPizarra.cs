@@ -1,5 +1,5 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
 public class ControladorPizarra : MonoBehaviour
 {
@@ -21,14 +21,21 @@ public class ControladorPizarra : MonoBehaviour
     [SerializeField] private TMP_Text txtCantidadFinalesLogrados;
     [SerializeField] private TMP_Text txtCantidadPreguntasEncontradas;
 
+    [Header("Respuestas clave")]
+    [SerializeField] private GameObject imgEncendedorEncontrado;
+    [SerializeField] private GameObject imgPeligroExterior;
+    [SerializeField] private GameObject imgLlaveComputador;
+    [SerializeField] private GameObject imgMonstruoObservado;
+    [SerializeField] private GameObject imgNombreDado;
+
     private void Start()
     {
-        ActualizarTextos();
+        ActualizarPizarra();
     }
 
-    public void ActualizarTextos()
+    public void ActualizarPizarra()
     {
-        // Variable
+        // Variables
         var muertos = SistemaMemoria.ObtenerUsuariosMuertos();
         var capturados = SistemaMemoria.ObtenerUsuariosCapturados();
         var escapados = SistemaMemoria.ObtenerUsuariosEscapados();
@@ -54,5 +61,12 @@ public class ControladorPizarra : MonoBehaviour
         txtCantidadDiálogosVistos.text = diálogos.ToString();
         txtCantidadFinalesLogrados.text = finales.ToString();
         txtCantidadPreguntasEncontradas.text = preguntas.ToString();
+
+        // Íconos respuestas clave
+        imgEncendedorEncontrado.SetActive(SistemaMemoria.ObtenerRespuestaClave(Constantes.RespuestasClave.encendedorEncontrado));
+        imgPeligroExterior.SetActive(SistemaMemoria.ObtenerRespuestaClave(Constantes.RespuestasClave.peligroExterior));
+        imgLlaveComputador.SetActive(SistemaMemoria.ObtenerRespuestaClave(Constantes.RespuestasClave.llaveComputador));
+        imgMonstruoObservado.SetActive(SistemaMemoria.ObtenerRespuestaClave(Constantes.RespuestasClave.monstruoObservado));
+        imgNombreDado.SetActive(SistemaMemoria.ObtenerRespuestaClave(Constantes.RespuestasClave.nombreDado));
     }
 }
