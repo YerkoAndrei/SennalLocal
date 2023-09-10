@@ -50,7 +50,7 @@ Bifurcación INTRO 1:
     Sube la escalera
 
 INTRO 0:
-    $ Buenas noches, soy el operador, ¿Cuál es su emergencia?.
+    $ Buenas noches, soy el operador, ¿Cuál es su emergencia?
     - B-buenas noches...
     $ ¿Cuál es su emergencia?
     - Acabo de despertar en algún lugar...
