@@ -70,7 +70,7 @@ public class RutaMonstruo : InterfazRuta
             new ElementoOpcion("opcion_monstruo3_0", CrearMonstruo_9()),
 
             // Opción limitada
-            new ElementoOpcion("opcion_monstruo3_1", ResponderNombre(), RespuestasClave.nombreDado)
+            new ElementoOpcion("opcion_monstruo3_1", CrearMonstruo_10(), RespuestasClave.nombreDado)
         };
 
         // Preguntas encontradas
@@ -81,20 +81,6 @@ public class RutaMonstruo : InterfazRuta
         }
 
         return ElementoDialogo.CrearOpciones(listaOpciones.ToArray());
-    }
-
-    private ElementoDialogo ResponderNombre()
-    {
-        var últimoNombreDado = SistemaMemoria.ObtenerNombreDado();
-        var listaDiálogos = new List<ElementoDialogo>
-        {
-            // Responder último nombre dado
-            ElementoDialogo.CrearDiálogo(Personajes.monstruo, últimoNombreDado, ruta),
-
-            // Siguiente diálogo
-            CrearMonstruo_10()
-        };
-        return AsignarDiálogosYObtenerPrimero(listaDiálogos);
     }
 
     public ElementoDialogo CrearMonstruo_0()
@@ -128,14 +114,14 @@ public class RutaMonstruo : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_1", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_2", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_3", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "monstruo1_4", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_5", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_6", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_7", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_8", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_9", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_10", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_11", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "monstruo1_11", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_12", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_13", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo1_14", ruta),
@@ -161,7 +147,7 @@ public class RutaMonstruo : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo2_3", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo2_4", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo2_5", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo2_6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "monstruo2_6", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo2_7", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo2_8", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo2_9", ruta),
@@ -196,9 +182,9 @@ public class RutaMonstruo : InterfazRuta
         {
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo4_0", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo4_1", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo4_2", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo4_3", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo4_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "monstruo4_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "monstruo4_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "monstruo4_4", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo4_5", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo4_6", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo4_7", ruta),
@@ -241,10 +227,10 @@ public class RutaMonstruo : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_4", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_5", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_6", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_7", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "monstruo6_7", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_8", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_9", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_10", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "monstruo6_10", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_11", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_12", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo6_13", ruta),
@@ -288,7 +274,7 @@ public class RutaMonstruo : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo8_1", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo8_2", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo8_3", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo8_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo8_4", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo8_5", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo8_6", ruta),
 
@@ -305,42 +291,42 @@ public class RutaMonstruo : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_0", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_1", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_2", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_3", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_4", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_5", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_6", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_7", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_8", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_9", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_7", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_8", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_9", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_10", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_11", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_12", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_13", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_11", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_12", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_13", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_14", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_15", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_16", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_17", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_18", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_19", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_20", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_21", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_22", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_23", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_24", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_16", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_17", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_18", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_19", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_20", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_21", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_22", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_23", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_24", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_25", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_26", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_27", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_28", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_29", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_30", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_29", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_30", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_31", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_32", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_32", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_33", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_34", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_35", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_36", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_37", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_38", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_36", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_37", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo9_38", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_39", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo9_40", ruta),
 
@@ -352,38 +338,43 @@ public class RutaMonstruo : InterfazRuta
 
     private ElementoDialogo CrearMonstruo_10()
     {
+        var últimoNombreDado = SistemaMemoria.ObtenerNombreDado();
         var listaDiálogos = new List<ElementoDialogo>
         {
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_0", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_1", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_2", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_3", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_4", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_5", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_6", ruta),
+
+            // Nombre dado
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, últimoNombreDado, ruta),
+
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_7", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_8", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_8", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_9", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_10", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_11", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_10", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_11", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_12", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_13", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_14", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_13", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_14", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_15", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_16", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_17", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_18", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_19", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_20", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_16", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_17", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_18", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_19", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_20", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_21", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_22", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_23", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_24", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_25", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_22", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_23", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_24", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_25", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_26", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_27", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_28", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_29", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "monstruo10_29", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_30", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "monstruo10_31", ruta),
 

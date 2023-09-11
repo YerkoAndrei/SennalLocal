@@ -796,7 +796,7 @@ MON 3:
     - Es enorme, pero su cabeza parece pequeña.
     - Sigo sin lograr ver su rostro.
     - ¡Ah!
-    - e va.S
+    - Se va.
     - Lo seguiré lentamente.
 
 MON 4:
