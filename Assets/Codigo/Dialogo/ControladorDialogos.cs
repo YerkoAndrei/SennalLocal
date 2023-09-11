@@ -594,9 +594,7 @@ public class ControladorDialogos : MonoBehaviour
     public void ActivarEfectos()
     {
         ControladorRadio.CambiarNombreRuta(diálogoActual.ruta);
-
-        if (diálogoActual.nivelEstrés != NivelEstrés.pausa)
-            ControladorOsciloscopio.CambiarNivelEstrés(diálogoActual.nivelEstrés);
+        ControladorOsciloscopio.CambiarNivelEstrés(diálogoActual.nivelEstrés);
     }
 
     // MenúController
@@ -625,7 +623,7 @@ public class ControladorDialogos : MonoBehaviour
                 break;
             case TipoFinal.captura:
                 diálogoFinal.texto = "final_captura";
-                diálogoFinal.nivelEstrés = NivelEstrés.capturado;
+                diálogoFinal.nivelEstrés = NivelEstrés.bajo;
                 break;
             case TipoFinal.escape:
                 diálogoFinal.texto = "final_escape";
@@ -715,7 +713,7 @@ public class ControladorDialogos : MonoBehaviour
 
         estado = Estados.enPausa;
         SistemaAnimacion.MostrarAnimación(Animaciones.nada);
-        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.muerto);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
     }
 

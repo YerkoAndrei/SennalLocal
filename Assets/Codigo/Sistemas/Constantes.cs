@@ -82,13 +82,11 @@ public class Constantes
 
     public enum NivelEstrés
     {
-        pausa,
+        muerto,
         bajo,
         normal,
         alto,
-        gritando,
-        capturado,
-        muerto
+        gritando
     }
 
     public enum Rutas

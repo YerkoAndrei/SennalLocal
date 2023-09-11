@@ -71,7 +71,7 @@ public class ControladorMenu : MonoBehaviour
         controladorDiálogos = FindObjectOfType<ControladorDialogos>();
         controladorCámara = FindObjectOfType<ControladorCamara>();
 
-        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.muerto);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
 
         // Volumen
@@ -217,7 +217,7 @@ public class ControladorMenu : MonoBehaviour
         SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, true, true, Direcciones.derecha, null);
 
         controladorCámara.CambiarPosición(CámarasCine.menú);
-        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
+        ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.muerto);
         ControladorRadio.CambiarNombreRuta(Rutas.menú);
         controladorDiálogos.MostrarPaneles(false);
     }

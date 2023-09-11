@@ -115,9 +115,9 @@ public class RutaAutor : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.operador, "autor1_1", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.operador, "autor1_2", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.operador, "autor1_3", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "autor1_4", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "autor1_5", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "autor1_6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "autor1_4", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "autor1_5", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "autor1_6", ruta, NivelEstrés.alto),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_7", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_8", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_9", ruta),
@@ -135,10 +135,10 @@ public class RutaAutor : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_21", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.operador, "autor1_22", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.operador, "autor1_23", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_24", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_25", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_26", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.muerto, Animaciones.finalAutor),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_24", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_25", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "autor1_26", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN AUTOR", ruta, NivelEstrés.bajo, Animaciones.finalAutor),
 
             // Final
             ElementoDialogo.CrearFinal("AUTOR_1", TipoFinal.escape, ruta)

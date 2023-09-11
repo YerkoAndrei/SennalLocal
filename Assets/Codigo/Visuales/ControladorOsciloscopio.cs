@@ -96,11 +96,8 @@ public class ControladorOsciloscopio : MonoBehaviour
 
         switch (nivelEstrésActual)
         {
-            case NivelEstrés.pausa:
-                velocidadVertical = 0.05f;
-
-                alto = new Vector3(luz.localPosition.x, mínimaSeparación, luz.localPosition.z);
-                bajo = new Vector3(luz.localPosition.x, -(mínimaSeparación), luz.localPosition.z);
+            case NivelEstrés.muerto:
+                velocidadVertical = 0;
                 break;
             case NivelEstrés.bajo:
                 velocidadVertical = 0.12f;
@@ -113,12 +110,6 @@ public class ControladorOsciloscopio : MonoBehaviour
                 break;
             case NivelEstrés.gritando:
                 velocidadVertical = 1f;
-                break;
-            case NivelEstrés.capturado:
-                velocidadVertical = 0.1f;
-                break;
-            case NivelEstrés.muerto:
-                velocidadVertical = 0;
                 break;
         }
     }
