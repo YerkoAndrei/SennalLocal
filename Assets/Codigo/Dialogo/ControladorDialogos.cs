@@ -654,14 +654,18 @@ public class ControladorDialogos : MonoBehaviour
     }
 
     public void MostrarPaneles(bool mostrar)
-    {
-        activo = mostrar;
-
+    {        
         if (mostrar)
             MostrarPanelesFijo(mostrar);
+        else
+            activo = mostrar;
 
         SistemaAnimacion.AnimarPanel(rectDiálogos, 0.2f, mostrar, true, Direcciones.abajo, null);
-        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, mostrar, true, Direcciones.izquierda, () => MostrarPanelesFijo(mostrar));
+        SistemaAnimacion.AnimarPanel(rectInteractuables, 0.3f, mostrar, true, Direcciones.izquierda, () =>
+        {
+            MostrarPanelesFijo(mostrar);
+            activo = mostrar;
+        });
     }
 
     private void MostrarPanelesFijo(bool mostrar)
