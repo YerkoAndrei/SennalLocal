@@ -147,7 +147,7 @@ OPE 0:
     - ¡Son horribles!
     $ ¿Qué ves?
     - Parecen humanos, pero son solo huesos moviéndose.
-    - !Que asco!
+    - ¡Que asco!
     - Se retuercen.
     $ ¿Cómo?
     - Son... ¿Monstruos? 
@@ -1097,7 +1097,7 @@ SOT 4:
     - ...
     - Como suena ésto...
     - ¡No!
-    - ¡Ahhhhhhhh!
+    - ¡Ahhhhhh!
     $ ¿Qué pasa?
     $ ¿Estás bien?
     - No...
