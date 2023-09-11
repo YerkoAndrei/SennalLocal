@@ -1593,6 +1593,7 @@ MonoBehaviour:
   tiempoPunto: 0.5
   tiempoOpciones: 0.8
   "tiempoElegirOpci\xF3n": 0.6
+  "tiempoEsperaAutom\xE1tico": 0.8
   colorCargando: {r: 1, g: 1, b: 0.78431374, a: 0.078431375}
   colorContinuar: {r: 1, g: 1, b: 0.78431374, a: 0.78431374}
   colorPanelActivo: {r: 0.019607844, g: 0.019607844, b: 0.019607844, a: 0.98039216}

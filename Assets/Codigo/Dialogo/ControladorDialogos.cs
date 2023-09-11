@@ -27,6 +27,7 @@ public class ControladorDialogos : MonoBehaviour
     [Header("Tiempos interfaz")]
     [SerializeField] private float tiempoOpciones;
     [SerializeField] private float tiempoElegirOpción;
+    [SerializeField] private float tiempoEsperaAutomático;
 
     [Header("Colores Menú")]
     [SerializeField] private Color colorCargando;
@@ -84,6 +85,7 @@ public class ControladorDialogos : MonoBehaviour
     private List<ElementoInterfazOpcion> opcionesActuales;
     private Animaciones animaciónMostrada;
     private bool iniciado;
+    private bool automático;
     private bool activo;
     private bool mostrandoTexto;
     private bool puedeContinuar;
@@ -406,6 +408,17 @@ public class ControladorDialogos : MonoBehaviour
             estado = Estados.esperandoFinal;
         else
             estado = Estados.esperandoClic;
+
+        if (automático)
+            StartCoroutine(EsperarAutomático());
+    }
+
+    private IEnumerator EsperarAutomático()
+    {
+        yield return new WaitForSeconds(tiempoEsperaAutomático);
+
+        if (estado == Estados.esperandoClic)
+            ContinuarSiguienteAcción();
     }
 
     private void ContinuarSiguienteAcción()
@@ -586,6 +599,17 @@ public class ControladorDialogos : MonoBehaviour
             ControladorOsciloscopio.CambiarNivelEstrés(diálogoActual.nivelEstrés);
     }
 
+    // MenúController
+    public bool ActivarAutomático()
+    {
+        automático = !automático;
+
+        if (automático && estado == Estados.esperandoClic)
+            StartCoroutine(EsperarAutomático());
+
+        return automático;
+    }
+
     private void FinalizarPartida(TipoFinal tipoFinal, Rutas ruta)
     {
         var diálogoFinal = new ElementoDialogo();
@@ -596,15 +620,15 @@ public class ControladorDialogos : MonoBehaviour
         switch (tipoFinal)
         {
             case TipoFinal.muerte:
-                diálogoFinal.texto = SistemaTraduccion.ObtenerTraducción("final_muerte");
+                diálogoFinal.texto = "final_muerte";
                 diálogoFinal.nivelEstrés = NivelEstrés.muerto;
                 break;
             case TipoFinal.captura:
-                diálogoFinal.texto = SistemaTraduccion.ObtenerTraducción("final_captura");
+                diálogoFinal.texto = "final_captura";
                 diálogoFinal.nivelEstrés = NivelEstrés.capturado;
                 break;
             case TipoFinal.escape:
-                diálogoFinal.texto = SistemaTraduccion.ObtenerTraducción("final_escape");
+                diálogoFinal.texto = "final_escape";
                 diálogoFinal.nivelEstrés = NivelEstrés.bajo;
                 break;
         }

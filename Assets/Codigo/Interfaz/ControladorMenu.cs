@@ -37,6 +37,8 @@ public class ControladorMenu : MonoBehaviour
     [Header("Colores")]
     [SerializeField] private Color colorRojoClaro;
     [SerializeField] private Color colorRojoOscuro;
+    [SerializeField] private Color colorAutomáticoPrendido;
+    [SerializeField] private Color colorAutomáticoApagado;
 
     [Header("Título")]
     [SerializeField] private Image imgTítulo;
@@ -45,6 +47,7 @@ public class ControladorMenu : MonoBehaviour
 
     [Header("Referencias")]
     [SerializeField] private Image panelOscuro;
+    [SerializeField] private Image btnAutomático;
     [SerializeField] private TMP_Text txtVersión;
 
     private ControladorDialogos controladorDiálogos;
@@ -64,10 +67,8 @@ public class ControladorMenu : MonoBehaviour
         aleatorio = new System.Random(semilla);
         UnityEngine.Random.InitState(semilla);
 
-        // Diálogos
+        // Controladores
         controladorDiálogos = FindObjectOfType<ControladorDialogos>();
-
-        // Visual
         controladorCámara = FindObjectOfType<ControladorCamara>();
 
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.pausa);
@@ -100,6 +101,7 @@ public class ControladorMenu : MonoBehaviour
                 break;
         }
 
+        btnAutomático.color = colorAutomáticoApagado;
         txtVersión.text = Application.version;
 
         // Menú
@@ -247,6 +249,14 @@ public class ControladorMenu : MonoBehaviour
             });
         }
         OcultarCréditos();
+    }
+
+    public void EnClicAutomático()
+    {
+        if (controladorDiálogos.ActivarAutomático())
+            btnAutomático.color = colorAutomáticoPrendido;
+        else
+            btnAutomático.color = colorAutomáticoApagado;
     }
 
     public void MostrarMenúJuego(bool mostrar)
