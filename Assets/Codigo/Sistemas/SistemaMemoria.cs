@@ -68,7 +68,8 @@ public class SistemaMemoria : MonoBehaviour
     // Verificar para guardar
     public static bool VerificarDiálogo(string texto)
     {
-        return instancia.datos.diálogosElegidos.Contains(texto);
+        var bloque = ObtenerBloque(texto);
+        return instancia.datos.diálogosElegidos.Contains(bloque);
     }
 
     public static bool VerificarOpción(string texto)
@@ -79,15 +80,7 @@ public class SistemaMemoria : MonoBehaviour
     // Marcado bloque de diálogo visto
     public static void MarcarDiálogo(string texto)
     {
-        // Base:        intro0_03
-        // Excepción:   operador9_1_0, operador9_2_0
-        var bloques = texto.Split("_");
-        var bloque = string.Empty;
-
-        if (bloques.Length <= 2)
-            bloque = bloques[0];
-        else
-            bloque = bloques[0] + "_" + bloques[1];
+        var bloque = ObtenerBloque(texto);
 
         if (!instancia.datos.diálogosElegidos.Contains(bloque) &&
             !instancia.datos.opcionesElegidas.Contains(texto) &&
@@ -96,6 +89,19 @@ public class SistemaMemoria : MonoBehaviour
             instancia.datos.diálogosElegidos.Add(bloque);
             instancia.ActualizarArchivo();
         }
+    }
+
+    private static string ObtenerBloque(string texto)
+    {
+        // Base:        intro0_03
+        // Excepción:   operador9_1_0, operador9_2_0
+        var bloques = texto.Split("_");
+        var bloque = string.Empty;
+
+        if (bloques.Length <= 2)
+            return bloques[0];
+        else
+            return bloques[0] + "_" + bloques[1];
     }
 
     public static void MarcarOpción(string texto)
