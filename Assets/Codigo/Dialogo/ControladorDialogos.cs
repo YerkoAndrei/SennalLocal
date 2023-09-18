@@ -260,7 +260,7 @@ public class ControladorDialogos : MonoBehaviour
             panelDiálogos.SetActive(false);
             animaciónMostrada = diálogoActual.animación;
             SistemaAnimacion.MostrarAnimación(diálogoActual.animación);
-            TerminarTexto();
+            TerminarTexto(false);
         }
         else
         {
@@ -278,7 +278,7 @@ public class ControladorDialogos : MonoBehaviour
     private void ApurarDiálogo()
     {
         if (mostrandoTexto && txtDiálogo.text.Length > 1 && !puedeContinuar && diálogoActual.visto)
-            TerminarTexto();
+            TerminarTexto(true);
     }
 
     private void ContarTiempoDiálogo(string texto)
@@ -398,15 +398,19 @@ public class ControladorDialogos : MonoBehaviour
             else
                 break;
         }
-        TerminarTexto();
+
+        if(mostrandoTexto)
+            TerminarTexto(true);
     }
 
-    private void TerminarTexto()
+    private void TerminarTexto(bool mostrarTexto)
     {
         puedeContinuar = true;
         mostrandoTexto = false;
-        txtDiálogo.text = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
         VerImagenContinuar(true);
+
+        if (mostrarTexto)
+            txtDiálogo.text = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
 
         // Continúa o termina guión
         if (diálogoActual.tipoDiálogo == TipoDiálogo.final)
