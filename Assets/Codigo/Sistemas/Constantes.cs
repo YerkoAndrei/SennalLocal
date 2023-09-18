@@ -57,6 +57,13 @@ public class Constantes
         nombreDado
     }
 
+    public enum DiálogoEspecial
+    {
+        nada,
+        conFormato,
+        noSaltar
+    }
+
     // Configuración
     public enum Idiomas
     {
