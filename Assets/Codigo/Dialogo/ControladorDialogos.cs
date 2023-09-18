@@ -92,9 +92,12 @@ public class ControladorDialogos : MonoBehaviour
     private bool carácterDeEtiqueta;
     private bool carácterEnTextoRico;
     private float contadorTiempo;
+    private float tiempoClic;
+    private float tiempoEntreClics;
     private float tiempoDiálogo;
 
     private const char carácterEtiqueta = '#';
+    private const string carácterReemplazo = "$";
 
     private void Start()
     {
@@ -118,6 +121,9 @@ public class ControladorDialogos : MonoBehaviour
         panelDiálogo.color = colorPanelEspera;
         imgPersonaje.gameObject.SetActive(false);
         imgVisto.SetActive(false);
+
+        tiempoEntreClics = 0.1f;
+        tiempoClic = tiempoEntreClics;
 
         foreach (Transform hijo in padreOpciones)
         {
@@ -172,8 +178,15 @@ public class ControladorDialogos : MonoBehaviour
             imgContinuar.fillAmount = contadorTiempo / tiempoDiálogo;
         }
 
-        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetKeyDown(KeyCode.Escape) && !panelPregunta.activeSelf)
+        // Control clics
+        if (tiempoClic > 0)
+            tiempoClic -= Time.deltaTime;
+
+        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetKeyDown(KeyCode.Escape) && !panelPregunta.activeSelf && tiempoClic <= 0)
+        {
+            tiempoClic = tiempoEntreClics;
             EnClic();
+        }
     }
 
     public void EnClic()
@@ -265,7 +278,7 @@ public class ControladorDialogos : MonoBehaviour
         else
         {
             var textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
-            textoReal = PonerPuntoFinal(textoReal);
+            textoReal = FormatearTextoFinal(textoReal);
 
             ContarTiempoDiálogo(textoReal);
             StartCoroutine(MostrarTexto(textoReal));
@@ -278,11 +291,15 @@ public class ControladorDialogos : MonoBehaviour
             TerminarTexto(true);
     }
 
-    private string PonerPuntoFinal(string texto)
+    private string FormatearTextoFinal(string texto)
     {
+        if (diálogoActual.especial == DiálogoEspecial.conFormato)
+            texto = texto.Replace(carácterReemplazo, SistemaMemoria.ObtenerNombreDado());
+
         if (texto[texto.Length - 1] != '.' &&
             texto[texto.Length - 1] != '?' &&
-            texto[texto.Length - 1] != '!')
+            texto[texto.Length - 1] != '!' &&
+            texto[texto.Length - 1] != ')')
             return texto += ".";
         else
             return texto;
@@ -417,7 +434,7 @@ public class ControladorDialogos : MonoBehaviour
         VerImagenContinuar(true);
 
         if (mostrarTexto)
-            txtDiálogo.text = PonerPuntoFinal(SistemaTraduccion.ObtenerTraducción(diálogoActual.texto));
+            txtDiálogo.text = FormatearTextoFinal(SistemaTraduccion.ObtenerTraducción(diálogoActual.texto));
 
         // Continúa o termina guión
         if (diálogoActual.tipoDiálogo == TipoDiálogo.final)
@@ -433,7 +450,7 @@ public class ControladorDialogos : MonoBehaviour
     {
         yield return new WaitForSeconds(tiempoEsperaAutomático);
 
-        if (estado == Estados.esperandoClic)
+        if (estado == Estados.esperandoClic && diálogoActual.especial != DiálogoEspecial.noSaltar)
             ContinuarSiguienteAcción();
     }
 
@@ -585,7 +602,7 @@ public class ControladorDialogos : MonoBehaviour
         //  Verificar nombre o pregunta válida
         if (diálogoActual.tipoDiálogo == TipoDiálogo.nombre)
         {
-            respuestaVálida = (inputPregunta.text.Length > 3);
+            respuestaVálida = (inputPregunta.text.Length > 1);
             if (respuestaVálida)
                 SistemaMemoria.GuardarNombre(inputPregunta.text);
         }
@@ -738,6 +755,11 @@ public class ControladorDialogos : MonoBehaviour
     }
 
     // Final Especial Usuario
+    public void OcultarDiálogos()
+    {
+        SistemaAnimacion.AnimarPanel(rectDiálogos, 0.2f, false, true, Direcciones.abajo, null);
+    }
+
     private IEnumerator FinalizarEspecialUsuario(TipoFinal tipoFinal, Rutas ruta)
     {
         panelOscuro.gameObject.SetActive(true);

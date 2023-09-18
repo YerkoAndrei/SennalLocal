@@ -25,6 +25,7 @@ public class ControladorAnimaciones : MonoBehaviour
     private FilmGrain granosCámara;
     private ChromaticAberration aberraciónCromática;
 
+    private ControladorDialogos controladorDiálogos;
     private ControladorCamara controladorCamara;
     private ControladorMenu controladorMenú;
     private AnimadorLuzFondo animadorLuzFondo;
@@ -36,6 +37,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
     private void Start()
     {
+        controladorDiálogos = FindObjectOfType<ControladorDialogos>();
         controladorCamara = FindObjectOfType<ControladorCamara>();
         controladorMenú = FindObjectOfType<ControladorMenu>();
         animadorLuzFondo = FindObjectOfType<AnimadorLuzFondo>();
@@ -151,6 +153,7 @@ public class ControladorAnimaciones : MonoBehaviour
     {
         SistemaAnimacion.MarcarAnimación(true);
         controladorMenú.MostrarMenúJuego(false);
+        controladorDiálogos.OcultarDiálogos();
         animadorLuzFondo.AnimarEncuentro();
         CancelarAnimación();
 
