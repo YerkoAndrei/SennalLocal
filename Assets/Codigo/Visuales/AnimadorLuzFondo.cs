@@ -24,12 +24,18 @@ public class AnimadorLuzFondo : MonoBehaviour
 
     public void AnimarEncuentro()
     {
+        luz.intensity = 0;
+        luz.gameObject.SetActive(true);
+
         StartCoroutine(AnimaciónPared());
         StartCoroutine(AnimaciónLuz());
     }
 
     public void AnimarOperador()
     {
+        luzOperador.intensity = 0;
+        luzOperador.gameObject.SetActive(true);
+
         StartCoroutine(AnimaciónLuzOperador());
     }
 
