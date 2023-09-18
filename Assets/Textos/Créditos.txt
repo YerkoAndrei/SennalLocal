@@ -19,3 +19,4 @@ Krita
 MakeHuman
 LMMS
 Audacity
+Draw.io
