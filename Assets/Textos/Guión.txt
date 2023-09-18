@@ -378,7 +378,7 @@ OPE 10:
     $ Enviaré ayuda, captúralos, espera a que lleguen y tráiganlos.
     * Entendido, maestro.
     $ Bien, tengo más usuarios con los qué entretenerme.
-    $ Espero los siguientes sean más divertidos que éste.
+    $ Espero los siguientes sean más divertidos que este.
     (Llamada perdida. El usuario ha sido capturado.)
 
 
@@ -545,14 +545,14 @@ USU 11:
     - Bien.
     - ...
     - Sí, veo una, es de metal.
-    - Éste lugar me da mala espina.
+    - Este lugar me da mala espina.
     - Hay algunas cosas médicas, pero siento que hay algo extraño aquí.
 
 USU 12:
     - ¿Algo útil?
     - Bien, hay varios muebles, buscaré en los cajones.
     - Hay cosas médicas aquí.
-    - Éste lugar me da mala espina.
+    - Este lugar me da mala espina.
     $ ¿Has encontrado algo?
     - No aún no, todos los cajones están vacíos.
     - ¡Oh!
@@ -960,7 +960,7 @@ CAZA 0:
     - ¿Sabes qué son esos monstruos?
     - Espera...
     - Estoy dentro pero no escucho nada.
-    - Éste lugar me da mala espina.
+    - Este lugar me da mala espina.
     $ ¿Qué ves?
     - ¡Ah!
     - Oh no.
@@ -1024,7 +1024,7 @@ CAZA 3:
     - ¡¿Qué era eso?!
     - ¡No es como los otros!
     - ¡Ah!
-    - ¡Éste pasillo no tiene salida!
+    - ¡Este pasillo no tiene salida!
     - ¡Me alcanzó!
     - ¡Ahhhhhh!
     - ¡Aléjate!
