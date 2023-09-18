@@ -265,10 +265,7 @@ public class ControladorDialogos : MonoBehaviour
         else
         {
             var textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
-
-            // Pone punto final en respuestas
-            if (textoReal[textoReal.Length - 1] != '.' || textoReal[textoReal.Length - 1] != '?')
-                textoReal += ".";
+            textoReal = PonerPuntoFinal(textoReal);
 
             ContarTiempoDiálogo(textoReal);
             StartCoroutine(MostrarTexto(textoReal));
@@ -279,6 +276,16 @@ public class ControladorDialogos : MonoBehaviour
     {
         if (mostrandoTexto && txtDiálogo.text.Length > 1 && !puedeContinuar && diálogoActual.visto)
             TerminarTexto(true);
+    }
+
+    private string PonerPuntoFinal(string texto)
+    {
+        if (texto[texto.Length - 1] != '.' &&
+            texto[texto.Length - 1] != '?' &&
+            texto[texto.Length - 1] != '!')
+            return texto += ".";
+        else
+            return texto;
     }
 
     private void ContarTiempoDiálogo(string texto)
@@ -410,7 +417,7 @@ public class ControladorDialogos : MonoBehaviour
         VerImagenContinuar(true);
 
         if (mostrarTexto)
-            txtDiálogo.text = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
+            txtDiálogo.text = PonerPuntoFinal(SistemaTraduccion.ObtenerTraducción(diálogoActual.texto));
 
         // Continúa o termina guión
         if (diálogoActual.tipoDiálogo == TipoDiálogo.final)
