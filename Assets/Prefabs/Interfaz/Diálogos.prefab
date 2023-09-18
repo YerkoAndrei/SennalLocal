@@ -1588,7 +1588,7 @@ MonoBehaviour:
   tiempoLetra: 0.05
   tiempoLetraEtiquetada: 0.1
   tiempoEspacio: 0.06
-  "tiempoGui\xF3n": 0.2
+  "tiempoGui\xF3n": 0.6
   tiempoComa: 0.3
   tiempoPunto: 0.5
   tiempoOpciones: 0.8
