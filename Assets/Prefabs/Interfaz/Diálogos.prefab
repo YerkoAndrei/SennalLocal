@@ -757,7 +757,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 300, y: 60, z: 300, w: 60}
+  m_margin: {x: 320, y: 60, z: 320, w: 60}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1587,13 +1587,13 @@ MonoBehaviour:
   ruta: 0
   tiempoLetra: 0.05
   tiempoLetraEtiquetada: 0.1
-  tiempoEspacio: 0.1
+  tiempoEspacio: 0.6
   "tiempoGui\xF3n": 0.2
   tiempoComa: 0.3
   tiempoPunto: 0.5
   tiempoOpciones: 0.8
   "tiempoElegirOpci\xF3n": 0.6
-  "tiempoEsperaAutom\xE1tico": 0.8
+  "tiempoEsperaAutom\xE1tico": 1
   colorCargando: {r: 1, g: 1, b: 0.78431374, a: 0.078431375}
   colorContinuar: {r: 1, g: 1, b: 0.78431374, a: 0.78431374}
   colorPanelActivo: {r: 0.019607844, g: 0.019607844, b: 0.019607844, a: 0.98039216}

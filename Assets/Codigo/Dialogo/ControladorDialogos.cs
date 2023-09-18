@@ -265,6 +265,11 @@ public class ControladorDialogos : MonoBehaviour
         else
         {
             var textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
+
+            // Pone punto final en respuestas
+            if (textoReal[textoReal.Length - 1] != '.' || textoReal[textoReal.Length - 1] != '?')
+                textoReal += ".";
+
             ContarTiempoDiálogo(textoReal);
             StartCoroutine(MostrarTexto(textoReal));
         }

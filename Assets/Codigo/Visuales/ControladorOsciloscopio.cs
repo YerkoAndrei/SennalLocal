@@ -10,8 +10,6 @@ public class ControladorOsciloscopio : MonoBehaviour
     [SerializeField] private NivelEstrés nivelEstrésActual;
     [SerializeField] private float velocidadHorizontal;
     [SerializeField] private float velocidadVertical;
-    [SerializeField] private float máximaSeparación;
-    [SerializeField] private float mínimaSeparación;
 
     [Header("Referencias visuales")]
     [SerializeField] private Transform visor;
@@ -91,8 +89,6 @@ public class ControladorOsciloscopio : MonoBehaviour
         nivelEstrésAnterior = nivelEstrésActual;
         nivelEstrésActual = nivelEstrés;
 
-        alto = new Vector3(luz.localPosition.x, máximaSeparación, luz.localPosition.z);
-        bajo = new Vector3(luz.localPosition.x, -(máximaSeparación), luz.localPosition.z);
 
         switch (nivelEstrésActual)
         {
@@ -100,16 +96,24 @@ public class ControladorOsciloscopio : MonoBehaviour
                 velocidadVertical = 0;
                 break;
             case NivelEstrés.bajo:
-                velocidadVertical = 0.12f;
+                velocidadVertical = 0.08f;
+                alto = new Vector3(luz.localPosition.x, 0.01f, luz.localPosition.z);
+                bajo = new Vector3(luz.localPosition.x, -(0.01f), luz.localPosition.z);
                 break;
             case NivelEstrés.normal:
-                velocidadVertical = 0.2f;
+                velocidadVertical = 0.18f;
+                alto = new Vector3(luz.localPosition.x, 0.015f, luz.localPosition.z);
+                bajo = new Vector3(luz.localPosition.x, -(0.015f), luz.localPosition.z);
                 break;
             case NivelEstrés.alto:
-                velocidadVertical = 0.8f;
+                velocidadVertical = 0.5f;
+                alto = new Vector3(luz.localPosition.x, 0.02f, luz.localPosition.z);
+                bajo = new Vector3(luz.localPosition.x, -(0.02f), luz.localPosition.z);
                 break;
             case NivelEstrés.gritando:
-                velocidadVertical = 1f;
+                velocidadVertical = 0.8f;
+                alto = new Vector3(luz.localPosition.x, 0.02f, luz.localPosition.z);
+                bajo = new Vector3(luz.localPosition.x, -(0.02f), luz.localPosition.z);
                 break;
         }
     }
