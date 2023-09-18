@@ -139,7 +139,7 @@ public class RutaUsuario : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "usuario2_1", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "usuario2_2", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "usuario2_3", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "usuario2_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "usuario2_4", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "usuario2_5", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "usuario2_6", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.operador, "usuario2_7", ruta),

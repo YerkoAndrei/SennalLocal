@@ -50,14 +50,13 @@ Bifurcación INTRO 1:
     Sube la escalera
 
 INTRO 0:
-    $ Buenas noches, soy el operador, ¿Cuál es su emergencia?
+    $ Buenas noches, ¿Cuál es su emergencia?
     - B-buenas noches...
     $ ¿Cuál es su emergencia?
     - Acabo de despertar en algún lugar...
     - No... No recuerdo nada. Ayúdame por favor.
     $ ¿Estás bien? ¿Puedes describir dónde estás?
     - Estoy dentro de una casa bastante grande y antigua.
-    - En una habitación desordenada.
     - Parece abandonada, no veo nada más.
     - No sé dónde estoy, ni siquiera recuerdo mi nombre.
 
@@ -66,7 +65,7 @@ INTRO 1:
     - Lo intento pero...
     - No logro recordar nada.
     - Me duele un poco la cabeza.
-    - !Ah!
+    - ¡Ah!
     - Tengo una herida, pero está cosida.
     - ¿Q-qué está pasando?
     - Ayúdame por favor.
@@ -82,25 +81,25 @@ INTRO 3:
     - Hay una ventana, pero está opaca, no puedo ver el exterior.
 
 INTRO 4:
-    $ ¿Cómo llamaste a emergencias?
+    $ Bien, ¿Cómo llamaste a emergencias?
     - Desperté con el teléfono en mi mano, tenía el número marcado.
-    - No sé de dónde salió, tiene casi todos los botones rotos y apenas funciona.
+    - No sé de dónde salió, está roto y apenas funciona.
     - Todo es muy extraño. No sé dónde estoy, ayúdame por favor, no cortes.
     $ Calma, ¿No hay alguna puerta cerca?
     - Sí, solo una. Voy a ir.
     - La puerta está abierta.
     - Hay una escalera grande.
-    - Parece que estoy en la entrada de alguna casona o mansión antigua.
+    - Parece que estoy en la entrada de una mansión antigua.
     - Veo otras puertas pero están bloqueadas con palos.
     - Aquí hay muchos escombros.
     $ ¿Una entrada? Entonces debería haber una puerta grande.
     - Sí, se ve pesada, al lado hay una ventana pequeña que da hacia afuera.
 
 INTRO 5:
-    - Es pesada.
+    - Bien. Es pesada.
     - ...
     - Pero se mueve.
-    - Está abierta. Bien, voy a salir.
+    - Está abierta. Voy a salir.
     - ¡¿Qué es eso?!
     - ¡Es horrible!
     - ¡No! ¡La puerta se cerró!
@@ -143,6 +142,7 @@ Bifurcación OPE 3:
     Me llamo...
 
 OPE 0:
+    - Está bien.
     - ¡¿Qué es eso?!
     - ¡Son horribles!
     $ ¿Qué ves?
@@ -163,7 +163,7 @@ OPE 0:
 OPE 1:
     - No creo que haya alguien aquí, hay demasiado polvo.
     $ ¿Ves huellas en él?
-    - No, parece abandonada hace años.
+    - No hay huellas, pero parece que hubo movimiento hace algún tiempo.
     - Esa escalera me da escalofríos.
     - Parece que se va a derrumbar en cualquier momento.
 
@@ -177,7 +177,7 @@ OPE 2:
     - Ya estoy dentro.
     $ ¿Sabes dónde estás? Descríbelo.
     - Por lo muebles parece un comedor.
-    - Hay dos puertas, una sale hacia afuera, y la otra debería ir a otra habitación, pero está sellada con palos.
+    - Hay dos puertas, una sale hacia afuera, y la otra debería ir a otra habitación, pero está sellada con tablas.
     - ¿Qué debería hacer?
 
 OPE 3:
@@ -225,7 +225,7 @@ OPE 5:
     $ ¿Qué pasa?
     - Todo está en ruinas.
     - No veo a nadie.
-    - ¿Qué debería hacer?
+    - ¿Qué debería hacer ahora?
     $ ¿Ves algún lugar que parezca cerrado?
     - Mmm...
     - Veo un par de edificios residenciales, pero la mayoría están en ruinas.
@@ -426,7 +426,7 @@ USU 2:
     - Espera.
     - Ya no lo veo, creo que no me sigue.
     - Cómo suena este piso, toda la madera está podrida.
-    - Voy a pisar con cuidado.
+    $ Pisa con cuidado.
     - Ésta está cerrada.
     - ...
     $ ¿Todo bien?
@@ -434,7 +434,7 @@ USU 2:
     - Pero está oscuro, no veo nada.
     - ¡Ah! Que susto.
     - Solo pateé una varilla de metal.
-    - ¿Qué debería hacer?
+    - ¿Qué debería hacer aquí?
 
 USU 3:
     - Bien.
@@ -782,7 +782,7 @@ MON 2:
     - Bien, me sigue mirando, voy a acercarme.
     - Tiene... Un rostro humano...
     - Pero su cuerpo es gigante y desproporcionado.
-    - Mide más de dos metros y su cabeza parece pequeña.
+    - Mide más de dos metros y su cabeza se ve pequeña.
     - Tiene una expresión vacía, no parece mover los músculos de su rostro.
     - Tiene la palidez de un cadáver.
     * ...
@@ -793,7 +793,7 @@ MON 2:
 
 MON 3:
     - Bien, me sigue mirando, voy a acercarme.
-    - Es enorme, pero su cabeza parece pequeña.
+    - Es enorme, pero su cabeza se ve pequeña.
     - Sigo sin lograr ver su rostro.
     - ¡Ah!
     - Se va.
@@ -1037,8 +1037,8 @@ Bifurcación SOT 0:
     Ve firme y lento
 
 SOT 0:
-    - Oh. Creo que no puede entrar.
-    - Pero es gigante ¿Cómo no puede abrirla?
+    - Sí. Creo que no puede abrirla.
+    - Pero es gigante ¿Cómo no puede hacerlo?
     - Bien, la patearé.
     - Aunque no creo que sea buena idea.
     - ...

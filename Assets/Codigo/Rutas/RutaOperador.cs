@@ -82,12 +82,12 @@ public class RutaOperador : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_0", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_0", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_1", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador0_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador0_2", ruta, NivelEstrés.alto),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_3", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_4", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_5", ruta, NivelEstrés.alto),
             ElementoDialogo.CrearDiálogo(Personajes.operador, "operador0_6", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_7", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_8", ruta),
@@ -98,6 +98,7 @@ public class RutaOperador : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_13", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.operador, "operador0_14", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_15", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador0_16", ruta),
 
             // Siguiente diálogo
             CrearOperador_2()
@@ -346,11 +347,11 @@ public class RutaOperador : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_9_1_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador9_1_0", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.operador, "ANIMACIÓN OPERADOR", ruta, NivelEstrés.alto, Animaciones.miraManos),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_9_1_1", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_9_1_2", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_9_1_3", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador9_1_1", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador9_1_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador9_1_3", ruta),
 
             // Final
             CrearOperador_10()
@@ -362,9 +363,9 @@ public class RutaOperador : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_9_2_0", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_9_2_1", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_9_2_2", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador9_2_0", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador9_2_1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador9_2_2", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_9_2_3", ruta, NivelEstrés.alto),
 
             // Final
@@ -377,44 +378,44 @@ public class RutaOperador : InterfazRuta
     {
         var listaDiálogos = new List<ElementoDialogo>
         {
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_10_0", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_1", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_10_2", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_10_3", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_4", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_5", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_10_6", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_10_7", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_8", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_9", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_10", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_11", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_12", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_13", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_10_14", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_10_15", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_16", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_17", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_18", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_19", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_20", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_21", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_22", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_23", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_24", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador_10_25", ruta, NivelEstrés.alto),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador_10_26", ruta, NivelEstrés.gritando),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_27", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "operador_10_28", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "operador_10_29", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "operador_10_30", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_31", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_32", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_33", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_34", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "operador_10_35", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_36", ruta, NivelEstrés.bajo),
-            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador_10_37", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador10_0", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_1", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador10_2", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador10_3", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_4", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_5", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador10_6", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador10_7", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_8", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_9", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_10", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_11", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_12", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_13", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador10_14", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador10_15", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_16", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_17", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_18", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_19", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_20", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_21", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_22", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_23", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_24", ruta),
+            ElementoDialogo.CrearDiálogo(Personajes.sobreviviente, "operador10_25", ruta, NivelEstrés.alto),
+            ElementoDialogo.CrearDiálogo(Personajes.usuario, "operador10_26", ruta, NivelEstrés.gritando),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_27", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "operador10_28", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "operador10_29", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "operador10_30", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_31", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_32", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_33", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_34", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.monstruo, "operador10_35", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_36", ruta, NivelEstrés.bajo),
+            ElementoDialogo.CrearDiálogo(Personajes.operador, "operador10_37", ruta, NivelEstrés.bajo),
 
             // Final
             ElementoDialogo.CrearFinal("OPERADOR_10", TipoFinal.captura, ruta)

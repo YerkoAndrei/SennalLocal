@@ -53,7 +53,6 @@ public class RutaIntro : InterfazRuta
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_6", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_7", ruta),
             ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_8", ruta),
-            ElementoDialogo.CrearDiálogo(Personajes.usuario, "intro0_9", ruta),
 
             // Opciones
             CrearBifurcación_intro_0()
