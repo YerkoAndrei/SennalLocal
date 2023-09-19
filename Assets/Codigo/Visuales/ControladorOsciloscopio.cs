@@ -97,8 +97,8 @@ public class ControladorOsciloscopio : MonoBehaviour
                 break;
             case NivelEstrés.bajo:
                 velocidadVertical = 0.08f;
-                alto = new Vector3(luz.localPosition.x, 0.01f, luz.localPosition.z);
-                bajo = new Vector3(luz.localPosition.x, -(0.01f), luz.localPosition.z);
+                alto = new Vector3(luz.localPosition.x, 0.008f, luz.localPosition.z);
+                bajo = new Vector3(luz.localPosition.x, -(0.008f), luz.localPosition.z);
                 break;
             case NivelEstrés.normal:
                 velocidadVertical = 0.18f;
