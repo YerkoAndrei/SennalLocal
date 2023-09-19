@@ -11,7 +11,7 @@ public class RutaAutor : InterfazRuta
     public ElementoDialogo CrearAutor_0(string pregunta)
     {
         var listaDiálogos = new List<ElementoDialogo>();
-        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "autor0", ruta));
+        listaDiálogos.Add(ElementoDialogo.CrearDiálogo(Personajes.operador, "autor0_0", ruta));
 
         // Respuesta correspondiente
         switch (pregunta)
