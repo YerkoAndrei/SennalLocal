@@ -1,6 +1,7 @@
 ﻿// YerkoAndrei
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -125,8 +126,11 @@ public class SistemaTraduccion : MonoBehaviour
         var posiblePregunta = SimplificaTexto(pregunta);
         var encontrada = string.Empty;
 
+        // Lista de preguntas
+        var preguntas = diccionario.Where(o => o.Key.Contains("pregunta"));
+
         // Busca y modifica preguntas
-        foreach (var elemento in diccionario)
+        foreach (var elemento in preguntas)
         {
             if (SimplificaTexto(elemento.Value) == posiblePregunta)
                 encontrada = elemento.Key;

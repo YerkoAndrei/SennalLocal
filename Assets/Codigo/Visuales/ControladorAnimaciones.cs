@@ -143,7 +143,7 @@ public class ControladorAnimaciones : MonoBehaviour
         SistemaAnimacion.MarcarAnimación(true);
         SistemaSonidos.ReproducirAnimación(Sonidos.estática);
         StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
 
         // Salida forzosa
         Application.Quit();

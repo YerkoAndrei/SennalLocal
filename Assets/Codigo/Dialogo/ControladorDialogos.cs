@@ -80,6 +80,7 @@ public class ControladorDialogos : MonoBehaviour
     [SerializeField] private RectTransform rectInteractuables;
 
     private ControladorCamara controladorCamara;
+    private ControladorMenu controladorMenú;
 
     private ElementoDialogo diálogoActual;
     private List<ElementoInterfazOpcion> opcionesActuales;
@@ -112,6 +113,7 @@ public class ControladorDialogos : MonoBehaviour
         VerImagenContinuar(false);
 
         controladorCamara = FindObjectOfType<ControladorCamara>();
+        controladorMenú = FindObjectOfType<ControladorMenu>();
         opcionesActuales = new List<ElementoInterfazOpcion>();
 
         // Estados limpios
@@ -277,7 +279,14 @@ public class ControladorDialogos : MonoBehaviour
         }
         else
         {
-            var textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
+            var textoReal = string.Empty;
+
+            // Excepción nombre monstruo
+            if(diálogoActual.especial != DiálogoEspecial.noTraducible)
+                textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
+            else
+                textoReal = diálogoActual.texto;
+
             textoReal = FormatearTextoFinal(textoReal);
 
             ContarTiempoDiálogo(textoReal);
@@ -293,6 +302,7 @@ public class ControladorDialogos : MonoBehaviour
 
     private string FormatearTextoFinal(string texto)
     {
+        // Excepción nombre operador
         if (diálogoActual.especial == DiálogoEspecial.conFormato)
             texto = texto.Replace(carácterReemplazo, SistemaMemoria.ObtenerNombreDado());
 
@@ -433,8 +443,10 @@ public class ControladorDialogos : MonoBehaviour
         mostrandoTexto = false;
         VerImagenContinuar(true);
 
-        if (mostrarTexto)
+        if (mostrarTexto && diálogoActual.especial != DiálogoEspecial.noTraducible)
             txtDiálogo.text = FormatearTextoFinal(SistemaTraduccion.ObtenerTraducción(diálogoActual.texto));
+        else if (mostrarTexto && diálogoActual.especial == DiálogoEspecial.noTraducible)
+            txtDiálogo.text = FormatearTextoFinal(diálogoActual.texto);
 
         // Continúa o termina guión
         if (diálogoActual.tipoDiálogo == TipoDiálogo.final)
@@ -610,9 +622,9 @@ public class ControladorDialogos : MonoBehaviour
             respuestaVálida = SistemaTraduccion.VerificarPreguntaVálida(inputPregunta.text);
 
         if (respuestaVálida)
-            IniciarDiálogo(diálogoActual.siguienteDiálogo);
+            StartCoroutine(SeguirDiálogoOpción(diálogoActual.siguienteDiálogo));
         else
-            IniciarDiálogo(diálogoActual.siguienteDiálogoNegativo);
+            StartCoroutine(SeguirDiálogoOpción(diálogoActual.siguienteDiálogoNegativo));
     }
 
     private void LimpiarInterfaz()
@@ -664,6 +676,7 @@ public class ControladorDialogos : MonoBehaviour
                 break;
         }
 
+        controladorMenú.MostrarMenúJuego(false);
         SistemaMemoria.MarcarFinal(diálogoActual.texto, tipoFinal);
         SistemaAnimacion.MostrarAnimación(Animaciones.soloEfectos);
         IniciarDiálogo(diálogoFinal);

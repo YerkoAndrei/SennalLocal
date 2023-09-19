@@ -61,7 +61,8 @@ public class Constantes
     {
         nada,
         conFormato,
-        noSaltar
+        noSaltar,
+        noTraducible
     }
 
     // Configuración
