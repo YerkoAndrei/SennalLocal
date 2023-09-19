@@ -519,12 +519,12 @@ USU 8:
 
 USU 9:
     - Cómo suena este piso, toda la madera está podrida.
-    - Voy a pisar con cuidado.
+    $ Pisa con cuidado.
     - ...
     $ ¿Todo bien?
     - Sí, entré a una habitación al otro lado de la escalera.
     - Vi que había una luz débil.
-    - Hay una lámpara encendida, ésto no estaba aquí antes, la habría visto desde la escalera.
+    - Hay una linterna encendida en el suelo, ésto no estaba aquí antes, la habría visto desde la escalera.
     - ¿Qué debería hacer?
 
 USU 10:
@@ -655,6 +655,7 @@ USU 15:
     (Llamada perdida. El usuario ha sido capturado.)
 
 USU 16:
+    - ¿La de la caja?
     - Mmm...
     - No veo una cerradura.
     - ¡Oh! Sí la encontré.
@@ -818,8 +819,7 @@ MON 5:
     - Se detuvo ante una puerta.
     - Me está mirando.
     - Mmm...
-    - ¡Ah!
-    - Creo que me está pidiendo ayuda para abrirla.
+    - Ah, Creo que me está pidiendo ayuda para abrirla.
     - ¿Qué debería hacer?
 
 MON 6:
@@ -1047,7 +1047,7 @@ SOT 0:
     - Salió corriendo, me dejó solo.
     - ¿Se habrá asustado?
     - La puerta se abrió, eso no tiene sentido.
-    $ Revisa peligros por la sala.
+    $ Revisa peligros por la habitación.
     - Oh sí, lo había olvidado.
     - Voy a entrar.
     - Hay un escritorio viejo, otros muebles viejos y una puerta.
