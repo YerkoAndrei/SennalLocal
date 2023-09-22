@@ -140,6 +140,8 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicIniciar()
     {
+        SistemaPublicidad.DestruirBanner();
+
         iniciado = true;
 
         ActivarBotones(false);
@@ -158,6 +160,8 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicReiniciar()
     {
+        SistemaPublicidad.DestruirBanner();
+
         menúInicio.SetActive(false);
         menúJuego.SetActive(false);
 
@@ -180,6 +184,8 @@ public class ControladorMenu : MonoBehaviour
         if (!controladorDiálogos.ObtenerDisponibilidad() || !controladorCámara.ObtenerDisponibilidad())
             return;
 
+        SistemaPublicidad.DestruirBanner();
+
         ActivarBotones(false);
         SistemaAnimacion.AnimarColor(imgTítulo, 1, true, Color.white, colorTransparente, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
@@ -199,6 +205,8 @@ public class ControladorMenu : MonoBehaviour
     {
         if (!controladorDiálogos.ObtenerDisponibilidad() || !controladorCámara.ObtenerDisponibilidad())
             return;
+
+        SistemaPublicidad.MostrarBanner();
 
         btnIniciar.SetActive(false);
         btnReiniciar.SetActive(true);
@@ -322,8 +330,14 @@ public class ControladorMenu : MonoBehaviour
 
     public void EnClicEnlaceJuego()
     {
-        Application.OpenURL("https://yerkoandrei.itch.io/sennal-local");
+        Application.OpenURL("https://yerkoandrei.itch.io/local-signal");
     }
+
+    public void EnClicPublicidad()
+    {
+        SistemaPublicidad.MostrarRecomensado();
+    }
+
     private void PrenderIdiomas()
     {
         foreach (var elemento in idiomas)
