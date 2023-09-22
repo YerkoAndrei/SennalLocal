@@ -43,7 +43,7 @@ public class SistemaPublicidad : MonoBehaviour
         if (instancia.modoPrueba)
             return "ca-app-pub-3940256099942544/6300978111";
         else
-            return "";
+            return "ca-app-pub-2409944020661987/3776753669";
 #elif UNITY_IOS || UNITY_IPHONE
         if (instancia.modoPrueba)
             return "ca-app-pub-3940256099942544/2934735716";
@@ -60,7 +60,7 @@ public class SistemaPublicidad : MonoBehaviour
         if (instancia.modoPrueba)
             return "ca-app-pub-3940256099942544/5224354917";
         else
-            return "";
+            return "ca-app-pub-2409944020661987/6311966405";
 #elif UNITY_IOS || UNITY_IPHONE
         if (instancia.modoPrueba)
             return "ca-app-pub-3940256099942544/1712485313";
