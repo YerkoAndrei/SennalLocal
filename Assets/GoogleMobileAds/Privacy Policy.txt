@@ -1,0 +1,4 @@
+This game uses Google AdMob.
+This game does not save any other data than that.
+
+https://policies.google.com/privacy
