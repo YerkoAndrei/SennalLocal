@@ -27,7 +27,7 @@ public class SistemaAnimacion : MonoBehaviour
             Iniciar();
         }
     }
-    
+
     private void Iniciar()
     {
         controladorAnimaciones = FindObjectOfType<ControladorAnimaciones>();
