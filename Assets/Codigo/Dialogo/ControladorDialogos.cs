@@ -700,9 +700,15 @@ public class ControladorDialogos : MonoBehaviour
     }
 
     public void MostrarPaneles(bool mostrar)
-    {        
+    {
         if (mostrar)
+        {
             MostrarPanelesFijo(mostrar);
+
+            // Traduce despues de cambiar idioma
+            if (puedeContinuar && diálogoActual.especial != DiálogoEspecial.noTraducible)
+                txtDiálogo.text = FormatearTextoFinal(SistemaTraduccion.ObtenerTraducción(diálogoActual.texto));
+        }
         else
             activo = mostrar;
 
