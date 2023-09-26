@@ -3,10 +3,10 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
-public class Constantes
+public static class Constantes
 {
     public static Random aleatorio;
-    protected static int llave = 08021996;
+    private static int llave = 08021996;
 
     public static UnityEngine.Color colorTransparente = new UnityEngine.Color(1, 1, 1, 0);
 

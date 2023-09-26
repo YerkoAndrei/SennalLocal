@@ -1,5 +1,4 @@
 ﻿// YerkoAndrei
-using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,13 +59,6 @@ public class ControladorMenu : MonoBehaviour
 
     private void Start()
     {
-        // Semilla aleatoria
-        var fecha = DateTime.Parse("08/02/1996");
-        var semilla = (int)(DateTime.Now - fecha).TotalSeconds;
-
-        aleatorio = new System.Random(semilla);
-        UnityEngine.Random.InitState(semilla);
-
         // Controladores
         controladorDiálogos = FindObjectOfType<ControladorDialogos>();
         controladorCámara = FindObjectOfType<ControladorCamara>();

@@ -1,4 +1,5 @@
 ﻿// YerkoAndrei
+using System;
 using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
@@ -27,6 +28,13 @@ public class SistemaMemoria : MonoBehaviour
 
     private void Iniciar()
     {
+        // Semilla aleatoria
+        var fecha = DateTime.Parse("08/02/1996");
+        var semilla = (int)(DateTime.Now - fecha).TotalSeconds;
+
+        aleatorio = new System.Random(semilla);
+        UnityEngine.Random.InitState(semilla);
+
         rutaArchivo = Application.persistentDataPath + "/EstadísticasSeñalLocal";
 
         if (File.Exists(rutaArchivo))
