@@ -1,4 +1,4 @@
-# SennalLocal
+# Señal Local
 <img src="https://github.com/YerkoAndrei/SennalLocal/blob/main/Assets/Texturas/%C3%8Dcono.png" height="128" width="128">
 
 <b>Eres un <i>Operador</i> de emergencias</b>
