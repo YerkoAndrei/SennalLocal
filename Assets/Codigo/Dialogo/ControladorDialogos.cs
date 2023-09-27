@@ -164,7 +164,7 @@ public class ControladorDialogos : MonoBehaviour
         else
             controladorCamara.CambiarPosición(CámarasCine.juego);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.4f);
         yield return new WaitUntil(() => activo);
 
         var intro = new RutaIntro();
@@ -787,7 +787,7 @@ public class ControladorDialogos : MonoBehaviour
         yield return new WaitForSeconds(1);
         SistemaSonidos.ReproducirAnimación(Sonidos.matarUsuario);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2.3f);
         FinalizarPartida(tipoFinal, ruta);
     }
 }

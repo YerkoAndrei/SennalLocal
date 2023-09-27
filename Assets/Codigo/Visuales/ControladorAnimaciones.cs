@@ -52,7 +52,7 @@ public class ControladorAnimaciones : MonoBehaviour
 
         SistemaSonidos.ActivarMúsica(true);
     }
-    
+
     // Sistema animación
     public void MostrarAnimación(Animaciones animación)
     {
