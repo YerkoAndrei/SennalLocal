@@ -1,6 +1,6 @@
 {
     "00": "---------------------------------------------------------------------------------------------------- endings",
-    "final_muerte": "(Call lost . The <i>user</i> has <b>died</b>.)",
+    "final_muerte": "(Call lost. The <i>user</i> has <b>died</b>.)",
     "final_captura": "(Call lost. The <i>user</i> has been <b>captured</b>.)",
     "final_escape": "(Call lost. The <i>user</i> has <b>escaped</b>.)",
 
