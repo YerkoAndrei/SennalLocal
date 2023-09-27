@@ -102,7 +102,7 @@ public class ControladorAnimaciones : MonoBehaviour
         animadorOperador.SetTrigger("Sentarse");
         animadorSilla.SetTrigger("Entrar");
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         SistemaSonidos.ReproducirAnimación(Sonidos.sillaEntrar);
     }
 
