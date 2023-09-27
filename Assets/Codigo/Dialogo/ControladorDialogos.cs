@@ -781,6 +781,9 @@ public class ControladorDialogos : MonoBehaviour
 
     private IEnumerator FinalizarEspecialUsuario(TipoFinal tipoFinal, Rutas ruta)
     {
+        estado = Estados.mostrandoAnimación;
+        SistemaAnimacion.MarcarAnimación(true);
+
         panelOscuro.gameObject.SetActive(true);
         SistemaAnimacion.AnimarColor(panelOscuro, 1, false, Color.clear, Color.black, null);
 
@@ -788,6 +791,7 @@ public class ControladorDialogos : MonoBehaviour
         SistemaSonidos.ReproducirAnimación(Sonidos.matarUsuario);
 
         yield return new WaitForSeconds(2.3f);
+        SistemaAnimacion.MarcarAnimación(false);
         FinalizarPartida(tipoFinal, ruta);
     }
 }
