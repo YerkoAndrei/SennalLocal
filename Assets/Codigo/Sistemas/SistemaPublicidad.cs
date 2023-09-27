@@ -6,7 +6,7 @@ public class SistemaPublicidad : MonoBehaviour
     [SerializeField] private bool modoPrueba;
     
     private static SistemaPublicidad instancia;
-    private static bool modoMóvil;
+    public static bool modoMóvil;
 
     // Intancias
     private BannerView banner;

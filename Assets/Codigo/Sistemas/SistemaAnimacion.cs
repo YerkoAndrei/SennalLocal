@@ -34,7 +34,13 @@ public class SistemaAnimacion : MonoBehaviour
 
         // Recuerda anterior o usa predeterminado
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
-            CambiarGráficos(Gráficos.altos);
+        {
+            // Movil bajo / PC alto
+            if(SistemaPublicidad.modoMóvil)
+                CambiarGráficos(Gráficos.bajos);
+            else
+                CambiarGráficos(Gráficos.altos);
+        }
         else
             CambiarGráficos((Gráficos)Enum.Parse(typeof(Gráficos), PlayerPrefs.GetString("gráficos")));
     }
