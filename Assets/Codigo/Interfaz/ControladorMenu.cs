@@ -97,7 +97,7 @@ public class ControladorMenu : MonoBehaviour
         txtVersión.text = Application.version;
 
         // Menú
-        IniciarMenú();
+        IniciarMenú(false);
     }
 
     private void Update()
@@ -111,7 +111,7 @@ public class ControladorMenu : MonoBehaviour
         }
     }
 
-    public void IniciarMenú()
+    public void IniciarMenú(bool finalJuego)
     {
         panelBotones.SetActive(true);
         panelOpciones.SetActive(false);
@@ -126,8 +126,13 @@ public class ControladorMenu : MonoBehaviour
 
         corrutinaColorTítulo = SistemaAnimacion.AnimarColor(imgTítulo, 4, true, colorRojoClaro, Color.white, null);
         SistemaAnimacion.AnimarColor(panelOscuro, 4, false, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
-        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, null);
         SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, true, Direcciones.arriba, null);
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, () =>
+        {
+            // Publicidad móvil
+            if (finalJuego)
+                SistemaPublicidad.MostrarInter();
+        });
     }
 
     public void EnClicIniciar()
@@ -323,11 +328,6 @@ public class ControladorMenu : MonoBehaviour
     public void EnClicEnlaceJuego()
     {
         Application.OpenURL("https://yerkoandrei.itch.io/local-signal");
-    }
-
-    public void EnClicPublicidad()
-    {
-        SistemaPublicidad.MostrarRecomensado();
     }
 
     private void PrenderIdiomas()

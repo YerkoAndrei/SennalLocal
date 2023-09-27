@@ -107,7 +107,7 @@ public class ControladorCamara : MonoBehaviour
                 controladorMenú.MostrarMenúJuego(true);
                 break;
             case CámarasCine.final:
-                controladorMenú.IniciarMenú();
+                controladorMenú.IniciarMenú(true);
                 break;
             case CámarasCine.menú:
             case CámarasCine.usuario:

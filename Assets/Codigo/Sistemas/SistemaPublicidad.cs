@@ -10,7 +10,7 @@ public class SistemaPublicidad : MonoBehaviour
 
     // Intancias
     private BannerView banner;
-    private RewardedAd recompensado;
+    private InterstitialAd inter;
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class SistemaPublicidad : MonoBehaviour
         if (modoMóvil)
         {
             MobileAds.Initialize(initStatus => { });
-            CargarRecomensado();
+            CargarInter();
             MostrarBanner();
         }
     }
@@ -48,26 +48,26 @@ public class SistemaPublicidad : MonoBehaviour
         if (instancia.modoPrueba)
             return "ca-app-pub-3940256099942544/2934735716";
         else
-            return "";
+            return "unused";
 #else
-        return "unexpected_platform";
+        return "unused";
 #endif
     }
 
-    private static string ObtenerIdPublicidadRecompensado()
+    private static string ObtenerIdPublicidadInter()
     {
 #if UNITY_ANDROID
         if (instancia.modoPrueba)
-            return "ca-app-pub-3940256099942544/5224354917";
+            return "ca-app-pub-3940256099942544/1033173712";
         else
-            return "ca-app-pub-2409944020661987/6311966405";
+            return "ca-app-pub-2409944020661987/4941902777";
 #elif UNITY_IOS || UNITY_IPHONE
         if (instancia.modoPrueba)
-            return "ca-app-pub-3940256099942544/1712485313";
+            return "ca-app-pub-3940256099942544/4411468910";
         else
-            return "";
+            return "unused";
 #else
-        return "unexpected_platform";
+        return "unused";
 #endif
     }
 
@@ -101,45 +101,41 @@ public class SistemaPublicidad : MonoBehaviour
         instancia.banner = null;
     }
 
-    // Recompensado
-    private static void CargarRecomensado()
+    // Intersticial
+    private static void CargarInter()
     {
         if (!modoMóvil)
             return;
 
-        if (instancia.recompensado != null)
+        if (instancia.inter != null)
         {
-            instancia.recompensado.Destroy();
-            instancia.recompensado = null;
+            instancia.inter.Destroy();
+            instancia.inter = null;
         }
 
-        // Carga de publicidad recompensada
+        // Carga de publicidad intersticial
         var adRequest = new AdRequest();
-        RewardedAd.Load(ObtenerIdPublicidadRecompensado(), adRequest,
-            (RewardedAd ad, LoadAdError error) =>
+        InterstitialAd.Load(ObtenerIdPublicidadInter(), adRequest,
+            (InterstitialAd ad, LoadAdError error) =>
             {
                 if (error != null || ad == null)
                 {
-                    Debug.LogError("Error carga: " + error);
+                    Debug.LogError("Error inter: " + error);
                     return;
                 }
-                instancia.recompensado = ad;
+                instancia.inter = ad;
+
+                // Vuelve a cargar
+                instancia.inter.OnAdFullScreenContentClosed += CargarInter;
             });
     }
 
-    public static void MostrarRecomensado()
+    public static void MostrarInter()
     {
         if (!modoMóvil)
             return;
 
-        if (instancia.recompensado != null && instancia.recompensado.CanShowAd())
-        {
-            instancia.recompensado.Show((Reward reward) =>
-            {
-                // Destruye y vuelve a cargar
-                instancia.recompensado.Destroy();
-                CargarRecomensado();
-            });
-        }
+        if (instancia.inter != null && instancia.inter.CanShowAd())
+            instancia.inter.Show();
     }
 }
