@@ -269,7 +269,7 @@ public class ControladorMenu : MonoBehaviour
         if(mostrar)
             menúJuego.SetActive(mostrar);
 
-        SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, mostrar, true, Direcciones.arriba, null);
+        SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, mostrar, true, Direcciones.arriba, () => menúJuego.SetActive(mostrar));
     }
 
     public void EnClicCréditos()
