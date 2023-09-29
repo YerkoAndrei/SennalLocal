@@ -468,9 +468,14 @@ public class ControladorDialogos : MonoBehaviour
 
     private void ContinuarSiguienteAcción()
     {
-        // Siguiente diálogo
+        var textoOpciones = diálogoActual.texto;
         diálogoActual = diálogoActual.siguienteDiálogo;
 
+        // Opciones no tienen texto, asi que se reemplaza
+        if (string.IsNullOrEmpty(diálogoActual.texto))
+            diálogoActual.texto = textoOpciones;
+
+        // Siguiente diálogo
         switch (diálogoActual.tipoDiálogo)
         {
             case TipoDiálogo.diálogo:
