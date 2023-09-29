@@ -77,7 +77,7 @@ public class SistemaPublicidad : MonoBehaviour
         if (instancia.banner != null)
             DestruirBanner();
 
-        instancia.banner = new BannerView(ObtenerIdPublicidadBanner(), AdSize.IABBanner, AdPosition.BottomLeft);
+        instancia.banner = new BannerView(ObtenerIdPublicidadBanner(), AdSize.MediumRectangle, AdPosition.BottomLeft);
     }
 
     public static void MostrarBanner()
