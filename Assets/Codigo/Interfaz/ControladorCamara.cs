@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using static Constantes;
 
 public class ControladorCamara : MonoBehaviour
@@ -8,6 +9,7 @@ public class ControladorCamara : MonoBehaviour
     public Transform posicionadorCámara;
     [SerializeField] private Transform vibradorCámara;
     [SerializeField] private Camera cámara;
+    [SerializeField] private UniversalAdditionalCameraData cámaraData;
 
     [Header("Curvas")]
     [SerializeField] private AnimationCurve curvaSuave;
@@ -168,5 +170,21 @@ public class ControladorCamara : MonoBehaviour
     public bool ObtenerDisponibilidad()
     {
         return !moviendo;
+    }
+
+    public void CambiarGráficos(Gráficos gráficos)
+    {
+        switch(gráficos)
+        {
+            case Gráficos.bajos:
+                cámaraData.antialiasing = AntialiasingMode.None;
+                break;
+            case Gráficos.medios:
+                cámaraData.antialiasing = AntialiasingMode.FastApproximateAntialiasing;
+                break;
+            case Gráficos.altos:
+                cámaraData.antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+                break;
+        }
     }
 }

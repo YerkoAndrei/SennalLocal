@@ -15,6 +15,7 @@ public class SistemaAnimacion : MonoBehaviour
     public AnimationCurve curvaAnimaciónEstandar;
 
     private ControladorAnimaciones controladorAnimaciones;
+    private ControladorCamara controladorCamara;
     private ElementoDesactivable[] desactivables;
 
     private void Start()
@@ -33,6 +34,7 @@ public class SistemaAnimacion : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         controladorAnimaciones = FindObjectOfType<ControladorAnimaciones>();
+        controladorCamara = FindObjectOfType<ControladorCamara>();
         desactivables = FindObjectsOfType<ElementoDesactivable>();
 
         // Recuerda anterior o usa predeterminado
@@ -56,10 +58,19 @@ public class SistemaAnimacion : MonoBehaviour
         QualitySettings.SetQualityLevel((int)gráficos, true);
 
         // Desactiva según gráficos
-        foreach(var desactivable in instancia.desactivables)
+        if (instancia.desactivables == null)
+            instancia.desactivables = FindObjectsOfType<ElementoDesactivable>();
+
+        foreach (var desactivable in instancia.desactivables)
         {
             desactivable.DesActivar();
         }
+
+        // Cambios cámara
+        if (instancia.controladorCamara == null)
+            instancia.controladorCamara = FindObjectOfType<ControladorCamara>();
+
+        instancia.controladorCamara.CambiarGráficos(gráficos);
     }
 
     // Animaciones juego
