@@ -30,6 +30,7 @@ public class SistemaAnimacion : MonoBehaviour
 
     private void Iniciar()
     {
+        Application.targetFrameRate = 60;
         controladorAnimaciones = FindObjectOfType<ControladorAnimaciones>();
 
         // Recuerda anterior o usa predeterminado
