@@ -7,6 +7,7 @@ using static Constantes;
 public class ControladorAnimaciones : MonoBehaviour
 {
     [Header("Personajes")]
+    [SerializeField] private GameObject usuarioPadre;
     [SerializeField] private Transform usuario;
     [SerializeField] private Transform objetivoUsuario;
 
@@ -41,6 +42,8 @@ public class ControladorAnimaciones : MonoBehaviour
         controladorCamara = FindObjectOfType<ControladorCamara>();
         controladorMenú = FindObjectOfType<ControladorMenu>();
         animadorLuzFondo = FindObjectOfType<AnimadorLuzFondo>();
+
+        usuarioPadre.SetActive(false);
         ojoOperador.gameObject.SetActive(false);
         ajusteMirada = new Vector3(-0.05f, 0.05f, 0);
 
@@ -151,6 +154,8 @@ public class ControladorAnimaciones : MonoBehaviour
 
     private IEnumerator AnimarLlegadaUsuario()
     {
+        usuarioPadre.SetActive(true);
+
         SistemaAnimacion.MarcarAnimación(true);
         controladorMenú.MostrarMenúJuego(false);
         controladorDiálogos.OcultarDiálogos();

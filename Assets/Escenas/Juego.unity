@@ -2842,6 +2842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f7372f1ad097a449b95f226be2b94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usuarioPadre: {fileID: 8146991606417665355}
   usuario: {fileID: 8146991606417665356}
   objetivoUsuario: {fileID: 1092305357}
   ojoOperador: {fileID: 532928047}
@@ -9827,6 +9828,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7c0df1bf77e0c1469456f6dc42fa994, type: 3}
+--- !u!1 &8146991606417665355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8370088795666961328, guid: d7c0df1bf77e0c1469456f6dc42fa994,
+    type: 3}
+  m_PrefabInstance: {fileID: 8146991606417665354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8146991606417665356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8540325514877678608, guid: d7c0df1bf77e0c1469456f6dc42fa994,
