@@ -32,6 +32,7 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private RectTransform rectBotones;
     [SerializeField] private RectTransform rectOpciones;
     [SerializeField] private RectTransform rectCréditos;
+    [SerializeField] private RectTransform rectVersión;
 
     [Header("Colores")]
     [SerializeField] private Color colorRojoClaro;
@@ -127,6 +128,7 @@ public class ControladorMenu : MonoBehaviour
         corrutinaColorTítulo = SistemaAnimacion.AnimarColor(imgTítulo, 4, true, colorRojoClaro, Color.white, null);
         SistemaAnimacion.AnimarColor(panelOscuro, 4, false, Color.black, Color.clear, () => panelOscuro.gameObject.SetActive(false));
         SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, true, Direcciones.arriba, null);
+        SistemaAnimacion.AnimarPanel(rectVersión, 0.5f, true, true, Direcciones.derecha, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.5f, true, true, Direcciones.derecha, () =>
         {
             // Publicidad móvil
@@ -144,6 +146,7 @@ public class ControladorMenu : MonoBehaviour
         ActivarBotones(false);
         SistemaAnimacion.CancelarCorrutina(corrutinaColorTítulo);
         SistemaAnimacion.AnimarColor(imgTítulo, 1, true, Color.white, colorTransparente, null);
+        SistemaAnimacion.AnimarPanel(rectVersión, 0.3f, false, true, Direcciones.derecha, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
@@ -164,6 +167,7 @@ public class ControladorMenu : MonoBehaviour
 
         ActivarBotones(false);
         SistemaAnimacion.AnimarColor(imgTítulo, 1, true, Color.white, colorTransparente, null);
+        SistemaAnimacion.AnimarPanel(rectVersión, 0.3f, false, false, Direcciones.derecha, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
@@ -185,6 +189,7 @@ public class ControladorMenu : MonoBehaviour
 
         ActivarBotones(false);
         SistemaAnimacion.AnimarColor(imgTítulo, 1, true, Color.white, colorTransparente, null);
+        SistemaAnimacion.AnimarPanel(rectVersión, 0.3f, false, false, Direcciones.derecha, null);
         SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, false, false, Direcciones.derecha, () =>
         {
             menúInicio.SetActive(false);
@@ -214,12 +219,13 @@ public class ControladorMenu : MonoBehaviour
 
         SistemaAnimacion.CancelarAnimación();
         SistemaAnimacion.AnimarColor(imgTítulo, 1, true, colorTransparente, Color.white, null);
+        SistemaAnimacion.AnimarPanel(rectVersión, 0.3f, true, true, Direcciones.derecha, null);
+        SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, true, true, Direcciones.derecha, null);
         SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, false, false, Direcciones.arriba, () =>
         {
             menúJuego.SetActive(false);
             ActivarBotones(true);
         });
-        SistemaAnimacion.AnimarPanel(rectBotones, 0.3f, true, true, Direcciones.derecha, null);
 
         controladorCámara.CambiarPosición(CámarasCine.menú);
         ControladorOsciloscopio.CambiarNivelEstrés(NivelEstrés.muerto);
