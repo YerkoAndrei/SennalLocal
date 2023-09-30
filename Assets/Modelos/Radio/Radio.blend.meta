@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BaseAntena
-    second: {fileID: 2100000, guid: 6af10c109a3eafb4480068d0c79625e9, type: 2}
+    second: {fileID: 2100000, guid: 60e279e8eaf37984d8a88ff920068dbc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -28,7 +28,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Luz
-    second: {fileID: 2100000, guid: 4972105b336772c45914b2d06801f758, type: 2}
+    second: {fileID: 2100000, guid: fa52a06da4d6ec84a80d9e9b4d4bfa41, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

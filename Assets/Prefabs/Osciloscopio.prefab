@@ -374,7 +374,7 @@ MonoBehaviour:
   tiempoParpadeo: 0.15
   luz: {fileID: 3969201410834926673}
   renderizadorLuz: {fileID: 2808658405624675006}
-  luzAlta: {fileID: 2100000, guid: 462664d5d5016c447b1f78b137b672d8, type: 2}
+  luzAlta: {fileID: 2100000, guid: 897308355d5bb3146a3d9bbec62d7ac3, type: 2}
   luzBaja: {fileID: 2100000, guid: db33c1a5be551bf489b07cd177515e70, type: 2}
 --- !u!114 &6400904668391314309
 MonoBehaviour:
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   tiempoParpadeo: 0.15
   luz: {fileID: 5049188789947038954}
   renderizadorLuz: {fileID: 3964236224551432459}
-  luzAlta: {fileID: 2100000, guid: aa1fff4634518fe488fef57cea61e4aa, type: 2}
+  luzAlta: {fileID: 2100000, guid: f3d2e4e6db0c3aa488e5ba8168baf641, type: 2}
   luzBaja: {fileID: 2100000, guid: db33c1a5be551bf489b07cd177515e70, type: 2}
 --- !u!114 &6962667377675857558
 MonoBehaviour:
@@ -1516,7 +1516,7 @@ MonoBehaviour:
   tiempoParpadeo: 0.15
   luz: {fileID: 8733071050237377887}
   renderizadorLuz: {fileID: 9078845604208405116}
-  luzAlta: {fileID: 2100000, guid: 3d22f8213e179034c804ff1417baff6d, type: 2}
+  luzAlta: {fileID: 2100000, guid: 897308355d5bb3146a3d9bbec62d7ac3, type: 2}
   luzBaja: {fileID: 2100000, guid: db33c1a5be551bf489b07cd177515e70, type: 2}
 --- !u!114 &7718610220878177092
 MonoBehaviour:
@@ -1689,7 +1689,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7925247181669762730
 MonoBehaviour:
   m_ObjectHideFlags: 0

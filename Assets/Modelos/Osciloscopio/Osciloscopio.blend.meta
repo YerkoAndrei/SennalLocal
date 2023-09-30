@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Botones
-    second: {fileID: 2100000, guid: 55b1a8cb8917ab34fb38bbc4ae66f54e, type: 2}
+    second: {fileID: 2100000, guid: 97f52101f643a594f97c16f4e1373ca9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -38,17 +38,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Luz_3
-    second: {fileID: 2100000, guid: 462664d5d5016c447b1f78b137b672d8, type: 2}
+    second: {fileID: 2100000, guid: 897308355d5bb3146a3d9bbec62d7ac3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Luz_4
-    second: {fileID: 2100000, guid: aa1fff4634518fe488fef57cea61e4aa, type: 2}
+    second: {fileID: 2100000, guid: f3d2e4e6db0c3aa488e5ba8168baf641, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Luz_5
-    second: {fileID: 2100000, guid: 3d22f8213e179034c804ff1417baff6d, type: 2}
+    second: {fileID: 2100000, guid: 897308355d5bb3146a3d9bbec62d7ac3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -58,17 +58,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pantalla
-    second: {fileID: 2100000, guid: 9393f0a794a426e41b1fcb979a860201, type: 2}
+    second: {fileID: 2100000, guid: bf7f98f3e60478641a99ab03a3a992c6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Perillas
-    second: {fileID: 2100000, guid: ac840d4d1318cdc4096a6e6a1a060b82, type: 2}
+    second: {fileID: 2100000, guid: 777d49aeb744831419c77ff839b7f79d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sujetadores
-    second: {fileID: 2100000, guid: baa4a42f26ffaa84f80498d1e48d6dc0, type: 2}
+    second: {fileID: 2100000, guid: 60e279e8eaf37984d8a88ff920068dbc, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

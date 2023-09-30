@@ -456,8 +456,8 @@ MonoBehaviour:
   tiempoParpadeo: 0.15
   luz: {fileID: 8466679874353178509}
   renderizadorLuz: {fileID: 8468395286194648122}
-  luzAlta: {fileID: 2100000, guid: 4972105b336772c45914b2d06801f758, type: 2}
-  luzBaja: {fileID: 2100000, guid: 114bbb494fed6774c96dc49e108891ff, type: 2}
+  luzAlta: {fileID: 2100000, guid: fa52a06da4d6ec84a80d9e9b4d4bfa41, type: 2}
+  luzBaja: {fileID: 2100000, guid: db33c1a5be551bf489b07cd177515e70, type: 2}
 --- !u!114 &3183490233105660736
 MonoBehaviour:
   m_ObjectHideFlags: 0
