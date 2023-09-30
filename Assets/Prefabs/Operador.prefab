@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desactivador: 0
+  desactivador: 1
   elementos:
   - {fileID: 503371888408726833}
 --- !u!1 &503371888408726833 stripped

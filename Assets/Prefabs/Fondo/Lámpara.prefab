@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4089926948468874498}
   - component: {fileID: 5285881647327270171}
+  - component: {fileID: 3751186699515838046}
   m_Layer: 0
   m_Name: "L\xE1mpara"
   m_TagString: Untagged
@@ -55,6 +56,19 @@ MonoBehaviour:
   renderizadorLuz: {fileID: 116361867839860}
   luzAlta: {fileID: 2100000, guid: ff4a1499358368c4c984e166316342b9, type: 2}
   luzBaja: {fileID: 2100000, guid: 19a2ffb925f8c2b4a8e8677950560c05, type: 2}
+--- !u!114 &3751186699515838046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3338408693309956447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1943c0b75f01047887d45fb86de420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luz: {fileID: 6297817170644268127}
 --- !u!1 &3615616998964600605
 GameObject:
   m_ObjectHideFlags: 0
