@@ -92,6 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 715267625687532924}
+  - component: {fileID: 6840859026558235204}
+  - component: {fileID: 1457777746822269181}
   m_Layer: 0
   m_Name: Repisa
   m_TagString: Untagged
@@ -123,6 +125,38 @@ Transform:
   - {fileID: 8291263730160290226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6840859026558235204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853423567576865651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desactivador: 1
+  elementos:
+  - {fileID: 6793328950708119610}
+  - {fileID: 533407218793464345}
+--- !u!114 &1457777746822269181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853423567576865651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desactivador: 0
+  elementos:
+  - {fileID: 5627164498501330952}
+  - {fileID: 5803892599876593800}
 --- !u!1 &4674045900096526775
 GameObject:
   m_ObjectHideFlags: 0
