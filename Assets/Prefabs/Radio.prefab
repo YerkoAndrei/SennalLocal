@@ -135,6 +135,38 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1830061420038581850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2460574734923758513}
+  m_Layer: 0
+  m_Name: Luces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2460574734923758513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830061420038581850}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7515477525875147125}
+  m_Father: {fileID: 1530218710533027297}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4014757003100785617
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,12 +295,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5373078631603036105}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.1035, y: 0.1265, z: 0.163}
+  m_LocalRotation: {x: -0.7071069, y: -0, z: -0.0000000018375865, w: 0.70710677}
+  m_LocalPosition: {x: 0.10350018, y: 0.12650001, z: 0.16300002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1530218710533027297}
+  m_Father: {fileID: 2460574734923758513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &8466679874353178509
 Light:
@@ -366,6 +398,7 @@ GameObject:
   - component: {fileID: 1530218710533027297}
   - component: {fileID: 5684309380631972241}
   - component: {fileID: 2006365884050094647}
+  - component: {fileID: 3183490233105660736}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -387,7 +420,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7584224832111858202}
-  - {fileID: 7515477525875147125}
+  - {fileID: 2460574734923758513}
   - {fileID: 4107436323800496605}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -425,6 +458,21 @@ MonoBehaviour:
   renderizadorLuz: {fileID: 8468395286194648122}
   luzAlta: {fileID: 2100000, guid: 4972105b336772c45914b2d06801f758, type: 2}
   luzBaja: {fileID: 2100000, guid: 114bbb494fed6774c96dc49e108891ff, type: 2}
+--- !u!114 &3183490233105660736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258123139596617662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desactivador: 0
+  elementos:
+  - {fileID: 1830061420038581850}
 --- !u!1001 &7983242974589105649
 PrefabInstance:
   m_ObjectHideFlags: 0

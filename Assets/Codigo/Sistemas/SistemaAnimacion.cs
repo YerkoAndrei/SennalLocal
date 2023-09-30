@@ -15,6 +15,7 @@ public class SistemaAnimacion : MonoBehaviour
     public AnimationCurve curvaAnimaciónEstandar;
 
     private ControladorAnimaciones controladorAnimaciones;
+    private ElementoDesactivable[] desactivables;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class SistemaAnimacion : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         controladorAnimaciones = FindObjectOfType<ControladorAnimaciones>();
+        desactivables = FindObjectsOfType<ElementoDesactivable>();
 
         // Recuerda anterior o usa predeterminado
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
@@ -52,6 +54,12 @@ public class SistemaAnimacion : MonoBehaviour
         PlayerPrefs.SetString("gráficos", gráficos.ToString());
 
         QualitySettings.SetQualityLevel((int)gráficos, true);
+
+        // Desactiva según gráficos
+        foreach(var desactivable in instancia.desactivables)
+        {
+            desactivable.DesActivar();
+        }
     }
 
     // Animaciones juego
