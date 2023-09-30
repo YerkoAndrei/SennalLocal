@@ -34,6 +34,7 @@ public class SistemaAnimacion : MonoBehaviour
     private void Iniciar()
     {
         Application.targetFrameRate = 60;
+
         controladorAnimaciones = FindObjectOfType<ControladorAnimaciones>();
         controladorCamara = FindObjectOfType<ControladorCamara>();
         desactivables = FindObjectsOfType<ElementoDesactivable>();
