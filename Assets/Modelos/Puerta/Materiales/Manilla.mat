@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Manilla
-  m_Shader: {fileID: -6465566751694194690, guid: ab1ba73d5e4019b4cad5c8261ccbdd07,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: ab1ba73d5e4019b4cad5c8261ccbdd07, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -72,11 +71,11 @@ Material:
     - Vector1_4DA6594D: 3
     - Vector1_6A0D8353: 0.01
     - Vector1_9AA6457C: 1
-    - Vector1_9E4DCE0A: 1
+    - Vector1_9E4DCE0A: 0.6
     - Vector1_CDC977F8: 0.5
     - Vector1_EA65D269: 10
     - Vector1_F13B8AE1: 50
-    - Vector1_F84E8E58: 1
+    - Vector1_F84E8E58: 0.8
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
