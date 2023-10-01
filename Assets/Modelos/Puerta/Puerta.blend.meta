@@ -23,7 +23,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pared
-    second: {fileID: 2100000, guid: 85f3338faadf2224ebb9c1db7641aafb, type: 2}
+    second: {fileID: 2100000, guid: 005a8fede40dbb144ac5e909baaefa76, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

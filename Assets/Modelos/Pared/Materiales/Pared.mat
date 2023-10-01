@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pared
-  m_Shader: {fileID: -6465566751694194690, guid: 103d88e199bcfcc40880e56c0d58911b,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 4e49ae41cc9751f48a01b4f055c0a712, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -107,8 +106,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_3BC22AFC: {r: 0.62745106, g: 0.47058815, b: 0.2745098, a: 1}
-    - Color_D397321C: {r: 0.627451, g: 0.47058824, b: 0.27450982, a: 1}
+    - Color_3BC22AFC: {r: 0.62745106, g: 0.43137255, b: 0.23529412, a: 1}
+    - Color_D397321C: {r: 0.78431374, g: 0.627451, b: 0.47058824, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
