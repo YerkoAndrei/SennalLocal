@@ -124,7 +124,7 @@ public class ControladorDialogos : MonoBehaviour
         imgPersonaje.gameObject.SetActive(false);
         imgVisto.SetActive(false);
 
-        tiempoEntreClics = 0.1f;
+        tiempoEntreClics = 0.15f;
         tiempoClic = tiempoEntreClics;
 
         foreach (Transform hijo in padreOpciones)
@@ -184,15 +184,22 @@ public class ControladorDialogos : MonoBehaviour
         if (tiempoClic > 0)
             tiempoClic -= Time.deltaTime;
 
-        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetKeyDown(KeyCode.Escape) && !panelPregunta.activeSelf && tiempoClic <= 0)
+        if (Input.anyKeyDown && 
+            !Input.GetMouseButtonDown(0) &&
+            !Input.GetKeyDown(KeyCode.Escape))
         {
-            tiempoClic = tiempoEntreClics;
             EnClic();
         }
     }
 
     public void EnClic()
     {
+        // Control clics
+        if (tiempoClic > 0 || panelPregunta.activeSelf)
+            return;
+
+        tiempoClic = tiempoEntreClics;
+
         // Finales
         if (SistemaAnimacion.mostrandoAnimación)
             return;
@@ -296,7 +303,7 @@ public class ControladorDialogos : MonoBehaviour
 
     private void ApurarDiálogo()
     {
-        if (mostrandoTexto && txtDiálogo.text.Length > 1 && !puedeContinuar && diálogoActual.visto)
+        if (mostrandoTexto && txtDiálogo.text.Length > 1 && !puedeContinuar && diálogoActual.visto && diálogoActual.especial != DiálogoEspecial.noSaltar)
             TerminarTexto(true);
     }
 
@@ -630,6 +637,8 @@ public class ControladorDialogos : MonoBehaviour
             StartCoroutine(SeguirDiálogoOpción(diálogoActual.siguienteDiálogo));
         else
             StartCoroutine(SeguirDiálogoOpción(diálogoActual.siguienteDiálogoNegativo));
+
+        inputPregunta.text = string.Empty;
     }
 
     private void LimpiarInterfaz()
@@ -663,6 +672,7 @@ public class ControladorDialogos : MonoBehaviour
         var diálogoFinal = new ElementoDialogo();
         diálogoFinal.personaje = Personajes.operador;
         diálogoFinal.tipoDiálogo = TipoDiálogo.final;
+        diálogoFinal.especial = DiálogoEspecial.noSaltar;
         diálogoFinal.ruta = ruta;
 
         switch (tipoFinal)
