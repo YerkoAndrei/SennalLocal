@@ -12,6 +12,9 @@ VST DSK Music:
 The Grand
 ChoirZ
 
+Plantilla política de privacidad:
+letsmakeagame.net/game-privacy-policy-generator/
+
 Software usado:
 Unity
 Blender
