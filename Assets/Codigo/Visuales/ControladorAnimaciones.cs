@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -23,24 +23,24 @@ public class ControladorAnimaciones : MonoBehaviour
 
     [Header("Efectos")]
     [SerializeField] private Volume efectos;
-    private FilmGrain granosCámara;
-    private ChromaticAberration aberraciónCromática;
+    private FilmGrain granosCÃ¡mara;
+    private ChromaticAberration aberraciÃ³nCromÃ¡tica;
 
-    private ControladorDialogos controladorDiálogos;
+    private ControladorDialogos controladorDiÃ¡logos;
     private ControladorCamara controladorCamara;
-    private ControladorMenu controladorMenú;
+    private ControladorMenu controladorMenÃº;
     private AnimadorLuzFondo animadorLuzFondo;
 
     private Vector3 ajusteMirada;
-    private float rotaciónInicialXOjo;
+    private float rotaciÃ³nInicialXOjo;
     private float granosBase;
-    private float aberraciónBas;
+    private float aberraciÃ³nBas;
 
     private void Start()
     {
-        controladorDiálogos = FindObjectOfType<ControladorDialogos>();
+        controladorDiÃ¡logos = FindObjectOfType<ControladorDialogos>();
         controladorCamara = FindObjectOfType<ControladorCamara>();
-        controladorMenú = FindObjectOfType<ControladorMenu>();
+        controladorMenÃº = FindObjectOfType<ControladorMenu>();
         animadorLuzFondo = FindObjectOfType<AnimadorLuzFondo>();
 
         usuarioPadre.SetActive(false);
@@ -48,18 +48,18 @@ public class ControladorAnimaciones : MonoBehaviour
         ajusteMirada = new Vector3(-0.05f, 0.05f, 0);
 
         // Post procesado
-        efectos.profile.TryGet(out granosCámara);
-        efectos.profile.TryGet(out aberraciónCromática);
+        efectos.profile.TryGet(out granosCÃ¡mara);
+        efectos.profile.TryGet(out aberraciÃ³nCromÃ¡tica);
         granosBase = 0.2f;
-        aberraciónBas = 0.5f;
+        aberraciÃ³nBas = 0.5f;
 
-        SistemaSonidos.ActivarMúsica(true);
+        SistemaSonidos.ActivarMÃºsica(true);
     }
 
-    // Sistema animación
-    public void MostrarAnimación(Animaciones animación)
+    // Sistema animaciÃ³n
+    public void MostrarAnimaciÃ³n(Animaciones animaciÃ³n)
     {
-        switch (animación)
+        switch (animaciÃ³n)
         {
             case Animaciones.nada:
                 StartCoroutine(AnimarEfectos(false));
@@ -88,7 +88,7 @@ public class ControladorAnimaciones : MonoBehaviour
         }
     }
 
-    public void CancelarAnimación()
+    public void CancelarAnimaciÃ³n()
     {
         animadorOperador.SetTrigger("Cancelar");
     }
@@ -106,46 +106,46 @@ public class ControladorAnimaciones : MonoBehaviour
         animadorSilla.SetTrigger("Entrar");
 
         yield return new WaitForSeconds(0.6f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.sillaEntrar);
+        SistemaSonidos.ReproducirAnimaciÃ³n(Sonidos.sillaEntrar);
     }
 
     private IEnumerator AnimarMirarManos()
     {
-        SistemaAnimacion.MarcarAnimación(true);
+        SistemaAnimacion.MarcarAnimaciÃ³n(true);
         StartCoroutine(AnimarEfectos(true));
         animadorOperador.SetTrigger("MirarManos");
         yield return new WaitForSeconds(2f);
-        SistemaAnimacion.MarcarAnimación(false);
+        SistemaAnimacion.MarcarAnimaciÃ³n(false);
     }
 
     private IEnumerator AnimarFinalAutor()
     {
-        SistemaAnimacion.MarcarAnimación(true);
-        controladorMenú.MostrarMenúJuego(false);
-        controladorCamara.CambiarPosición(CámarasCine.autor);
-        controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
+        SistemaAnimacion.MarcarAnimaciÃ³n(true);
+        controladorMenÃº.MostrarMenÃºJuego(false);
+        controladorCamara.CambiarPosiciÃ³n(CÃ¡marasCine.autor);
+        controladorCamara.CambiarDistanciaMÃ­nima(0.5f, 0.1f);
         animadorLuzFondo.AnimarOperador();
 
-        SistemaSonidos.ActivarMúsica(false);
+        SistemaSonidos.ActivarMÃºsica(false);
         StartCoroutine(AnimarEfectos(true));
 
         // Mirada
-        StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
+        StartCoroutine(AnimarRotaciÃ³nOjo(objetivoOjoOperador.position));
         yield return new WaitForSeconds(1f);
         animadorOperador.SetTrigger("Mirar");
 
         yield return new WaitForSeconds(0.2f);
-        StartCoroutine(AnimarRotaciónOjo(objetivoOjoOperador.position));
+        StartCoroutine(AnimarRotaciÃ³nOjo(objetivoOjoOperador.position));
 
         yield return new WaitForSeconds(8.8f);
-        SistemaAnimacion.MarcarAnimación(false);
+        SistemaAnimacion.MarcarAnimaciÃ³n(false);
     }
 
     private IEnumerator AnimarCierreAutor()
     {
-        SistemaAnimacion.MarcarAnimación(true);
-        SistemaSonidos.ReproducirAnimación(Sonidos.estática);
-        StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
+        SistemaAnimacion.MarcarAnimaciÃ³n(true);
+        SistemaSonidos.ReproducirAnimaciÃ³n(Sonidos.estÃ¡tica);
+        StartCoroutine(AnimarRotaciÃ³nOjo(controladorCamara.posicionadorCÃ¡mara.position));
         yield return new WaitForSeconds(0.5f);
 
         // Salida forzosa
@@ -156,54 +156,54 @@ public class ControladorAnimaciones : MonoBehaviour
     {
         usuarioPadre.SetActive(true);
 
-        SistemaAnimacion.MarcarAnimación(true);
-        controladorMenú.MostrarMenúJuego(false);
-        controladorDiálogos.OcultarDiálogos();
+        SistemaAnimacion.MarcarAnimaciÃ³n(true);
+        controladorMenÃº.MostrarMenÃºJuego(false);
+        controladorDiÃ¡logos.OcultarDiÃ¡logos();
         animadorLuzFondo.AnimarEncuentro();
-        CancelarAnimación();
+        CancelarAnimaciÃ³n();
 
         // Movimiento Usuario
         usuario.gameObject.SetActive(true);
         animadorUsuario.SetTrigger("Entrar");
         animadorPuerta.SetTrigger("Abrir");
-        StartCoroutine(AnimarEntrarPosición(usuario.position));
+        StartCoroutine(AnimarEntrarPosiciÃ³n(usuario.position));
 
         // Sonido
-        SistemaSonidos.ActivarMúsica(false);
+        SistemaSonidos.ActivarMÃºsica(false);
 
         yield return new WaitForSeconds(0.2f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.puertaAbrir);
+        SistemaSonidos.ReproducirAnimaciÃ³n(Sonidos.puertaAbrir);
 
-        // Cámara
+        // CÃ¡mara
         yield return new WaitForSeconds(0.3f);
         StartCoroutine(AnimarEfectos(true));
-        controladorCamara.CambiarPosición(CámarasCine.usuario);
+        controladorCamara.CambiarPosiciÃ³n(CÃ¡marasCine.usuario);
 
         // Operador
         yield return new WaitForSeconds(0.3f);
         animadorOperador.SetTrigger("Pararse");
         animadorSilla.SetTrigger("Salir");
 
-        controladorCamara.CambiarDistanciaMínima(0.5f, 0.1f);
-        StartCoroutine(AnimarEntrarRotación(usuario.rotation));
+        controladorCamara.CambiarDistanciaMÃ­nima(0.5f, 0.1f);
+        StartCoroutine(AnimarEntrarRotaciÃ³n(usuario.rotation));
 
         yield return new WaitForSeconds(0.6f);
-        SistemaSonidos.ReproducirAnimación(Sonidos.sillaSalir);
+        SistemaSonidos.ReproducirAnimaciÃ³n(Sonidos.sillaSalir);
 
-        // Final con diálogos
+        // Final con diÃ¡logos
         yield return new WaitForSeconds(1f);
-        SistemaAnimacion.MarcarAnimación(false);
+        SistemaAnimacion.MarcarAnimaciÃ³n(false);
     }
 
-    private IEnumerator AnimarEntrarPosición(Vector3 posiciónInicial)
+    private IEnumerator AnimarEntrarPosiciÃ³n(Vector3 posiciÃ³nInicial)
     {
         float tiempoLerp = 0;
         float tiempo = 0;
-        float duraciónLerp = 1.5f;
-        while (tiempoLerp < duraciónLerp)
+        float duraciÃ³nLerp = 1.5f;
+        while (tiempoLerp < duraciÃ³nLerp)
         {
-            tiempo = tiempoLerp / duraciónLerp;
-            usuario.position = Vector3.Lerp(posiciónInicial, objetivoUsuario.position, tiempo);
+            tiempo = tiempoLerp / duraciÃ³nLerp;
+            usuario.position = Vector3.Lerp(posiciÃ³nInicial, objetivoUsuario.position, tiempo);
 
             tiempoLerp += Time.deltaTime;
             yield return null;
@@ -213,15 +213,15 @@ public class ControladorAnimaciones : MonoBehaviour
         usuario.position = objetivoUsuario.position;
     }
 
-    private IEnumerator AnimarEntrarRotación(Quaternion rotaciónInicial)
+    private IEnumerator AnimarEntrarRotaciÃ³n(Quaternion rotaciÃ³nInicial)
     {
         float tiempoLerp = 0;
         float tiempo = 0;
-        float duraciónLerp = 0.5f;
-        while (tiempoLerp < duraciónLerp)
+        float duraciÃ³nLerp = 0.5f;
+        while (tiempoLerp < duraciÃ³nLerp)
         {
-            tiempo = tiempoLerp / duraciónLerp;
-            usuario.rotation = Quaternion.Lerp(rotaciónInicial, objetivoUsuario.rotation, tiempo);
+            tiempo = tiempoLerp / duraciÃ³nLerp;
+            usuario.rotation = Quaternion.Lerp(rotaciÃ³nInicial, objetivoUsuario.rotation, tiempo);
 
             tiempoLerp += Time.deltaTime;
             yield return null;
@@ -231,95 +231,95 @@ public class ControladorAnimaciones : MonoBehaviour
         usuario.rotation = objetivoUsuario.rotation;
     }
 
-    private IEnumerator AnimarRotaciónOjo(Vector3 objetivo)
+    private IEnumerator AnimarRotaciÃ³nOjo(Vector3 objetivo)
     {
-        // Prende ojo y guarda su rotación base
+        // Prende ojo y guarda su rotaciÃ³n base
         if (!ojoOperador.gameObject.activeSelf)
         {
-            rotaciónInicialXOjo = ojoOperador.rotation.eulerAngles.x;
+            rotaciÃ³nInicialXOjo = ojoOperador.rotation.eulerAngles.x;
             ojoOperador.gameObject.SetActive(true);
         }
 
         float tiempoLerp = 0;
         float tiempo = 0;
-        float duraciónLerp = 0.1f;
+        float duraciÃ³nLerp = 0.1f;
 
-        var rotaciónInicial = ojoOperador.rotation;
-        var posiciónRelativa = (objetivo + ajusteMirada) - ojoOperador.position;
-        var rotaciónRelativa = Quaternion.LookRotation(posiciónRelativa, Vector3.up).eulerAngles + new Vector3(rotaciónInicialXOjo, 0, 0);
-        var rotaciónObjetivo = Quaternion.Euler(rotaciónRelativa);
+        var rotaciÃ³nInicial = ojoOperador.rotation;
+        var posiciÃ³nRelativa = (objetivo + ajusteMirada) - ojoOperador.position;
+        var rotaciÃ³nRelativa = Quaternion.LookRotation(posiciÃ³nRelativa, Vector3.up).eulerAngles + new Vector3(rotaciÃ³nInicialXOjo, 0, 0);
+        var rotaciÃ³nObjetivo = Quaternion.Euler(rotaciÃ³nRelativa);
 
-        while (tiempoLerp < duraciónLerp)
+        while (tiempoLerp < duraciÃ³nLerp)
         {
-            tiempo = tiempoLerp / duraciónLerp;
+            tiempo = tiempoLerp / duraciÃ³nLerp;
 
-            ojoOperador.rotation = Quaternion.Lerp(rotaciónInicial, rotaciónObjetivo, tiempo);
+            ojoOperador.rotation = Quaternion.Lerp(rotaciÃ³nInicial, rotaciÃ³nObjetivo, tiempo);
 
             tiempoLerp += Time.deltaTime;
             yield return null;
         }
 
         // Fin
-        ojoOperador.rotation = rotaciónObjetivo;
+        ojoOperador.rotation = rotaciÃ³nObjetivo;
     }
 
     private IEnumerator AnimarEfectosEscribir()
     {
         float tiempoLerp = 0;
         float tiempo = 0;
-        float duraciónLerpInicio = 0.1f;
+        float duraciÃ³nLerpInicio = 0.1f;
 
-        while (tiempoLerp < duraciónLerpInicio)
+        while (tiempoLerp < duraciÃ³nLerpInicio)
         {
-            tiempo = tiempoLerp / duraciónLerpInicio;
+            tiempo = tiempoLerp / duraciÃ³nLerpInicio;
 
-            granosCámara.intensity.value = Mathf.Lerp(granosBase, 1f, tiempo);
-            aberraciónCromática.intensity.value = Mathf.Lerp(0, 1, tiempo);
+            granosCÃ¡mara.intensity.value = Mathf.Lerp(granosBase, 1f, tiempo);
+            aberraciÃ³nCromÃ¡tica.intensity.value = Mathf.Lerp(0, 1, tiempo);
 
             tiempoLerp += Time.deltaTime;
             yield return null;
         }
 
         // Fin
-        granosCámara.intensity.value = 1;
-        aberraciónCromática.intensity.value = 1;
-        float duraciónLerpFin = 2f;
+        granosCÃ¡mara.intensity.value = 1;
+        aberraciÃ³nCromÃ¡tica.intensity.value = 1;
+        float duraciÃ³nLerpFin = 2f;
 
-        while (tiempoLerp < duraciónLerpFin)
+        while (tiempoLerp < duraciÃ³nLerpFin)
         {
-            tiempo = tiempoLerp / duraciónLerpFin;
+            tiempo = tiempoLerp / duraciÃ³nLerpFin;
 
-            granosCámara.intensity.value = Mathf.Lerp(1f, granosBase, tiempo);
-            aberraciónCromática.intensity.value = Mathf.Lerp(1, 0, tiempo);
+            granosCÃ¡mara.intensity.value = Mathf.Lerp(1f, granosBase, tiempo);
+            aberraciÃ³nCromÃ¡tica.intensity.value = Mathf.Lerp(1, 0, tiempo);
 
             tiempoLerp += Time.deltaTime;
             yield return null;
         }
 
         // Fin
-        granosCámara.intensity.value = granosBase;
-        aberraciónCromática.intensity.value = 0;
+        granosCÃ¡mara.intensity.value = granosBase;
+        aberraciÃ³nCromÃ¡tica.intensity.value = 0;
     }
 
     private IEnumerator AnimarEfectos(bool mostrar)
     {
         float tiempoLerp = 0;
         float tiempo = 0;
-        float duraciónLerp = 4f;
+        float duraciÃ³nLerp = 4f;
 
-        while (tiempoLerp < duraciónLerp)
+        while (tiempoLerp < duraciÃ³nLerp)
         {
-            tiempo = tiempoLerp / duraciónLerp;
+            tiempo = tiempoLerp / duraciÃ³nLerp;
 
             if (mostrar)
             {
-                granosCámara.intensity.value = Mathf.Lerp(granosBase, 1f, tiempo);
-                aberraciónCromática.intensity.value = Mathf.Lerp(0, aberraciónBas, tiempo);
+                granosCÃ¡mara.intensity.value = Mathf.Lerp(granosBase, 1f, tiempo);
+                aberraciÃ³nCromÃ¡tica.intensity.value = Mathf.Lerp(0, aberraciÃ³nBas, tiempo);
             }
             else
             {
-                granosCámara.intensity.value = Mathf.Lerp(1, granosBase, tiempo);
-                aberraciónCromática.intensity.value = Mathf.Lerp(aberraciónBas, 0, tiempo);
+                granosCÃ¡mara.intensity.value = Mathf.Lerp(1, granosBase, tiempo);
+                aberraciÃ³nCromÃ¡tica.intensity.value = Mathf.Lerp(aberraciÃ³nBas, 0, tiempo);
             }
 
             tiempoLerp += Time.deltaTime;
@@ -329,13 +329,13 @@ public class ControladorAnimaciones : MonoBehaviour
         // Fin
         if (mostrar)
         {
-            granosCámara.intensity.value = 1;
-            aberraciónCromática.intensity.value = aberraciónBas;
+            granosCÃ¡mara.intensity.value = 1;
+            aberraciÃ³nCromÃ¡tica.intensity.value = aberraciÃ³nBas;
         }
         else
         {
-            granosCámara.intensity.value = granosBase;
-            aberraciónCromática.intensity.value = 0;
+            granosCÃ¡mara.intensity.value = granosBase;
+            aberraciÃ³nCromÃ¡tica.intensity.value = 0;
         }
     }
 }

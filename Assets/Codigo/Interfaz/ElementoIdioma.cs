@@ -1,21 +1,21 @@
-using UnityEngine;
+锘縰sing UnityEngine;
 using UnityEngine.UI;
 using static Constantes;
 
 public class ElementoIdioma : MonoBehaviour
 {
     public Idiomas idioma;
-    public Button bot髇;
+    public Button bot贸n;
 
     public void OnPointerDown()
     {
-        if(bot髇.interactable)
-            SistemaSonidos.PresionarBot髇Fuerte();
+        if(bot贸n.interactable)
+            SistemaSonidos.PresionarBot贸nFuerte();
     }
 
     public void OnPointerUp()
     {
-        if (bot髇.interactable)
-            SistemaSonidos.SoltarBot髇Fuerte();
+        if (bot贸n.interactable)
+            SistemaSonidos.SoltarBot贸nFuerte();
     }
 }

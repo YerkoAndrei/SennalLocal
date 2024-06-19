@@ -1,25 +1,25 @@
-using UnityEngine;
+锘縰sing UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class ElementoTraducible : MonoBehaviour
 {
-    public string c骴igo;
+    public string c贸digo;
 
     public void MostrarTexto()
     {
-        if (string.IsNullOrEmpty(c骴igo))
+        if (string.IsNullOrEmpty(c贸digo))
             return;
 
         if (GetComponent<TMP_Text>() != null)
         {
             TMP_Text tmpText = GetComponent<TMP_Text>();
-            tmpText.text = SistemaTraduccion.ObtenerTraducci髇(c骴igo);
+            tmpText.text = SistemaTraduccion.ObtenerTraducci贸n(c贸digo);
         }
         else if (GetComponent<Text>() != null)
         {
             Text oldText = GetComponent<Text>();
-            oldText.text = SistemaTraduccion.ObtenerTraducci髇(c骴igo);
+            oldText.text = SistemaTraduccion.ObtenerTraducci贸n(c贸digo);
         }
         else
             Debug.LogError("Componente no encontrado en: " + gameObject.name);
