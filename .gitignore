@@ -23,7 +23,8 @@
 # Cache de Gradle
 .gradle/
 
-# Cache Visual Studio 
+# Cache Visual Studio
+.vscode/
 .vs/
 .suo/
 .vsconfig*
