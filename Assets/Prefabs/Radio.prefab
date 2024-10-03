@@ -68,8 +68,7 @@ MonoBehaviour:
   m_text: "MEN\xDA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d00340fe33256479ae9298f6089277, type: 2}
-  m_sharedMaterial: {fileID: 2831852856574015263, guid: f4d00340fe33256479ae9298f6089277,
-    type: 2}
+  m_sharedMaterial: {fileID: 2831852856574015263, guid: f4d00340fe33256479ae9298f6089277, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -353,7 +352,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -481,28 +480,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1530218710533027297}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -38.602
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 6c3e93bd63d0fac49be27bf73abd055c,
-        type: 3}
+    - target: {fileID: 919132149155446097, guid: 6c3e93bd63d0fac49be27bf73abd055c, type: 3}
       propertyPath: m_Name
       value: Radio
       objectReference: {fileID: 0}
@@ -513,13 +507,11 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 6c3e93bd63d0fac49be27bf73abd055c, type: 3}
 --- !u!4 &7584224832111858202 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c3e93bd63d0fac49be27bf73abd055c, type: 3}
   m_PrefabInstance: {fileID: 7983242974589105649}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &8468395286194648122 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1968043990485647819, guid: 6c3e93bd63d0fac49be27bf73abd055c,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 1968043990485647819, guid: 6c3e93bd63d0fac49be27bf73abd055c, type: 3}
   m_PrefabInstance: {fileID: 7983242974589105649}
   m_PrefabAsset: {fileID: 0}

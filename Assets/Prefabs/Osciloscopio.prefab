@@ -85,7 +85,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -225,7 +225,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -344,7 +344,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -541,8 +541,7 @@ MonoBehaviour:
     ------'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d00340fe33256479ae9298f6089277, type: 2}
-  m_sharedMaterial: {fileID: 2831852856574015263, guid: f4d00340fe33256479ae9298f6089277,
-    type: 2}
+  m_sharedMaterial: {fileID: 2831852856574015263, guid: f4d00340fe33256479ae9298f6089277, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -761,7 +760,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -1071,7 +1070,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -1194,8 +1193,7 @@ MonoBehaviour:
   m_text: "------\n "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d00340fe33256479ae9298f6089277, type: 2}
-  m_sharedMaterial: {fileID: 2831852856574015263, guid: f4d00340fe33256479ae9298f6089277,
-    type: 2}
+  m_sharedMaterial: {fileID: 2831852856574015263, guid: f4d00340fe33256479ae9298f6089277, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1346,7 +1344,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -1486,7 +1484,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -1715,38 +1713,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1770615484332497069}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -14.009001
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 758537007482883915, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
+    - target: {fileID: 758537007482883915, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
+    - target: {fileID: 919132149155446097, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
       propertyPath: m_Name
       value: Osciloscopio
       objectReference: {fileID: 0}
-    - target: {fileID: 5230746575183279661, guid: 94b8d7b212dcbb041aabd05101137eb6,
-        type: 3}
+    - target: {fileID: 5230746575183279661, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1757,43 +1748,36 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
 --- !u!23 &2808658405624675006 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -1614086160197980166, guid: 94b8d7b212dcbb041aabd05101137eb6,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: -1614086160197980166, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
   m_PrefabInstance: {fileID: 5720634479797212484}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &3964236224551432459 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 8673947278109942863, guid: 94b8d7b212dcbb041aabd05101137eb6,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 8673947278109942863, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
   m_PrefabInstance: {fileID: 5720634479797212484}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &4175407942355488223 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -679549146988046181, guid: 94b8d7b212dcbb041aabd05101137eb6,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: -679549146988046181, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
   m_PrefabInstance: {fileID: 5720634479797212484}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5253870891986023087 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
   m_PrefabInstance: {fileID: 5720634479797212484}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &5370559886342033548 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 426655604779189704, guid: 94b8d7b212dcbb041aabd05101137eb6,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 426655604779189704, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
   m_PrefabInstance: {fileID: 5720634479797212484}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &8183297168244852003 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4536021660886356071, guid: 94b8d7b212dcbb041aabd05101137eb6,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 4536021660886356071, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
   m_PrefabInstance: {fileID: 5720634479797212484}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &9078845604208405116 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -5576213654642131144, guid: 94b8d7b212dcbb041aabd05101137eb6,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: -5576213654642131144, guid: 94b8d7b212dcbb041aabd05101137eb6, type: 3}
   m_PrefabInstance: {fileID: 5720634479797212484}
   m_PrefabAsset: {fileID: 0}
