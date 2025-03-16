@@ -3,7 +3,37 @@ guid: 9472471dd67cc0a35a27c81d3bc205e7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Esclera
+    second: {fileID: 2100000, guid: d6fc4a561877450408dde77b6899315f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior
+    second: {fileID: 2100000, guid: 974f4af8dfa8bff40ab3442bb095ec4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iris
+    second: {fileID: 2100000, guid: dac545ed772ca4a4a8c64ba24768f65a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Operador
+    second: {fileID: 2100000, guid: 0f5ad05bcbef6db43b6203fc56babb24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pupila
+    second: {fileID: 2100000, guid: bc717caf7f22038418c6a0fa68f70a04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "U\xF1as"
+    second: {fileID: 2100000, guid: cf01ef97b8121204683b7f3afd677426, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +120,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.099999994
+    globalScale: 10
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
