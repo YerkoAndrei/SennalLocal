@@ -3,7 +3,27 @@ guid: 730475a9b75582bf6ad82fdb9293cb31
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Acolchado
+    second: {fileID: 2100000, guid: 432738844d6f24a4ba7bd2e23bb73acd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clavos
+    second: {fileID: 2100000, guid: 7d5a68df3ddb7694f84c8fc9006938f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pies
+    second: {fileID: 2100000, guid: b1990ae8aa10cdd4cb0b82cdb8b51b38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Silla
+    second: {fileID: 2100000, guid: e4b9870d9154bfc438108551b80e4a57, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +110,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 100
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

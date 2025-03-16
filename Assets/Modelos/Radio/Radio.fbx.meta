@@ -3,7 +3,62 @@ guid: ae002254274ada37a8ce365cc4d2ebdd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseAntena
+    second: {fileID: 2100000, guid: 60e279e8eaf37984d8a88ff920068dbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Botones
+    second: {fileID: 2100000, guid: 97f52101f643a594f97c16f4e1373ca9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CableAntena
+    second: {fileID: 2100000, guid: aa38b8d01fc6a154281b1dbc4ae1a6a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Conectores
+    second: {fileID: 2100000, guid: 5dac1a458c5f6a343a19bf0a452d2bd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luz
+    second: {fileID: 2100000, guid: fa52a06da4d6ec84a80d9e9b4d4bfa41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pantalla
+    second: {fileID: 2100000, guid: bf7f98f3e60478641a99ab03a3a992c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Perillas
+    second: {fileID: 2100000, guid: 777d49aeb744831419c77ff839b7f79d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Placa
+    second: {fileID: 2100000, guid: cf951317e5055964ca6e32680836b0c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ProtectorRadio
+    second: {fileID: 2100000, guid: 2295c97bbf20c984d8e064676d6ed611, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Radio
+    second: {fileID: 2100000, guid: 0223326aaa5ae8e458b01cbef0307d4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sujetadores
+    second: {fileID: 2100000, guid: 60e279e8eaf37984d8a88ff920068dbc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +145,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 100
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
