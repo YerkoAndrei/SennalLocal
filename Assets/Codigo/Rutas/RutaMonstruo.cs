@@ -75,7 +75,7 @@ public class RutaMonstruo : InterfazRuta
 
         // Preguntas encontradas
         var preguntasEncontradas = SistemaMemoria.ObtenerPreguntas();
-        foreach(var pregunta in preguntasEncontradas)
+        foreach (var pregunta in preguntasEncontradas)
         {
             listaOpciones.Add(new ElementoOpcion(pregunta, autor.CrearAutor_0(pregunta)));
         }

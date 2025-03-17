@@ -1,1 +1,1 @@
-﻿public interface InterfazRuta {}
+﻿public interface InterfazRuta { }

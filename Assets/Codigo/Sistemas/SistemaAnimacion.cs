@@ -44,7 +44,7 @@ public class SistemaAnimacion : MonoBehaviour
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
         {
             // Movil bajo / PC alto
-            if(SistemaPublicidad.modoMóvil)
+            if (SistemaPublicidad.modoMóvil)
                 CambiarGráficos(Gráficos.bajos);
             else
                 CambiarGráficos(Gráficos.altos);
@@ -138,7 +138,7 @@ public class SistemaAnimacion : MonoBehaviour
     {
         var posiciónFuera = Vector2.zero;
 
-        switch(dirección)
+        switch (dirección)
         {
             case Direcciones.arriba:
                 posiciónFuera = new Vector2(0, 1000);

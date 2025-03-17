@@ -4,7 +4,7 @@ using GoogleMobileAds.Api;
 public class SistemaPublicidad : MonoBehaviour
 {
     [SerializeField] private bool modoPrueba;
-    
+
     private static SistemaPublicidad instancia;
     public static bool modoMóvil;
 

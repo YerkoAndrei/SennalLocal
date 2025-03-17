@@ -36,7 +36,7 @@ public class AnimadorLuzMecanica : MonoBehaviour
 
     private void Update()
     {
-        switch(tipoLuz)
+        switch (tipoLuz)
         {
             case ModoLuz.palpitar:
                 PalpitaLuz();

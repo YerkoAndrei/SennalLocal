@@ -17,7 +17,7 @@ public class ControladorRadio : MonoBehaviour
 
     private void CambiarRuta(Rutas ruta)
     {
-        switch(ruta)
+        switch (ruta)
         {
             case Rutas.menú:
                 txtRuta.text = "647F";//MENÚ
@@ -55,7 +55,7 @@ public class ControladorRadio : MonoBehaviour
     {
         instancia.CambiarRuta(ruta);
 
-        if(ruta != Rutas.menú)
+        if (ruta != Rutas.menú)
             rutaAnterior = ruta;
     }
 

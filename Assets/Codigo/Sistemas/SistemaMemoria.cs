@@ -55,12 +55,12 @@ public class SistemaMemoria : MonoBehaviour
         File.WriteAllText(rutaArchivo, datosEncriptados);
 
         // Pizarra
-        if(controladorPizarra == null)
+        if (controladorPizarra == null)
             controladorPizarra = FindObjectOfType<ControladorPizarra>();
 
         controladorPizarra.ActualizarPizarra();
     }
-    
+
     // Nombre respondido
     public static void GuardarNombre(string texto)
     {
@@ -123,7 +123,7 @@ public class SistemaMemoria : MonoBehaviour
 
     public static void MarcarFinal(string texto, TipoFinal tipoFinal)
     {
-        switch(tipoFinal)
+        switch (tipoFinal)
         {
             case TipoFinal.muerte:
                 instancia.datos.usuariosMuertos++;
@@ -158,7 +158,7 @@ public class SistemaMemoria : MonoBehaviour
 
     public static bool ObtenerRespuestaClave(RespuestasClave respuesta)
     {
-        switch(respuesta)
+        switch (respuesta)
         {
             default:
             case RespuestasClave.nada:
