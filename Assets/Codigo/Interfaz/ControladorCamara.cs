@@ -77,7 +77,7 @@ public class ControladorCamara : MonoBehaviour
     {
         StartCoroutine(ModificarDistanciaMínima(duraciónObjetivo, distanciaObjetivo));
     }
-    
+
     private IEnumerator MoverCámara(float duraciónObjetivo, AnimationCurve curva, Vector3 posiciónObjetivo, Quaternion rotaciónObjetivo)
     {
         // Intercalación lineal con curva
@@ -174,7 +174,7 @@ public class ControladorCamara : MonoBehaviour
 
     public void CambiarGráficos(Gráficos gráficos)
     {
-        switch(gráficos)
+        switch (gráficos)
         {
             case Gráficos.bajos:
                 cámaraData.antialiasing = AntialiasingMode.None;

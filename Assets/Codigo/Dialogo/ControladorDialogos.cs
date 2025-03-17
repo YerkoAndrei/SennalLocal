@@ -184,7 +184,7 @@ public class ControladorDialogos : MonoBehaviour
         if (tiempoClic > 0)
             tiempoClic -= Time.deltaTime;
 
-        if (Input.anyKeyDown && 
+        if (Input.anyKeyDown &&
             !Input.GetMouseButtonDown(0) &&
             !Input.GetKeyDown(KeyCode.Escape))
         {
@@ -289,7 +289,7 @@ public class ControladorDialogos : MonoBehaviour
             var textoReal = string.Empty;
 
             // Excepción nombre monstruo
-            if(diálogoActual.especial != DiálogoEspecial.noTraducible)
+            if (diálogoActual.especial != DiálogoEspecial.noTraducible)
                 textoReal = SistemaTraduccion.ObtenerTraducción(diálogoActual.texto);
             else
                 textoReal = diálogoActual.texto;
@@ -440,7 +440,7 @@ public class ControladorDialogos : MonoBehaviour
                 break;
         }
 
-        if(mostrandoTexto)
+        if (mostrandoTexto)
             TerminarTexto(true);
     }
 
@@ -762,7 +762,7 @@ public class ControladorDialogos : MonoBehaviour
     private void VolverAlMenú()
     {
         // Finales especiales
-        switch(animaciónMostrada)
+        switch (animaciónMostrada)
         {
             case Animaciones.llegaUsuario:
                 SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);

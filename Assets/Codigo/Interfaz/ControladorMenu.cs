@@ -272,7 +272,7 @@ public class ControladorMenu : MonoBehaviour
 
     public void MostrarMenúJuego(bool mostrar)
     {
-        if(mostrar)
+        if (mostrar)
             menúJuego.SetActive(mostrar);
 
         SistemaAnimacion.AnimarPanel(rectJuego, 0.2f, mostrar, true, Direcciones.arriba, () => menúJuego.SetActive(mostrar));
@@ -309,7 +309,7 @@ public class ControladorMenu : MonoBehaviour
         PrenderIdiomas();
         elemento.botón.interactable = false;
 
-        switch(SistemaTraduccion.idioma)
+        switch (SistemaTraduccion.idioma)
         {
             default:
             case Idiomas.español:

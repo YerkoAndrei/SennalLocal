@@ -9,7 +9,7 @@ public class ElementoIdioma : MonoBehaviour
 
     public void OnPointerDown()
     {
-        if(botón.interactable)
+        if (botón.interactable)
             SistemaSonidos.PresionarBotónFuerte();
     }
 
