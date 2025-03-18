@@ -43,9 +43,13 @@ public class SistemaAnimacion : MonoBehaviour
         // Recuerda anterior o usa predeterminado
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
         {
-            // Movil bajo / PC alto
-            if (SistemaPublicidad.modoMóvil)
-                CambiarGráficos(Gráficos.bajos);
+            var webGL = false;
+#if UNITY_WEBGL
+            webGL = true;
+#endif
+
+            if (SistemaPublicidad.modoMóvil || webGL)
+                CambiarGráficos(Gráficos.medios);
             else
                 CambiarGráficos(Gráficos.altos);
         }
