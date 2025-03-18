@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8196361608886411262, guid: 9472471dd67cc0a35a27c81d3bc205e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9472471dd67cc0a35a27c81d3bc205e7, type: 3}
       propertyPath: m_Name
       value: Operador

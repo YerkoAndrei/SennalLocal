@@ -31,7 +31,6 @@ public class ControladorAnimaciones : MonoBehaviour
     private ControladorMenu controladorMenú;
     private AnimadorLuzFondo animadorLuzFondo;
 
-    private Vector3 ajusteMirada;
     private float rotaciónInicialXOjo;
     private float granosBase;
     private float aberraciónBas;
@@ -45,7 +44,6 @@ public class ControladorAnimaciones : MonoBehaviour
 
         usuarioPadre.SetActive(false);
         ojoOperador.gameObject.SetActive(false);
-        ajusteMirada = new Vector3(-0.05f, 0.05f, 0);
 
         // Post procesado
         efectos.profile.TryGet(out granosCámara);
@@ -245,7 +243,7 @@ public class ControladorAnimaciones : MonoBehaviour
         float duraciónLerp = 0.1f;
 
         var rotaciónInicial = ojoOperador.rotation;
-        var posiciónRelativa = (objetivo + ajusteMirada) - ojoOperador.position;
+        var posiciónRelativa = objetivo + -ojoOperador.position;
         var rotaciónRelativa = Quaternion.LookRotation(posiciónRelativa, Vector3.up).eulerAngles + new Vector3(rotaciónInicialXOjo, 0, 0);
         var rotaciónObjetivo = Quaternion.Euler(rotaciónRelativa);
 
