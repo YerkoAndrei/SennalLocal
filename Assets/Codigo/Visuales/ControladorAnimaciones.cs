@@ -146,6 +146,11 @@ public class ControladorAnimaciones : MonoBehaviour
         StartCoroutine(AnimarRotaciónOjo(controladorCamara.posicionadorCámara.position));
         yield return new WaitForSeconds(0.5f);
 
+        // Adaptación WebGL
+        SistemaSonidos.DetenerSondidos();
+        controladorMenú.MostrarFinal();
+        Time.timeScale = 0;
+
         // Salida forzosa
         Application.Quit();
     }

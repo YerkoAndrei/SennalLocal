@@ -194,6 +194,13 @@ public class SistemaSonidos : MonoBehaviour
         }
     }
 
+    public static void DetenerSondidos()
+    {
+        instancia.fuenteMúsica.Stop();
+        instancia.fuenteDiálogo.Stop();
+        instancia.fuenteEfectos.Stop();
+    }
+
     public static void PresionarBotónFuerte()
     {
         instancia.fuenteEfectos.PlayOneShot(instancia.presionarBotónFuerte);

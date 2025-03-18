@@ -49,6 +49,7 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private Image panelOscuro;
     [SerializeField] private Image btnAutomático;
     [SerializeField] private TMP_Text txtVersión;
+    [SerializeField] private GameObject imgFinal;
 
     private ControladorDialogos controladorDiálogos;
     private ControladorCamara controladorCámara;
@@ -96,6 +97,7 @@ public class ControladorMenu : MonoBehaviour
 
         btnAutomático.color = colorAutomáticoApagado;
         txtVersión.text = Application.version;
+        imgFinal.SetActive(false);
 
         // Menú
         IniciarMenú(false);
@@ -357,6 +359,11 @@ public class ControladorMenu : MonoBehaviour
         {
             elemento.botón.interactable = true;
         }
+    }
+
+    public void MostrarFinal()
+    {
+        imgFinal.SetActive(true);
     }
 
     public void ActualizarVolumenGeneral()
