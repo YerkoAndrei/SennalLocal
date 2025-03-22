@@ -151,6 +151,7 @@ public class SistemaSonidos : MonoBehaviour
 
     private void ActivarPersonaje(Personajes personaje)
     {
+        fuenteDiálogo.Stop();
         switch (personaje)
         {
             case Personajes.usuario:

@@ -1583,12 +1583,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   estado: 0
   ruta: 0
-  tiempoLetra: 0.05
-  tiempoLetraEtiquetada: 0.1
-  tiempoEspacio: 0.06
-  "tiempoGui\xF3n": 0.6
-  tiempoComa: 0.3
-  tiempoPunto: 0.5
+  tiempoLetra: 0.04
+  tiempoLetraEtiquetada: 0.08
+  tiempoEspacio: 0.05
+  "tiempoGui\xF3n": 0.5
+  tiempoComa: 0.2
+  tiempoPunto: 0.4
   tiempoOpciones: 0.8
   "tiempoElegirOpci\xF3n": 0.6
   "tiempoEsperaAutom\xE1tico": 1
