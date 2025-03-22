@@ -186,7 +186,8 @@ public class ControladorDialogos : MonoBehaviour
 
         if (Input.anyKeyDown &&
             !Input.GetMouseButtonDown(0) &&
-            !Input.GetKeyDown(KeyCode.Escape))
+            !Input.GetKeyDown(KeyCode.Escape) &&
+            activo)
         {
             EnClic();
         }
