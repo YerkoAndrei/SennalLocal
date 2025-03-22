@@ -438,7 +438,7 @@ public class ControladorDialogos : MonoBehaviour
                 }
             }
             else
-                break;
+                yield break;
         }
 
         if (mostrandoTexto)
