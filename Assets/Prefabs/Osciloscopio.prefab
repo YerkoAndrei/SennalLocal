@@ -471,6 +471,9 @@ MonoBehaviour:
   desactivador: 0
   elementos:
   - {fileID: 4868585597895929590}
+  - {fileID: 4178440988974576882}
+  - {fileID: 4124363136109923957}
+  - {fileID: 5496847493803804560}
 --- !u!1 &3197698430213579863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1910,21 @@ MeshRenderer:
 --- !u!23 &1736399605651719004 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -679549146988046181, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+  m_PrefabInstance: {fileID: 7964949760436362183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4124363136109923957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6320100523100345778, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+  m_PrefabInstance: {fileID: 7964949760436362183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4178440988974576882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2921179831768535243, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+  m_PrefabInstance: {fileID: 7964949760436362183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5496847493803804560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2504448032507452503, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
   m_PrefabInstance: {fileID: 7964949760436362183}
   m_PrefabAsset: {fileID: 0}
 --- !u!23 &5798947682965752736 stripped

@@ -472,6 +472,8 @@ MonoBehaviour:
   desactivador: 0
   elementos:
   - {fileID: 1830061420038581850}
+  - {fileID: 8852239974596519833}
+  - {fileID: 8798092760492547358}
 --- !u!1001 &3291176060748564652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -633,5 +635,15 @@ Transform:
 --- !u!23 &3955144147329698151 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1968043990485647819, guid: ae002254274ada37a8ce365cc4d2ebdd, type: 3}
+  m_PrefabInstance: {fileID: 3291176060748564652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8798092760492547358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6320100523100345778, guid: ae002254274ada37a8ce365cc4d2ebdd, type: 3}
+  m_PrefabInstance: {fileID: 3291176060748564652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8852239974596519833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2921179831768535243, guid: ae002254274ada37a8ce365cc4d2ebdd, type: 3}
   m_PrefabInstance: {fileID: 3291176060748564652}
   m_PrefabAsset: {fileID: 0}
