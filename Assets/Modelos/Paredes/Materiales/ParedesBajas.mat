@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Paredes
+  m_Name: ParedesBajas
   m_Shader: {fileID: -6465566751694194690, guid: 103d88e199bcfcc40880e56c0d58911b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -80,9 +80,9 @@ Material:
     m_Floats:
     - Vector1_2ED4BCEE: 10
     - Vector1_373B3F99: 0.2
-    - Vector1_4DA6594D: 0.8
-    - Vector1_CDC977F8: 0.2
-    - Vector1_EA65D269: 10
+    - Vector1_4DA6594D: 1.5
+    - Vector1_CDC977F8: 0
+    - Vector1_EA65D269: 20
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
