@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 1530218710533027297}
   - component: {fileID: 5684309380631972241}
   - component: {fileID: 2006365884050094647}
+  - component: {fileID: 6126284679777399603}
   - component: {fileID: 3183490233105660736}
   m_Layer: 0
   m_Name: Radio
@@ -457,7 +458,7 @@ MonoBehaviour:
   renderizadorLuz: {fileID: 3955144147329698151}
   luzAlta: {fileID: 2100000, guid: fa52a06da4d6ec84a80d9e9b4d4bfa41, type: 2}
   luzBaja: {fileID: 2100000, guid: db33c1a5be551bf489b07cd177515e70, type: 2}
---- !u!114 &3183490233105660736
+--- !u!114 &6126284679777399603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -471,9 +472,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desactivador: 0
   elementos:
-  - {fileID: 1830061420038581850}
   - {fileID: 8852239974596519833}
   - {fileID: 8798092760492547358}
+--- !u!114 &3183490233105660736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258123139596617662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desactivador: 1
+  elementos:
+  - {fileID: 1830061420038581850}
 --- !u!1001 &3291176060748564652
 PrefabInstance:
   m_ObjectHideFlags: 0

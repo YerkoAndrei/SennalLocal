@@ -409,6 +409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1770615484332497069}
   - component: {fileID: 1081931142415792824}
+  - component: {fileID: 4678072897266505259}
   - component: {fileID: 4068418372810411655}
   m_Layer: 0
   m_Name: Osciloscopio
@@ -456,7 +457,7 @@ MonoBehaviour:
   rastro: {fileID: 3969593905070636349}
   comienzo: {fileID: 1103342342194153997}
   final: {fileID: 7243255441008154485}
---- !u!114 &4068418372810411655
+--- !u!114 &4678072897266505259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,10 +471,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desactivador: 0
   elementos:
-  - {fileID: 4868585597895929590}
   - {fileID: 4178440988974576882}
   - {fileID: 4124363136109923957}
   - {fileID: 5496847493803804560}
+--- !u!114 &4068418372810411655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943019353265116002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desactivador: 1
+  elementos:
+  - {fileID: 4868585597895929590}
 --- !u!1 &3197698430213579863
 GameObject:
   m_ObjectHideFlags: 0

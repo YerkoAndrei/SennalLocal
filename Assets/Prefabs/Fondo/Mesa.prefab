@@ -520,6 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2727556050286976589}
   - component: {fileID: 6647900808811183500}
+  - component: {fileID: 685497499826292856}
   m_Layer: 0
   m_Name: Mesa
   m_TagString: Untagged
@@ -574,13 +575,27 @@ MonoBehaviour:
   - {fileID: 2428183874981417823}
   - {fileID: 8400630316639117305}
   - {fileID: 3807151401843514432}
-  - {fileID: 1132612287696770324}
-  - {fileID: 1576820023708435753}
   - {fileID: 3289920978159784579}
   - {fileID: 2781787166576608403}
-  - {fileID: 4663988521353748677}
   - {fileID: 5616747384550803098}
+--- !u!114 &685497499826292856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2781571644966473511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desactivador: 1
+  elementos:
   - {fileID: 28641930345265500}
+  - {fileID: 1132612287696770324}
+  - {fileID: 1576820023708435753}
+  - {fileID: 4663988521353748677}
 --- !u!1 &2784465141951372398
 GameObject:
   m_ObjectHideFlags: 0
