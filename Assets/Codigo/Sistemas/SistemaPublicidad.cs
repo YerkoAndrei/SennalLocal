@@ -3,6 +3,7 @@ using GoogleMobileAds.Api;
 
 public class SistemaPublicidad : MonoBehaviour
 {
+    [SerializeField] private bool activa;
     [SerializeField] private bool modoPrueba;
 
     private static SistemaPublicidad instancia;
@@ -26,6 +27,9 @@ public class SistemaPublicidad : MonoBehaviour
 
     private void Iniciar()
     {
+        if (!activa)
+            return;
+
 #if UNITY_ANDROID || UNITY_IOS || UNITY_IPHONE
         modoMóvil = true;
 #endif
