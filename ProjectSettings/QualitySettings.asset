@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 2
+  m_CurrentQuality: 0
   m_QualitySettings:
   - serializedVersion: 3
     name: Bajo
@@ -27,7 +27,7 @@ QualitySettings:
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
-    useLegacyDetailDistribution: 1
+    useLegacyDetailDistribution: 0
     vSyncCount: 0
     realtimeGICPUUsage: 25
     lodBias: 0.3
@@ -41,7 +41,7 @@ QualitySettings:
     streamingMipmapsMaxFileIORequests: 1024
     particleRaycastBudget: 4
     asyncUploadTimeSlice: 2
-    asyncUploadBufferSize: 16
+    asyncUploadBufferSize: 8
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: 19e6f2a1c2c3bce4799f0840a57ddf27, type: 2}
@@ -71,12 +71,12 @@ QualitySettings:
     globalTextureMipmapLimit: 1
     textureMipmapLimitSettings: []
     anisotropicTextures: 1
-    antiAliasing: 2
+    antiAliasing: 0
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
-    useLegacyDetailDistribution: 1
+    useLegacyDetailDistribution: 0
     vSyncCount: 0
     realtimeGICPUUsage: 50
     lodBias: 0.7
@@ -90,7 +90,7 @@ QualitySettings:
     streamingMipmapsMaxFileIORequests: 1024
     particleRaycastBudget: 64
     asyncUploadTimeSlice: 2
-    asyncUploadBufferSize: 16
+    asyncUploadBufferSize: 8
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: 8c052f3e73cb57b41ba8dbef2c46b214, type: 2}
@@ -124,8 +124,8 @@ QualitySettings:
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1
-    billboardsFaceCameraPosition: 1
-    useLegacyDetailDistribution: 1
+    billboardsFaceCameraPosition: 0
+    useLegacyDetailDistribution: 0
     vSyncCount: 0
     realtimeGICPUUsage: 100
     lodBias: 2
