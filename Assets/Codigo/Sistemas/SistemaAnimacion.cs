@@ -50,7 +50,9 @@ public class SistemaAnimacion : MonoBehaviour
             webGL = true;
 #endif
 
-            if (SistemaPublicidad.modoMóvil || webGL)
+            if (webGL)
+                CambiarGráficos(Gráficos.bajos);
+            else if (SistemaPublicidad.modoMóvil)
                 CambiarGráficos(Gráficos.medios);
             else
                 CambiarGráficos(Gráficos.altos);
