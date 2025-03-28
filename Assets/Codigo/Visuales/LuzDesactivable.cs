@@ -1,26 +1,30 @@
 ﻿using UnityEngine;
-using UnityEngine.Rendering;
 using static Constantes;
 
 public class LuzDesactivable : MonoBehaviour
 {
-    [SerializeField] private Light luz;
+    [SerializeField] private GameObject luzBaja;
+    [SerializeField] private GameObject luzMedia;
+    [SerializeField] private GameObject luzAlta;
 
     public void CambiarLuz(Gráficos gráficos)
     {
         switch (gráficos)
         {
             case Gráficos.bajos:
-                luz.shadows = LightShadows.Hard;
-                luz.shadowResolution = LightShadowResolution.Low;
+                luzBaja.SetActive(true);
+                luzMedia.SetActive(false);
+                luzAlta.SetActive(false);
                 break;
             case Gráficos.medios:
-                luz.shadows = LightShadows.Hard;
-                luz.shadowResolution = LightShadowResolution.Medium;
+                luzBaja.SetActive(false);
+                luzMedia.SetActive(true);
+                luzAlta.SetActive(false);
                 break;
             case Gráficos.altos:
-                luz.shadows = LightShadows.Soft;
-                luz.shadowResolution = LightShadowResolution.High;
+                luzBaja.SetActive(false);
+                luzMedia.SetActive(false);
+                luzAlta.SetActive(true);
                 break;
         }
     }

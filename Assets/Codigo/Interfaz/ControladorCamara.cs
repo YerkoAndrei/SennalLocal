@@ -177,13 +177,11 @@ public class ControladorCamara : MonoBehaviour
         switch (gráficos)
         {
             case Gráficos.bajos:
+            case Gráficos.medios:
                 cámaraData.antialiasing = AntialiasingMode.None;
                 break;
-            case Gráficos.medios:
-                cámaraData.antialiasing = AntialiasingMode.FastApproximateAntialiasing;
-                break;
             case Gráficos.altos:
-                cámaraData.antialiasing = AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+                cámaraData.antialiasing = AntialiasingMode.FastApproximateAntialiasing;
                 break;
         }
     }

@@ -18,6 +18,7 @@ public class SistemaAnimacion : MonoBehaviour
     private ControladorCamara controladorCamara;
     private ElementoDesactivable[] desactivables;
     private LuzDesactivable[] luces;
+    private SombraDesactivable[] sombras;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class SistemaAnimacion : MonoBehaviour
         controladorCamara = FindObjectOfType<ControladorCamara>();
         desactivables = FindObjectsOfType<ElementoDesactivable>();
         luces = FindObjectsOfType<LuzDesactivable>();
+        sombras = FindObjectsOfType<SombraDesactivable>();
 
         // Recuerda anterior o usa predeterminado
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("gráficos")))
@@ -77,9 +79,16 @@ public class SistemaAnimacion : MonoBehaviour
         if (instancia.luces == null)
             instancia.luces = FindObjectsOfType<LuzDesactivable>();
 
+        if (instancia.sombras == null)
+            instancia.sombras = FindObjectsOfType<SombraDesactivable>();
+
         foreach (var luz in instancia.luces)
         {
             luz.CambiarLuz(gráficos);
+        }
+        foreach (var sombra in instancia.sombras)
+        {
+            sombra.CambiarLuz(gráficos);
         }
 
         // Cambios cámara
