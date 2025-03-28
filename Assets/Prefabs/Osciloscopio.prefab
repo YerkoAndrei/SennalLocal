@@ -1678,7 +1678,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1783,6 +1783,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5576213654642131144, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5576213654642131144, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5471533196416894120, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1807,6 +1815,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1614086160197980166, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1614086160197980166, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1564749077823807831, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1818,6 +1834,22 @@ PrefabInstance:
     - target: {fileID: -1564749077823807831, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -679549146988046181, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -679549146988046181, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426655604779189704, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426655604779189704, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
       propertyPath: m_Name
@@ -1871,6 +1903,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4536021660886356071, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536021660886356071, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4818527636987199519, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1894,6 +1934,14 @@ PrefabInstance:
     - target: {fileID: 8672532355908725327, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673947278109942863, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673947278109942863, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8769647558982476267, guid: f520e6e005b95025fa4d8a0ed39426f1, type: 3}
       propertyPath: m_LocalScale.x

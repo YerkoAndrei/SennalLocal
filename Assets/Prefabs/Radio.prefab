@@ -223,7 +223,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -398,7 +398,6 @@ GameObject:
   - component: {fileID: 5684309380631972241}
   - component: {fileID: 2006365884050094647}
   - component: {fileID: 6126284679777399603}
-  - component: {fileID: 3183490233105660736}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -470,24 +469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desactivador: 0
+  desactivador: 1
   elementos:
   - {fileID: 8852239974596519833}
   - {fileID: 8798092760492547358}
---- !u!114 &3183490233105660736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6258123139596617662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5347bf925e4bef74c994ed66c696f41b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  desactivador: 1
-  elementos:
   - {fileID: 1830061420038581850}
 --- !u!1001 &3291176060748564652
 PrefabInstance:
@@ -564,6 +549,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ae002254274ada37a8ce365cc4d2ebdd, type: 3}
       propertyPath: m_Name
       value: Radio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968043990485647819, guid: ae002254274ada37a8ce365cc4d2ebdd, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968043990485647819, guid: ae002254274ada37a8ce365cc4d2ebdd, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3629909565253856920, guid: ae002254274ada37a8ce365cc4d2ebdd, type: 3}
       propertyPath: m_LocalScale.x
