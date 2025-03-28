@@ -406,7 +406,8 @@ public class ControladorDialogos : MonoBehaviour
                     {
                         SistemaSonidos.ActivarSonidoPersonaje(diálogoActual.personaje);
                         yield return new WaitForSeconds(tiempoLetraEtiquetada);
-                        yield return new WaitUntil(() => activo);
+                        if (!activo)
+                            yield return new WaitUntil(() => activo);
                         continue;
                     }
 
@@ -416,25 +417,23 @@ public class ControladorDialogos : MonoBehaviour
                         default:
                             SistemaSonidos.ActivarSonidoPersonaje(diálogoActual.personaje);
                             yield return new WaitForSeconds(tiempoLetra);
-                            yield return new WaitUntil(() => activo);
                             break;
                         case ' ':
                             yield return new WaitForSeconds(tiempoEspacio);
-                            yield return new WaitUntil(() => activo);
                             break;
                         case '-':
                             yield return new WaitForSeconds(tiempoGuión);
-                            yield return new WaitUntil(() => activo);
                             break;
                         case ',':
                             yield return new WaitForSeconds(tiempoComa);
-                            yield return new WaitUntil(() => activo);
                             break;
                         case '.':
                             yield return new WaitForSeconds(tiempoPunto);
-                            yield return new WaitUntil(() => activo);
                             break;
                     }
+
+                    if (!activo)
+                        yield return new WaitUntil(() => activo);
                 }
             }
             else
