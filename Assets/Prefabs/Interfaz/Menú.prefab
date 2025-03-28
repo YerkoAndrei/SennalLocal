@@ -1677,7 +1677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vol\xFAmen M\xFAsica"
+  m_text: "Volumen m\xFAsica"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
   m_sharedMaterial: {fileID: 7673214734847661305, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
@@ -2719,7 +2719,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vol\xFAmen General"
+  m_text: Volumen general
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
   m_sharedMaterial: {fileID: 7673214734847661305, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
@@ -2867,9 +2867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reiniciar
-
-'
+  m_text: Reiniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
   m_sharedMaterial: {fileID: 7673214734847661305, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
@@ -3530,7 +3528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vol\xFAmen Efectos"
+  m_text: Volumen efectos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
   m_sharedMaterial: {fileID: 7673214734847661305, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
@@ -3678,9 +3676,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reanudar
-
-'
+  m_text: Reanudar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
   m_sharedMaterial: {fileID: 7673214734847661305, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
@@ -3902,6 +3898,13 @@ MonoBehaviour:
   "btnAutom\xE1tico": {fileID: 5933741223274109756}
   "txtVersi\xF3n": {fileID: 3655231902714443853}
   imgFinal: {fileID: 7660459000258529671}
+  idiomas:
+  - {fileID: 1326470917736987252}
+  - {fileID: 4287808706816146476}
+  "gr\xE1ficos":
+  - {fileID: 7930977633056083714}
+  - {fileID: 8535044081616101137}
+  - {fileID: 5623760310470591144}
 --- !u!1 &3655231903356155618
 GameObject:
   m_ObjectHideFlags: 0
@@ -5844,9 +5847,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Iniciar
-
-'
+  m_text: Iniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
   m_sharedMaterial: {fileID: 7673214734847661305, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
@@ -5994,9 +5995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Volver
-
-'
+  m_text: Volver
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37815f40ad969e345a0740219642aa3b, type: 2}
   m_sharedMaterial: {fileID: 7673214734847661305, guid: 37815f40ad969e345a0740219642aa3b, type: 2}

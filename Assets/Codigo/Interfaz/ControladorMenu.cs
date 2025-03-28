@@ -50,11 +50,11 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private Image btnAutomático;
     [SerializeField] private TMP_Text txtVersión;
     [SerializeField] private GameObject imgFinal;
+    [SerializeField] private ElementoIdioma[] idiomas;
+    [SerializeField] private ElementoGrafico[] gráficos;
 
     private ControladorDialogos controladorDiálogos;
     private ControladorCamara controladorCámara;
-    private ElementoIdioma[] idiomas;
-    private ElementoGrafico[] gráficos;
 
     private bool iniciado;
     private Coroutine corrutinaColorTítulo;
@@ -74,12 +74,10 @@ public class ControladorMenu : MonoBehaviour
         volumenEfectos.value = SistemaSonidos.ObtenerVolumenEfectos();
 
         // Idiomas
-        idiomas = Resources.FindObjectsOfTypeAll<ElementoIdioma>();
         PrenderIdiomas();
         idiomas.Where(o => o.idioma == SistemaTraduccion.idioma).FirstOrDefault().botón.interactable = false;
 
         // Gráficos
-        gráficos = Resources.FindObjectsOfTypeAll<ElementoGrafico>();
         PrenderGráficos();
         gráficos.Where(o => o.gráfico == SistemaAnimacion.gráficos).FirstOrDefault().botón.interactable = false;
 
