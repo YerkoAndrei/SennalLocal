@@ -164,7 +164,14 @@ public class ControladorDialogos : MonoBehaviour
         else
             controladorCamara.CambiarPosición(CámarasCine.juego);
 
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(1.2f);
+
+        txtDiálogo.text = string.Empty;
+        panelDiálogos.SetActive(true);
+        panelDiálogo.color = colorPanelActivo;
+        SistemaAnimacion.AnimarPanel(rectDiálogos, 0.2f, true, true, Direcciones.abajo, null);
+
+        yield return new WaitForSeconds(0.2f);
         yield return new WaitUntil(() => activo);
 
         var intro = new RutaIntro();
@@ -230,14 +237,9 @@ public class ControladorDialogos : MonoBehaviour
         puedeContinuar = false;
 
         txtDiálogo.text = string.Empty;
+        panelDiálogos.SetActive(true);
         imgPersonaje.gameObject.SetActive(true);
         panelDiálogo.color = colorPanelActivo;
-
-        if (!panelDiálogos.activeSelf)
-        {
-            panelDiálogos.SetActive(true);
-            SistemaAnimacion.AnimarPanel(rectDiálogos, 0.2f, true, true, Direcciones.abajo, null);
-        }
 
         // Cambio de fuentes
         switch (diálogoActual.personaje)
