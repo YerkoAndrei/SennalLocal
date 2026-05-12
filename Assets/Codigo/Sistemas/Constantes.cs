@@ -69,7 +69,8 @@ public static class Constantes
     public enum Idiomas
     {
         español,
-        inglés
+        inglés,
+        francés
     }
 
     public enum Gráficos

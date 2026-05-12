@@ -44,6 +44,7 @@ public class ControladorMenu : MonoBehaviour
     [SerializeField] private Image imgTítulo;
     [SerializeField] private Sprite títuloEspañol;
     [SerializeField] private Sprite títuloInglés;
+    [SerializeField] private Sprite títuloFrancés;
 
     [Header("Referencias")]
     [SerializeField] private Image panelOscuro;
@@ -90,6 +91,9 @@ public class ControladorMenu : MonoBehaviour
                 break;
             case Idiomas.inglés:
                 imgTítulo.sprite = títuloInglés;
+                break;
+            case Idiomas.francés:
+                imgTítulo.sprite = títuloFrancés;
                 break;
         }
 
@@ -317,6 +321,9 @@ public class ControladorMenu : MonoBehaviour
                 break;
             case Idiomas.inglés:
                 imgTítulo.sprite = títuloInglés;
+                break;
+            case Idiomas.francés:
+                imgTítulo.sprite = títuloFrancés;
                 break;
         }
     }

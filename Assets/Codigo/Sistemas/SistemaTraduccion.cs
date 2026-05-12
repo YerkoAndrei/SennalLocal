@@ -13,12 +13,14 @@ public class SistemaTraduccion : MonoBehaviour
     public static Idiomas idioma;
 
     [Header("Menu")]
-    [SerializeField] private TextAsset menu_español;
-    [SerializeField] private TextAsset menu_inglés;
+    [SerializeField] private TextAsset menú_español;
+    [SerializeField] private TextAsset menú_inglés;
+    [SerializeField] private TextAsset menú_francés;
 
     [Header("Guión")]
     [SerializeField] private TextAsset guión_español;
     [SerializeField] private TextAsset guión_inglés;
+    [SerializeField] private TextAsset guión_francés;
 
     private static Dictionary<string, string> diccionario;
 
@@ -52,6 +54,9 @@ public class SistemaTraduccion : MonoBehaviour
                 case "en":
                     CambiarIdioma(Idiomas.inglés);
                     break;
+                case "fr":
+                    CambiarIdioma(Idiomas.inglés);
+                    break;
             }
         }
         else
@@ -72,10 +77,13 @@ public class SistemaTraduccion : MonoBehaviour
         {
             default:
             case Idiomas.español:
-                diccionario = UnirTextosJSON(new string[] { instancia.menu_español.text, instancia.guión_español.text });
+                diccionario = UnirTextosJSON(new string[] { instancia.menú_español.text, instancia.guión_español.text });
                 break;
             case Idiomas.inglés:
-                diccionario = UnirTextosJSON(new string[] { instancia.menu_inglés.text, instancia.guión_inglés.text });
+                diccionario = UnirTextosJSON(new string[] { instancia.menú_inglés.text, instancia.guión_inglés.text });
+                break;
+            case Idiomas.francés:
+                diccionario = UnirTextosJSON(new string[] { instancia.menú_francés.text, instancia.guión_francés.text });
                 break;
         }
         instancia.ActualizarTextosEscena();
